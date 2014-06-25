@@ -1,3 +1,5 @@
-# README #
+# Builds folder
 
-In this folder, you can (should) build your build of project. As the folder is ignored by GIT, content of the folder (except this README.md file) will be ignored by git
+* Content of this folder (except this README.md file) is ignored by GIT.
+
+* In this folder, you can (should) place builds of your project. 

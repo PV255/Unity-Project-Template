@@ -10,7 +10,7 @@ You can simply:
 
 3. Clone it
 
-4. Develop
+4. Develop in Unity using Git
 
 
 

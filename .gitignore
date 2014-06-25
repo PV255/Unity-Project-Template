@@ -1,0 +1,21 @@
+.DS_Store
+# Exclude these folders and all it content
+Library
+Temp
+obj
+
+# Folders designed to be part of repository, but not their content
+/Assets/_NonVersioned/*
+!/Assets/_NonVersioned.meta
+!/Assets/_NonVersioned/README.md
+!/Assets/_NonVersioned/README.md.meta
+/Builds/*
+!/Builds/README.md
+
+# Files to be excluded
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.suo
+*.userprefs

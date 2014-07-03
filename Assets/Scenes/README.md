@@ -1,5 +1,5 @@
 # Scenes folder
 
 
-* Folder inteded for all Unity scenes
+* Folder inteded for all Unity scenes.
 

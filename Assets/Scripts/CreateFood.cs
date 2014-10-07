@@ -15,7 +15,7 @@ public class CreateFood : MonoBehaviour {
 			float py = (float) Random.value*10- (float) 9.5;
 			float pz = (float) Random.value*10- (float) 4.5;
 			foodPosition[i]=new Vector3(px, py, pz);
-			Instantiate(food);
+			Instantiate(food, /*foodPosition[i]*/new Vector3(1,0,1), Quaternion.identity);
 
 				}
 	

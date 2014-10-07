@@ -4,6 +4,7 @@ using System.Collections;
 //[RequireComponent(typeof(CharacterController))]
 public class Move : MonoBehaviour {
 	public float speed = 3.0F;
+	public Vector3 change;
 	//public float rotateSpeed = 3.0F;
 	void Update () {
 		// The step size is equal to speed times frame time.
@@ -11,23 +12,39 @@ public class Move : MonoBehaviour {
 		
 		// Move our position a step closer to the target.
 		Vector3 target = transform.position;
-		if (Input.GetKey ("up"))
-			target.y++;
-		
-		if (Input.GetKey ("down"))
-			target.y--;
 
-		if (Input.GetKey ("left"))
-			target.x++;
-		
-		if (Input.GetKey ("right"))
-			target.x--;
+		if (Input.GetKey ("up")){
+						//target.y++;
+						change.Set(0,1,0);
 
-		if (Input.GetKey ("f"))
-			target.z++;
+				}
+			
 		
-		if (Input.GetKey ("b"))
-			target.z--;
+		if (Input.GetKey ("down")) {
+						//target.y--;
+						change.Set (0, -1, 0);
+				}
+
+		if (Input.GetKey ("left")) {
+						//target.x++;
+						change.Set (1, 0, 0);
+				}
+		
+		if (Input.GetKey ("right")) {
+						//target.x--;
+						change.Set (-1, 0, 0);
+				}
+
+		if (Input.GetKey ("f")) {
+						//target.z++;
+						change.Set (0, 0, 1);
+				}
+		
+		if (Input.GetKey ("b")) {
+						//target.z--;
+						change.Set (0, 0, -1);
+				}
+		target = target+change;
 
 		//not to go out of the plane
 

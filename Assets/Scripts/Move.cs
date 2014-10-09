@@ -6,7 +6,7 @@ public class Move : MonoBehaviour {
 	public float speed = 3.0F;
 	public Vector3 change;
 	//public float rotateSpeed = 3.0F;
-	void Update () {
+	void FixedUpdate () {
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		

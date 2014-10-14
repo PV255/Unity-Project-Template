@@ -48,7 +48,7 @@ public class Move : MonoBehaviour {
 
 		//not to go out of the plane
 
-		var gamePlanePosition = GameObject.Find("GamePlane").transform.position;
+	//	var gamePlanePosition = GameObject.Find("GamePlane").transform.position;
 		if ((target.x <9.5) && (target.x > -0.5) && (target.y > -9.5) && (target.y <0.5) && (target.z <5.5) && (target.z > -4.5)) {
 		//Debug.Log("target.x " + target.x + "/n gamePlanePosition " + gamePlanePosition + "target.y " + target.y + "target.z " + target.z);
 						transform.position = Vector3.MoveTowards (transform.position, target, step);

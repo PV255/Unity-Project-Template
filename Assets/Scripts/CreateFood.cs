@@ -8,14 +8,14 @@ public class CreateFood : MonoBehaviour {
 	public GameObject food;
 	// Use this for initialization
 	void Start () {
-		int foodNumber = 5 - level / 2;
+		int foodNumber = 3 + level / 2;
 		foodPosition = new Vector3[foodNumber];
 		for (int i=0; i<foodNumber; i++) {
 			float px = (float) Random.value*10- (float) 0.5;
 			float py = (float) Random.value*10- (float) 9.5;
 			float pz = (float) Random.value*10- (float) 4.5;
 			foodPosition[i]=new Vector3(px, py, pz);
-			Instantiate(food, /*foodPosition[i]*/new Vector3(1,0,1), Quaternion.identity);
+			Instantiate(food, foodPosition[i], Quaternion.identity);
 
 				}
 	

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DestroyMe : MonoBehaviour {
 	public GameObject food;
+	public GameObject snakeprefab;
 	// Use this for initialization
 	void OnTriggerEnter(Collider c)
 	{
@@ -15,5 +16,8 @@ public class DestroyMe : MonoBehaviour {
 		Vector3 foodPosition = new Vector3(px, py, pz);
 		Instantiate(food, foodPosition, Quaternion.identity);
 
+		Vector3 NewBodyPosition = new Vector3 (c.transform.position.x, c.transform.position.y-1, c.transform.position.z);
+		//Vector3 NewBodyPosition = (StoreBody.foodObject [0]);
+		Instantiate (snakeprefab, NewBodyPosition, Quaternion.identity);
 	}
 }

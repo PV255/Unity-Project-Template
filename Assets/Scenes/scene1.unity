@@ -26081,6 +26081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
   snakeprefab: {fileID: 0}
+  head: {fileID: 0}
 --- !u!23 &745300628
 Renderer:
   m_ObjectHideFlags: 0

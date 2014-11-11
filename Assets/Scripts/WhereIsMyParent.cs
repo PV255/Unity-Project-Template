@@ -26,22 +26,25 @@ public class WhereIsMyParent : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		previousPosition = currentPosition;
-		if (isMyParentHead) {
-			//print("my parent is head");
-			WhereIAM pos = headIfParentHead.GetComponent <WhereIAM>();
-			currentPosition = pos.returnPreviousPosition ();
-			this.transform.position=currentPosition;
-						/*WhereIAM head = GetComponent<WhereIAM>(GameObject.Find ("Snake"));
+	void FixedUpdate () {
+		if (timer > 20) {
+			previousPosition = currentPosition;
+			if (isMyParentHead) {
+				//print("my parent is head");
+				WhereIAM pos = headIfParentHead.GetComponent <WhereIAM> ();
+				currentPosition = pos.returnPreviousPosition ();
+				this.transform.position = currentPosition;
+				/*WhereIAM head = GetComponent<WhereIAM>(GameObject.Find ("Snake"));
 			currentPosition = head.returnPreviousPosition();*/
-						//currentPosition = GameObject.Find ("Snake").re
-	} else 
-		{
-			//print("my parent is not head");
-			WhereIsMyParent p = headIfParentNotHead.GetComponent <WhereIsMyParent>();
-			currentPosition = p.returnPreviousBodyPosition ();
-			this.transform.position=currentPosition;
+				//currentPosition = GameObject.Find ("Snake").re
+			} else {
+				//print("my parent is not head");
+				WhereIsMyParent p = headIfParentNotHead.GetComponent <WhereIsMyParent> ();
+				currentPosition = p.returnPreviousBodyPosition ();
+				this.transform.position = currentPosition;
+			}
+		} else {
+			timer++;
 		}
 	}
 

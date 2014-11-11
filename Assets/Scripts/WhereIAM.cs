@@ -13,10 +13,14 @@ public class WhereIAM : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 	//timer - kym sa hlava posunie o 1
-
-		//zmena pozice
-		previousPosition = currentPosition;
-		currentPosition = transform.position;
+		if (timer > 20) {
+			//zmena pozice
+			previousPosition = currentPosition;
+			currentPosition = transform.position;
+			timer = 0;
+		} else {
+			timer ++;
+		}
 	}
 	public Vector3 returnPreviousPosition()
 	{

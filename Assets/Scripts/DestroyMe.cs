@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyMe : MonoBehaviour {
+public class DestroyMe : MonoBehaviour 
+{
 	public GameObject food;
 	public GameObject snakeprefab;
 	public GameObject head;

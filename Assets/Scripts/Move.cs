@@ -3,10 +3,19 @@ using System.Collections;
 
 //[RequireComponent(typeof(CharacterController))]
 public class Move : MonoBehaviour {
+	private GestureListener gestureListener; //gesture listener for Kinect
 	public float speed = 3.0F;
 	public Vector3 change;
 	//public float rotateSpeed = 3.0F;
-	void FixedUpdate () {
+	void Start(){
+		gestureListener = Camera.main.GetComponent<GestureListener>();
+		}
+
+	void Update () {
+
+		KinectManager kinectManager = KinectManager.Instance;
+
+
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		
@@ -44,6 +53,37 @@ public class Move : MonoBehaviour {
 						//target.z--;
 						change.Set (0, 0, -1);
 				}
+
+		if (gestureListener) {
+			if (gestureListener.IsSwipeLeft ()) {
+				change.Set (1, 0, 0);
+				//print ("gesture left swipe");
+			}
+			if (gestureListener.IsSwipeRight ()) {
+				change.Set (-1, 0, 0);
+				//print ("gesture right swipe");
+			}
+			if (gestureListener.IsSwipeUp ()) {
+				change.Set (0, 1, 0);
+				//print ("gesture up swipe");
+			}
+			if (gestureListener.IsSwipeDown ()) {
+				change.Set (0, -1, 0);
+				//print ("gesture down swipe");
+			}
+			if(gestureListener.IsPull()){
+				change.Set(0, 0, 1);
+				//print ("gesture pull");
+			}
+			if(gestureListener.IsPush()){
+				change.Set(0, 0, -1);
+				//print ("gesture push");
+			}
+
+		}
+
+
+
 		target = target+change;
 
 		//not to go out of the plane

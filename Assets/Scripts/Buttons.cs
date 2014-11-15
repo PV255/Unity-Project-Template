@@ -21,7 +21,8 @@ public class Buttons : MonoBehaviour {
 	void OnMouseDown(){
 		if(levelToLoad.Equals ("exit")){
 			//exit game
-			print("exit");
+			//print("exit");
+			Application.Quit();
 		}else
 		Application.LoadLevel(levelToLoad);
 	}

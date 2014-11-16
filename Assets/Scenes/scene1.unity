@@ -24124,6 +24124,7 @@ GameObject:
   - 54: {fileID: 670949083}
   - 33: {fileID: 670949087}
   - 114: {fileID: 670949089}
+  - 114: {fileID: 670949090}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -24226,6 +24227,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodObject: []
+--- !u!114 &670949090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670949082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd692fadddafa5418d44f26e2c5cc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &671665498
 GameObject:
   m_ObjectHideFlags: 0
@@ -26059,6 +26072,7 @@ MonoBehaviour:
   food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
   snakeprefab: {fileID: 0}
   head: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!23 &745300628
 Renderer:
   m_ObjectHideFlags: 0

@@ -27,13 +27,15 @@ public class WhereIsMyParent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (timer > 20) {
+		print ("changed position");
+		if (timer > 6) {
 			previousPosition = currentPosition;
 			if (isMyParentHead) {
 				//print("my parent is head");
 				WhereIAM pos = headIfParentHead.GetComponent <WhereIAM> ();
 				currentPosition = pos.returnPreviousPosition ();
 				this.transform.position = currentPosition;
+				timer = 0;
 				/*WhereIAM head = GetComponent<WhereIAM>(GameObject.Find ("Snake"));
 			currentPosition = head.returnPreviousPosition();*/
 				//currentPosition = GameObject.Find ("Snake").re
@@ -42,6 +44,7 @@ public class WhereIsMyParent : MonoBehaviour {
 				WhereIsMyParent p = headIfParentNotHead.GetComponent <WhereIsMyParent> ();
 				currentPosition = p.returnPreviousBodyPosition ();
 				this.transform.position = currentPosition;
+				timer = 0;
 			}
 		} else {
 			timer++;

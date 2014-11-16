@@ -12,8 +12,9 @@ public class WhereIAM : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		print ("changed parent coords");
 	//timer - kym sa hlava posunie o 1
-		if (timer > 20) {
+		if (timer > 6) {
 			//zmena pozice
 			previousPosition = currentPosition;
 			currentPosition = transform.position;

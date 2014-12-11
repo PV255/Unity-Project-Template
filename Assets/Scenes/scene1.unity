@@ -31548,16 +31548,16 @@ MonoBehaviour:
   IgnoreInferredJoints: 1
   smoothing: 1
   UseBoneOrientationsFilter: 0
-  UseClippedLegsFilter: 0
+  UseClippedLegsFilter: 1
   UseBoneOrientationsConstraint: 1
   UseSelfIntersectionConstraint: 0
   Player1Avatars: []
   Player2Avatars: []
   Player1CalibrationPose: 0
   Player2CalibrationPose: 0
-  Player1Gestures: 
+  Player1Gestures: 0700000008000000090000000a0000001300000012000000
   Player2Gestures: 
-  MinTimeBetweenGestures: .699999988
+  MinTimeBetweenGestures: .00999999978
   GestureListeners:
   - {fileID: 986795743}
   CalibrationText: {fileID: 0}

@@ -5,7 +5,7 @@ public class Buttons : MonoBehaviour {
 
 	public string levelToLoad;
 
-	// Use this for initialization
+	//Use this for initialization
 	void Start () {
 		this.guiTexture.texture = (Texture)Resources.Load("Button");
 	}

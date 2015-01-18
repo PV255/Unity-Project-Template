@@ -9,6 +9,7 @@ public class DestroyMe : MonoBehaviour
 	public GameObject parent;
 	private bool alive = true;
 
+
 	void Start()
 	{
 		head = GameObject.Find ("Snake");
@@ -18,9 +19,12 @@ public class DestroyMe : MonoBehaviour
 	{
 		if (alive) 
 		{
+			//audio.PlayOneShot(glass);
+			//yield return new WaitForSeconds(2);
 			alive = false;
 			print ("colliding");
 			Destroy (this.gameObject);
+
 
 			float px = (float)Random.value * 10 - 0.5f;
 			float py = (float)Random.value * 10 - 9.5f;

@@ -6,20 +6,23 @@ public class KillSnake : MonoBehaviour
 {
 
 	GameObject[] snakeBody;
+	public AudioClip glass;
 
-	void OnTriggerEnter(Collider c)
+	IEnumerator OnTriggerEnter(Collider c)
 	{
-		if (c.gameObject.name == "Snake") 
-		{
-			Destroy(GameObject.Find("Snake head"));
-			Destroy(GameObject.Find("Snake"));
-			snakeBody =  GameObject.FindGameObjectsWithTag("SnakeBody");			
-			for(int i = 0; i < snakeBody.Length; i++)
-			{
-				Destroy(snakeBody[i]);
+		if (c.gameObject.name == "Snake") {
+			audio.PlayOneShot (glass);
+			//yield return new WaitForSeconds(5);
+			Destroy (GameObject.Find ("Snake head"));
+			Destroy (GameObject.Find ("Snake"));
+			snakeBody = GameObject.FindGameObjectsWithTag ("SnakeBody");			
+			for (int i = 0; i < snakeBody.Length; i++) {
+				Destroy (snakeBody [i]);
 			}
 
-			GameObject.Find("loserMessage").guiText.enabled = true;
+			GameObject.Find ("loserMessage").guiText.enabled = true;
+		} else {
+			yield return new WaitForSeconds(0);
 		}
 	}
 }

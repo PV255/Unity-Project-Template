@@ -110,7 +110,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294902015
+    rgba: 4289659135
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!4 &611838104
@@ -367,7 +367,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4278255615
+    rgba: 4294967040
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!114 &1036697685

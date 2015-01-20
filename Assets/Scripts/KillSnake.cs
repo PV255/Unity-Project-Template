@@ -12,7 +12,9 @@ public class KillSnake : MonoBehaviour
 	{
 		if (c.gameObject.name == "Snake") {
 			audio.PlayOneShot (glass);
-			//yield return new WaitForSeconds(5);
+			GameObject.Find ("loserMessage").guiText.enabled = true;
+			yield return new WaitForSeconds(1);
+
 			Destroy (GameObject.Find ("Snake head"));
 			Destroy (GameObject.Find ("Snake"));
 			snakeBody = GameObject.FindGameObjectsWithTag ("SnakeBody");			
@@ -20,7 +22,7 @@ public class KillSnake : MonoBehaviour
 				Destroy (snakeBody [i]);
 			}
 
-			GameObject.Find ("loserMessage").guiText.enabled = true;
+
 		} else {
 			yield return new WaitForSeconds(0);
 		}

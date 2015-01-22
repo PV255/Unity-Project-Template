@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 	private int score;
+	//private string levelToLoad;
+	public int currentLevel;
 
 	void Start()
 	{
@@ -37,5 +39,10 @@ public class GameManager : MonoBehaviour {
 	public void TakeOffPointsAddedAfterSnakeDead(int i){
 		score = score - i;
 	}
+	public string NextLevel()
+	{
+		currentLevel++;
+		return "scene" + currentLevel;
+		}
 	
 }

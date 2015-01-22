@@ -12,6 +12,7 @@ public class CreateFood : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		level = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
 		int foodNumber = 3 + level / 2;
 		foodPosition = new Vector3[foodNumber];
 		for (int i=0; i<foodNumber; i++) 
@@ -23,7 +24,7 @@ public class CreateFood : MonoBehaviour
 			Instantiate(food, foodPosition[i], Quaternion.identity);
 		}
 
-		int poisonNumber = 1 + level / 2;
+		int poisonNumber = level;
 		poisonPosition = new Vector3[poisonNumber];
 		for (int i=0; i<poisonNumber; i++) 
 		{

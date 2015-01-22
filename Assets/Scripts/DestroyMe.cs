@@ -8,7 +8,7 @@ public class DestroyMe : MonoBehaviour
 	public GameObject head;
 	public GameObject parent;
 	private bool alive = true;
-
+	public AudioClip eating;
 
 	void Start()
 	{
@@ -19,7 +19,7 @@ public class DestroyMe : MonoBehaviour
 	{
 		if (alive) 
 		{
-			//audio.PlayOneShot(glass);
+			audio.PlayOneShot(eating);
 			//yield return new WaitForSeconds(2);
 			alive = false;
 			print ("colliding");

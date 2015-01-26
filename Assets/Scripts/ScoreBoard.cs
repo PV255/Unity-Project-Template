@@ -23,6 +23,7 @@ public class ScoreBoard : MonoBehaviour {
 		aFont = new GUIStyle();
 		aFont.fontSize = 56;
 		aFont.alignment = TextAnchor.MiddleCenter;
+		aFont.normal.textColor = Color.magenta;
 		//
 		if (GameObject.Find ("_GameManager_") != null) {
 			print ("fromgame");

@@ -9,6 +9,7 @@ public class DestroyMe : MonoBehaviour
 	public GameObject parent;
 	private bool alive = true;
 	public AudioClip eating;
+	public int score;
 
 	void Start()
 	{
@@ -32,14 +33,25 @@ public class DestroyMe : MonoBehaviour
 			Vector3 foodPosition = new Vector3 (px, py, pz);
 			Instantiate (food, foodPosition, Quaternion.identity);
 			print ("created food");
-			//tu bude timer
-			//Vector3 NewBodyPosition = new Vector3 (c.transform.position.x, c.transform.position.y-1, c.transform.position.z);
+			//pozicia hada - buduca pozicia dalsieho kuska tela
 			WhereIAM pos = head.GetComponent <WhereIAM> ();
 			Vector3 NewBodyPosition = pos.returnPreviousPosition ();
 			GameObject newbody = (GameObject)Instantiate (snakeprefab, NewBodyPosition, Quaternion.identity);
-			print ("created body");
 			newbody.transform.parent = FindSon (head.transform);
-			print ("created body with parent " + newbody.transform.parent);
+
+
+
+
+		/*	print ("eaten food");
+			score = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().LastScore();
+			print("level "+ score);
+
+			//uspesne ukonceny level - had zjedol 5 potrav
+			if ((score%5) == 0)
+			{
+				print("won the level");
+				Application.LoadLevel("WinningScreen");
+			}*/
 		}
 
 	}

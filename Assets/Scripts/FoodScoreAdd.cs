@@ -23,6 +23,7 @@ public class FoodScoreAdd : MonoBehaviour {
 		{
 			print("won the level");
 			Application.LoadLevel("WinningScreen");
+			print("winning");
 		}
 	}
 }

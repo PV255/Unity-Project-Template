@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels.unity
   - enabled: 1
     path: Assets/Scenes/scene2.unity
+  - enabled: 1
+    path: Assets/Scenes/WinningScreen.unity

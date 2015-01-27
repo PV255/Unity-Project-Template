@@ -1,16 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ScoreLoadAfterSnakeDeath : MonoBehaviour {
 
+	public int level;
+	public bool death;
+
 	void OnDestroy(){
-		//Time.timeScale = 0.1F;
-		print ("spomalenie");
-		GameObject.Find ("_GameManager_").GetComponent<GameManager> ().TakeOffPointsAddedAfterSnakeDead (3);
-		//yield return new WaitForSeconds(2);
+		death = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().death;
+		level = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
+		print("checking death: " + death);
+		if (death) {
 
-
-
-		Application.LoadLevel("Score");
+						print ("score screen");
+						Application.LoadLevel ("Score");
+						print ("score screen LOADED");
+				}
 	}
 }

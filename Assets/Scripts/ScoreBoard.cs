@@ -17,6 +17,7 @@ public class ScoreBoard : MonoBehaviour {
 	public int score5;
 	public string stringToEdit;
 	GUIStyle aFont;
+	public int level;
 
 	void Start(){
 		//font a tak pro GUI
@@ -26,10 +27,12 @@ public class ScoreBoard : MonoBehaviour {
 		aFont.normal.textColor = Color.magenta;
 		//
 		if (GameObject.Find ("_GameManager_") != null) {
+			level = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
 			print ("fromgame");
 			if(GameObject.Find ("_GameManager_").GetComponent<GameManager>().LastScore() != 0){
 				enteringScore = true;
 				newScore = GameObject.Find ("_GameManager_").GetComponent<GameManager>().LastScore();
+				GameObject.Find ("_GameManager_").GetComponent<GameManager> ().TakeOffPointsAddedAfterSnakeDead (3+level/2);
 			}
 		}else{
 			newScore = 0;

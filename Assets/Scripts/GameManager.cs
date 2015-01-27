@@ -5,9 +5,12 @@ public class GameManager : MonoBehaviour {
 	private int score;
 	//private string levelToLoad;
 	public int currentLevel;
-
+	public bool death;
+	public bool winning;
 	void Start()
 	{
+		death = false;
+		winning = false;
 		score = 0;
 		//This keeps the object alive across multiple scenes.
 		DontDestroyOnLoad (this.gameObject);
@@ -38,11 +41,34 @@ public class GameManager : MonoBehaviour {
 
 	public void TakeOffPointsAddedAfterSnakeDead(int i){
 		score = score - i;
+		print("erasing " + i + "points");
 	}
 	public string NextLevel()
 	{
 		currentLevel++;
 		return "scene" + currentLevel;
 		}
+	public bool Alive()
+	{
+		death = false;
+		return death;
+	}
+	public bool Dead()
+	{
+		death = true;
+		return death;
+	}
+	public void Winning()
+	{
+		winning = true;
+	}
+	public void NotWinning()
+	{
+		winning = false;
+	}
+	/*public bool AmIDead()
+	{
+		return death;
+	}*/
 	
 }

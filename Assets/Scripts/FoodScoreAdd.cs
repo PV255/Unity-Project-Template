@@ -5,6 +5,7 @@ public class FoodScoreAdd : MonoBehaviour {
 	static GameObject ob;
 	static GameManager sc;
 	public int score;
+	public int level;
 	// Use this for initialization
 	void Start () {
 		ob = GameObject.Find("_GameManager_");
@@ -13,17 +14,24 @@ public class FoodScoreAdd : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnDestroy () {
-			sc.AddPoints ();
-		print ("eaten food");
+		sc.AddPoints ();
+
 		score = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().LastScore();
+		print ("eaten food, score " + score);
+		if (score % 5 == 0 && !GameObject.Find ("_GameManager_").GetComponent<GameManager> ().death) {
+			GameObject.Find ("_GameManager_").GetComponent<GameManager>().Winning();
+		
 
 		
 		//uspesne ukonceny level - had zjedol 5 potrav
-		if ((score%5) == 0)
-		{
+
+
+
+
 			print("won the level");
 			Application.LoadLevel("WinningScreen");
-			print("winning");
+			//GameObject.Find ("_GameManager_").GetComponent<GameManager> ().TakeOffPointsAddedAfterSnakeDead (3+level/2);
+			print("winning screen loaded");
 		}
 	}
 }

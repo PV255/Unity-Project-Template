@@ -31,8 +31,10 @@ public class ScoreBoard : MonoBehaviour {
 			print ("fromgame");
 			if(GameObject.Find ("_GameManager_").GetComponent<GameManager>().LastScore() != 0){
 				enteringScore = true;
-				newScore = GameObject.Find ("_GameManager_").GetComponent<GameManager>().LastScore();
 				GameObject.Find ("_GameManager_").GetComponent<GameManager> ().TakeOffPointsAddedAfterSnakeDead (3+level/2);
+				newScore = GameObject.Find ("_GameManager_").GetComponent<GameManager>().LastScore();
+				print("last score " + newScore);
+
 			}
 		}else{
 			newScore = 0;

@@ -7286,6 +7286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
+  death: 0
+  winning: 0
 --- !u!132 &202837877
 GUIText:
   m_ObjectHideFlags: 0
@@ -24313,6 +24315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ada931f9e412c74f82f731efda028f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  death: 0
 --- !u!111 &670949092
 Animation:
   m_ObjectHideFlags: 0

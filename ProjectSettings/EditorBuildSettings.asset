@@ -21,3 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/scene2.unity
   - enabled: 1
     path: Assets/Scenes/WinningScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/scene3.unity
+  - enabled: 1
+    path: Assets/Scenes/scene4.unity
+  - enabled: 1
+    path: Assets/Scenes/scene5.unity

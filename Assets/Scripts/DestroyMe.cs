@@ -21,7 +21,6 @@ public class DestroyMe : MonoBehaviour
 		if (alive) 
 		{
 			audio.PlayOneShot(eating);
-			//yield return new WaitForSeconds(2);
 			alive = false;
 			print ("colliding");
 			Destroy (this.gameObject);
@@ -33,6 +32,7 @@ public class DestroyMe : MonoBehaviour
 			Vector3 foodPosition = new Vector3 (px, py, pz);
 			Instantiate (food, foodPosition, Quaternion.identity);
 			print ("created food");
+
 			//pozicia hada - buduca pozicia dalsieho kuska tela
 			WhereIAM pos = head.GetComponent <WhereIAM> ();
 			Vector3 NewBodyPosition = pos.returnPreviousPosition ();
@@ -42,16 +42,7 @@ public class DestroyMe : MonoBehaviour
 
 
 
-		/*	print ("eaten food");
-			score = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().LastScore();
-			print("level "+ score);
-
-			//uspesne ukonceny level - had zjedol 5 potrav
-			if ((score%5) == 0)
-			{
-				print("won the level");
-				Application.LoadLevel("WinningScreen");
-			}*/
+		
 		}
 
 	}

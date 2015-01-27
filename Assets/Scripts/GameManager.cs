@@ -66,9 +66,9 @@ public class GameManager : MonoBehaviour {
 	{
 		winning = false;
 	}
-	/*public bool AmIDead()
+	public void SetLevel(int number)
 	{
-		return death;
-	}*/
+		currentLevel = number;
+		}
 	
 }

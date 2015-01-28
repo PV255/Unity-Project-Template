@@ -8,7 +8,7 @@ public class Move : MonoBehaviour {
 	public Vector3 change;
 	//public float rotateSpeed = 3.0F;
 	void Start(){
-		speed = speed*(GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel);
+		speed = speed+(GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel)*1.5F;
 		gestureListener = Camera.main.GetComponent<GestureListener>();
 		}
 

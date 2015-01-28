@@ -18,15 +18,18 @@ public class YourScore : MonoBehaviour {
 			level = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
 			GameObject.Find ("_GameManager_").GetComponent<GameManager> ().TakeOffPointsAddedAfterSnakeDead (3+level/2);
 			print ("Your score:");
-			if(GameObject.Find("_GameManager_").GetComponent<GameManager>().LastScore() != 0){
-				enteringScore = true;
-				newScore = GameObject.Find ("_GameManager_").GetComponent<GameManager>().LastScore();
-	
+			if (GameObject.Find ("_GameManager_").GetComponent<GameManager> ().LastScore () != 0) {
+						enteringScore = true;
+						newScore = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().LastScore ();
+				}
 
-	}
+		}
+		 void OnGUI() {
+		this.guiText.text = "Your score is " + newScore;
+		}
 	
 	// Update is called once per frame
 //	void Update () {
 	
 	}
-}
+

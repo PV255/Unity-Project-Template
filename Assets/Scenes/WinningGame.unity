@@ -86,7 +86,7 @@ GameObject:
   - 131: {fileID: 574316936}
   - 114: {fileID: 574316935}
   m_Layer: 0
-  m_Name: Next level
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d6915224794cc4590372d5793df4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Next level
+  levelToLoad: Score
 --- !u!131 &574316936
 GUITexture:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GUIText:
   m_GameObject: {fileID: 611838102}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: You won the level!
+  m_Text: You won the game!
   m_Anchor: 1
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -561,7 +561,7 @@ GUIText:
   m_GameObject: {fileID: 1048918875}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Next level
+  m_Text: Record score!
   m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}

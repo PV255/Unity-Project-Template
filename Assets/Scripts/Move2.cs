@@ -6,7 +6,8 @@ public class Move2 : MonoBehaviour
 {
 	private GestureListener gestureListener; //gesture listener for Kinect
 	public int snakeLength = 3;
-	public float speed = 0.05f;
+	public static float level; 
+	private float speed;
 	//private float frenquency = 1.0f/speed;
 	private int lr = 0; // x axis increment
 	private int ud = 0; // z axis increment
@@ -18,6 +19,9 @@ public class Move2 : MonoBehaviour
 	{
 		gestureListener = Camera.main.GetComponent<GestureListener>();
 		// repeats the moving routine every "frequency" seconds
+		level = (float)GameObject.Find("_Level Manager_").GetComponent<LevelManager>().level;
+		//speed = 1.1f - (0.5f + level/10);
+		speed = 2 / (level + 2);
 		InvokeRepeating("Move", 0.1f, speed);
 	}
 

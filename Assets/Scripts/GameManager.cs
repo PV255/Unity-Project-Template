@@ -48,8 +48,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void TakeOffPointsAddedAfterSnakeDead(int i){
-		score = score - i;
-		print("erasing " + i + "points");
+		//score = score - i;
+		//print("erasing " + i + "points");
+		score = score - 3;
 	}
 	public string NextLevel()
 	{

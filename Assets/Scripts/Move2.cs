@@ -6,16 +6,18 @@ public class Move2 : MonoBehaviour
 {
 	private GestureListener gestureListener; //gesture listener for Kinect
 	public int snakeLength = 3;
-	private int lr = 0;
-	private int ud = 0;
-	private int fb = 0;
+	public float speed = 0.05f;
+	private int lr = 0; // x axis increment
+	private int ud = 0; // z axis increment
+	private int fb = 0; // y axis increment
 	private bool init = true;
 
 	// Use this for initialization
 	void Start () 
 	{
 		gestureListener = Camera.main.GetComponent<GestureListener>();
-		InvokeRepeating("Move", 0.1f, 0.5f);
+
+		InvokeRepeating("Move", 0.1f, speed);
 	}
 
 	public void Move()

@@ -155,11 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9b8798a1873824ea5a00433746d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
-  snakeprefab: {fileID: 100000, guid: 5bb2727b222d8c74eafbfb6d4a927fd1, type: 2}
-  eating: {fileID: 0}
   snakeLength: 3
+  speed: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

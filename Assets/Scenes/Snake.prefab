@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 65: {fileID: 6500000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
   - 33: {fileID: 3300000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -32,6 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -50,9 +51,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -95,11 +95,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62366b6438fd1bd49b6e33c5d85cdedc, type: 3}
+  m_Script: {fileID: 11500000, guid: be9b8798a1873824ea5a00433746d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  change: {x: 0, y: 0, z: 0}
+  snakeLength: 3
+  speed: .0500000007
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

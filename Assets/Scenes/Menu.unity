@@ -744,6 +744,11 @@ MonoBehaviour:
   currentLevel: 1
   death: 0
   winning: 0
+  snakehead: {fileID: 0}
+  snakeprefab: {fileID: 0}
+  gridCube: {fileID: 0}
+  food: {fileID: 0}
+  eating: {fileID: 0}
 --- !u!132 &923996832
 GUIText:
   m_ObjectHideFlags: 0

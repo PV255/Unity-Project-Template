@@ -446,6 +446,10 @@ Prefab:
       propertyPath: m_NormalizedViewPortRect.height
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 9a1d093776df26940a07e14d468a2394, type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: .50999999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a1d093776df26940a07e14d468a2394, type: 2}
   m_RootGameObject: {fileID: 2010469770}
@@ -596,7 +600,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: .5
+    width: .50999999
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
@@ -828,7 +832,7 @@ Camera:
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: .519999981
+    x: .50999999
     y: 0
     width: 1
     height: 2
@@ -960,7 +964,6 @@ MonoBehaviour:
   foodPosition: []
   poisonPosition: []
   mainCamera: {fileID: 1633872874}
-  death: {fileID: 8300000, guid: b79e3a2c6e3c472489efb7524ea2cb38, type: 3}
 --- !u!4 &2054537341
 Transform:
   m_ObjectHideFlags: 0

@@ -394,6 +394,7 @@ MonoBehaviour:
   poison: {fileID: 100000, guid: 27b1a0bc515b0a64f96d932fbb8da62a, type: 2}
   foodPosition: []
   poisonPosition: []
+  mainCamera: {fileID: 1408762185}
 --- !u!4 &982578863
 Transform:
   m_ObjectHideFlags: 0

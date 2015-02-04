@@ -5,7 +5,7 @@ using System.Collections;
 public class KillSnake : MonoBehaviour 
 {
 
-	GameObject[] snakeBody;
+	private GameObject[] snakeBody;
 	public AudioClip glass;
 	public bool dead;
 
@@ -21,8 +21,12 @@ public class KillSnake : MonoBehaviour
 			(GameObject.Find ("snake1").GetComponent<Move2>()).enabled = false;
 			yield return new WaitForSeconds(1);
 			GameObject.Find ("_GameManager_").GetComponent<GameManager>().Dead();
-			//Destroy (GameObject.Find ("Snake head"));
 			snakeBody = GameObject.FindGameObjectsWithTag ("Snake");			
+			for (int i = 0; i < snakeBody.Length; i++) 
+			{
+				Destroy (snakeBody [i]);
+			}
+			snakeBody = GameObject.FindGameObjectsWithTag ("Tail");			
 			for (int i = 0; i < snakeBody.Length; i++) 
 			{
 				Destroy (snakeBody [i]);

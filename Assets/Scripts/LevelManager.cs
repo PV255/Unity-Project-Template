@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour 
@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
 	public GameObject poison;
 	public Vector3[] foodPosition;
 	public Vector3[] poisonPosition;
+
+	public Camera mainCamera;
 	
 	// Use this for initialization
 	void Start () 
@@ -67,11 +69,37 @@ public class LevelManager : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
-		/*if (Input.GetKey ("esc")) 
+		GameObject[] snakeBody;
+		bool inside = false;
+		int snakeLength = GameObject.Find ("snake1").GetComponent<Move2> ().snakeLength;
+		for (int i = 1; i <= snakeLength; i++) 
 		{
-			Application.LoadLevel("Menu");
-		}*/
+			inside = GeometryUtility.TestPlanesAABB (GeometryUtility.CalculateFrustumPlanes (mainCamera), GameObject.Find ("snake" + i).GetComponent<BoxCollider>().bounds);
+			if (inside) 
+			{
+				break;
+			}
+		}
+		if (!inside) 
+		{
+			GameObject.Find ("loserMessage").guiText.enabled = true;
+			
+			(GameObject.Find ("snake1").GetComponent<Move2>()).enabled = false;
+			GameObject.Find ("_GameManager_").GetComponent<GameManager>().Dead();
+			snakeBody = GameObject.FindGameObjectsWithTag ("Snake");			
+			for (int i = 0; i < snakeBody.Length; i++) 
+			{
+				Destroy (snakeBody [i]);
+			}
+			snakeBody = GameObject.FindGameObjectsWithTag ("Tail");			
+			for (int i = 0; i < snakeBody.Length; i++) 
+			{
+				Destroy (snakeBody [i]);
+			}
+		}
+
+		
 	}
 }

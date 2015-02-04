@@ -1,0 +1,120 @@
+Initialize engine version: 4.6.2f1 (bd99309c2ad7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.4725]
+    Renderer: Intel(R) HD Graphics Family
+    Vendor:   Intel
+    VRAM:     1988 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.109 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: D:\Dokumenty\Dokumenty\Programování\Unity\snake\snakefinal\test_Data\Managed\System.Core.dll (this message is harmless)
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+All players calibrated.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+All players calibrated.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.348395 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 275.
+Total: 0.996149 ms (FindLiveObjects: 0.016535 ms CreateObjectMapping: 0.009123 ms MarkObjects: 0.258873 ms  DeleteObjects: 0.036493 ms)
+
+UnloadTime: 0.253171 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 270.
+Total: 0.504632 ms (FindLiveObjects: 0.010833 ms CreateObjectMapping: 0.007412 ms MarkObjects: 0.143121 ms  DeleteObjects: 0.002280 ms)
+
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+All players calibrated.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+checking death: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+score screen
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+score screen LOADED
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+eaten food, score 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+eaten food, score 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+eaten food, score 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 4.038769 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 217.
+Total: 1.138131 ms (FindLiveObjects: 0.011404 ms CreateObjectMapping: 0.010263 ms MarkObjects: 0.153385 ms  DeleteObjects: 0.579329 ms)
+
+fromgame
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+last score 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+All players calibrated.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.237775 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 269.
+Total: 0.550248 ms (FindLiveObjects: 0.009693 ms CreateObjectMapping: 0.007412 ms MarkObjects: 0.159087 ms  DeleteObjects: 0.006842 ms)
+
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Waiting for users.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+

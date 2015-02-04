@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 	public Vector3[] poisonPosition;
 
 	public Camera mainCamera;
-	
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour
 			Instantiate(poison, poisonPosition[i], Quaternion.identity);
 		}	
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
@@ -99,7 +99,6 @@ public class LevelManager : MonoBehaviour
 				Destroy (snakeBody [i]);
 			}
 		}
-
 		
 	}
 }

@@ -34,7 +34,6 @@ public class Move2 : MonoBehaviour
 		if (c.gameObject.tag == "Food")
 		{
 			audio.PlayOneShot(eating);
-
 			float px = (float) Random.Range(0,10);
 			float py = (float) Random.Range(0,10);
 			float pz = (float) Random.Range(0,10);

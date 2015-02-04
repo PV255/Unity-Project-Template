@@ -6,7 +6,7 @@ public class KillSnake : MonoBehaviour
 {
 
 	private GameObject[] snakeBody;
-	public AudioClip glass;
+	public AudioClip death;
 	public bool dead;
 
 
@@ -15,11 +15,11 @@ public class KillSnake : MonoBehaviour
 		if (c.gameObject.name.StartsWith("snake") || (c.gameObject.tag == "Tail")) 
 		{
 
-			audio.PlayOneShot (glass);
+			audio.PlayOneShot (death);
 			GameObject.Find ("loserMessage").guiText.enabled = true;
 
 			(GameObject.Find ("snake1").GetComponent<Move2>()).enabled = false;
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(3);
 			GameObject.Find ("_GameManager_").GetComponent<GameManager>().Dead();
 			snakeBody = GameObject.FindGameObjectsWithTag ("Snake");			
 			for (int i = 0; i < snakeBody.Length; i++) 

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1299c91153a2d4240ae0eea71b4017d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glass: {fileID: 8300000, guid: 0e4ecce5e0d0b054185274fc06ecde51, type: 3}
+  death: {fileID: 8300000, guid: b79e3a2c6e3c472489efb7524ea2cb38, type: 3}
   dead: 0
 --- !u!114 &11400002
 MonoBehaviour:

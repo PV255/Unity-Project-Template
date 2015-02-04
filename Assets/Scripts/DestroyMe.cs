@@ -6,11 +6,11 @@ using System.Collections;
 // and appends another segment to snake's body
 public class DestroyMe : MonoBehaviour 
 {
-	public GameObject food;
+	/*public GameObject food;
 	public GameObject snakeprefab;
 	private bool alive = true;
 	public AudioClip eating;
-	public int score;
+	//public int score;
 
 	void Start()
 	{
@@ -20,10 +20,8 @@ public class DestroyMe : MonoBehaviour
 	{
 		if (alive) 
 		{
-			audio.PlayOneShot(eating);
 			alive = false;
-			Destroy (this.gameObject);
-
+			audio.PlayOneShot(eating);
 
 			float px = (float) Random.Range(0,10);
 			float py = (float) Random.Range(0,10);
@@ -35,7 +33,9 @@ public class DestroyMe : MonoBehaviour
 			GameObject newbody = (GameObject)Instantiate (snakeprefab, NewBodyPosition, Quaternion.identity);
 			GameObject.Find("snake1").GetComponent<Move2>().snakeLength++;
 			newbody.name = "snake" + GameObject.Find("snake1").GetComponent<Move2>().snakeLength;
+
+			Destroy (this.gameObject);
 		}
 
-	}
+	}*/
 }

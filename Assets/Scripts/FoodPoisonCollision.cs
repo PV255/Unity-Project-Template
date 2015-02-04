@@ -12,9 +12,9 @@ public class FoodPoisonCollision : MonoBehaviour
 		{
 			Destroy(this.gameObject);
 			
-			float px = (float) Random.value * 10 - 0.5f;
-			float py = (float) Random.value * 10 - 9.5f;
-			float pz = (float) Random.value * 10 - 4.5f;
+			float px = (float) Random.Range(0,10);
+			float py = (float) Random.Range(0,10);
+			float pz = (float) Random.Range(0,10);
 			
 			Vector3 foodPosition = new Vector3(px, py, pz);
 			

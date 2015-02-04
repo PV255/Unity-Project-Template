@@ -5,16 +5,13 @@ public class DestroyMe : MonoBehaviour
 {
 	public GameObject food;
 	public GameObject snakeprefab;
-	public GameObject head;
-	public GameObject parent;
 	private bool alive = true;
 	public AudioClip eating;
 	public int score;
 
 	void Start()
 	{
-		head = GameObject.Find ("Snake");
-		}
+	}
 	// Use this for initialization
 	void OnTriggerEnter(Collider c)
 	{
@@ -22,41 +19,20 @@ public class DestroyMe : MonoBehaviour
 		{
 			audio.PlayOneShot(eating);
 			alive = false;
-			print ("colliding");
 			Destroy (this.gameObject);
 
 
-			float px = (float)Random.value * 10 - 0.5f;
-			float py = (float)Random.value * 10 - 9.5f;
-			float pz = (float)Random.value * 10 - 4.5f;
+			float px = (float) Random.Range(0,10);
+			float py = (float) Random.Range(0,10);
+			float pz = (float) Random.Range(0,10);
 			Vector3 foodPosition = new Vector3 (px, py, pz);
 			Instantiate (food, foodPosition, Quaternion.identity);
-			print ("created food");
 
-			//pozicia hada - buduca pozicia dalsieho kuska tela
-			WhereIAM pos = head.GetComponent <WhereIAM> ();
-			Vector3 NewBodyPosition = pos.returnPreviousPosition ();
+			Vector3 NewBodyPosition = GameObject.Find("snake" + GameObject.Find("snake1").GetComponent<Move2>().snakeLength).transform.position;
 			GameObject newbody = (GameObject)Instantiate (snakeprefab, NewBodyPosition, Quaternion.identity);
-			newbody.transform.parent = FindSon (head.transform);
-
-
-
-
-		
+			GameObject.Find("snake1").GetComponent<Move2>().snakeLength++;
+			newbody.name = "snake" + GameObject.Find("snake1").GetComponent<Move2>().snakeLength;
 		}
 
 	}
-	public Transform FindSon(Transform oldParent)
-	{
-
-
-
-			if(transform.childCount > 0) {
-						Transform son = oldParent.transform.GetChild (1);
-						return FindSon (son);
-						
-				} else {
-						return oldParent.transform;
-				}
-		}
 }

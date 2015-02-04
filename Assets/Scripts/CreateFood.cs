@@ -15,22 +15,22 @@ public class CreateFood : MonoBehaviour
 		level = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
 		int foodNumber = 3 + level / 2;
 		foodPosition = new Vector3[foodNumber];
-		for (int i=0; i<foodNumber; i++) 
+		for (int i = 0; i < foodNumber; i++) 
 		{
-			float px = (float) Random.value * 10 - (float) 0.5;
-			float py = (float) Random.value * 10 - (float) 9.5;
-			float pz = (float) Random.value * 10 - (float) 4.5;
+			float px = (float) Random.Range(0,10);
+			float py = (float) Random.Range(0,10);
+			float pz = (float) Random.Range(0,10);
 			foodPosition[i] = new Vector3(px, py, pz);
 			Instantiate(food, foodPosition[i], Quaternion.identity);
 		}
 
 		int poisonNumber = level;
 		poisonPosition = new Vector3[poisonNumber];
-		for (int i=0; i<poisonNumber; i++) 
+		for (int i = 0; i < poisonNumber; i++) 
 		{
-			float px = (float) Random.value * 10 - (float) 0.5;
-			float py = (float) Random.value * 10 - (float) 9.5;
-			float pz = (float) Random.value * 10 - (float) 4.5;
+			float px = (float) Random.Range(0,10);
+			float py = (float) Random.Range(0,10);
+			float pz = (float) Random.Range(0,10);
 			poisonPosition[i] = new Vector3(px, py, pz);
 			Instantiate(poison, poisonPosition[i], Quaternion.identity);
 		}	

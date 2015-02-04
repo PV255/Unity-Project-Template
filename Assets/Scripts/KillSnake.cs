@@ -12,22 +12,26 @@ public class KillSnake : MonoBehaviour
 
 	IEnumerator OnTriggerEnter(Collider c)
 	{
-		if (c.gameObject.name == "Snake") {
+		if (c.gameObject.name.StartsWith("snake") || (c.gameObject.tag == "Tail")) 
+		{
+
 			audio.PlayOneShot (glass);
 			GameObject.Find ("loserMessage").guiText.enabled = true;
 
-			(GameObject.Find ("Snake").GetComponent<Move>()).enabled = false;
+			(GameObject.Find ("snake1").GetComponent<Move2>()).enabled = false;
 			yield return new WaitForSeconds(1);
 			GameObject.Find ("_GameManager_").GetComponent<GameManager>().Dead();
 			//Destroy (GameObject.Find ("Snake head"));
-			Destroy (GameObject.Find ("Snake"));
-			snakeBody = GameObject.FindGameObjectsWithTag ("SnakeBody");			
-			for (int i = 0; i < snakeBody.Length; i++) {
+			snakeBody = GameObject.FindGameObjectsWithTag ("Snake");			
+			for (int i = 0; i < snakeBody.Length; i++) 
+			{
 				Destroy (snakeBody [i]);
 			}
+			Destroy(this);
 
-
-		} else {
+		} 
+		else 
+		{
 			yield return new WaitForSeconds(0);
 		}
 	}

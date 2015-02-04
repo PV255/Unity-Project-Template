@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 	private int score;
@@ -7,6 +8,14 @@ public class GameManager : MonoBehaviour {
 	public int currentLevel;
 	public bool death;
 	public bool winning;
+	public GameObject snakehead;
+	public GameObject snakeprefab;
+	public GameObject gridCube;
+
+	private GestureListener gestureListener; //gesture listener for Kinect
+	public GameObject food;
+	public AudioClip eating;
+
 	void Start()
 	{
 		death = false;
@@ -22,8 +31,29 @@ public class GameManager : MonoBehaviour {
 		//Checks, if there is no other GameManager in scene
 		if(GameObject.Find("_GameManager_") != this.gameObject)
 			Destroy(this.gameObject);
+
+		GameObject snake1 = (GameObject)Instantiate (snakehead, new Vector3(4, 4, 2), Quaternion.identity);
+		snake1.name = "snake1";
+		GameObject snake2 = (GameObject)Instantiate (snakeprefab, new Vector3(3, 4, 2), Quaternion.identity);
+		snake2.name = "snake2";
+		GameObject snake3 = (GameObject)Instantiate (snakeprefab, new Vector3(2, 4, 2), Quaternion.identity);
+		snake3.name = "snake3";
+	
+		for (int i = 0; i < 10; i++) 
+		{
+			for (int j = 0; j < 10; j++) 
+			{
+				for (int k = 0; k < 10; k++) 
+				{
+					Instantiate(gridCube, new Vector3(i, j, k), Quaternion.identity);
+					GameObject.Find("gridCube(Clone)").gameObject.name = "gridCell(" + i + ", " + j + ", " + k + ")";
+				}
+			}
+		}
 	}
-	void Update(){
+
+	void Update()
+	{
 		this.guiText.text = "Score:" + score;
 	}
 

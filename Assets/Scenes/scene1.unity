@@ -74,6 +74,53 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &47820884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 47820886}
+  - 114: {fileID: 47820885}
+  m_Layer: 0
+  m_Name: _Level Manager_
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &47820885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47820884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96238ea5c4d4c87458ae939297b8b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakehead: {fileID: 100000, guid: b148de86c517aac4996d704c5d891dc0, type: 2}
+  snakeprefab: {fileID: 100000, guid: 5bb2727b222d8c74eafbfb6d4a927fd1, type: 2}
+  gridCube: {fileID: 100000, guid: 4fa403a707e3fc447a6fa7ab4b3eab57, type: 2}
+  level: 1
+  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
+  poison: {fileID: 100000, guid: 27b1a0bc515b0a64f96d932fbb8da62a, type: 2}
+  foodPosition: []
+  poisonPosition: []
+--- !u!4 &47820886
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47820884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &202837875
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +131,6 @@ GameObject:
   - 4: {fileID: 202837878}
   - 132: {fileID: 202837877}
   - 114: {fileID: 202837876}
-  - 114: {fileID: 202837879}
   m_Layer: 0
   m_Name: _GameManager_
   m_TagString: Untagged
@@ -107,11 +153,7 @@ MonoBehaviour:
   currentLevel: 1
   death: 0
   winning: 0
-  snakehead: {fileID: 100000, guid: b148de86c517aac4996d704c5d891dc0, type: 2}
-  snakeprefab: {fileID: 100000, guid: 5bb2727b222d8c74eafbfb6d4a927fd1, type: 2}
-  gridCube: {fileID: 100000, guid: 4fa403a707e3fc447a6fa7ab4b3eab57, type: 2}
-  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
-  eating: {fileID: 0}
+  eating: {fileID: 8300000, guid: 3b4b67ccd67a15e44937e365a4caa2d7, type: 3}
 --- !u!132 &202837877
 GUIText:
   m_ObjectHideFlags: 0
@@ -147,22 +189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!114 &202837879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 202837875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210cdc91cba9f5c48be1fb8d96423b9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodPosition: []
-  poisonPosition: []
-  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
-  poison: {fileID: 100000, guid: 27b1a0bc515b0a64f96d932fbb8da62a, type: 2}
+  m_RootOrder: 0
 --- !u!1001 &213780121
 Prefab:
   m_ObjectHideFlags: 0
@@ -200,7 +227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
       propertyPath: snakehead
@@ -218,6 +245,10 @@ Prefab:
       propertyPath: gridCube
       value: 
       objectReference: {fileID: 100000, guid: 4fa403a707e3fc447a6fa7ab4b3eab57, type: 2}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: eating
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b4b67ccd67a15e44937e365a4caa2d7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
   m_RootGameObject: {fileID: 202837875}
@@ -308,7 +339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1001 &362493170
 Prefab:
   m_ObjectHideFlags: 0
@@ -431,7 +462,7 @@ Transform:
   m_LocalScale: {x: 4.52599907, y: 4.52600002, z: 4.52600002}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &986795742
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +577,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!1001 &1056668446
 Prefab:
   m_ObjectHideFlags: 0
@@ -641,7 +672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
 --- !u!1001 &1155862694
 Prefab:
   m_ObjectHideFlags: 0
@@ -774,7 +805,7 @@ Transform:
   m_LocalScale: {x: 30.1696358, y: 12.7049904, z: 22.8786907}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1480398125
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +877,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1001 &1806889029
 Prefab:
   m_ObjectHideFlags: 0
@@ -967,7 +998,7 @@ Transform:
   m_LocalScale: {x: 25.3461227, y: 11.8140421, z: 21.7229328}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &2073954368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,4 +1086,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3

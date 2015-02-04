@@ -7,6 +7,7 @@ public class Move2 : MonoBehaviour
 	private GestureListener gestureListener; //gesture listener for Kinect
 	public int snakeLength = 3;
 	public float speed = 0.05f;
+	//private float frenquency = 1.0f/speed;
 	private int lr = 0; // x axis increment
 	private int ud = 0; // z axis increment
 	private int fb = 0; // y axis increment
@@ -16,12 +17,13 @@ public class Move2 : MonoBehaviour
 	void Start () 
 	{
 		gestureListener = Camera.main.GetComponent<GestureListener>();
-
+		// repeats the moving routine every "frequency" seconds
 		InvokeRepeating("Move", 0.1f, speed);
 	}
 
 	public void Move()
 	{
+		// moves the head
 		Vector3 pos = transform.position;
 		Vector3 oldPos = transform.position;
 		pos.x += lr;
@@ -29,6 +31,7 @@ public class Move2 : MonoBehaviour
 		pos.z += fb;
 		transform.position = pos;
 
+		// makes the rest of the body follow
 		if (transform.position != oldPos) 
 		{
 			for (int i = snakeLength; i > 2; i--) 

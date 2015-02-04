@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// destroys an instance of food when the snake collides with it,
+// creates another instance of food somewhere else
+// and appends another segment to snake's body
 public class DestroyMe : MonoBehaviour 
 {
 	public GameObject food;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// Kills the snake if he collides with poison
+// kills the snake if he collides with poison
 public class KillSnake : MonoBehaviour 
 {
 

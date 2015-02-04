@@ -513,6 +513,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: snakeprefab
+      value: 
+      objectReference: {fileID: 100000, guid: 5bb2727b222d8c74eafbfb6d4a927fd1, type: 2}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: snakehead
+      value: 
+      objectReference: {fileID: 100000, guid: b148de86c517aac4996d704c5d891dc0, type: 2}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: food
+      value: 
+      objectReference: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: gridCube
+      value: 
+      objectReference: {fileID: 100000, guid: 4fa403a707e3fc447a6fa7ab4b3eab57, type: 2}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: eating
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b4b67ccd67a15e44937e365a4caa2d7, type: 3}
+    - target: {fileID: 11414994, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
+      propertyPath: currentLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7be93e81411f7a48b82581af2563fe0, type: 2}
   m_RootGameObject: {fileID: 923996830}
@@ -528,6 +552,7 @@ GameObject:
   - 4: {fileID: 537790426}
   - 131: {fileID: 537790425}
   - 114: {fileID: 537790427}
+  - 114: {fileID: 537790428}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -579,6 +604,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: scene1
+--- !u!114 &537790428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 537790424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed4bd295bc5449459067c7c9489e073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: scene1
+  levelNumber: 1
 --- !u!1 &835038574
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,14 +779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d106a960d7a8b7245acebda0d1343040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 1
+  currentLevel: 0
   death: 0
   winning: 0
-  snakehead: {fileID: 0}
-  snakeprefab: {fileID: 0}
-  gridCube: {fileID: 0}
-  food: {fileID: 0}
-  eating: {fileID: 0}
+  eating: {fileID: 8300000, guid: 3b4b67ccd67a15e44937e365a4caa2d7, type: 3}
 --- !u!132 &923996832
 GUIText:
   m_ObjectHideFlags: 0

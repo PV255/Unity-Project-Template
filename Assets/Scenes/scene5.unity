@@ -74,6 +74,53 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &295966267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 295966269}
+  - 114: {fileID: 295966268}
+  m_Layer: 0
+  m_Name: _Level Manager_
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &295966268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295966267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96238ea5c4d4c87458ae939297b8b75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakehead: {fileID: 100000, guid: b148de86c517aac4996d704c5d891dc0, type: 2}
+  snakeprefab: {fileID: 100000, guid: 5bb2727b222d8c74eafbfb6d4a927fd1, type: 2}
+  gridCube: {fileID: 100000, guid: 4fa403a707e3fc447a6fa7ab4b3eab57, type: 2}
+  level: 5
+  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
+  poison: {fileID: 100000, guid: 27b1a0bc515b0a64f96d932fbb8da62a, type: 2}
+  foodPosition: []
+  poisonPosition: []
+--- !u!4 &295966269
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295966267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &688099893
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +621,6 @@ GameObject:
   - 4: {fileID: 1454300180}
   - 132: {fileID: 1454300179}
   - 114: {fileID: 1454300178}
-  - 114: {fileID: 1454300177}
   m_Layer: 0
   m_Name: _GameManager_
   m_TagString: Untagged
@@ -582,21 +628,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1454300177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1454300176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210cdc91cba9f5c48be1fb8d96423b9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodPosition: []
-  poisonPosition: []
-  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
-  poison: {fileID: 100000, guid: 27b1a0bc515b0a64f96d932fbb8da62a, type: 2}
 --- !u!114 &1454300178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,10 +643,6 @@ MonoBehaviour:
   currentLevel: 5
   death: 0
   winning: 0
-  snakehead: {fileID: 100000, guid: b148de86c517aac4996d704c5d891dc0, type: 2}
-  snakeprefab: {fileID: 100000, guid: 5bb2727b222d8c74eafbfb6d4a927fd1, type: 2}
-  gridCube: {fileID: 100000, guid: 4fa403a707e3fc447a6fa7ab4b3eab57, type: 2}
-  food: {fileID: 100000, guid: 0730bad85955bce428bf7adee1b0426f, type: 2}
   eating: {fileID: 0}
 --- !u!132 &1454300179
 GUIText:

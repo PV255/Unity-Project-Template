@@ -13,6 +13,7 @@ public class Move2 : MonoBehaviour
 	private int ud = 0; // z axis increment
 	private int fb = 0; // y axis increment
 	private bool init = true;
+	private bool inside = true;
 
 	// Use this for initialization
 	void Start () 
@@ -34,9 +35,9 @@ public class Move2 : MonoBehaviour
 		pos.y += ud;
 		pos.z += fb;
 		transform.position = pos;
-
+		inside = (lr > 0 && lr < 10 && ud > 0 && ud < 10 && fb > 0 && fb < 10);
 		// makes the rest of the body follow
-		if (transform.position != oldPos) 
+		if (transform.position != oldPos && inside) 
 		{
 			for (int i = snakeLength; i > 2; i--) 
 			{

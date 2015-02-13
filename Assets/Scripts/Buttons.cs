@@ -31,12 +31,15 @@ public class Buttons : MonoBehaviour {
 
 		if (levelToLoad == "scene1" || levelToLoad == "scene2" || levelToLoad == "scene3" || levelToLoad == "scene4" || levelToLoad == "scene5" || levelToLoad == "scene6" || levelToLoad == "scene7" || levelToLoad == "scene8" || levelToLoad == "scene9" || levelToLoad == "scene10") {
 			KinectManager manager = KinectManager.Instance;
-		
+			print(manager);
+			if (manager!=null)
+			{
 			manager.Player1Gestures [2] = KinectGestures.Gestures.SwipeUp;
 			manager.Player1Gestures [3] = KinectGestures.Gestures.SwipeDown;
 			manager.Player1Gestures [4] = KinectGestures.Gestures.Pull;
 			manager.Player1Gestures [5] = KinectGestures.Gestures.Push;
 			manager.ControlMouseCursor = false;
+			}
 		}
 
 		Application.LoadLevel(levelToLoad);

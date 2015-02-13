@@ -858,7 +858,8 @@ public class KinectManager : MonoBehaviour
 	{
 		//CalibrationText = GameObject.Find("CalibrationText");
 		int hr = 0;
-		
+		if(GameObject.Find("KinectObject") != this.gameObject)
+			Destroy(this.gameObject);
 		try
 		{
 			hr = KinectWrapper.NuiInitialize(KinectWrapper.NuiInitializeFlags.UsesSkeleton |

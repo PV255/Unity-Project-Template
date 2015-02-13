@@ -72,7 +72,7 @@ public class Move2 : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () 
+	void Update () 
 	{
 		KinectManager kinectManager = KinectManager.Instance;
 

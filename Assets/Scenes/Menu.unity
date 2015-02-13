@@ -1203,7 +1203,7 @@ GameObject:
   - 124: {fileID: 1540446405}
   - 81: {fileID: 1540446404}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: KinectObject
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

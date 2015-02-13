@@ -52,7 +52,13 @@ public class KinectGestures
 		Jump,
 		Squat,
 		Push,
-		Pull
+		Pull,
+		Front,
+		Back,
+		Up,
+		Down,
+		Right,
+		Left
 	}
 	
 	

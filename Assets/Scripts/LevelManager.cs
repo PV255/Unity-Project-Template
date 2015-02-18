@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
 	void Start () 
 	{
 		// creates snake
+		GameObject.Find ("_GameManager_").GetComponent<GameManager> ().game = true;
 		GameObject snake1 = (GameObject)Instantiate (snakehead, new Vector3(4, 4, 2), Quaternion.identity);
 		snake1.name = "snake1";
 		GameObject snake2 = (GameObject)Instantiate (snakeprefab, new Vector3(3, 4, 2), Quaternion.identity);
@@ -84,6 +85,7 @@ public class LevelManager : MonoBehaviour
 		}
 		if (!inside) 
 		{
+			GameObject.Find ("_GameManager_").GetComponent<GameManager> ().game = false;
 			GameObject.Find ("loserMessage").guiText.enabled = true;
 			
 			(GameObject.Find ("snake1").GetComponent<Move2>()).enabled = false;

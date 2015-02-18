@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	public int currentLevel;
 	public bool death;
 	public bool winning;
-
+	public bool game;
 	private GestureListener gestureListener; //gesture listener for Kinect
 	public AudioClip eating;
 
@@ -17,13 +17,14 @@ public class GameManager : MonoBehaviour {
 
 		death = false;
 		winning = false;
+		game = false;
 		score = 0;
 		//This keeps the object alive across multiple scenes.
 		DontDestroyOnLoad (this.gameObject);
 		
 		//Sets the position of GUI Text
 		this.guiText.pixelOffset = new Vector2 (Screen.width/6,Screen.height/2);
-		this.guiText.text = "Score:" + score;
+		//this.guiText.text = "Score:" + score;
 		
 		//Checks, if there is no other GameManager in scene
 		if(GameObject.Find("_GameManager_") != this.gameObject)
@@ -32,7 +33,12 @@ public class GameManager : MonoBehaviour {
 
 	void Update()
 	{
-		this.guiText.text = "Score:" + score;
+		if (game) {
+						this.guiText.text = "Score:" + score;
+				} else {
+			this.guiText.text = "";
+				}
+
 	}
 
 	public void AddPoints(){

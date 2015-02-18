@@ -11,7 +11,8 @@ public class ScoreLoadAfterSnakeDeath : MonoBehaviour {
 		level = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
 		print("checking death: " + death);
 		if (death) {
-						KinectManager manager = KinectManager.Instance;
+			GameObject.Find ("_GameManager_").GetComponent<GameManager> ().game = true;
+			KinectManager manager = KinectManager.Instance;
 						manager.Player1Gestures [2] = KinectGestures.Gestures.RightHandCursor;
 						manager.Player1Gestures [3] = KinectGestures.Gestures.LeftHandCursor;
 						manager.Player1Gestures [4] = KinectGestures.Gestures.Click;

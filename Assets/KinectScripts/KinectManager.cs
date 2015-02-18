@@ -10,6 +10,7 @@ using System.Text;
 
 public class KinectManager : MonoBehaviour
 {
+	public Texture disabledKinect;
 	public enum Smoothing : int { None, Default, Medium, Aggressive }
 	
 	
@@ -1335,6 +1336,14 @@ public class KinectManager : MonoBehaviour
 			{
 				GUI.DrawTexture(usersClrRect, usersClrTex);
 			}
+		}
+		else {
+			int current = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().currentLevel;
+			if (current == 0)
+				//print(current);
+				GUI.DrawTexture (new Rect(50,50,60,60), disabledKinect);
+			//GUI.Label(new Rect(120, 50, 200, 50), "Kinect is not connected. Use arrows and keys f(front) and b(back) instead.");
+			//print("dis");
 		}
     }
 	

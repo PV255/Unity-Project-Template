@@ -19,6 +19,7 @@ public class FoodScoreAdd : MonoBehaviour {
 		score = GameObject.Find ("_GameManager_").GetComponent<GameManager> ().LastScore();
 		print ("eaten food, score " + score);
 		if (score % 5 == 0 && !GameObject.Find ("_GameManager_").GetComponent<GameManager> ().death) {
+			GameObject.Find ("_GameManager_").GetComponent<GameManager> ().game = true;
 			GameObject.Find ("_GameManager_").GetComponent<GameManager>().Winning();
 		
 

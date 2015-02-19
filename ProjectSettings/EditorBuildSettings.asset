@@ -5,5 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
+  - enabled: 0
+    path: Assets/Scenes/scene2.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/Scenes/scene1.unity
+  - enabled: 1
+    path: Assets/Scenes/Score.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels.unity
+  - enabled: 1
+    path: Assets/Scenes/scene2.unity
+  - enabled: 1
+    path: Assets/Scenes/WinningScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/scene3.unity
+  - enabled: 1
+    path: Assets/Scenes/scene4.unity
+  - enabled: 1
+    path: Assets/Scenes/scene5.unity
+  - enabled: 1
+    path: Assets/Scenes/scene6.unity
+  - enabled: 1
+    path: Assets/Scenes/scene7.unity
+  - enabled: 1
+    path: Assets/Scenes/scene8.unity
+  - enabled: 1
+    path: Assets/Scenes/scene9.unity
+  - enabled: 1
+    path: Assets/Scenes/scene10.unity
+  - enabled: 1
+    path: Assets/Scenes/WinningGame.unity

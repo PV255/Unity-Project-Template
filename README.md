@@ -38,6 +38,6 @@ This and other readme files uses Markdown notation...
 
 * Miroslava Jaresova
 
-* Roman Gluszny
+* Roman Gluszny - zkouska
 
 * Martin Stefanko

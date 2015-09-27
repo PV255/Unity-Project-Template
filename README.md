@@ -30,3 +30,14 @@ You can simply:
 This and other readme files uses Markdown notation...
 
 * [Learn Markdown](http://daringfireball.net/projects/markdown/basics)
+
+
+# Project group
+
+* Lubor Slusny
+
+* Miroslava Jaresova
+
+* Roman Gluszny
+
+* Martin Stefanko

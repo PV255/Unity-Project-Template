@@ -34,7 +34,7 @@ This and other readme files uses Markdown notation...
 
 # Project group
 
-* Lubor Slusny
+* Lubor Slusny [*PUSH TEST*]
 
 * Miroslava Jaresova
 

@@ -458,14 +458,18 @@ PlayerSettings:
   WebGL::dataCaching: 0
   WebGL::useEmbeddedResources: 0
   stringPropertyNames:
+  - Build_ServiceEnabled::Build_ServiceEnabled
+  - UNet_ServiceEnabled::UNet_ServiceEnabled
   - WebGL::emscriptenArgs
   - WebGL::template
   - additionalIl2CppArgs::additionalIl2CppArgs
+  Build_ServiceEnabled::Build_ServiceEnabled: True
+  UNet_ServiceEnabled::UNet_ServiceEnabled: True
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
   additionalIl2CppArgs::additionalIl2CppArgs: 
   firstStreamedSceneWithResources: 0
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 23e45958-4a1d-4c12-b8e1-0ae48f4b3b03
+  projectName: Space Shooter
+  organizationId: matejp
   cloudEnabled: 0

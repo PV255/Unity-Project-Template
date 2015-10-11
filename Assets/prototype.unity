@@ -160,6 +160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94cf41d5b697814cb80a689290fa04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodPrefab: {fileID: 187790, guid: a959a5b3b2de0634388218597ade4724, type: 2}
+  borderTop: {fileID: 891390380}
+  borderBottom: {fileID: 1402098674}
+  borderLeft: {fileID: 2007887491}
+  borderRight: {fileID: 1832255339}
   moveTime: .200000003
   moveRate: .200000003
   moveDistance: .400000006
@@ -206,6 +211,10 @@ Prefab:
     - target: {fileID: 188044, guid: 30b7fe6a7b4c79845ba1df49e549301d, type: 2}
       propertyPath: m_Name
       value: SnakeHead
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129806, guid: 30b7fe6a7b4c79845ba1df49e549301d, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30b7fe6a7b4c79845ba1df49e549301d, type: 2}
@@ -273,7 +282,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 891390378}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -287,11 +296,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 485704, guid: a959a5b3b2de0634388218597ade4724, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.7819653
+      value: -32.0400009
       objectReference: {fileID: 0}
     - target: {fileID: 485704, guid: a959a5b3b2de0634388218597ade4724, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.13733017
+      value: .709999979
       objectReference: {fileID: 0}
     - target: {fileID: 485704, guid: a959a5b3b2de0634388218597ade4724, type: 2}
       propertyPath: m_LocalPosition.z
@@ -387,7 +396,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1402098672}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -404,7 +413,6 @@ GameObject:
   - 92: {fileID: 1810528639}
   - 124: {fileID: 1810528638}
   - 81: {fileID: 1810528637}
-  - 114: {fileID: 1810528642}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -441,7 +449,7 @@ Camera:
   m_GameObject: {fileID: 1810528636}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -479,22 +487,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1810528642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1810528636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e0be03fa03377f4ea15976d7f3454c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodPrefab: {fileID: 187790, guid: a959a5b3b2de0634388218597ade4724, type: 2}
-  borderTop: {fileID: 891390380}
-  borderBottom: {fileID: 1402098674}
-  borderLeft: {fileID: 2007887491}
-  borderRight: {fileID: 1832255339}
 --- !u!1 &1832255337
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +550,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1832255337}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -626,7 +618,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2007887489}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2

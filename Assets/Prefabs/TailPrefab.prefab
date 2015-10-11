@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6129806}
   - 50: {fileID: 5087942}
   m_Layer: 0
-  m_Name: SnakePrefab
+  m_Name: TailPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

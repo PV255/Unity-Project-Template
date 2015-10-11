@@ -18,7 +18,7 @@ You can simply:
 
 * There are prepared several basic folders such as 'Models' and 'Prefabs', comonly used for projects in Unity editor. 
 
-* Git is set to ignore content of '_NonVersioned' folder - so you can freely put there anything that shloud not be tracked by by Git (like working versions of 3D models, textures, ...).
+* Git is set to ignore content of '_NonVersioned' folder - so you can freely put there anything that should not be tracked by Git (like working versions of 3D models, textures, ...).
 
 * You can change content of file '.gitignore' to adjust which folders and files should be ignored by Git
 

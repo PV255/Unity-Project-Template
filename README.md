@@ -1,4 +1,4 @@
-# Bender: Doomed World
+# Trolling
 
 
 This is developed as semestral project for PV255: Digital game development, fall 2015.

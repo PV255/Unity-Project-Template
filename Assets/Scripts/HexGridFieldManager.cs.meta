@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 96eea383a2673264a9e4cb5fc8ae31c6
+timeCreated: 1444739612
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - hex: {fileID: 101758, guid: b058a69abba50fa43bb970cbdc7a5734, type: 2}
+  - unitObject: {fileID: 176056, guid: 4417ccc30ec78e749a09bb541a9861f2, type: 2}
+  - unitObject2: {fileID: 195970, guid: fbe8c23174c78ba48a6efe8ce0688435, type: 2}
+  - selectedHex: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 928392c756851d24c95ef1566a35e037
+timeCreated: 1444739887
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - unit: {instanceID: 0}
+  - fullMaterial: {fileID: 2100000, guid: 047bc4588d9313a43b2c8c072db55773, type: 2}
+  - defaultMaterial: {fileID: 2100000, guid: 8f1645eda446def4da137d33543505ab, type: 2}
+  - fullSprite: {fileID: 21300000, guid: b6b1167bad2130a4ea35a7133d750f7e, type: 3}
+  - outlineSprite: {fileID: 21300000, guid: 07fd794201dd1d94db48aa7b7f2e78e2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

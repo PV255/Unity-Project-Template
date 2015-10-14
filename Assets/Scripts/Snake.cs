@@ -18,11 +18,13 @@ public class Snake : MonoBehaviour {
     public float moveDistance;
     public GameObject tailPrefab;
     public GameObject newPortal;
-
+    public GameObject iniPortal;
+    public GameObject iniPortal2;
     Vector2 dir = Vector2.right;
 
     private List<Transform> tail = new List<Transform>();
     bool ate = false;
+    bool portal = false;
 	// Use this for initialization
 	void Start () {
         InvokeRepeating("Move", moveTime, moveRate);
@@ -44,8 +46,9 @@ public class Snake : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
+        if (portal) { return; }
         // Food?
-        if (coll.name.StartsWith("FoodPrefab"))
+        if (coll.name.StartsWith("foodPrefab"))
         {
             // Get longer in next Move call
             ate = true;
@@ -54,7 +57,16 @@ public class Snake : MonoBehaviour {
             Destroy(coll.gameObject);
         }
         // Collided with Tail or Border
-        else
+        else if (coll.name.StartsWith("InitialPor")) {
+            portal = true;
+            if (coll.name.StartsWith("InitialPortalPrefab2"))
+            {
+                transform.position = iniPortal.transform.position;
+            }
+            else {
+                transform.position = iniPortal2.transform.position;
+            }
+        } else
         {
             // ToDo 'You lose' screen
             Debug.Log("collision with: " + coll.name);
@@ -68,7 +80,7 @@ public class Snake : MonoBehaviour {
     }
 
     public void Move() {
-        
+        portal = false;
         Vector2 currentPossition = transform.position;
 
         transform.Translate(dir * moveDistance);

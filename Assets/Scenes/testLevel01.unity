@@ -97,6 +97,7 @@ GameObject:
   - 33: {fileID: 249925163}
   - 135: {fileID: 249925162}
   - 23: {fileID: 249925161}
+  - 114: {fileID: 249925164}
   m_Layer: 0
   m_Name: point (11)
   m_TagString: Points
@@ -147,7 +148,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249925159}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -159,6 +160,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249925159}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &249925164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 249925159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &268245109
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +182,7 @@ GameObject:
   - 33: {fileID: 268245113}
   - 135: {fileID: 268245112}
   - 23: {fileID: 268245111}
+  - 114: {fileID: 268245114}
   m_Layer: 0
   m_Name: point (10)
   m_TagString: Points
@@ -220,7 +233,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268245109}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -232,6 +245,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268245109}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &268245114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268245109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363425901
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +517,7 @@ GameObject:
   - 33: {fileID: 840157756}
   - 135: {fileID: 840157755}
   - 23: {fileID: 840157754}
+  - 114: {fileID: 840157757}
   m_Layer: 0
   m_Name: point (6)
   m_TagString: Points
@@ -543,7 +568,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840157752}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -555,6 +580,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840157752}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &840157757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 840157752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &913882388
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +602,7 @@ GameObject:
   - 33: {fileID: 913882392}
   - 135: {fileID: 913882391}
   - 23: {fileID: 913882390}
+  - 114: {fileID: 913882393}
   m_Layer: 0
   m_Name: point (4)
   m_TagString: Points
@@ -616,7 +653,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913882388}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -628,6 +665,102 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913882388}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &913882393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 913882388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &923569555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 923569560}
+  - 33: {fileID: 923569559}
+  - 23: {fileID: 923569558}
+  - 64: {fileID: 923569557}
+  - 114: {fileID: 923569556}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &923569556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923569555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12ad9d810189204f8cde256d95ed8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &923569557
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923569555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &923569558
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923569555}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &923569559
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923569555}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &923569560
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923569555}
+  m_LocalRotation: {x: .707106829, y: 2.84217094e-14, z: 2.84217094e-14, w: .707106709}
+  m_LocalPosition: {x: 0, y: -1.07599999e-05, z: -3}
+  m_LocalScale: {x: 289.203308, y: 3.81898236, z: 331.121338}
+  m_Children: []
+  m_Father: {fileID: 1559199483}
+  m_RootOrder: 1
 --- !u!1001 &1083015130
 Prefab:
   m_ObjectHideFlags: 0
@@ -645,7 +778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408730, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.1500001
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 408730, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -733,6 +866,7 @@ GameObject:
   - 33: {fileID: 1113986477}
   - 135: {fileID: 1113986476}
   - 23: {fileID: 1113986475}
+  - 114: {fileID: 1113986479}
   m_Layer: 0
   m_Name: point
   m_TagString: Points
@@ -771,7 +905,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1113986474}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -795,6 +929,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 765581028}
   m_RootOrder: 0
+--- !u!114 &1113986479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113986474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1132726962
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1115,7 @@ GameObject:
   - 33: {fileID: 1425169317}
   - 135: {fileID: 1425169316}
   - 23: {fileID: 1425169315}
+  - 114: {fileID: 1425169318}
   m_Layer: 0
   m_Name: point (3)
   m_TagString: Points
@@ -1020,7 +1166,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1425169313}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -1032,6 +1178,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1425169313}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1425169318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425169313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439322815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1200,7 @@ GameObject:
   - 33: {fileID: 1439322819}
   - 135: {fileID: 1439322818}
   - 23: {fileID: 1439322817}
+  - 114: {fileID: 1439322820}
   m_Layer: 0
   m_Name: point (7)
   m_TagString: Points
@@ -1093,7 +1251,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439322815}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -1105,6 +1263,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439322815}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1439322820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1439322815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1469101458
 Prefab:
   m_ObjectHideFlags: 0
@@ -1142,7 +1311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
       propertyPath: m_Name
@@ -1170,6 +1339,10 @@ Prefab:
 --- !u!1 &1559199482 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
+  m_PrefabInternal: {fileID: 1469101458}
+--- !u!4 &1559199483 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400002, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
   m_PrefabInternal: {fileID: 1469101458}
 --- !u!199 &1559199484
 ParticleSystemRenderer:
@@ -2260,6 +2433,30 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!114 &1559199486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559199482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12ad9d810189204f8cde256d95ed8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1559199487
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559199482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.95928574
+  m_Height: 3.91915727
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1630279331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +2468,7 @@ GameObject:
   - 33: {fileID: 1630279334}
   - 135: {fileID: 1630279333}
   - 23: {fileID: 1630279332}
+  - 114: {fileID: 1630279336}
   m_Layer: 0
   m_Name: point (8)
   m_TagString: Points
@@ -2309,7 +2507,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1630279331}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -2333,6 +2531,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 765581028}
   m_RootOrder: 8
+--- !u!114 &1630279336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1630279331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1633443522 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 149790, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
@@ -2448,6 +2657,7 @@ GameObject:
   - 33: {fileID: 1708767811}
   - 135: {fileID: 1708767810}
   - 23: {fileID: 1708767809}
+  - 114: {fileID: 1708767812}
   m_Layer: 0
   m_Name: point (2)
   m_TagString: Points
@@ -2498,7 +2708,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708767807}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -2510,6 +2720,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708767807}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1708767812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708767807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727346167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,6 +2742,7 @@ GameObject:
   - 33: {fileID: 1727346171}
   - 135: {fileID: 1727346170}
   - 23: {fileID: 1727346169}
+  - 114: {fileID: 1727346172}
   m_Layer: 0
   m_Name: point (9)
   m_TagString: Points
@@ -2571,7 +2793,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1727346167}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -2583,6 +2805,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1727346167}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1727346172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727346167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2014381142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2827,7 @@ GameObject:
   - 33: {fileID: 2014381146}
   - 135: {fileID: 2014381145}
   - 23: {fileID: 2014381144}
+  - 114: {fileID: 2014381147}
   m_Layer: 0
   m_Name: point (1)
   m_TagString: Points
@@ -2644,7 +2878,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2014381142}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -2656,6 +2890,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2014381142}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2014381147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014381142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2105938674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2912,7 @@ GameObject:
   - 33: {fileID: 2105938678}
   - 135: {fileID: 2105938677}
   - 23: {fileID: 2105938676}
+  - 114: {fileID: 2105938679}
   m_Layer: 0
   m_Name: point (5)
   m_TagString: Points
@@ -2717,7 +2963,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2105938674}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -2729,3 +2975,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2105938674}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2105938679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2105938674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

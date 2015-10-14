@@ -29,15 +29,10 @@ public class PlayerLimit : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void AddScore(int ammount)
     {
-        if (collision.gameObject.CompareTag("Points"))
-        {
-            collision.gameObject.SetActive(false);
-            score += 1;
-            SetScoreText();
-        }
-
+        score += ammount;
+        SetScoreText();
     }
 
     private void ResetLevel()

@@ -36,6 +36,7 @@ public class HexTile : MonoBehaviour {
                 //a mame naklikle pole s jednoutkou, ktera se nepohybuje
                 if (HexGridFieldManager.instance.selectedHex != null && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving())
                 {
+                    previousColor = Color.blue;
                     PathFinder.instance.buildPath(HexGridFieldManager.instance.selectedHex, this); //tak zvyraznime cestu k tomuto poli
                 }
             }
@@ -100,6 +101,16 @@ public class HexTile : MonoBehaviour {
                 }
             }
         }
+        /*else
+        {
+            if (neighbourHighlight)
+            {
+                if (HexGridFieldManager.instance.selectedHex != null)
+                {
+                    HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedAttack();
+                }
+            }
+        }*/
     }
 
     public bool isPassable() //v tuto chvili bereme jako prekazku pouze jednotku na poli, ale neni problem pridat dalsi podminky

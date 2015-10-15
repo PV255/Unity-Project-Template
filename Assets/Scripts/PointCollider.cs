@@ -15,7 +15,10 @@ public class PointCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        this.gameObject.SetActive(false);
-        other.GetComponent<PlayerLimit>().AddScore(1);
+        if (other.CompareTag("Player"))
+        {
+            this.gameObject.SetActive(false);
+            other.GetComponent<PlayerLimit>().AddScore(1);
+        }
     }
 }

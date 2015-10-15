@@ -41,10 +41,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hex: {fileID: 101758, guid: b058a69abba50fa43bb970cbdc7a5734, type: 2}
-  unitObject: {fileID: 176056, guid: 4417ccc30ec78e749a09bb541a9861f2, type: 2}
-  unitObject2: {fileID: 195970, guid: fbe8c23174c78ba48a6efe8ce0688435, type: 2}
+  unitObject:
+  - {fileID: 176056, guid: 4417ccc30ec78e749a09bb541a9861f2, type: 2}
+  - {fileID: 195970, guid: fbe8c23174c78ba48a6efe8ce0688435, type: 2}
+  - {fileID: 137174, guid: 289a7268a0ac36b4c8103783d8a4774a, type: 2}
+  - {fileID: 170548, guid: 7dd80430e919c6747aa636411dbbfc91, type: 2}
+  - {fileID: 190920, guid: ec2c7bcda60ca3048bff2fef4274d0d5, type: 2}
+  - {fileID: 150496, guid: 6471dc248e971c14b946ecd579737661, type: 2}
+  - {fileID: 192734, guid: 1549e6eb51ec55b4a94a77ba31733281, type: 2}
+  - {fileID: 167492, guid: 2cf1a4059cd3b8d4c850399ffd6956b3, type: 2}
+  - {fileID: 169960, guid: 5971a7c239f5cf14fa4d35de09f4865a, type: 2}
+  - {fileID: 171664, guid: c9f54e213468bc7438aeef57f64ef432, type: 2}
   gridSize: {x: 10, y: 10}
   selectedHex: {fileID: 0}
+  playerTurn: 0
+  numberOfActions: 1
 --- !u!114 &11491334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,6 +74,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: hex
       value: 
@@ -83,6 +98,46 @@ Prefab:
       propertyPath: unitObject2
       value: 
       objectReference: {fileID: 195970, guid: fbe8c23174c78ba48a6efe8ce0688435, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[0]
+      value: 
+      objectReference: {fileID: 176056, guid: 4417ccc30ec78e749a09bb541a9861f2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[1]
+      value: 
+      objectReference: {fileID: 195970, guid: fbe8c23174c78ba48a6efe8ce0688435, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[2]
+      value: 
+      objectReference: {fileID: 137174, guid: 289a7268a0ac36b4c8103783d8a4774a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[3]
+      value: 
+      objectReference: {fileID: 170548, guid: 7dd80430e919c6747aa636411dbbfc91, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[4]
+      value: 
+      objectReference: {fileID: 190920, guid: ec2c7bcda60ca3048bff2fef4274d0d5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[5]
+      value: 
+      objectReference: {fileID: 150496, guid: 6471dc248e971c14b946ecd579737661, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[6]
+      value: 
+      objectReference: {fileID: 192734, guid: 1549e6eb51ec55b4a94a77ba31733281, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[7]
+      value: 
+      objectReference: {fileID: 167492, guid: 2cf1a4059cd3b8d4c850399ffd6956b3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[8]
+      value: 
+      objectReference: {fileID: 169960, guid: 5971a7c239f5cf14fa4d35de09f4865a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: unitObject.Array.data[9]
+      value: 
+      objectReference: {fileID: 171664, guid: c9f54e213468bc7438aeef57f64ef432, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102308}

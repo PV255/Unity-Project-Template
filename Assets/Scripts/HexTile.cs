@@ -16,13 +16,27 @@ public class HexTile : MonoBehaviour {
     private bool selected = false, neighbourHighlight = false;
     Color orange = new Color(255f / 255f, 127f / 255f, 0, 127f / 255f);
     Color orange2 = new Color(255f / 255f, 191f / 255f, 54f / 255f, 127f / 255f);
-    private Color previousColor;
+    private Color previousColor, highlightedColor;
 
     public void changeColor(Color color)
     {
         GetComponent<SpriteRenderer>().sprite = fullSprite;
         GetComponent<Renderer>().material = fullMaterial;
         GetComponent<Renderer>().material.color = color;
+    }
+
+    public void changeOutlineColor(Color color)
+    {
+        GetComponent<SpriteRenderer>().sprite = outlineSprite;
+        GetComponent<Renderer>().material = defaultMaterial;
+        GetComponent<Renderer>().material.color = color;
+    }
+
+    public void changeBackColor()
+    {
+        GetComponent<SpriteRenderer>().sprite = fullSprite;
+        GetComponent<Renderer>().material = fullMaterial;
+        GetComponent<Renderer>().material.color = highlightedColor;
     }
 
     void OnMouseEnter() //po najeti mysi na pole
@@ -37,7 +51,22 @@ public class HexTile : MonoBehaviour {
                 if (HexGridFieldManager.instance.selectedHex != null && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving())
                 {
                     previousColor = Color.blue;
-                    PathFinder.instance.buildPath(HexGridFieldManager.instance.selectedHex, this); //tak zvyraznime cestu k tomuto poli
+                    PathFinder.instance.buildPath(HexGridFieldManager.instance.selectedHex, this, Color.blue); //tak zvyraznime cestu k tomuto poli
+                }
+            }
+        }
+        else
+        {
+            if(unit != null)
+            {
+                if (neighbourHighlight) //a je v dosahu
+                {
+                    //a mame naklikle pole s jednoutkou, ktera se nepohybuje
+                    if (HexGridFieldManager.instance.selectedHex != null && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving())
+                    {
+                        previousColor = Color.red;
+                        PathFinder.instance.buildPath(HexGridFieldManager.instance.selectedHex, this, Color.red); //tak zvyraznime cestu k tomuto poli
+                    }
                 }
             }
         }
@@ -48,7 +77,10 @@ public class HexTile : MonoBehaviour {
         if (!selected && !neighbourHighlight) {
             GetComponent<SpriteRenderer>().sprite = outlineSprite;
             GetComponent<Renderer>().material = defaultMaterial;
-            GetComponent<Renderer>().material.color = orange2;
+            if(unit == null || unit.GetComponent<BasicUnit>().side != HexGridFieldManager.instance.playerTurn)
+                GetComponent<Renderer>().material.color = orange2;
+            else
+                GetComponent<Renderer>().material.color = Color.green;
         }
         else if(neighbourHighlight || selected)
         {
@@ -58,12 +90,14 @@ public class HexTile : MonoBehaviour {
 
     void OnMouseOver() //pokud je mys na poli a klikneme pravym tlacitkem, tak provedeme akci
     {
-        if (Input.GetMouseButtonDown(1) && HexGridFieldManager.instance.selectedHex != null && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving())
+        if (Input.GetMouseButtonDown(1) && HexGridFieldManager.instance.selectedHex != null && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving() && HexGridFieldManager.instance.numberOfActions > 0)
             mouseRightButtonClick();
     }
 
     void OnMouseDown()
     {
+        if (unit.GetComponent<BasicUnit>().side != HexGridFieldManager.instance.playerTurn)
+            return;
         //pokud se jednotka nepohybuje, tak pole vybereme
         if (HexGridFieldManager.instance.selectedHex != null && HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving())
             return;
@@ -98,19 +132,21 @@ public class HexTile : MonoBehaviour {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
                     HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedPath();
+                    HexGridFieldManager.instance.nextTurn();
                 }
             }
         }
-        /*else
+        else
         {
             if (neighbourHighlight)
             {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
-                    HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedAttack();
+                    HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedAttack(this);
+                    HexGridFieldManager.instance.nextTurn();
                 }
             }
-        }*/
+        }
     }
 
     public bool isPassable() //v tuto chvili bereme jako prekazku pouze jednotku na poli, ale neni problem pridat dalsi podminky
@@ -139,15 +175,30 @@ public class HexTile : MonoBehaviour {
                 if (unit != null && unit.GetComponent<BasicUnit>().side != HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().side)
                 {
                     changeColor(Color.red);
+                    highlightedColor = Color.red;
                     neighbourHighlight = true;
                 }
                 else if(unit == null)
                 {
                     changeColor(c);
+                    highlightedColor = c;
                     neighbourHighlight = true;
                 }
             }
         }
+    }
+
+    public void highlightUnitTile(Color c)
+    {
+        changeOutlineColor(Color.green);
+    }
+
+    public void unHighlightUnitTile()
+    {
+        GetComponent<SpriteRenderer>().sprite = outlineSprite;
+        GetComponent<Renderer>().material = defaultMaterial;
+        GetComponent<Renderer>().material.color = orange2;
+        neighbourHighlight = false;
     }
 
     public void unHighlightTile(bool player)
@@ -225,7 +276,10 @@ public class HexTile : MonoBehaviour {
             if (neighbourX >= 0 &&
                 neighbourX < (int)boardSize.x &&
                 neighbourY >= 0 && neighbourY < (int)boardSize.y)
-                neighbours.Add(board[new Point(neighbourX, neighbourY)]);
+            {
+                GameObject n = (GameObject) board[new Point(neighbourX, neighbourY)];
+                neighbours.Add(n.GetComponent<HexTile>());
+            }
         }
 
         AllNeighbours = neighbours;
@@ -235,15 +289,15 @@ public class HexTile : MonoBehaviour {
     {
         if (!isPassable() && HexGridFieldManager.instance.selectedHex != this)
             return;
-        foreach (GameObject til in AllNeighbours)
+        foreach (HexTile til in AllNeighbours)
         {
             if(highlight)
-                til.GetComponent<HexTile>().highlightTile(Color.yellow, false);
+                til.highlightTile(Color.yellow, false);
             else
-                til.GetComponent<HexTile>().unHighlightTile(false);
+                til.unHighlightTile(false);
             if (reach > 1 && (isPassable() || HexGridFieldManager.instance.selectedHex == this))
             {
-                til.GetComponent<HexTile>().selectNeighbours(reach - 1, highlight);
+                til.selectNeighbours(reach - 1, highlight);
             }
         }
     }

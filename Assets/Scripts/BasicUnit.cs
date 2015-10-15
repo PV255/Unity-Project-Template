@@ -6,10 +6,14 @@ public class BasicUnit : MonoBehaviour {
     public int reach; //jak daleko muze jednotka dojit
     public int speed; //rychlost pohybu pres policka
     public int side; //strana za za kterou jednotka hraje
+    public int rank;
     public ArrayList path;
-    private bool move = false; //je v pohybu
+    public GameObject floatingText;
+    private bool moving = false, attacking = false; //je v pohybu
     private Vector3 target; //souradnice policek na ktera se jednotka postupne presouva
-    private GameObject targetTile; //reference na policko kam se ve finale presunem
+    private HexTile targetTile, attackingTile; //reference na policko kam se ve finale presunem
+    private Mesh mainMesh;
+    public Mesh hiddenMesh;
 
 
     public void setPath(ArrayList pathList)
@@ -19,42 +23,98 @@ public class BasicUnit : MonoBehaviour {
 
     public void proceedPath()
     {
-        foreach (GameObject obj in path)
+        foreach (HexTile obj in path)
         {
             target = obj.transform.position;
-            if (path.Count == 1)
-                targetTile = obj;
+            targetTile = obj;
             break;
         }
         path.RemoveAt(0);
-        move = true;
+        moving = true;
+    }
+
+    public void proceedAttack(HexTile destinationTile)
+    {
+        attackingTile = destinationTile;
+        attacking = true;
+        path.RemoveAt(path.Count - 1);
+        if (path.Count > 0) 
+            proceedPath();
+        else
+            attackTile();
+    }
+
+    public void attackTile()
+    {
+        moving = false;
+        attacking = false;
+        Debug.Log("unit: " + attackingTile.unit + " " + attackingTile.boardPosition.x + " / " + attackingTile.boardPosition.y);
+        if (rank > attackingTile.unit.GetComponent<BasicUnit>().rank)
+        {
+            Debug.Log("Unit destroyed!");
+            Destroy(attackingTile.unit);
+            path.Add(attackingTile);
+            proceedPath();
+        }
+        else
+        {
+            Debug.Log("You lost!");
+            Destroy(HexGridFieldManager.instance.selectedHex.unit);
+            path.Clear();
+            HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
+            HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
+            HexGridFieldManager.instance.selectedHex.unit = null;
+            HexGridFieldManager.instance.selectedHex = null;
+        }
     }
 
     public void finishPath()
     {
-        move = false;
+        moving = false;
         path.Clear();
         HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
         HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
-        targetTile.GetComponent<HexTile>().unit = HexGridFieldManager.instance.selectedHex.unit;
+        targetTile.unit = HexGridFieldManager.instance.selectedHex.unit;
         HexGridFieldManager.instance.selectedHex.unit = null;
-        HexGridFieldManager.instance.selectedHex = null;
+        if (attacking)
+        {
+            HexGridFieldManager.instance.selectedHex = targetTile;
+            attackTile();
+        }
+        else
+        {
+            HexGridFieldManager.instance.selectedHex = null;
+        }
     }
 
     public bool isMoving()
     {
-        return move;
+        return moving;
     }
 
-	// Use this for initialization
-	void Start () {
+    public void hideUnit()
+    {
+        GetComponent<MeshFilter>().mesh = hiddenMesh;
+    }
+
+    public void unhideUnit()
+    {
+        GetComponent<MeshFilter>().mesh = mainMesh;
+    }
+
+    // Use this for initialization
+    void Start () {
         path = new ArrayList();
+        mainMesh = GetComponent<MeshFilter>().mesh;
+        GameObject flText = (GameObject)Instantiate(floatingText);
+        flText.GetComponent<FloatingText>().target = this.transform;
+        flText.GetComponent<GUIText>().text = "Rank: " + rank;
 	}
 
     // Update is called once per frame
     void Update()
     {
-        if (move)
+        if (moving)
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);

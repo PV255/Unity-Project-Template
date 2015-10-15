@@ -22,26 +22,26 @@ public class PathFinder : MonoBehaviour {
         return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(from.boardPosition.x - to.boardPosition.x), 2) + Mathf.Pow(Mathf.Abs(from.boardPosition.y - to.boardPosition.y), 2));
     }
 
-    public void buildPath(HexTile pFrom, HexTile destination)
+    public void buildPath(HexTile pFrom, HexTile destination, Color c)
     {
-        foreach (GameObject til in currentPath)
+        foreach (HexTile til in currentPath)
         {
-            til.GetComponent<HexTile>().changeColor(Color.yellow);
+            til.changeBackColor();
         }
         currentPath.Clear();
         start = pFrom;
-        computePath(start, destination);
+        computePath(start, destination, c);
     }
 
-    void computePath(HexTile from, HexTile destination)
+    void computePath(HexTile from, HexTile destination, Color c)
     {
         float bestDistance = 99999;
-        GameObject bestTile = null;
-        foreach (GameObject til in from.AllNeighbours)
+        HexTile bestTile = null;
+        foreach (HexTile til in from.AllNeighbours)
         {
-            if (til.GetComponent<HexTile>().isPassable() && !visitedTiles.Contains(til))
+            if ((til.isPassable() || til == destination) && !visitedTiles.Contains(til))
             {
-                float currentDistance = getDistance(til.GetComponent<HexTile>(), destination);
+                float currentDistance = getDistance(til, destination);
                 if (currentDistance < bestDistance)
                 {
                     bestDistance = currentDistance;
@@ -53,15 +53,15 @@ public class PathFinder : MonoBehaviour {
         {
             visitedTiles.Add(bestTile);
             currentPath.Add(bestTile);
-            if (!bestTile.GetComponent<HexTile>().boardPosition.Equals(destination.boardPosition))
+            if (!bestTile.boardPosition.Equals(destination.boardPosition))
             {
-                computePath(bestTile.GetComponent<HexTile>(), destination);
+                computePath(bestTile, destination, c);
             }
             else
             {
-                foreach (GameObject til in currentPath)
+                foreach (HexTile til in currentPath)
                 {
-                    til.GetComponent<HexTile>().changeColor(Color.blue);
+                    til.changeColor(c);
                 }
                 start.unit.GetComponent<BasicUnit>().setPath(currentPath);
                 visitedTiles.Clear();
@@ -70,7 +70,7 @@ public class PathFinder : MonoBehaviour {
         else
         {
             currentPath.Clear();
-            computePath(start, destination);
+            computePath(start, destination, c);
         }
     }
 

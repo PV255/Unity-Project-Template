@@ -72,9 +72,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186a2d8c1198f4c49a0bfbce23ea0fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reach: 1
+  reach: 3
   speed: 3
   side: 1
+  rank: 2
+  floatingText: {fileID: 127894, guid: e576596220a1ce445937da0656cd39b9, type: 2}
+  hiddenMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -92,8 +95,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: reach
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rank
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: floatingText
+      value: 
+      objectReference: {fileID: 127894, guid: e576596220a1ce445937da0656cd39b9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: hiddenMesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195970}

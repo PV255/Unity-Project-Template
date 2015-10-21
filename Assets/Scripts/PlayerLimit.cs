@@ -35,6 +35,11 @@ public class PlayerLimit : MonoBehaviour
         SetScoreText();
     }
 
+    public void SetStartPos(Vector3 position)
+    {
+        this.startPos = position;
+    }
+
     private void ResetLevel()
     {
         transform.position = startPos;

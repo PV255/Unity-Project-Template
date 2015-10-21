@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 8fc2d4610a5768940a5f5974c2fa7595
+timeCreated: 1445173816
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CINEMA4D_editor
+    100002: //RootNode
+    100004: Koule
+    100006: Koule_2
+    100008: Koule_3
+    100010: Koule_4
+    100012: Krychle
+    100014: Krychle_1
+    100016: Krychle_1_2
+    100018: Krychle_1_3
+    100020: Krychle_1_4
+    100022: Krychle_1_5
+    100024: Krychle_2
+    100026: Krychle_2_2
+    100028: Krychle_2_3
+    100030: Krychle_3
+    100032: Krychle_3_2
+    100034: Krychle_3_3
+    100036: Krychle_4
+    100038: Krychle_4_2
+    100040: Krychle_4_3
+    100042: Krychle_5
+    100044: Krychle_5_2
+    100046: Krychle_6
+    100048: Krychle_6_2
+    100050: part01
+    100052: part02
+    100054: "V\xE1lec"
+    100056: "V\xE1lec_1"
+    100058: "V\xE1lec_2"
+    100060: "V\xE1lec_2_2"
+    100062: "V\xE1lec_3"
+    100064: "V\xE1lec_4"
+    400000: CINEMA4D_editor
+    400002: //RootNode
+    400004: Koule
+    400006: Koule_2
+    400008: Koule_3
+    400010: Koule_4
+    400012: Krychle
+    400014: Krychle_1
+    400016: Krychle_1_2
+    400018: Krychle_1_3
+    400020: Krychle_1_4
+    400022: Krychle_1_5
+    400024: Krychle_2
+    400026: Krychle_2_2
+    400028: Krychle_2_3
+    400030: Krychle_3
+    400032: Krychle_3_2
+    400034: Krychle_3_3
+    400036: Krychle_4
+    400038: Krychle_4_2
+    400040: Krychle_4_3
+    400042: Krychle_5
+    400044: Krychle_5_2
+    400046: Krychle_6
+    400048: Krychle_6_2
+    400050: part01
+    400052: part02
+    400054: "V\xE1lec"
+    400056: "V\xE1lec_1"
+    400058: "V\xE1lec_2"
+    400060: "V\xE1lec_2_2"
+    400062: "V\xE1lec_3"
+    400064: "V\xE1lec_4"
+    2300000: Koule_2
+    2300002: Koule_4
+    2300004: Krychle
+    2300006: Krychle_1_2
+    2300008: Krychle_1_4
+    2300010: Krychle_1_5
+    2300012: Krychle_2_2
+    2300014: Krychle_3
+    2300016: Krychle_3_3
+    2300018: Krychle_4_2
+    2300020: Krychle_4_3
+    2300022: Krychle_5_2
+    2300024: Krychle_6_2
+    2300026: "V\xE1lec"
+    2300028: "V\xE1lec_1"
+    2300030: "V\xE1lec_2"
+    2300032: "V\xE1lec_2_2"
+    2300034: "V\xE1lec_3"
+    2300036: "V\xE1lec_4"
+    3300000: Koule_2
+    3300002: Koule_4
+    3300004: Krychle
+    3300006: Krychle_1_2
+    3300008: Krychle_1_4
+    3300010: Krychle_1_5
+    3300012: Krychle_2_2
+    3300014: Krychle_3
+    3300016: Krychle_3_3
+    3300018: Krychle_4_2
+    3300020: Krychle_4_3
+    3300022: Krychle_5_2
+    3300024: Krychle_6_2
+    3300026: "V\xE1lec"
+    3300028: "V\xE1lec_1"
+    3300030: "V\xE1lec_2"
+    3300032: "V\xE1lec_2_2"
+    3300034: "V\xE1lec_3"
+    3300036: "V\xE1lec_4"
+    4300000: Krychle
+    4300002: Koule_2
+    4300004: Krychle_2_2
+    4300006: Krychle_1_2
+    4300008: Krychle_3
+    4300010: Koule_4
+    4300012: "V\xE1lec"
+    4300014: Krychle_1_4
+    4300016: Krychle_6_2
+    4300018: Krychle_5_2
+    4300020: Krychle_4_2
+    4300022: Krychle_3_3
+    4300024: Krychle_1_5
+    4300026: "V\xE1lec_4"
+    4300028: Krychle_4_3
+    4300030: "V\xE1lec_2"
+    4300032: "V\xE1lec_2_2"
+    4300034: "V\xE1lec_1"
+    4300036: "V\xE1lec_3"
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

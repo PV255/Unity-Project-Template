@@ -34,18 +34,26 @@ public class FlyingCamera : MonoBehaviour
 
     void Start()
     {
-        
+
+    }
+
+    public void reset()
+    {
+        rotationX = (HexGridFieldManager.instance.playerTurn == 0 ? 0 : 180);
+        rotationY = 0;
     }
 
     void Update()
     {
-        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
-        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
-        rotationY = Mathf.Clamp(rotationY, -90, 90);
+        if (Input.GetMouseButton(2))
+        {
+            rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
+            rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
+            rotationY = Mathf.Clamp(rotationY, -90, 90);
 
-        transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-        transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
-
+            transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
+            transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
+        }
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             transform.position += transform.forward * (normalMoveSpeed * fastMoveFactor) * Input.GetAxis("Vertical") * Time.deltaTime;

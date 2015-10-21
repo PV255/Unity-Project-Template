@@ -8,11 +8,10 @@ public class BasicUnit : MonoBehaviour {
     public int side; //strana za za kterou jednotka hraje
     public int rank;
     public ArrayList path;
-    public GameObject floatingText;
     private bool moving = false, attacking = false; //je v pohybu
     private Vector3 target; //souradnice policek na ktera se jednotka postupne presouva
     private HexTile targetTile, attackingTile; //reference na policko kam se ve finale presunem
-    private Mesh mainMesh;
+    public Mesh mainMesh;
     public Mesh hiddenMesh;
 
 
@@ -56,11 +55,23 @@ public class BasicUnit : MonoBehaviour {
             path.Add(attackingTile);
             proceedPath();
         }
-        else
+        else if(rank < attackingTile.unit.GetComponent<BasicUnit>().rank)
         {
             Debug.Log("You lost!");
             Destroy(HexGridFieldManager.instance.selectedHex.unit);
             path.Clear();
+            HexGridFieldManager.instance.selectedHex.unHighlightUnitTile();
+            HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
+            HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
+            HexGridFieldManager.instance.selectedHex.unit = null;
+            HexGridFieldManager.instance.selectedHex = null;
+        }
+        else
+        {
+            Destroy(attackingTile.unit);
+            Destroy(HexGridFieldManager.instance.selectedHex.unit);
+            path.Clear();
+            HexGridFieldManager.instance.selectedHex.unHighlightUnitTile();
             HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
             HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
             HexGridFieldManager.instance.selectedHex.unit = null;
@@ -75,7 +86,9 @@ public class BasicUnit : MonoBehaviour {
         HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
         HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
         targetTile.unit = HexGridFieldManager.instance.selectedHex.unit;
+        targetTile.highlightUnitTile();
         HexGridFieldManager.instance.selectedHex.unit = null;
+        HexGridFieldManager.instance.selectedHex.unHighlightUnitTile();
         if (attacking)
         {
             HexGridFieldManager.instance.selectedHex = targetTile;
@@ -105,10 +118,6 @@ public class BasicUnit : MonoBehaviour {
     // Use this for initialization
     void Start () {
         path = new ArrayList();
-        mainMesh = GetComponent<MeshFilter>().mesh;
-        GameObject flText = (GameObject)Instantiate(floatingText);
-        flText.GetComponent<FloatingText>().target = this.transform;
-        flText.GetComponent<GUIText>().text = "Rank: " + rank;
 	}
 
     // Update is called once per frame

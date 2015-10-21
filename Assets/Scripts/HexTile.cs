@@ -96,35 +96,34 @@ public class HexTile : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (unit.GetComponent<BasicUnit>().side != HexGridFieldManager.instance.playerTurn)
+        if (unit == null || unit.GetComponent<BasicUnit>().side != HexGridFieldManager.instance.playerTurn ||
+            (HexGridFieldManager.instance.selectedHex != null && HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving()))
             return;
         //pokud se jednotka nepohybuje, tak pole vybereme
-        if (HexGridFieldManager.instance.selectedHex != null && HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving())
-            return;
-        if (unit != null)
+        if (!selected)
         {
-            if (!selected)
+            if (HexGridFieldManager.instance.selectedHex != null) //pokud bylo nejake pole vybrano, tak vyber zrusime
             {
-                if (HexGridFieldManager.instance.selectedHex != null) //pokud bylo nejake pole vybrano, tak vyber zrusime
-                {
-                    HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
-                    HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
-                }
-                HexGridFieldManager.instance.selectedHex = this;
-                highlightTile(orange, true);
-                selectNeighbours(unit.GetComponent<BasicUnit>().reach, true); //a zaroven zvyraznime dosah ktery ma jednotka na tomto poli
+                HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
+                HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
             }
-            else //pokud pole bylo vybrano a znovu na nej klikneme, tak zrusime vybrani a zvyrazneni dalsich poli
-            {
-                unHighlightTile(true);
-                selectNeighbours(unit.GetComponent<BasicUnit>().reach, false);
-                HexGridFieldManager.instance.selectedHex = null;
-            }
+            HexGridFieldManager.instance.selectedHex = this;
+            highlightTile(orange, true);
+            selectNeighbours(unit.GetComponent<BasicUnit>().reach, true); //a zaroven zvyraznime dosah ktery ma jednotka na tomto poli
         }
+        else //pokud pole bylo vybrano a znovu na nej klikneme, tak zrusime vybrani a zvyrazneni dalsich poli
+        {
+            unHighlightTile(true);
+            selectNeighbours(unit.GetComponent<BasicUnit>().reach, false);
+            HexGridFieldManager.instance.selectedHex = null;
+        }
+        PathFinder.instance.reset();
     }
 
     void mouseRightButtonClick() //jednotka se zacne pohybovat smerem k tomuto poli pokud je to mozne
     {
+        if (HexGridFieldManager.instance.numberOfActions <= 0)
+            return;
         if (isPassable())
         {
             if (neighbourHighlight)
@@ -132,7 +131,8 @@ public class HexTile : MonoBehaviour {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
                     HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedPath();
-                    HexGridFieldManager.instance.nextTurn();
+                    HexGridFieldManager.instance.numberOfActions--;
+                    //HexGridFieldManager.instance.nextTurn();
                 }
             }
         }
@@ -143,7 +143,8 @@ public class HexTile : MonoBehaviour {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
                     HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedAttack(this);
-                    HexGridFieldManager.instance.nextTurn();
+                    HexGridFieldManager.instance.numberOfActions--;
+                    //HexGridFieldManager.instance.nextTurn();
                 }
             }
         }
@@ -188,7 +189,7 @@ public class HexTile : MonoBehaviour {
         }
     }
 
-    public void highlightUnitTile(Color c)
+    public void highlightUnitTile()
     {
         changeOutlineColor(Color.green);
     }
@@ -198,7 +199,6 @@ public class HexTile : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = outlineSprite;
         GetComponent<Renderer>().material = defaultMaterial;
         GetComponent<Renderer>().material.color = orange2;
-        neighbourHighlight = false;
     }
 
     public void unHighlightTile(bool player)
@@ -209,7 +209,10 @@ public class HexTile : MonoBehaviour {
             {
                 GetComponent<SpriteRenderer>().sprite = outlineSprite;
                 GetComponent<Renderer>().material = defaultMaterial;
-                GetComponent<Renderer>().material.color = orange2;
+                if(unit == null)
+                    GetComponent<Renderer>().material.color = orange2;
+                else
+                    GetComponent<Renderer>().material.color = Color.green;
                 selected = false;
             }
         }
@@ -310,9 +313,19 @@ public class HexTile : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GetComponent<SpriteRenderer>().sprite = outlineSprite;
+        /*GetComponent<SpriteRenderer>().sprite = outlineSprite;
         GetComponent<Renderer>().material = defaultMaterial;
-        GetComponent<Renderer>().material.color = orange2;
+        GetComponent<Renderer>().material.color = orange2;*/
+        /*if (unit.GetComponent<BasicUnit>().side == HexGridFieldManager.instance.playerTurn)
+        {
+            unit.GetComponent<BasicUnit>().unhideUnit();
+            highlightUnitTile();
+        }
+        else
+        {
+            GetComponent<BasicUnit>().hideUnit();
+            unHighlightUnitTile();
+        }*/
     }
 	
 	// Update is called once per frame

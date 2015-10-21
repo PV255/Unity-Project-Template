@@ -22,6 +22,13 @@ public class PathFinder : MonoBehaviour {
         return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(from.boardPosition.x - to.boardPosition.x), 2) + Mathf.Pow(Mathf.Abs(from.boardPosition.y - to.boardPosition.y), 2));
     }
 
+    public void reset()
+    {
+        visitedTiles.Clear();
+        currentPath.Clear();
+        start = null;
+    }
+
     public void buildPath(HexTile pFrom, HexTile destination, Color c)
     {
         foreach (HexTile til in currentPath)

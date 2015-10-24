@@ -5,10 +5,14 @@ using UnityEngine.UI;
 public class PlayerLimit : MonoBehaviour
 {
     public Text scoreText;
+    public Material normal;
+    public Material attack;
 
     private Vector3 startPos;
     private GameObject mainCamera;
     private int score;
+    private Animator animator;
+    private Renderer renderer;
    
 
     // Use this for initialization
@@ -18,6 +22,8 @@ public class PlayerLimit : MonoBehaviour
         startPos = transform.position;
         score = 0;
         SetScoreText();
+        animator = GetComponent<Animator>();
+        renderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -26,6 +32,14 @@ public class PlayerLimit : MonoBehaviour
         if (transform.position.y < -5)
         {
             ResetLevel();
+        }
+
+        if (Input.GetKey(KeyCode.K)) {
+            Debug.Log("ATTACK!!!");
+            //animator.Play("Crouching");
+            renderer.sharedMaterial = attack;
+        } else {
+            renderer.sharedMaterial = normal;
         }
     }
 

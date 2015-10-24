@@ -37,7 +37,7 @@ public class PlayerLimit : MonoBehaviour
 
     public void SetStartPos(Vector3 position)
     {
-        this.startPos = position;
+        startPos = position;
     }
 
     private void ResetLevel()

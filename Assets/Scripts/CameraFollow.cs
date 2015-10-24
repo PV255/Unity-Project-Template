@@ -27,7 +27,7 @@ public class CameraFollow : MonoBehaviour
     public void ResetCamera()
     {
         transform.position = new Vector3(target.transform.position.x,
-                                        target.transform.position.y + height,
+                                        height,
                                         target.transform.position.z - distance);
     }
 }

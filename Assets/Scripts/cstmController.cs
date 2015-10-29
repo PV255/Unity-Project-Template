@@ -2,25 +2,33 @@
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class cstmController : MonoBehaviour
+public class CstmController : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     float gravity;
     float nextJump;
 
-    // Use this for initialization
+    bool is_grounded;
+    bool m_Jump;
+
+    public float maxJump;
+    public float speed;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        gravity = 10;
+        gravity = 3.7f;
         nextJump = Time.time;
+
+        m_Jump = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-            
+        if (!m_Jump)
+        {
+            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+        }
     }
 
     private void FixedUpdate()
@@ -28,20 +36,18 @@ public class cstmController : MonoBehaviour
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
-        m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * 7;
+        m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * speed;
 
-        if (CrossPlatformInputManager.GetButtonDown("Jump") && Time.time > nextJump)
+        if (m_Jump)
         {
-            // m_Rigidbody.velocity += Vector3.up * 20f;
-            // m_Rigidbody.AddForce(Vector3.up * 10);
-            transform.position += Vector3.up * 3;
-            nextJump = Time.time + 0.3f;
+            transform.position += Vector3.up * 0.16f;
+
+            if (transform.position.y > maxJump) m_Jump = false;
         }
 
-        if (Time.time > nextJump)
-        {
-            m_Rigidbody.velocity += Vector3.down * gravity;
-        }
+        
+        m_Rigidbody.velocity += Vector3.down * gravity;
+        
 
     }
 }

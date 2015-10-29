@@ -5,10 +5,10 @@ using UnityStandardAssets.CrossPlatformInput;
 public class CstmController : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
-    float gravity;
-    float nextJump;
+    GameObject camera;
+    public float gravity;
+    public float nextJump;
 
-    bool is_grounded;
     bool m_Jump;
 
     public float maxJump;
@@ -16,6 +16,7 @@ public class CstmController : MonoBehaviour
 
     void Start()
     {
+        camera = GameObject.Find("cstmCamera");
         m_Rigidbody = GetComponent<Rigidbody>();
         gravity = 3.7f;
         nextJump = Time.time;
@@ -36,7 +37,13 @@ public class CstmController : MonoBehaviour
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
+
         m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * speed;
+
+        /*Transform dir = camera.transform;
+ 
+        //m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * 10;
+        m_Rigidbody.velocity = (v * dir.forward + h * dir.right) * 10;*/
 
         if (m_Jump)
         {
@@ -45,9 +52,8 @@ public class CstmController : MonoBehaviour
             if (transform.position.y > maxJump) m_Jump = false;
         }
 
-        
-        m_Rigidbody.velocity += Vector3.down * gravity;
-        
 
+        m_Rigidbody.velocity += Vector3.down * gravity;
     }
+
 }

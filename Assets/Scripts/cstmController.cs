@@ -9,10 +9,13 @@ public class CstmController : MonoBehaviour
     public float gravity;
     public float nextJump;
 
-    bool m_Jump;
+    bool is_grounded;
+    bool is_jumping;
 
     public float maxJump;
     public float speed;
+
+    private float currentMaxY;
 
     void Start()
     {
@@ -21,14 +24,18 @@ public class CstmController : MonoBehaviour
         gravity = 3.7f;
         nextJump = Time.time;
 
-        m_Jump = false;
+        is_jumping = false;
     }
 
     void Update()
     {
-        if (!m_Jump)
+        if (is_grounded)
         {
-            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            if (CrossPlatformInputManager.GetButtonDown("Jump")) {
+                is_grounded = false;
+                is_jumping = true;
+                currentMaxY = m_Rigidbody.transform.position.y + maxJump;
+            }
         }
     }
 
@@ -45,11 +52,17 @@ public class CstmController : MonoBehaviour
         //m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * 10;
         m_Rigidbody.velocity = (v * dir.forward + h * dir.right) * 10;*/
 
-        if (m_Jump)
+        if (is_jumping)
         {
             transform.position += Vector3.up * 0.16f;
 
-            if (transform.position.y > maxJump) m_Jump = false;
+            if (transform.position.y > currentMaxY) is_jumping = false;
+        }
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, 0.3f))
+        {
+            is_grounded = true;
         }
 
 

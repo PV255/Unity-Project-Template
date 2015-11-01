@@ -12,7 +12,7 @@ public class PlayerLimit : MonoBehaviour
     private GameObject mainCamera;
     private int score;
     private Animator animator;
-    private Renderer renderer;
+    private Renderer bodyRenderer;
    
 
     // Use this for initialization
@@ -23,7 +23,7 @@ public class PlayerLimit : MonoBehaviour
         score = 0;
         SetScoreText();
         animator = GetComponent<Animator>();
-        renderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
+        bodyRenderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -37,9 +37,9 @@ public class PlayerLimit : MonoBehaviour
         if (Input.GetKey(KeyCode.K)) {
             Debug.Log("ATTACK!!!");
             //animator.Play("Crouching");
-            renderer.sharedMaterial = attack;
+            bodyRenderer.sharedMaterial = attack;
         } else {
-            renderer.sharedMaterial = normal;
+            bodyRenderer.sharedMaterial = normal;
         }
     }
 

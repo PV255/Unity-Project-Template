@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerController : MonoBehaviour {
 
     Rigidbody m_Rigidbody;
-    GameObject camera;
+    //GameObject camera;
     private float gravity;
 
     bool is_grounded;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-        camera = GameObject.Find("cstmCamera");
+        //camera = GameObject.Find("cstmCamera");
         m_Rigidbody = GetComponent<Rigidbody>();
         gravity = 3.7f;
 

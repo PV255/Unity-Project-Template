@@ -1797,6 +1797,19 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 149790, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 2}
   m_PrefabInternal: {fileID: 1930936825}
+--- !u!114 &1714486115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714486114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b86fef5fe551548a4bc353c8acb57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJump: 1.20000005
+  speed: 8
 --- !u!114 &1714486116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1819,13 +1832,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714486114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a143675e01d1c4983cb38c3df4dea9, type: 3}
+  m_Script: {fileID: 11500000, guid: a0b86fef5fe551548a4bc353c8acb57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0
-  nextJump: 0
-  maxJump: 1.20000005
-  speed: 8
+  maxJump: 0
+  speed: 0
 --- !u!4 &1722445063 stripped
 Transform:
   m_PrefabParentObject: {fileID: 422372, guid: fdfbe339fb953ef43b20a7449c9e35c0, type: 2}

@@ -24,16 +24,18 @@ public class CameraFollow : MonoBehaviour
         Vector3 last = path[path.Length - 1];
         pathLength = last.z - first.z;
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        float playerPos = target.transform.position.z - first.z;
+        float playerPos = target.transform.position.z - first.z - 10;
 
         iTween.PutOnPath(this.gameObject, path, playerPos / pathLength);
+
+        transform.LookAt(target.transform);
 
         //Vector3 temp = transform.position;
         //Vector3 playerPos = target.transform.position;

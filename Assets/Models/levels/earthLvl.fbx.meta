@@ -38,6 +38,9 @@ ModelImporter:
     100060: "V\xE1lec_2_2"
     100062: "V\xE1lec_3"
     100064: "V\xE1lec_4"
+    100066: corridor
+    100068: corridor01
+    100070: "K\u0159ivka"
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -71,6 +74,9 @@ ModelImporter:
     400060: "V\xE1lec_2_2"
     400062: "V\xE1lec_3"
     400064: "V\xE1lec_4"
+    400066: corridor
+    400068: corridor01
+    400070: "K\u0159ivka"
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle
@@ -90,6 +96,8 @@ ModelImporter:
     2300032: "V\xE1lec_2_2"
     2300034: "V\xE1lec_3"
     2300036: "V\xE1lec_4"
+    2300038: corridor
+    2300040: corridor01
     3300000: Koule_2
     3300002: Koule_4
     3300004: Krychle
@@ -109,6 +117,8 @@ ModelImporter:
     3300032: "V\xE1lec_2_2"
     3300034: "V\xE1lec_3"
     3300036: "V\xE1lec_4"
+    3300038: corridor
+    3300040: corridor01
     4300000: Krychle
     4300002: Koule_2
     4300004: Krychle_2_2
@@ -128,6 +138,8 @@ ModelImporter:
     4300032: "V\xE1lec_2_2"
     4300034: "V\xE1lec_1"
     4300036: "V\xE1lec_3"
+    4300038: corridor
+    4300040: corridor01
     9500000: //RootNode
   materials:
     importMaterials: 1

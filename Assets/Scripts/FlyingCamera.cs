@@ -31,6 +31,8 @@ public class FlyingCamera : MonoBehaviour
 
     private float rotationX = 0.0f;
     private float rotationY = 0.0f;
+    private float rotationX1 = 0.0f, rotationX2 = 180.0f;
+    private float rotationY1 = 0.0f, rotationY2 = 0.0f;
 
     void Start()
     {
@@ -39,8 +41,15 @@ public class FlyingCamera : MonoBehaviour
 
     public void reset()
     {
-        rotationX = (HexGridFieldManager.instance.playerTurn == 0 ? 0 : 180);
-        rotationY = 0;
+        if(HexGridFieldManager.instance.playerTurn == 0) {
+            rotationX2 = rotationX;
+            rotationY2 = rotationY;
+        } else {
+            rotationX1 = rotationX;
+            rotationY1 = rotationY;
+        }
+        rotationX = (HexGridFieldManager.instance.playerTurn == 0 ? rotationX1 : rotationX2);
+        rotationY = (HexGridFieldManager.instance.playerTurn == 0 ? rotationY1 : rotationY2);
     }
 
     void Update()

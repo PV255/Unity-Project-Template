@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96eea383a2673264a9e4cb5fc8ae31c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   hex: {fileID: 101758, guid: b058a69abba50fa43bb970cbdc7a5734, type: 2}
   unitObject:
   - {fileID: 176056, guid: 4417ccc30ec78e749a09bb541a9861f2, type: 2}
@@ -52,10 +53,13 @@ MonoBehaviour:
   - {fileID: 167492, guid: 2cf1a4059cd3b8d4c850399ffd6956b3, type: 2}
   - {fileID: 169960, guid: 5971a7c239f5cf14fa4d35de09f4865a, type: 2}
   - {fileID: 171664, guid: c9f54e213468bc7438aeef57f64ef432, type: 2}
-  gridSize: {x: 10, y: 10}
+  gridSize: {x: 10, y: 19}
   selectedHex: {fileID: 0}
+  treeObject: {fileID: 135844, guid: a6e58eff4a35fd54ba4725597e7ad387, type: 2}
   playerTurn: 0
-  numberOfActions: 1
+  numberOfActionsMax: 2
+  unitRankText: {fileID: 0}
+  numberOfActionsText: {fileID: 0}
 --- !u!114 &11491334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,7 +96,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: gridSize.y
-      value: 10
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: unitObject2
@@ -138,6 +142,14 @@ Prefab:
       propertyPath: unitObject.Array.data[9]
       value: 
       objectReference: {fileID: 171664, guid: c9f54e213468bc7438aeef57f64ef432, type: 2}
+    - target: {fileID: 0}
+      propertyPath: treeObject
+      value: 
+      objectReference: {fileID: 135844, guid: a6e58eff4a35fd54ba4725597e7ad387, type: 2}
+    - target: {fileID: 0}
+      propertyPath: numberOfActionsMax
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102308}

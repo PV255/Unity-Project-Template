@@ -17,7 +17,7 @@ public class BasicUnit : MonoBehaviour {
 
     public void setPath(ArrayList pathList)
     {
-        path = pathList;
+        path = (ArrayList) pathList.Clone();
     }
 
     public void proceedPath()
@@ -47,17 +47,17 @@ public class BasicUnit : MonoBehaviour {
     {
         moving = false;
         attacking = false;
-        Debug.Log("unit: " + attackingTile.unit + " " + attackingTile.boardPosition.x + " / " + attackingTile.boardPosition.y);
+        
         if (rank > attackingTile.unit.GetComponent<BasicUnit>().rank)
         {
-            Debug.Log("Unit destroyed!");
+            
             Destroy(attackingTile.unit);
             path.Add(attackingTile);
             proceedPath();
         }
         else if(rank < attackingTile.unit.GetComponent<BasicUnit>().rank)
         {
-            Debug.Log("You lost!");
+            
             Destroy(HexGridFieldManager.instance.selectedHex.unit);
             path.Clear();
             HexGridFieldManager.instance.selectedHex.unHighlightUnitTile();

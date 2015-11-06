@@ -19,7 +19,7 @@ public class PathFinder : MonoBehaviour {
 
     float getDistance(HexTile from, HexTile to)
     {
-        return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(from.boardPosition.x - to.boardPosition.x), 2) + Mathf.Pow(Mathf.Abs(from.boardPosition.y - to.boardPosition.y), 2));
+        return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(from.transform.position.x - to.transform.position.x), 2) + Mathf.Pow(Mathf.Abs(from.transform.position.z - to.transform.position.z), 2));
     }
 
     public void reset()
@@ -46,7 +46,7 @@ public class PathFinder : MonoBehaviour {
         HexTile bestTile = null;
         foreach (HexTile til in from.AllNeighbours)
         {
-            if ((til.isPassable() || til == destination) && !visitedTiles.Contains(til))
+            if ((til.isPassable() || til == destination) && !visitedTiles.Contains(til) && til.isHighlighted())
             {
                 float currentDistance = getDistance(til, destination);
                 if (currentDistance < bestDistance)

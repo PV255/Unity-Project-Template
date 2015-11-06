@@ -4,6 +4,7 @@ using System.Collections;
 public class HexTile : MonoBehaviour {
 
     public GameObject unit;
+    private GameObject placeHolder;
     public Point boardPosition;
 
     public ArrayList AllNeighbours;
@@ -90,7 +91,9 @@ public class HexTile : MonoBehaviour {
 
     void OnMouseOver() //pokud je mys na poli a klikneme pravym tlacitkem, tak provedeme akci
     {
-        if (Input.GetMouseButtonDown(1) && HexGridFieldManager.instance.selectedHex != null && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving() && HexGridFieldManager.instance.numberOfActions > 0)
+        if (Input.GetMouseButtonDown(1) && HexGridFieldManager.instance.selectedHex != null
+            && !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoving()
+            && HexGridFieldManager.instance.hasAvailableActions())
             mouseRightButtonClick();
     }
 
@@ -104,25 +107,28 @@ public class HexTile : MonoBehaviour {
         {
             if (HexGridFieldManager.instance.selectedHex != null) //pokud bylo nejake pole vybrano, tak vyber zrusime
             {
+                HexGridFieldManager.instance.unitRankText.text = "Unit rank: ";
                 HexGridFieldManager.instance.selectedHex.unHighlightTile(true);
                 HexGridFieldManager.instance.selectedHex.selectNeighbours(HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().reach, false);
             }
             HexGridFieldManager.instance.selectedHex = this;
             highlightTile(orange, true);
             selectNeighbours(unit.GetComponent<BasicUnit>().reach, true); //a zaroven zvyraznime dosah ktery ma jednotka na tomto poli
+            HexGridFieldManager.instance.unitRankText.text = "Unit rank: " + this.unit.GetComponent<BasicUnit>().rank;
         }
         else //pokud pole bylo vybrano a znovu na nej klikneme, tak zrusime vybrani a zvyrazneni dalsich poli
         {
             unHighlightTile(true);
             selectNeighbours(unit.GetComponent<BasicUnit>().reach, false);
             HexGridFieldManager.instance.selectedHex = null;
+            HexGridFieldManager.instance.unitRankText.text = "Unit rank: ";
         }
         PathFinder.instance.reset();
     }
 
     void mouseRightButtonClick() //jednotka se zacne pohybovat smerem k tomuto poli pokud je to mozne
     {
-        if (HexGridFieldManager.instance.numberOfActions <= 0)
+        if (!HexGridFieldManager.instance.hasAvailableActions())
             return;
         if (isPassable())
         {
@@ -131,7 +137,7 @@ public class HexTile : MonoBehaviour {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
                     HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedPath();
-                    HexGridFieldManager.instance.numberOfActions--;
+                    HexGridFieldManager.instance.proceedAction();
                     //HexGridFieldManager.instance.nextTurn();
                 }
             }
@@ -143,7 +149,7 @@ public class HexTile : MonoBehaviour {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
                     HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().proceedAttack(this);
-                    HexGridFieldManager.instance.numberOfActions--;
+                    HexGridFieldManager.instance.proceedAction();
                     //HexGridFieldManager.instance.nextTurn();
                 }
             }
@@ -152,10 +158,15 @@ public class HexTile : MonoBehaviour {
 
     public bool isPassable() //v tuto chvili bereme jako prekazku pouze jednotku na poli, ale neni problem pridat dalsi podminky
     {
-        if (unit == null)
+        if (unit == null && placeHolder == null)
             return true;
         else
             return false;
+    }
+
+    public bool isHighlighted()
+    {
+        return selected || neighbourHighlight;
     }
 
     public void highlightTile(Color c, bool player)
@@ -179,7 +190,7 @@ public class HexTile : MonoBehaviour {
                     highlightedColor = Color.red;
                     neighbourHighlight = true;
                 }
-                else if(unit == null)
+                else if(isPassable())
                 {
                     changeColor(c);
                     highlightedColor = c;
@@ -234,23 +245,13 @@ public class HexTile : MonoBehaviour {
         unit.transform.position = transform.position;
     }
 
-    public static ArrayList neighbourEven //lichy radek
+    public void setPlaceHolder(GameObject pHolder)
     {
-        get
-        {
-            return new ArrayList
-                {
-                    new Point(1, 0),
-                    new Point(-1, 0),
-                    new Point(-1, -1),
-                    new Point(0, -1),
-                    new Point(0, 1),
-                    new Point(-1, 1),
-                };
-        }
+        placeHolder = pHolder;
+        placeHolder.transform.position = transform.position;
     }
 
-    public static ArrayList neighbourOdd //sudy radek
+    public static ArrayList neighbourArray //sudy radek
     {
         get
         {
@@ -258,8 +259,8 @@ public class HexTile : MonoBehaviour {
                 {
                     new Point(1, 0),
                     new Point(-1, 0),
-                    new Point(1, -1),
                     new Point(0, -1),
+                    new Point(1, -1),
                     new Point(0, 1),
                     new Point(1, 1),
                 };
@@ -270,17 +271,24 @@ public class HexTile : MonoBehaviour {
     {
         ArrayList neighbours = new ArrayList();
 
-        foreach (Point point in (boardPosition.y % 2 == 0) ? neighbourOdd : neighbourEven) //podle sude/liche vybereme spravny list se souradnicemi
+        foreach (Point point in neighbourArray) //projedeme okolni body
         {
-            int neighbourX = boardPosition.x + point.x;
             int neighbourY = boardPosition.y + point.y;
+            int neighbourX = boardPosition.x + point.x;
+
+            int compareY = (int) ((neighbourY > boardSize.y / 2 - 1) ? (boardSize.y - neighbourY) : neighbourY);
+            int compareY2 = (int)((boardPosition.y > boardSize.y / 2 - 1) ? (boardSize.y - boardPosition.y) : boardPosition.y);
+
+            if (compareY < compareY2) {
+                neighbourX = boardPosition.x + point.x - 1;
+            }
 
             //drzime se pouze v rozmezi herni plochy
             if (neighbourX >= 0 &&
-                neighbourX < (int)boardSize.x &&
+                neighbourX < (int) boardSize.x + ((neighbourY < boardSize.y / 2 - 1) ? neighbourY : (boardSize.y - 1) - neighbourY) &&
                 neighbourY >= 0 && neighbourY < (int)boardSize.y)
             {
-                GameObject n = (GameObject) board[new Point(neighbourX, neighbourY)];
+                GameObject n = (GameObject)board[new Point(neighbourX, neighbourY)];
                 neighbours.Add(n.GetComponent<HexTile>());
             }
         }

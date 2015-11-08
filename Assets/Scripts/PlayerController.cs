@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerController : MonoBehaviour {
 
     Rigidbody m_Rigidbody;
-    //GameObject camera;
+    public GameObject cam;
     private float gravity;
 
     bool is_grounded;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     {
         //camera = GameObject.Find("cstmCamera");
         m_Rigidbody = GetComponent<Rigidbody>();
-        gravity = 3.7f;
+        gravity = 5f;
 
         is_jumping = false;
     }
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
 
-        m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * speed;
+        m_Rigidbody.velocity = (v * cam.transform.forward + h * cam.transform.right) * speed;
 
         /*Transform dir = camera.transform;
  
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
 
         if (is_jumping)
         {
-            transform.position += Vector3.up * 0.16f;
+            transform.position += Vector3.up * 0.18f;
 
             if (transform.position.y > currentMaxY) is_jumping = false;
         }

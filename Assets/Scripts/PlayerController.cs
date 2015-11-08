@@ -48,10 +48,13 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 move = (v * cam.transform.forward + h * cam.transform.right) * speed;
         m_Rigidbody.velocity = move;
-        /*Transform dir = camera.transform;
- 
-        //m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * 10;
-        m_Rigidbody.velocity = (v * dir.forward + h * dir.right) * 10;*/
+
+        float step = speed * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(m_Rigidbody.transform.forward, move, step, 0.0F);
+        Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
+        newDir.Scale(new Vector3(1, 0, 1));
+        transform.rotation = Quaternion.LookRotation(newDir);
+       
 
         if (is_jumping)
         {

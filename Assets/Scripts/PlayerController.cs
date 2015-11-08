@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour {
 
         float step = speed * Time.deltaTime;
         Vector3 newDir = Vector3.RotateTowards(m_Rigidbody.transform.forward, move, step, 0.0F);
-        Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
+        //Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
         newDir.Scale(new Vector3(1, 0, 1));
         newDir.Normalize();
         transform.rotation = Quaternion.LookRotation(newDir);

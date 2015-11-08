@@ -40,8 +40,22 @@ public class CameraFollow : MonoBehaviour
 
     public void ResetCamera()
     {
+        float camY = height;
+        Debug.DrawLine(transform.position, transform.position + Vector3.up, Color.yellow);
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, Vector3.up, out hitInfo, height))
+        {
+            camY += height - hitInfo.distance;
+        }
+        else if (Physics.Raycast(transform.position, transform.position + Vector3.down, out hitInfo, 20f))
+        {
+            Debug.Log("Cam Under terrain");
+            camY += hitInfo.distance;
+        }
+
         transform.position = new Vector3(targetTransform.transform.position.x,
-                                        height,
+                                        camY,
                                         targetTransform.transform.position.z - distance);
     }
 }

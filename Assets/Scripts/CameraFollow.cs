@@ -18,7 +18,6 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate() {
         float currDistance = Vector3.Distance(transform.position, targetTransform.transform.position);
-        //animation.Play("Walk");
         Debug.DrawLine(targetTransform.transform.position, transform.position, Color.red);
         transform.LookAt(targetTransform.transform);
 

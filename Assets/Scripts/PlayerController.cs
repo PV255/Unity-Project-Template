@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public float speed;
 
     private float currentMaxY;
+    private Animator m_Animator;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour {
         gravity = 5f;
 
         is_jumping = false;
+        m_Animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -44,8 +46,8 @@ public class PlayerController : MonoBehaviour {
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
 
-        m_Rigidbody.velocity = (v * cam.transform.forward + h * cam.transform.right) * speed;
-
+        Vector3 move = (v * cam.transform.forward + h * cam.transform.right) * speed;
+        m_Rigidbody.velocity = move;
         /*Transform dir = camera.transform;
  
         //m_Rigidbody.velocity = (v * Vector3.forward + h * Vector3.right) * 10;
@@ -66,5 +68,55 @@ public class PlayerController : MonoBehaviour {
 
 
         m_Rigidbody.velocity += Vector3.down * gravity;
+
+        //---------
+        if (move.magnitude > 1f) move.Normalize();
+        move = transform.InverseTransformDirection(move);
+
+        // send input and other state parameters to the animator
+        UpdateAnimator(move);
+    }
+
+    void UpdateAnimator(Vector3 move)
+    {
+        if (!Vector3.Equals(move, Vector3.zero))
+            m_Animator.SetBool("moving", true);
+        else
+            m_Animator.SetBool("moving", false);
+
+
+        //// update the animator parameters
+        //m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+        //m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
+        //m_Animator.SetBool("Crouch", m_Crouching);
+        //m_Animator.SetBool("OnGround", m_IsGrounded);
+        //if (!m_IsGrounded)
+        //{
+        //    m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+        //}
+
+        //// calculate which leg is behind, so as to leave that leg trailing in the jump animation
+        //// (This code is reliant on the specific run cycle offset in our animations,
+        //// and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
+        //float runCycle =
+        //    Mathf.Repeat(
+        //        m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1);
+        //float jumpLeg = (runCycle < k_Half ? 1 : -1) * m_ForwardAmount;
+        //if (m_IsGrounded)
+        //{
+        //    m_Animator.SetFloat("JumpLeg", jumpLeg);
+        //}
+
+        //// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
+        //// which affects the movement speed because of the root motion.
+        //if (m_IsGrounded && move.magnitude > 0)
+        //{
+        //    m_Animator.speed = m_AnimSpeedMultiplier;
+        //}
+        //else
+        //{
+        //    // don't use that while airborne
+        //    m_Animator.speed = 1;
+        //}
     }
 }

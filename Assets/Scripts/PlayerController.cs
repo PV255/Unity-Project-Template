@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 newDir = Vector3.RotateTowards(m_Rigidbody.transform.forward, move, step, 0.0F);
         Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
         newDir.Scale(new Vector3(1, 0, 1));
+        newDir.Normalize();
         transform.rotation = Quaternion.LookRotation(newDir);
        
 
@@ -86,6 +87,11 @@ public class PlayerController : MonoBehaviour {
             m_Animator.SetBool("moving", true);
         else
             m_Animator.SetBool("moving", false);
+
+        if (is_jumping)
+            m_Animator.SetBool("jumping", true);
+        else
+            m_Animator.SetBool("jumping", false);
 
 
         //// update the animator parameters

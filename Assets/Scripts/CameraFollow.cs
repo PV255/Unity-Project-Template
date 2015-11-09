@@ -50,7 +50,6 @@ public class CameraFollow : MonoBehaviour
         }
         else if (Physics.Raycast(transform.position, transform.position + Vector3.down, out hitInfo, 20f))
         {
-            Debug.Log("Cam Under terrain");
             camY += hitInfo.distance;
         }
 

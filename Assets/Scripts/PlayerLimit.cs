@@ -29,7 +29,7 @@ public class PlayerLimit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -5)
+        if (transform.position.y < -10)
         {
             ResetLevel();
         }
@@ -43,6 +43,12 @@ public class PlayerLimit : MonoBehaviour
         }
     }
 
+    public void ResetLevel()
+    {
+        transform.position = startPos;
+        mainCamera.GetComponent<CameraFollow>().ResetCamera();
+    }
+
     public void AddScore(int ammount)
     {
         score += ammount;
@@ -52,12 +58,6 @@ public class PlayerLimit : MonoBehaviour
     public void SetStartPos(Vector3 position)
     {
         startPos = position;
-    }
-
-    private void ResetLevel()
-    {
-        transform.position = startPos;
-        mainCamera.GetComponent<CameraFollow>().ResetCamera();
     }
 
     private void SetScoreText()

@@ -5,6 +5,7 @@ public class CameraFollow : MonoBehaviour
 {
 
     public Transform targetTransform;
+    public Transform lookAt;
     public float moveSpeed;
     public float distance;
     public float height;
@@ -19,23 +20,27 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate() {
         float currDistance = Vector3.Distance(transform.position, targetTransform.transform.position);
         Debug.DrawLine(targetTransform.transform.position, transform.position, Color.red);
-        transform.LookAt(targetTransform.transform);
+        transform.LookAt(targetTransform);
 
         //move towards the player
+        //if (currDistance > distance) {
+        //    Vector3 difference = targetTransform.position - transform.position;
+        //    if (Mathf.Abs(difference.y) > height)
+        //        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        //    else
+        //        transform.position += Vector3.Scale(transform.forward, new Vector3(1,0,1))
+        //            * moveSpeed * Time.deltaTime;
+        //}
+
         if (currDistance > distance) {
-            Vector3 difference = targetTransform.position - transform.position;
-            if (Mathf.Abs(difference.y) > height)
-                transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            else
-                transform.position += Vector3.Scale(transform.forward, new Vector3(1,0,1))
-                    * moveSpeed * Time.deltaTime;
+            Debug.Log(transform.forward);
+            transform.position += transform.forward * (currDistance - distance);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(targetTransform.transform);
     }
 
     public void ResetCamera()

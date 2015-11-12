@@ -54,6 +54,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 493618}
   - 95: {fileID: 9505032}
+  - 65: {fileID: 6566256}
+  - 65: {fileID: 6555566}
+  - 114: {fileID: 11450966}
   m_Layer: 0
   m_Name: smasher
   m_TagString: Untagged
@@ -442,7 +445,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.13969636, z: 0}
+  m_LocalPosition: {x: 0, y: 1.13969636, z: -.0520000011}
   m_LocalScale: {x: .349999994, y: .349999994, z: .349999994}
   m_Children: []
   m_Father: {fileID: 493618}
@@ -738,7 +741,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111946}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: -.385761291, y: -1.78475857, z: 79.8469086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -785,6 +788,30 @@ Transform:
   - {fileID: 420736}
   m_Father: {fileID: 416390}
   m_RootOrder: 0
+--- !u!65 &6555566
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.33449411, y: 2.80576158, z: 1.34355259}
+  m_Center: {x: -.000885721412, y: .902880788, z: .171783447}
+--- !u!65 &6566256
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.74746704, y: 2.98028231, z: 1.57471478}
+  m_Center: {x: .014555702, y: .990141153, z: .24446106}
 --- !u!95 &9505032
 Animator:
   serializedVersion: 3
@@ -802,6 +829,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11450966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f403bf292f75d4eaee42acdcf0ac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &13799560
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

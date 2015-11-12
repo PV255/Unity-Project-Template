@@ -26,7 +26,7 @@ public class EnemyScript : MonoBehaviour
                 Debug.Log("ENEMY DEAD");
                 dead = true;
                 animator.Play("dead");
-                StartCoroutine(KillOnAnimationEnd());
+                //StartCoroutine(KillOnAnimationEnd());
             }
 
         }
@@ -59,9 +59,9 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    private IEnumerator KillOnAnimationEnd()
+    private void KillOnAnimationEnd()
     {
-        yield return new WaitForSeconds(3.95f);
+        //yield return new WaitForSeconds(3.95f);
         this.gameObject.SetActive(false);
     }
 }

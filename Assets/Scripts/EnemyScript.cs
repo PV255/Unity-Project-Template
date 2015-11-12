@@ -23,6 +23,7 @@ public class EnemyScript : MonoBehaviour
         {
             if (touchingEnemy)
             {
+                Debug.Log("ENEMY DEAD");
                 dead = true;
                 animator.Play("dead");
                 StartCoroutine(KillOnAnimationEnd());

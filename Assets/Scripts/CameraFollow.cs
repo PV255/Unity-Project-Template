@@ -33,7 +33,6 @@ public class CameraFollow : MonoBehaviour
         //}
 
         if (currDistance > distance) {
-            Debug.Log(transform.forward);
             transform.position += transform.forward * (currDistance - distance);
         }
     }

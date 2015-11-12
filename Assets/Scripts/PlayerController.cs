@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 
     private float currentMaxY;
     private Animator m_Animator;
+    private Transform cameraPivot;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 
         is_jumping = false;
         m_Animator = GetComponent<Animator>();
+        cameraPivot = transform.Find("CameraPivot");
     }
 
     void Update()
@@ -59,13 +61,13 @@ public class PlayerController : MonoBehaviour {
 
         if (is_jumping)
         {
-            transform.position += Vector3.up * 0.18f;
+            transform.position += Vector3.up * 10f * Time.deltaTime;
 
             if (transform.position.y > currentMaxY) is_jumping = false;
         }
 
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, 0.3f))
+        if (Physics.Raycast(transform.position + (Vector3.up * 0.05f), Vector3.down, out hitInfo, 0.3f))
         {
             is_grounded = true;
         }

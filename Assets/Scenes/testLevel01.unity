@@ -310,7 +310,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 279404544}
-  - 114: {fileID: 279404545}
   m_Layer: 0
   m_Name: CameraPivot
   m_TagString: Untagged
@@ -330,20 +329,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1714486115}
   m_RootOrder: 3
---- !u!114 &279404545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 279404543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82da815b0d5a8cf42bc4ec68ccaec536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Rigidbody: {fileID: 0}
-  cam: {fileID: 363425901}
-  speed: 8
 --- !u!1 &363425901
 GameObject:
   m_ObjectHideFlags: 0

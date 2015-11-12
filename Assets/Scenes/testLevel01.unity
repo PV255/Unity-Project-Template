@@ -1531,6 +1531,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bcf4cae1edcbec498c042bf67610623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1466341387 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 111946, guid: bfd051e0bcaa44a4f95fd49d6d8c7515, type: 2}
+  m_PrefabInternal: {fileID: 1796674518}
+--- !u!114 &1466341393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466341387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ef3b15c32eb43108261a87963b8937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Path01
+  pathColor: {r: .944827557, g: 1, b: 0, a: 1}
+  nodes:
+  - {x: -.385761291, y: -1.78475904, z: 79.8469086}
+  - {x: .680752993, y: -1.78475904, z: 73.729187}
+  - {x: -1.95728016, y: -1.78475904, z: 73.2575302}
+  - {x: -.385761291, y: -1.78475904, z: 79.8469086}
+  nodeCount: 4
+  initialized: 1
+  initialName: New Path 1
 --- !u!1001 &1469101458
 Prefab:
   m_ObjectHideFlags: 0
@@ -1642,6 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f403bf292f75d4eaee42acdcf0ac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: 
 --- !u!65 &1618355692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2078,6 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f403bf292f75d4eaee42acdcf0ac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: 
 --- !u!4 &1757139836 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470620, guid: 6592124c7ce101d42a6eee9005311fb3, type: 2}
@@ -2124,6 +2151,14 @@ Prefab:
     - target: {fileID: 111946, guid: bfd051e0bcaa44a4f95fd49d6d8c7515, type: 2}
       propertyPath: m_Name
       value: smasher-rigged
+      objectReference: {fileID: 0}
+    - target: {fileID: 433322, guid: bfd051e0bcaa44a4f95fd49d6d8c7515, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.1166153
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450966, guid: bfd051e0bcaa44a4f95fd49d6d8c7515, type: 2}
+      propertyPath: path
+      value: Path01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfd051e0bcaa44a4f95fd49d6d8c7515, type: 2}

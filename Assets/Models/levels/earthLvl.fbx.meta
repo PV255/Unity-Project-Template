@@ -42,6 +42,8 @@ ModelImporter:
     100068: corridor01
     100070: "K\u0159ivka"
     100072: corridor_2
+    100074: arch
+    100076: obstacle
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -79,6 +81,8 @@ ModelImporter:
     400068: corridor01
     400070: "K\u0159ivka"
     400072: corridor_2
+    400074: arch
+    400076: obstacle
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle
@@ -101,6 +105,11 @@ ModelImporter:
     2300038: corridor
     2300040: corridor01
     2300042: corridor_2
+    2300044: Krychle_1
+    2300046: Krychle_2
+    2300048: Krychle_3_2
+    2300050: arch
+    2300052: obstacle
     3300000: Koule_2
     3300002: Koule_4
     3300004: Krychle
@@ -123,6 +132,11 @@ ModelImporter:
     3300038: corridor
     3300040: corridor01
     3300042: corridor_2
+    3300044: Krychle_1
+    3300046: Krychle_2
+    3300048: Krychle_3_2
+    3300050: arch
+    3300052: obstacle
     4300000: Krychle
     4300002: Koule_2
     4300004: Krychle_2_2
@@ -145,6 +159,11 @@ ModelImporter:
     4300038: corridor
     4300040: corridor01
     4300042: corridor_2
+    4300044: Krychle_1
+    4300046: Krychle_2
+    4300048: Krychle_3_2
+    4300050: arch
+    4300052: obstacle
     9500000: //RootNode
   materials:
     importMaterials: 1

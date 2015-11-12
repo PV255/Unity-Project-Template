@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 598fa9c11d051a748862c9159cbf1950
+timeCreated: 1447329101
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: arch
+    100002: CINEMA4D_editor
+    100004: corridor
+    100006: corridor_2
+    100008: //RootNode
+    100010: Koule_2
+    100012: Koule_4
+    100014: Krychle
+    100016: Krychle_1
+    100018: Krychle_1_2
+    100020: Krychle_1_4
+    100022: Krychle_1_5
+    100024: Krychle_2
+    100026: Krychle_2_2
+    100028: Krychle_3
+    100030: Krychle_3_3
+    100032: Krychle_4_2
+    100034: Krychle_5_2
+    100036: Krychle_6_2
+    100038: "K\u0159ivka"
+    100040: obstacle
+    100042: part01
+    100044: part02
+    100046: "V\xE1lec"
+    400000: arch
+    400002: CINEMA4D_editor
+    400004: corridor
+    400006: corridor_2
+    400008: //RootNode
+    400010: Koule_2
+    400012: Koule_4
+    400014: Krychle
+    400016: Krychle_1
+    400018: Krychle_1_2
+    400020: Krychle_1_4
+    400022: Krychle_1_5
+    400024: Krychle_2
+    400026: Krychle_2_2
+    400028: Krychle_3
+    400030: Krychle_3_3
+    400032: Krychle_4_2
+    400034: Krychle_5_2
+    400036: Krychle_6_2
+    400038: "K\u0159ivka"
+    400040: obstacle
+    400042: part01
+    400044: part02
+    400046: "V\xE1lec"
+    2300000: arch
+    2300002: corridor
+    2300004: corridor_2
+    2300006: Koule_2
+    2300008: Koule_4
+    2300010: Krychle
+    2300012: Krychle_1
+    2300014: Krychle_1_2
+    2300016: Krychle_1_4
+    2300018: Krychle_1_5
+    2300020: Krychle_2
+    2300022: Krychle_2_2
+    2300024: Krychle_3
+    2300026: Krychle_3_3
+    2300028: Krychle_4_2
+    2300030: Krychle_5_2
+    2300032: Krychle_6_2
+    2300034: obstacle
+    2300036: "V\xE1lec"
+    3300000: arch
+    3300002: corridor
+    3300004: corridor_2
+    3300006: Koule_2
+    3300008: Koule_4
+    3300010: Krychle
+    3300012: Krychle_1
+    3300014: Krychle_1_2
+    3300016: Krychle_1_4
+    3300018: Krychle_1_5
+    3300020: Krychle_2
+    3300022: Krychle_2_2
+    3300024: Krychle_3
+    3300026: Krychle_3_3
+    3300028: Krychle_4_2
+    3300030: Krychle_5_2
+    3300032: Krychle_6_2
+    3300034: obstacle
+    3300036: "V\xE1lec"
+    4300000: Krychle_1_5
+    4300002: Krychle_3_3
+    4300004: Krychle_4_2
+    4300006: Krychle_5_2
+    4300008: Krychle_6_2
+    4300010: Krychle_1_4
+    4300012: "V\xE1lec"
+    4300014: Koule_4
+    4300016: Krychle_3
+    4300018: Krychle_1_2
+    4300020: Krychle_2_2
+    4300022: Koule_2
+    4300024: corridor
+    4300026: obstacle
+    4300028: Krychle_2
+    4300030: Krychle_1
+    4300032: Krychle
+    4300034: arch
+    4300036: corridor_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

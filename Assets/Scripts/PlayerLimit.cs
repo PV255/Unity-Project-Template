@@ -29,7 +29,7 @@ public class PlayerLimit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -10)
+        if (transform.position.y < -30) // temp edit for Eart level
         {
             ResetLevel();
         }

@@ -16,12 +16,14 @@ public class EnemyScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         dead = false;
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(path),
-            "time", 5,
-            "looptype", iTween.LoopType.loop,
-            "orientToPath", true, 
-            "delay", 0,
-            "easetype", iTween.EaseType.linear));
+        if (path != null) {
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(path),
+                "time", 5,
+                "looptype", iTween.LoopType.loop,
+                "orientToPath", true, 
+                "delay", 0,
+                "easetype", iTween.EaseType.linear));
+        }
     }
 
     // Update is called once per frame

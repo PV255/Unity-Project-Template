@@ -46,6 +46,8 @@ ModelImporter:
     100076: obstacle
     100078: Camera
     100080: Lamp
+    100082: "Segmentovan\xFD_povrch"
+    100084: platform
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -87,6 +89,8 @@ ModelImporter:
     400076: obstacle
     400078: Camera
     400080: Lamp
+    400082: "Segmentovan\xFD_povrch"
+    400084: platform
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle
@@ -114,6 +118,7 @@ ModelImporter:
     2300048: Krychle_3_2
     2300050: arch
     2300052: obstacle
+    2300054: platform
     3300000: Koule_2
     3300002: Koule_4
     3300004: Krychle
@@ -141,6 +146,7 @@ ModelImporter:
     3300048: Krychle_3_2
     3300050: arch
     3300052: obstacle
+    3300054: platform
     4300000: Krychle
     4300002: Koule_2
     4300004: Krychle_2_2
@@ -168,6 +174,7 @@ ModelImporter:
     4300048: Krychle_3_2
     4300050: arch
     4300052: obstacle
+    4300054: platform
     9500000: //RootNode
   materials:
     importMaterials: 1

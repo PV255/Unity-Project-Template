@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2387638}
   - 65: {fileID: 6535672}
   m_Layer: 0
-  m_Name: obstbBig
+  m_Name: obstbBigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

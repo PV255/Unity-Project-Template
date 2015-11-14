@@ -48,6 +48,7 @@ ModelImporter:
     100080: Lamp
     100082: "Segmentovan\xFD_povrch"
     100084: platform
+    100086: CINEMA4D_editor_2
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -91,6 +92,7 @@ ModelImporter:
     400080: Lamp
     400082: "Segmentovan\xFD_povrch"
     400084: platform
+    400086: CINEMA4D_editor_2
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle

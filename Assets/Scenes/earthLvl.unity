@@ -1404,7 +1404,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 403784, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.409999996
+      value: -.170000002
       objectReference: {fileID: 0}
     - target: {fileID: 403784, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1432,7 +1432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403784, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11489980, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
       propertyPath: lookAt
@@ -1446,7 +1446,16 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 405032, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .219999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 405032, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.26999998
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6551186, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &883109433
@@ -1644,6 +1653,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &939482364 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192412, guid: 69067d5b86bbb9d4ea71c12d148ec4be, type: 2}
+  m_PrefabInternal: {fileID: 881652698}
+--- !u!135 &939482365
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 939482364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.83459663
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &957817284 stripped
 Transform:
   m_PrefabParentObject: {fileID: 489082, guid: db142345ac58e934ca8e75cd66192e55, type: 2}

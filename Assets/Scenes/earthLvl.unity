@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f403bf292f75d4eaee42acdcf0ac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: 
 --- !u!1 &694978339 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100048, guid: 8fc2d4610a5768940a5f5974c2fa7595, type: 3}

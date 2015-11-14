@@ -44,6 +44,8 @@ ModelImporter:
     100072: corridor_2
     100074: arch
     100076: obstacle
+    100078: Camera
+    100080: Lamp
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -83,6 +85,8 @@ ModelImporter:
     400072: corridor_2
     400074: arch
     400076: obstacle
+    400078: Camera
+    400080: Lamp
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle

@@ -7,6 +7,7 @@ TagManager:
   - Boundary
   - Enemy
   - Points
+  - BackCollider
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - BackCollider
   - 
   - 
   - 

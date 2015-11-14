@@ -16,7 +16,7 @@ public class EnemyScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         dead = false;
-        if (path != null) {
+        if (path != "") {
             iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(path),
                 "time", 5,
                 "looptype", iTween.LoopType.loop,

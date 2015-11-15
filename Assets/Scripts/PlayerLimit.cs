@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+
 
 public class PlayerLimit : MonoBehaviour
 {
-    public Text scoreText;
+    
     public Material normal;
     public Material attack;
 
     private Vector3 startPos;
     private GameObject mainCamera;
-    private int score;
+
     private Animator animator;
     private Renderer bodyRenderer;
    
@@ -20,8 +20,6 @@ public class PlayerLimit : MonoBehaviour
     {
         mainCamera = GameObject.Find("Main Camera");
         startPos = transform.position;
-        score = 0;
-        SetScoreText();
         animator = GetComponent<Animator>();
         bodyRenderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
     }
@@ -49,19 +47,8 @@ public class PlayerLimit : MonoBehaviour
         mainCamera.GetComponent<CameraFollow>().ResetCamera();
     }
 
-    public void AddScore(int ammount)
-    {
-        score += ammount;
-        SetScoreText();
-    }
-
     public void SetStartPos(Vector3 position)
     {
         startPos = position;
-    }
-
-    private void SetScoreText()
-    {
-        scoreText.text = "Score: " + score; 
     }
 }

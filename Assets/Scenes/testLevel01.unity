@@ -132,6 +132,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6592124c7ce101d42a6eee9005311fb3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &239917278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 239917280}
+  - 114: {fileID: 239917279}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &239917279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239917278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962345d5f3c76144fae7ecdbc5e6742d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 327155576}
+  scoreText: {fileID: 1696673675}
+--- !u!4 &239917280
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239917278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1327582124}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &249925159
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +413,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1714486115}
   m_RootOrder: 3
+--- !u!1 &327155575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 327155577}
+  - 114: {fileID: 327155576}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &327155576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327155575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e247f1dd1d2e5748b2056a144ba28e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: earthLvl
+--- !u!4 &327155577
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327155575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.5997124, y: 4.31765604, z: 5.19000006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1 &363425901
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +485,7 @@ Transform:
   m_Children:
   - {fileID: 1999684267}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &363425903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +739,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &765581027
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +778,7 @@ Transform:
   - {fileID: 268245110}
   - {fileID: 249925160}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &840157752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,8 +1436,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1696673676}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 239917280}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1792,7 +1874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6294a7a237c11ca4a846b80f0af5172c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1696673675}
   normal: {fileID: 2100000, guid: 2618dd969cf75644f8f995ad20da8f19, type: 2}
   attack: {fileID: 2100000, guid: 2787bb0a8ae21924c99ac3b1ccf8da58, type: 2}
 --- !u!1 &1650587400 stripped
@@ -1987,7 +2068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6294a7a237c11ca4a846b80f0af5172c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1696673675}
   normal: {fileID: 2100000, guid: 2618dd969cf75644f8f995ad20da8f19, type: 2}
   attack: {fileID: 2100000, guid: 2787bb0a8ae21924c99ac3b1ccf8da58, type: 2}
 --- !u!114 &1714486121

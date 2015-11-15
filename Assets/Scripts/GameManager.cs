@@ -48,4 +48,10 @@ public class GameManager : MonoBehaviour {
     {
         scoreText.text = "Score: " + score;
     }
+
+    void OnLevelWasLoaded(int level)
+    {
+        Debug.Log("New level was loaded");
+        setLevelManager(GameObject.Find("LevelManager").GetComponent<LevelManager>());
+    }
 }

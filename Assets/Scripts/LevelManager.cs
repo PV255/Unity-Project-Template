@@ -10,10 +10,11 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
         gameManager = GameManager.Instance;
         gameManager.setLevelManager(this);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
 

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
 
-    private GameObject levelManager;
+    private LevelManager levelManager;
     public Text scoreText;
     private int score;
 
@@ -14,13 +14,13 @@ public class GameManager : MonoBehaviour {
         Instance = this;
         score = 0;
         SetScoreText();
+        
     }
 
 	// Use this for initialization
 	void Start () {
-        levelManager = GameObject.Find("LevelManager");
-        DontDestroyOnLoad(gameObject);
         
+        DontDestroyOnLoad(gameObject);
         SetScoreText();
     }
 	
@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void setLevelManager(LevelManager m)
+    {
+        levelManager = m;
+    }
 
     public void GoToNextLevel() {
         levelManager.GetComponent<LevelManager>().GoToNextLevel();

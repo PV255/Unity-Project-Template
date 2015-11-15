@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PointCollider : MonoBehaviour {
 
-    private GameObject gameManager;
+    private GameManager gameManager;
 
 	// Use this for initialization
 	void Start () {
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameManager.Instance;
 	}
 	
 	// Update is called once per frame

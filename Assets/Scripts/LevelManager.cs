@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LevelController : MonoBehaviour {
+public class LevelManager : MonoBehaviour {
 
     public string nextLevel;
 

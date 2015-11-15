@@ -3,14 +3,14 @@ using System.Collections;
 
 public class OnPortalEnter : MonoBehaviour
 {
-    private GameObject levelController;
+    private GameObject gameManager;
 
     void Start() {
-        levelController = GameObject.Find("LevelController");
+        gameManager = GameObject.Find("GameManager");
     }
 
     void OnCollisionEnter(Collision col)
     {
-        levelController.GetComponent<LevelController>().GoToNextLevel();
+        gameManager.GetComponent<GameManager>().GoToNextLevel();
     }
 }

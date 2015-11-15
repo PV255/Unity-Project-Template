@@ -1,7 +1,7 @@
 Initialize engine version: 5.2.1f1 (44735ea161b3)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dumx.dll 10.18.13.5582]
+    Version:  Direct3D 9.0c [nvd3dum.dll 10.18.13.5582]
     Renderer: NVIDIA GeForce GT 750M
     Vendor:   NVIDIA
     VRAM:     1990 MB (via DXGI)
@@ -17,19 +17,29 @@ Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\t
 Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.056 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+- Completed reload, in  0.047 seconds
+desktop: 1920x1080 60Hz; virtual: 4000x1280 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 22a0 -> priority: 1 
-  Thread -> id: 35c -> priority: 1 
+  Thread -> id: 14b8 -> priority: 1 
+  Thread -> id: 708 -> priority: 1 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 15.230015 ms
+UnloadTime: 6.061979 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 522.
-Total: 0.679113 ms (FindLiveObjects: 0.065003 ms CreateObjectMapping: 0.045331 ms MarkObjects: 0.546540 ms  DeleteObjects: 0.013684 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 985.
+Total: 0.610260 ms (FindLiveObjects: 0.081681 ms CreateObjectMapping: 0.052601 ms MarkObjects: 0.461009 ms  DeleteObjects: 0.013684 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.414675 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 985.
+Total: 0.616675 ms (FindLiveObjects: 0.091517 ms CreateObjectMapping: 0.056450 ms MarkObjects: 0.452456 ms  DeleteObjects: 0.014540 ms)
 

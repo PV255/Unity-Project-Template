@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
             SetScoreText();
             DontDestroyOnLoad(gameObject);
         }
+        setLevelManager(GameObject.Find("LevelManager").GetComponent<LevelManager>());
     }
 
 	// Use this for initialization
@@ -55,11 +56,5 @@ public class GameManager : MonoBehaviour {
     private void SetScoreText()
     {
         scoreText.text = "Score: " + score;
-    }
-
-    void OnLevelWasLoaded(int level)
-    {
-        Debug.Log("New level was loaded");
-        setLevelManager(GameObject.Find("LevelManager").GetComponent<LevelManager>());
     }
 }

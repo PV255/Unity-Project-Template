@@ -49,6 +49,13 @@ ModelImporter:
     100082: "Segmentovan\xFD_povrch"
     100084: platform
     100086: CINEMA4D_editor_2
+    100088: corridor_2_2
+    100090: corridor_3
+    100092: corridor_4
+    100094: part000
+    100096: part03
+    100098: part04
+    100100: part05
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -93,6 +100,13 @@ ModelImporter:
     400082: "Segmentovan\xFD_povrch"
     400084: platform
     400086: CINEMA4D_editor_2
+    400088: corridor_2_2
+    400090: corridor_3
+    400092: corridor_4
+    400094: part000
+    400096: part03
+    400098: part04
+    400100: part05
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle
@@ -121,6 +135,9 @@ ModelImporter:
     2300050: arch
     2300052: obstacle
     2300054: platform
+    2300056: corridor_2_2
+    2300058: corridor_3
+    2300060: corridor_4
     3300000: Koule_2
     3300002: Koule_4
     3300004: Krychle
@@ -149,6 +166,9 @@ ModelImporter:
     3300050: arch
     3300052: obstacle
     3300054: platform
+    3300056: corridor_2_2
+    3300058: corridor_3
+    3300060: corridor_4
     4300000: Krychle
     4300002: Koule_2
     4300004: Krychle_2_2
@@ -177,6 +197,9 @@ ModelImporter:
     4300050: arch
     4300052: obstacle
     4300054: platform
+    4300056: corridor_2_2
+    4300058: corridor_3
+    4300060: corridor_4
     9500000: //RootNode
   materials:
     importMaterials: 1

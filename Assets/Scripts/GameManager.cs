@@ -11,16 +11,24 @@ public class GameManager : MonoBehaviour {
     private int score;
 
     void Awake() {
-        Instance = this;
-        score = 0;
-        SetScoreText();
-        
+        if (Instance)
+        {
+            foreach (Transform child in transform) {
+                DestroyImmediate(child.gameObject);
+            }
+            DestroyImmediate(this);
+        }
+        else{
+            Instance = this;
+            score = 0;
+            SetScoreText();
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
 	// Use this for initialization
 	void Start () {
         
-        DontDestroyOnLoad(gameObject);
         SetScoreText();
     }
 	

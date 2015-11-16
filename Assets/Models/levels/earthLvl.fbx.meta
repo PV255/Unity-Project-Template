@@ -59,6 +59,7 @@ ModelImporter:
     100102: Osy
     100104: corritor
     100106: roof
+    100108: top
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -113,6 +114,7 @@ ModelImporter:
     400102: Osy
     400104: corritor
     400106: roof
+    400108: top
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle
@@ -147,6 +149,7 @@ ModelImporter:
     2300062: Osy
     2300064: corritor
     2300066: roof
+    2300068: top
     3300000: Koule_2
     3300002: Koule_4
     3300004: Krychle
@@ -181,6 +184,7 @@ ModelImporter:
     3300062: Osy
     3300064: corritor
     3300066: roof
+    3300068: top
     4300000: Krychle
     4300002: Koule_2
     4300004: Krychle_2_2
@@ -215,6 +219,7 @@ ModelImporter:
     4300062: Osy
     4300064: corritor
     4300066: roof
+    4300068: top
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     private float currentMaxY;
     private Animator m_Animator;
     private Transform cameraPivot;
-
+    
     void Start()
     {
         //camera = GameObject.Find("cstmCamera");
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
         is_jumping = false;
         m_Animator = GetComponent<Animator>();
         cameraPivot = transform.Find("CameraPivot");
+
     }
 
     void Update()
@@ -46,11 +47,21 @@ public class PlayerController : MonoBehaviour {
     {
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
-
-
+        
         Vector3 move = (v * cam.transform.forward + h * cam.transform.right) * speed;
-        m_Rigidbody.velocity = move;
 
+        if (move.magnitude < 0.001f){
+            CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
+            PhysicMaterial phys = col.material;
+            phys.staticFriction = 100; // 100 is place holder
+        }else{
+            CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
+            PhysicMaterial phys = col.material;
+            phys.staticFriction = 0;
+        }
+
+        m_Rigidbody.velocity = move;
+        
         float step = speed * Time.deltaTime;
         Vector3 newDir = Vector3.RotateTowards(m_Rigidbody.transform.forward, move, step, 0.0F);
         //Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
@@ -71,8 +82,7 @@ public class PlayerController : MonoBehaviour {
         {
             is_grounded = true;
         }
-
-
+        
         m_Rigidbody.velocity += Vector3.down * gravity;
 
         //---------

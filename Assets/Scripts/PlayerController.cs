@@ -47,8 +47,16 @@ public class PlayerController : MonoBehaviour {
     {
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
-        
-        Vector3 move = (v * cam.transform.forward + h * cam.transform.right) * speed;
+
+        Vector3 flatFWD = cam.transform.forward;
+        flatFWD.y = 0;
+        flatFWD.Normalize();
+
+        Vector3 flatRT = cam.transform.right;
+        flatRT.y = 0;
+        flatRT.Normalize();
+
+        Vector3 move = (v * flatFWD + h * flatRT) * speed;
 
         if (move.magnitude < 0.001f){
             CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();

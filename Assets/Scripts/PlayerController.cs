@@ -58,13 +58,13 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 move = (v * flatFWD + h * flatRT) * speed;
 
-        if (move.magnitude < 0.001f){
-            CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
-            PhysicMaterial phys = col.material;
-            phys.staticFriction = 100; // 100 is place holder
+        CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
+        PhysicMaterial phys = col.material;
+        bool useHigherFriction = (v == 0) && (h == 0); // move.magnitude < 0.001f;
+
+        if (useHigherFriction){
+            phys.staticFriction = 10;
         }else{
-            CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
-            PhysicMaterial phys = col.material;
             phys.staticFriction = 0;
         }
 

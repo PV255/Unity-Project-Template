@@ -10,11 +10,11 @@ public class CameraFollow : MonoBehaviour
     public float distance;
     public float height;
 
-
+    public Transform backCollider;
     
     void Start()
     {
-        
+
     }
 
     void FixedUpdate() {
@@ -34,6 +34,16 @@ public class CameraFollow : MonoBehaviour
 
         if (currDistance > distance) {
             transform.position += transform.forward * (currDistance - distance);
+        }
+
+        transform.LookAt(new Vector3(
+            lookAt.position.x,
+            lookAt.position.y + 1.5f,
+            lookAt.position.z
+        ));
+
+        if (backCollider != null) {
+            backCollider.position = new Vector3(transform.position.x, 0, transform.position.z);
         }
     }
 

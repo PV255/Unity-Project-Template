@@ -23,6 +23,8 @@ public class EnemyScript : MonoBehaviour
                 "orientToPath", true, 
                 "delay", 0,
                 "easetype", iTween.EaseType.linear));
+
+            animator.SetBool("isWalking", true);
         }
     }
 
@@ -35,7 +37,10 @@ public class EnemyScript : MonoBehaviour
             {
                 Debug.Log("ENEMY DEAD");
                 dead = true;
-                animator.Play("dead");
+                if(path != "") {
+                    iTween.Stop();
+                }
+                animator.SetBool("isDead", true);
                 //StartCoroutine(KillOnAnimationEnd());
             }
 

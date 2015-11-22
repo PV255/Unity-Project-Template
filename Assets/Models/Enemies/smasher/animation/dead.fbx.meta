@@ -57,7 +57,7 @@ ModelImporter:
     400046: mixamorig:Spine
     400048: mixamorig:Spine1
     400050: mixamorig:Spine2
-    7400000: dead
+    7400000: smasherDead
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -80,7 +80,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: dead
+      name: smasherDead
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 157

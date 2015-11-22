@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour {
 
     private LevelManager levelManager;
     public Text scoreText;
+    public Text livesText;
     private int score;
+    private int lives;
 
     void Awake() {
         if (Instance)
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour {
         else{
             Instance = this;
             score = 0;
+            lives = 5;
             SetScoreText();
             DontDestroyOnLoad(gameObject);
         }
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         
         SetScoreText();
+        SetLivesText();
     }
 	
 	// Update is called once per frame
@@ -53,8 +57,25 @@ public class GameManager : MonoBehaviour {
         SetScoreText();
     }
 
+    public void AddLife()
+    {
+        lives++;
+        SetLivesText();
+    }
+
+    public void DestroyLife()
+    {
+        lives--;
+        SetLivesText();
+    }
+
     private void SetScoreText()
     {
         scoreText.text = "Score: " + score;
+    }
+
+    private void SetLivesText()
+    {
+        livesText.text = "lives: " + lives;
     }
 }

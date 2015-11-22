@@ -52,22 +52,24 @@ public class CameraFollow : MonoBehaviour
     {
     }
 
-    public void ResetCamera()
+    public void ResetCamera(Vector3 position)
     {
-        float camY = height;
+        //float camY = height;
 
-        RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, Vector3.up, out hitInfo, height))
-        {
-            camY += height - hitInfo.distance;
-        }
-        else if (Physics.Raycast(transform.position, transform.position + Vector3.down, out hitInfo, 20f))
-        {
-            camY += hitInfo.distance;
-        }
+        //RaycastHit hitInfo;
+        //if (Physics.Raycast(transform.position, Vector3.up, out hitInfo, height))
+        //{
+        //    camY += height - hitInfo.distance;
+        //}
+        //else if (Physics.Raycast(transform.position, transform.position + Vector3.down, out hitInfo, 20f))
+        //{
+        //    camY += hitInfo.distance;
+        //}
 
-        transform.position = new Vector3(targetTransform.transform.position.x,
-                                        camY,
-                                        targetTransform.transform.position.z - distance);
+        //transform.position = new Vector3(targetTransform.transform.position.x,
+        //                                camY,
+        //                                targetTransform.transform.position.z - distance);
+
+        transform.position = position;
     }
 }

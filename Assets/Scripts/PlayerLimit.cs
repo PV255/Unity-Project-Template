@@ -9,6 +9,7 @@ public class PlayerLimit : MonoBehaviour
     public Material attack;
 
     private Vector3 startPos;
+    private Vector3 cameraStartPos;
     private GameObject mainCamera;
 
     private Animator animator;
@@ -18,16 +19,16 @@ public class PlayerLimit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera");
         startPos = transform.position;
         animator = GetComponent<Animator>();
         bodyRenderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
+        mainCamera = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -30) // temp edit for Eart level
+        if (transform.position.y < -30) // temp edit for Earth level
         {
             ResetLevel();
         }
@@ -44,11 +45,12 @@ public class PlayerLimit : MonoBehaviour
     public void ResetLevel()
     {
         transform.position = startPos;
-        mainCamera.GetComponent<CameraFollow>().ResetCamera();
+        mainCamera.GetComponent<CameraFollow>().ResetCamera(cameraStartPos);
     }
 
-    public void SetStartPos(Vector3 position)
+    public void SetStartPos(Vector3 position, Vector3 cameraPos)
     {
         startPos = position;
+        cameraStartPos = cameraPos;
     }
 }

@@ -23,7 +23,7 @@ public class Snake : MonoBehaviour {
     public GameObject newPortal;
     public GameObject iniPortal;
     public GameObject iniPortal2;
-    Vector2 dir = Vector2.right;
+    Vector2 dir = Vector2.left;
     private List<Transform> tail = new List<Transform>();
     bool ate = false;
     bool portal = false;
@@ -54,7 +54,7 @@ public class Snake : MonoBehaviour {
     {
         if (portal) { return; }
         // Food?
-        if (coll.name.StartsWith("foodPrefab"))
+        if (coll.name.StartsWith(foodPrefab.name))
         {
             // Get longer in next Move call
             ate = true;
@@ -87,8 +87,45 @@ public class Snake : MonoBehaviour {
             }
             if (onIndex != null)
             {
+
+                Vector3 head = new Vector3(dir.x,dir.y,0);
+                Vector3 moveDirection = head;
+                //transform.rotation = Quaternion.identity;
+                if (moveDirection != Vector3.zero)
+                {
+                    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+                    if (angle < 0)
+                    {
+                        angle = -1 * Mathf.Abs(Mathf.RoundToInt(angle)) / 90 * 90;
+                    }
+                    else
+                    {
+                        angle =Mathf.RoundToInt(angle)  / 90 * 90;
+                    }
+                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+                }
                 dir = onIndex.outputPortal.getHeading();
+                //transform.position = new Vector2(0,0);
+                if (dir == Vector2.left) {
+                    transform.rotation = new Quaternion(0, 0, 0, 1);
+                }
+                if (dir == Vector2.right) {
+                    transform.rotation = new Quaternion(0, 1, 0, 0);
+                }
+                if (dir == Vector2.down)
+                {
+                    transform.rotation = new Quaternion(1, 1, 0, 0);
+                }
+                if (dir == Vector2.up)
+                {
+                    transform.rotation = new Quaternion(1, -1, 0, 0);
+                }
+                Debug.Log(transform.rotation);
+                //transform.rotation = Quaternion.RotateTowards(transform.rotation,new Quaternion(head.x,head.y,head.z,1) ,360);
+                //transform.rotation = Quaternion.LookRotation(new Vector3(0,dir.x,dir.y));
+                //transform.LookAt(onIndex.outputPortal.getHeading());
                 transform.position = onIndex.outputPortal.getPosition();
+                
             }
 
         }
@@ -106,6 +143,7 @@ public class Snake : MonoBehaviour {
                 Destroy(ta.gameObject);
             }
             tail = new List<Transform>();
+            
             transform.position = new Vector2(-7, 1);
         }
     }
@@ -114,17 +152,17 @@ public class Snake : MonoBehaviour {
         portal = false;
         Vector2 currentPossition = transform.position;
 
-        transform.Translate(dir * moveDistance);
-        transform.Rotate(dir, 0, Space.World);
+        transform.Translate(dir * moveDistance, Space.World);
+        
         if (ate) {
             SpawnFood();
-            tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, Quaternion.identity)).transform);
+            tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
             ate = false;
             
         }
         else if (tail.Count > 0) {
             tail.Last().position = currentPossition;
-
+            tail.Last().rotation = transform.rotation;
             tail.Insert(0, tail.Last());
             tail.RemoveAt(tail.Count - 1);
                 
@@ -165,10 +203,14 @@ public class Snake : MonoBehaviour {
         Vector2 pos;
         pos.x = x;
         pos.y = y;
+        if (pos.x > 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 + 1;
+        if (pos.x < 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 - 1;
+        if (pos.y < 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 - 1;
+        if (pos.y > 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 + 1;
         Debug.Log("Position food" + pos);
         // Instantiate the food at (x, y)
         Instantiate(foodPrefab,
-                    new Vector2(x, y),
+                    new Vector2(pos.x, pos.y),
                     Quaternion.identity); // default rotation
     }
 }

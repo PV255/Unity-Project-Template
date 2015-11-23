@@ -31,20 +31,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            if (touchingEnemy)
-            {
-                Debug.Log("ENEMY DEAD");
-                dead = true;
-                if(path != "") {
-                    iTween.Stop();
-                }
-                animator.SetBool("isDead", true);
-                //StartCoroutine(KillOnAnimationEnd());
-            }
-
-        }
+        
     }
 
 
@@ -62,7 +49,12 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            touchingEnemy = true;
+            if (other.GetComponent<PlayerController>().isAttacking())
+            {
+                killEnemy();
+            } else {
+                other.GetComponent<PlayerLimit>().killPlayer();
+            }
         }
     }
 
@@ -78,5 +70,16 @@ public class EnemyScript : MonoBehaviour
     {
         //yield return new WaitForSeconds(3.95f);
         this.gameObject.SetActive(false);
+    }
+
+    private void killEnemy() {
+        Debug.Log("ENEMY DEAD");
+        dead = true;
+        if (path != "")
+        {
+            iTween.Stop();
+        }
+        animator.SetBool("isDead", true);
+        //StartCoroutine(KillOnAnimationEnd());
     }
 }

@@ -34,7 +34,6 @@ public class PlayerLimit : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.K)) {
-            Debug.Log("ATTACK!!!");
             //animator.Play("Crouching");
             bodyRenderer.sharedMaterial = attack;
         } else {
@@ -44,6 +43,7 @@ public class PlayerLimit : MonoBehaviour
 
     public void ResetLevel()
     {
+        killPlayer();
         transform.position = startPos;
         mainCamera.GetComponent<CameraFollow>().ResetCamera(cameraStartPos);
     }
@@ -52,5 +52,10 @@ public class PlayerLimit : MonoBehaviour
     {
         startPos = position;
         cameraStartPos = cameraPos;
+    }
+
+    public void killPlayer() {
+        GameManager.Instance.GetComponent<GameManager>().DestroyLife();
+
     }
 }

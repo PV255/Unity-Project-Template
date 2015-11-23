@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
     private float currentMaxY;
     private Animator m_Animator;
     private Transform cameraPivot;
+
+    private bool attacking;
     
     void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour {
         gravity = 5f;
 
         is_jumping = false;
+        attacking = false;
         m_Animator = GetComponent<Animator>();
         cameraPivot = transform.Find("CameraPivot");
 
@@ -40,6 +43,13 @@ public class PlayerController : MonoBehaviour {
                 is_jumping = true;
                 currentMaxY = m_Rigidbody.transform.position.y + maxJump;
             }
+        }
+
+        if (Input.GetKey(KeyCode.K)) {
+            attacking = true;
+            Debug.Log("attacking");
+        } else {
+            attacking = false;
         }
     }
 
@@ -147,5 +157,9 @@ public class PlayerController : MonoBehaviour {
         //    // don't use that while airborne
         //    m_Animator.speed = 1;
         //}
+    }
+
+    public bool isAttacking() {
+        return attacking;
     }
 }

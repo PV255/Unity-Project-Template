@@ -39,6 +39,31 @@ ModelImporter:
     100062: "V\xE1lec"
     100064: "V\xE1lec_1"
     100066: "V\xE1lec_1_2"
+    100068: mixamorig_Head
+    100070: mixamorig_HeadTop_End
+    100072: mixamorig_Hips
+    100074: mixamorig_LeftArm
+    100076: mixamorig_LeftFoot
+    100078: mixamorig_LeftForeArm
+    100080: mixamorig_LeftHand
+    100082: mixamorig_LeftLeg
+    100084: mixamorig_LeftShoulder
+    100086: mixamorig_LeftToe_End
+    100088: mixamorig_LeftToeBase
+    100090: mixamorig_LeftUpLeg
+    100092: mixamorig_Neck
+    100094: mixamorig_RightArm
+    100096: mixamorig_RightFoot
+    100098: mixamorig_RightForeArm
+    100100: mixamorig_RightHand
+    100102: mixamorig_RightLeg
+    100104: mixamorig_RightShoulder
+    100106: mixamorig_RightToe_End
+    100108: mixamorig_RightToeBase
+    100110: mixamorig_RightUpLeg
+    100112: mixamorig_Spine
+    100114: mixamorig_Spine1
+    100116: mixamorig_Spine2
     400000: CINEMA4D_editor
     400002: Krychle
     400004: mixamorig:Head
@@ -73,6 +98,31 @@ ModelImporter:
     400062: "V\xE1lec"
     400064: "V\xE1lec_1"
     400066: "V\xE1lec_1_2"
+    400068: mixamorig_Head
+    400070: mixamorig_HeadTop_End
+    400072: mixamorig_Hips
+    400074: mixamorig_LeftArm
+    400076: mixamorig_LeftFoot
+    400078: mixamorig_LeftForeArm
+    400080: mixamorig_LeftHand
+    400082: mixamorig_LeftLeg
+    400084: mixamorig_LeftShoulder
+    400086: mixamorig_LeftToe_End
+    400088: mixamorig_LeftToeBase
+    400090: mixamorig_LeftUpLeg
+    400092: mixamorig_Neck
+    400094: mixamorig_RightArm
+    400096: mixamorig_RightFoot
+    400098: mixamorig_RightForeArm
+    400100: mixamorig_RightHand
+    400102: mixamorig_RightLeg
+    400104: mixamorig_RightShoulder
+    400106: mixamorig_RightToe_End
+    400108: mixamorig_RightToeBase
+    400110: mixamorig_RightUpLeg
+    400112: mixamorig_Spine
+    400114: mixamorig_Spine1
+    400116: mixamorig_Spine2
     2300000: Krychle
     2300002: "V\xE1lec"
     2300004: "V\xE1lec_1"

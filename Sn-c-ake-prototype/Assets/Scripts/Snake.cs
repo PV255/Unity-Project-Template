@@ -3,12 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-
 public class Snake : MonoBehaviour {
 
     public GameObject foodPrefab;
-    public GameObject background;
-    public AddPortal AddPortalSript;
 
     public Transform borderTop;
     public Transform borderBottom;
@@ -24,21 +21,18 @@ public class Snake : MonoBehaviour {
     public GameObject iniPortal;
     public GameObject iniPortal2;
     Vector2 dir = Vector2.right;
+
     private List<Transform> tail = new List<Transform>();
     bool ate = false;
     bool portal = false;
 	// Use this for initialization
 	void Start () {
-        background = GameObject.FindGameObjectWithTag("Background");
-        AddPortalSript = background.GetComponent<AddPortal>();
-
         InvokeRepeating("Move", moveTime, moveRate);
         SpawnFood();
 	}
 	
 	// Update is called once per frame
     void Update() {
-
         // Move in a new Direction?
         if (Input.GetKey(KeyCode.RightArrow))
             dir = Vector2.right;
@@ -72,12 +66,7 @@ public class Snake : MonoBehaviour {
             else {
                 transform.position = iniPortal2.transform.position;
             }
-        }else if(coll.name.StartsWith("PortalPrefab")){
-             // = GetComponent(AddPortal); 
-            Debug.Log("Pal topice ty kokot");
-            
-        } 
-        else
+        } else
         {
             // ToDo 'You lose' screen
             Debug.Log("collision with: " + coll.name);
@@ -86,7 +75,7 @@ public class Snake : MonoBehaviour {
                 Destroy(ta.gameObject);
             }
             tail = new List<Transform>();
-            transform.position = new Vector2(-7, 1);
+            transform.position = new Vector2(-6, 1);
         }
     }
 
@@ -95,7 +84,6 @@ public class Snake : MonoBehaviour {
         Vector2 currentPossition = transform.position;
 
         transform.Translate(dir * moveDistance);
-        transform.Rotate(dir, 0, Space.World);
         if (ate) {
             SpawnFood();
             tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, Quaternion.identity)).transform);
@@ -128,7 +116,7 @@ public class Snake : MonoBehaviour {
         if (inBounds(pos))
         {
             GameObject obj = (GameObject)Instantiate(newPortal, pos, Quaternion.identity);
-            //obj.transform.Rotate(new Vector3(90f, 0f, 0f));
+            obj.transform.Rotate(new Vector3(90f, 0f, 0f));
             obj.AddComponent<RemovePortal>();
         }
     }

@@ -1,27 +1,47 @@
 fileFormatVersion: 2
-guid: b7d76f0bebcd766429dd260dac8bc7c9
-timeCreated: 1448275488
+guid: 7d0f6d291fcf51e4bb2a510e94ae66ff
+timeCreated: 1448288630
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Hlava
-    100002: Ruce
-    100004: Telo
-    100006: //RootNode
-    400000: Hlava
-    400002: Ruce
-    400004: Telo
-    400006: //RootNode
-    2300000: Hlava
-    2300002: Ruce
-    2300004: Telo
-    3300000: Hlava
-    3300002: Ruce
-    3300004: Telo
-    4300000: Telo
-    4300002: Hlava
-    4300004: Ruce
+    100000: "Cylinder001 (Kop\xEDrovat)"
+    100002: Hlava
+    100004: //RootNode
+    100006: Ruka dole leva
+    100008: Ruka dole prava
+    100010: Ruka nahore leva
+    100012: Ruka nahore prava
+    100014: Telo
+    400000: "Cylinder001 (Kop\xEDrovat)"
+    400002: Hlava
+    400004: //RootNode
+    400006: Ruka dole leva
+    400008: Ruka dole prava
+    400010: Ruka nahore leva
+    400012: Ruka nahore prava
+    400014: Telo
+    2300000: "Cylinder001 (Kop\xEDrovat)"
+    2300002: Hlava
+    2300004: Ruka dole leva
+    2300006: Ruka dole prava
+    2300008: Ruka nahore leva
+    2300010: Ruka nahore prava
+    2300012: Telo
+    3300000: "Cylinder001 (Kop\xEDrovat)"
+    3300002: Hlava
+    3300004: Ruka dole leva
+    3300006: Ruka dole prava
+    3300008: Ruka nahore leva
+    3300010: Ruka nahore prava
+    3300012: Telo
+    4300000: "Cylinder001 (Kop\xEDrovat)"
+    4300002: Telo
+    4300004: Hlava
+    4300006: Ruka nahore prava
+    4300008: Ruka dole prava
+    4300010: Ruka nahore leva
+    4300012: Ruka dole leva
     7400000: C4D Animation Take
     9500000: //RootNode
   materials:

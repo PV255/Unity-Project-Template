@@ -74,9 +74,29 @@ public class Snake : MonoBehaviour {
             }
         }else if(coll.name.StartsWith("PortalPrefab")){
              // = GetComponent(AddPortal); 
-            Debug.Log("Pal topice ty kokot");
-            
-        } 
+            List<AddPortal.Tuple> portals = AddPortalSript.portals;
+            PortalId something = coll.gameObject.GetComponent<PortalId>();
+            int id = something.id;
+            Debug.Log("Collision portal id: "+id);
+            AddPortal.Tuple onIndex = null;
+            foreach (AddPortal.Tuple tup in portals){
+                if (tup.outputPortal.getId() == id) {
+                    onIndex = tup;
+                    break;
+                }
+            }
+            if (onIndex != null)
+            {
+                dir = onIndex.outputPortal.getHeading();
+                transform.position = onIndex.outputPortal.getPosition();
+            }
+
+        }
+        else if (coll.name.StartsWith("Tail"))
+        {
+
+        }
+
         else
         {
             // ToDo 'You lose' screen

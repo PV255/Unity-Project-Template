@@ -9,7 +9,9 @@ public class AddPortal : MonoBehaviour {
     public GameObject inPortal;
     public GameObject outPortal;
     private bool input = true;
+    private bool outputPortal = false;
     private InputPortal por;
+    private OutputPortal outPor;
     private int id = 0;
     private Vector3 pos;
     private bool mouseDown = false;
@@ -39,15 +41,16 @@ public class AddPortal : MonoBehaviour {
         {
             GameObject obj = (GameObject)Instantiate(inPortal, pos, Quaternion.identity);
             obj.AddComponent<RemovePortal>();
+            obj.AddComponent<PortalId>();
+            PortalId idOfNewPortal = obj.GetComponent<PortalId>();
+            idOfNewPortal.setId(id);
             por = new InputPortal(id);
             input = false;
         }
         else {
             GameObject obj = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
             obj.AddComponent<RemovePortal>();
-            Vector2 vec = Vector2.up;
-            portals.Add(new Tuple(por, new OutputPortal(id, vec)));
-            id++;
+            outputPortal = true;
             input = true;
         }
             //obj.transform.Rotate(new Vector3(90f, 0f, 0f));
@@ -56,28 +59,37 @@ public class AddPortal : MonoBehaviour {
 
     void OnMouseUp()
     {
-        if (mouseDown)
+        if (outputPortal)
         {
-            var v3 = Input.mousePosition;
-            v3.z = distance;
-            Vector3 posUp = Camera.main.ScreenToWorldPoint(v3);
-            //Debug.Log("OnMouseUp " + posUp);
-            float distX = Mathf.Abs(posUp.x - pos.x);
-            float distY = Mathf.Abs(posUp.y - pos.y);
-            string direction;
-            //Debug.Log("distX: " + distX + ", distY: " + distY);
-            if (distX > distY)
+            if (mouseDown)
             {
-                if (posUp.x > pos.x) direction = "right";
-                else direction = "left";
+                outputPortal = false;
+                var v3 = Input.mousePosition;
+                v3.z = distance;
+                Vector3 posUp = Camera.main.ScreenToWorldPoint(v3);
+                //Debug.Log("OnMouseUp " + posUp);
+                float distX = Mathf.Abs(posUp.x - pos.x);
+                float distY = Mathf.Abs(posUp.y - pos.y);
+                string direction;
+                //Debug.Log("distX: " + distX + ", distY: " + distY);
+                Vector2 vec;
+                if (distX > distY)
+                {
+                    if (posUp.x > pos.x) vec = Vector2.right;
+                    else vec = Vector2.left;
+                }
+                else
+                {
+                    if (posUp.y > pos.y) vec = Vector2.up;
+                    else vec = Vector2.down;
+                }
+                Debug.Log("Direction: " + vec);
+                mouseDown = false;          
+                OutputPortal localOutputPortal = new OutputPortal(id, vec);
+                localOutputPortal.setPosition((int)pos.x, (int)pos.y);
+                portals.Add(new Tuple(por, localOutputPortal));
+                id++;
             }
-            else
-            {
-                if (posUp.y > pos.y) direction = "up";
-                else direction = "down";
-            }
-            Debug.Log("Direction: " + direction);
-            mouseDown = false;
         }
     }
 
@@ -99,17 +111,34 @@ public class AddPortal : MonoBehaviour {
     {
         int id;
         Vector2 heading;
+        int x, y;
+
+        public Vector3 getPosition() { 
+            return new Vector3(x,y,0) ;
+        }
+
+        public void setPosition(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
 
         public OutputPortal(int id, Vector2 to) {
             this.id = id;
             heading = to;
         }
+
+        public Vector2 getHeading(){
+            return heading;
+        }
+        public int getId() {
+            return id;
+        }
     }
 
     public class Tuple
     {
-        InputPortal inputPortal;
-        OutputPortal outputPortal;
+        public InputPortal inputPortal;
+        public OutputPortal outputPortal;
 
         public Tuple(InputPortal inp, OutputPortal outp){
             inputPortal = inp;

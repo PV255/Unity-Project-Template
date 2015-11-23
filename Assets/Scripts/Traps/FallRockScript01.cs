@@ -4,10 +4,10 @@ using System.Collections;
 public class FallRockScript01 : MonoBehaviour {
 
     public GameObject rock;
+    
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame

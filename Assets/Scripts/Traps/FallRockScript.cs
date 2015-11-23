@@ -17,7 +17,6 @@ public class FallRockScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collision");
         if (other.CompareTag("Player"))
         {
             rock.GetComponent<Rigidbody>().useGravity = true;

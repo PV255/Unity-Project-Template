@@ -20,7 +20,7 @@ public class FallRockScript01 : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             Rigidbody rb = rock.GetComponent<Rigidbody>();
-            Vector3 dir = new Vector3(500, -50, 500);
+            Vector3 dir = new Vector3(500, -150, 500);
             dir = dir.normalized;
             rb.AddForce(dir * 500f);
             rb.useGravity = true;

@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.K)) {
             attacking = true;
-            Debug.Log("attacking");
         } else {
             attacking = false;
         }

@@ -66,6 +66,9 @@ public class GameManager : MonoBehaviour {
     public void DestroyLife()
     {
         lives--;
+        if (lives == 0) {
+            Application.LoadLevel("gameOver");
+        }
         SetLivesText();
     }
 

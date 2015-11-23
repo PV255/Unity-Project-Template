@@ -56,6 +56,6 @@ public class PlayerLimit : MonoBehaviour
 
     public void killPlayer() {
         GameManager.Instance.GetComponent<GameManager>().DestroyLife();
-
+        animator.Play("Crouching");
     }
 }

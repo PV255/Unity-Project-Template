@@ -18,18 +18,12 @@ Loading C:\Trolling\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Trolling\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Trolling\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Trolling\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.046 seconds
+- Completed reload, in  0.043 seconds
 desktop: 1920x1080 60Hz; virtual: 4000x1280 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Trolling\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2754 -> priority: 1 
-  Thread -> id: 172c -> priority: 1 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.887807 ms
-
-Unloading 102 unused Assets to reduce memory usage. Loaded Objects now: 246.
-Total: 0.419527 ms (FindLiveObjects: 0.015395 ms CreateObjectMapping: 0.014112 ms MarkObjects: 0.155665 ms  DeleteObjects: 0.233926 ms)
-
+  Thread -> id: ef4 -> priority: 1 
+  Thread -> id: 1a2c -> priority: 1 

@@ -28,7 +28,6 @@ ModelImporter:
     2300008: Ruka nahore leva
     2300010: Ruka nahore prava
     2300012: Telo
-    2300014: //RootNode
     3300000: "Cylinder001 (Kop\xEDrovat)"
     3300002: Hlava
     3300004: Ruka dole leva
@@ -36,7 +35,6 @@ ModelImporter:
     3300008: Ruka nahore leva
     3300010: Ruka nahore prava
     3300012: Telo
-    3300014: //RootNode
     4300000: "Cylinder001 (Kop\xEDrovat)"
     4300002: Telo
     4300004: Hlava
@@ -44,7 +42,6 @@ ModelImporter:
     4300008: Ruka dole prava
     4300010: Ruka nahore leva
     4300012: Ruka dole leva
-    4300014: Osy_1
     7400000: C4D Animation Take
     9500000: //RootNode
   materials:

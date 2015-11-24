@@ -14,14 +14,13 @@ public class PlayerLimit : MonoBehaviour
 
     private Animator animator;
     private Renderer bodyRenderer;
-   
 
     // Use this for initialization
     void Start()
     {
         startPos = transform.position;
         animator = GetComponent<Animator>();
-        bodyRenderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
+        //bodyRenderer = GameObject.Find("EthanBody").GetComponent<Renderer>();
         mainCamera = GameObject.Find("Main Camera");
     }
 
@@ -32,18 +31,10 @@ public class PlayerLimit : MonoBehaviour
         {
             ResetLevel();
         }
-
-        if (Input.GetKey(KeyCode.K)) {
-            //animator.Play("Crouching");
-            bodyRenderer.sharedMaterial = attack;
-        } else {
-            bodyRenderer.sharedMaterial = normal;
-        }
     }
 
     public void ResetLevel()
     {
-        killPlayer();
         transform.position = startPos;
         mainCamera.GetComponent<CameraFollow>().ResetCamera(cameraStartPos);
     }
@@ -52,10 +43,5 @@ public class PlayerLimit : MonoBehaviour
     {
         startPos = position;
         cameraStartPos = cameraPos;
-    }
-
-    public void killPlayer() {
-        GameManager.Instance.GetComponent<GameManager>().DestroyLife();
-        animator.SetTrigger("isDead");
     }
 }

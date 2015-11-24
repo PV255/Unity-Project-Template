@@ -47,24 +47,25 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !dead)
         {
             if (other.GetComponent<PlayerController>().isAttacking())
             {
                 killEnemy();
             } else {
-                other.GetComponent<PlayerLimit>().killPlayer();
+                killEnemy();
+                other.GetComponent<PlayerController>().killPlayer();
             }
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            touchingEnemy = false;
-        }
-    }
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        touchingEnemy = false;
+    //    }
+    //}
 
     private void KillOnAnimationEnd()
     {

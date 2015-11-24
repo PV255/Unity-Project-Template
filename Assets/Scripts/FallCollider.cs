@@ -7,6 +7,7 @@ public class FallCollider : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
+            GameManager.Instance.GetComponent<GameManager>().DestroyLife();
             other.GetComponent<PlayerLimit>().ResetLevel();
         }
     }

@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour {
     private Transform cameraPivot;
 
     private bool attacking;
-    
+    private bool dying;
+
+
     void Start()
     {
-        //camera = GameObject.Find("cstmCamera");
         m_Rigidbody = GetComponent<Rigidbody>();
         gravity = 5f;
 
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
         attacking = false;
         m_Animator = GetComponent<Animator>();
         cameraPivot = transform.Find("CameraPivot");
-
+        dying = false;
     }
 
     void Update()
@@ -45,15 +46,20 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.K)) {
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
             attacking = true;
-        } else {
-            attacking = false;
+            m_Animator.SetTrigger("attack");
         }
     }
 
     private void FixedUpdate()
     {
+        if (dying) {
+            return;
+        }
+
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
 
@@ -160,5 +166,22 @@ public class PlayerController : MonoBehaviour {
 
     public bool isAttacking() {
         return attacking;
+    }
+
+    public void StopAttacking()
+    {
+        this.attacking = false;
+    }
+
+    public void StopDying() {
+        Debug.Log("StopDying()");
+        dying = false;
+    }
+
+    public void killPlayer()
+    {
+        GameManager.Instance.GetComponent<GameManager>().DestroyLife();
+        m_Animator.SetTrigger("isDead");
+        dying = true;
     }
 }

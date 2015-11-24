@@ -1,45 +1,35 @@
 Initialize engine version: 5.2.1f1 (44735ea161b3)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 10.18.13.5582]
+    Version:  Direct3D 9.0c [nvd3dum.dll 10.18.13.5900]
     Renderer: NVIDIA GeForce GT 750M
     Vendor:   NVIDIA
-    VRAM:     1990 MB (via DXGI)
+    VRAM:     3072 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.047 seconds
+Platform assembly: C:\Trolling\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Trolling\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Trolling\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Trolling\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Trolling\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Trolling\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Trolling\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Trolling\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Trolling\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Trolling\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Trolling\test_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.046 seconds
 desktop: 1920x1080 60Hz; virtual: 4000x1280 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\skolaFI\V. semester\PV255 Vyvoj digitalnych her\Trolling\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Trolling\test_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 14b8 -> priority: 1 
-  Thread -> id: 708 -> priority: 1 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.061979 ms
+  Thread -> id: 2754 -> priority: 1 
+  Thread -> id: 172c -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.887807 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 985.
-Total: 0.610260 ms (FindLiveObjects: 0.081681 ms CreateObjectMapping: 0.052601 ms MarkObjects: 0.461009 ms  DeleteObjects: 0.013684 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.414675 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 985.
-Total: 0.616675 ms (FindLiveObjects: 0.091517 ms CreateObjectMapping: 0.056450 ms MarkObjects: 0.452456 ms  DeleteObjects: 0.014540 ms)
+Unloading 102 unused Assets to reduce memory usage. Loaded Objects now: 246.
+Total: 0.419527 ms (FindLiveObjects: 0.015395 ms CreateObjectMapping: 0.014112 ms MarkObjects: 0.155665 ms  DeleteObjects: 0.233926 ms)
 

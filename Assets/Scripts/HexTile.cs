@@ -144,7 +144,7 @@ public class HexTile : MonoBehaviour {
         }
         else
         {
-            if (neighbourHighlight)
+            if (neighbourHighlight && (HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isVulnerable()))
             {
                 if (HexGridFieldManager.instance.selectedHex != null)
                 {
@@ -242,7 +242,8 @@ public class HexTile : MonoBehaviour {
     public void setUnit(GameObject unitObject)
     {
         unit = unitObject;
-        unit.transform.position = transform.position;
+        unit.transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        unit.transform.rotation = new Quaternion(0, 1, 0, unitObject.GetComponent<BasicUnit>().side * 180);
     }
 
     public void setPlaceHolder(GameObject pHolder)
@@ -298,7 +299,7 @@ public class HexTile : MonoBehaviour {
 
     public void selectNeighbours(int reach, bool highlight) //zvyraznime sousedy na ktere muze jednotka jit
     {
-        if (!isPassable() && HexGridFieldManager.instance.selectedHex != this)
+        if (!isPassable() && HexGridFieldManager.instance.selectedHex != this || !HexGridFieldManager.instance.selectedHex.unit.GetComponent<BasicUnit>().isMoveable())
             return;
         foreach (HexTile til in AllNeighbours)
         {

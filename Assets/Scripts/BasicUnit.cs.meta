@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 186a2d8c1198f4c49a0bfbce23ea0fe0
-timeCreated: 1444739441
+timeCreated: 1448292186
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mainMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - hiddenMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  - mainModel: {instanceID: 0}
+  - hiddenModel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

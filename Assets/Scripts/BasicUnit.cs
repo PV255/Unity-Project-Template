@@ -4,15 +4,17 @@ using System.Collections;
 public class BasicUnit : MonoBehaviour {
 
     public int reach; //jak daleko muze jednotka dojit
-    public int speed; //rychlost pohybu pres policka
+    protected int speed = 3; //rychlost pohybu pres policka
     public int side; //strana za za kterou jednotka hraje
     public int rank;
+    protected int hiddenRank;
     public ArrayList path;
-    private bool moving = false, attacking = false; //je v pohybu
-    private Vector3 target; //souradnice policek na ktera se jednotka postupne presouva
-    private HexTile targetTile, attackingTile; //reference na policko kam se ve finale presunem
+    protected bool moving = false, attacking = false; //je v pohybu
+    protected Vector3 target; //souradnice policek na ktera se jednotka postupne presouva
+    protected HexTile targetTile, attackingTile; //reference na policko kam se ve finale presunem
     public Mesh mainMesh;
     public Mesh hiddenMesh;
+    public bool vulnerable = true, moveable = true, passiveAbility = false;
 
 
     public void setPath(ArrayList pathList)
@@ -43,21 +45,39 @@ public class BasicUnit : MonoBehaviour {
             attackTile();
     }
 
+    public int attackedGetRank()
+    {
+        if (passiveAbility)
+        {
+            useAbility();
+        }
+        return hiddenRank;
+    }
+
+    public void resetRank()
+    {
+        hiddenRank = rank;
+    }
+
     public void attackTile()
     {
+        if (passiveAbility)
+        {
+            useAbility();
+        }
         moving = false;
         attacking = false;
-        
-        if (rank > attackingTile.unit.GetComponent<BasicUnit>().rank)
+        if (hiddenRank > attackingTile.unit.GetComponent<BasicUnit>().attackedGetRank())
         {
             
             Destroy(attackingTile.unit);
             path.Add(attackingTile);
             proceedPath();
+            resetRank();
         }
-        else if(rank < attackingTile.unit.GetComponent<BasicUnit>().rank)
+        else if(hiddenRank < attackingTile.unit.GetComponent<BasicUnit>().attackedGetRank())
         {
-            
+            attackingTile.unit.GetComponent<BasicUnit>().resetRank();
             Destroy(HexGridFieldManager.instance.selectedHex.unit);
             path.Clear();
             HexGridFieldManager.instance.selectedHex.unHighlightUnitTile();
@@ -100,6 +120,16 @@ public class BasicUnit : MonoBehaviour {
         }
     }
 
+    public bool isMoveable()
+    {
+        return moveable;
+    }
+
+    public bool isVulnerable()
+    {
+        return vulnerable;
+    }
+
     public bool isMoving()
     {
         return moving;
@@ -107,17 +137,23 @@ public class BasicUnit : MonoBehaviour {
 
     public void hideUnit()
     {
-        GetComponent<MeshFilter>().mesh = hiddenMesh;
+        //GetComponent<MeshFilter>().mesh = hiddenMesh;
     }
 
     public void unhideUnit()
     {
-        GetComponent<MeshFilter>().mesh = mainMesh;
+        //GetComponent<MeshFilter>().mesh = mainMesh;
+    }
+
+    public virtual void useAbility()
+    {
+
     }
 
     // Use this for initialization
     void Start () {
         path = new ArrayList();
+        resetRank();
 	}
 
     // Update is called once per frame

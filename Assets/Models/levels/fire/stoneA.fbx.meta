@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 592913479e8c99f4cb788a925b0cc06c
-timeCreated: 1447678936
+guid: 5ebf101445e3c244aa6fe6c5f5994f53
+timeCreated: 1448469815
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: CINEMA4D_editor
-    100004: corridor
-    400000: //RootNode
-    400002: CINEMA4D_editor
-    400004: corridor
-    2300000: corridor
-    3300000: corridor
-    4300000: corridor
+    100000: CINEMA4D_editor
+    100002: //RootNode
+    100004: stoneA
+    400000: CINEMA4D_editor
+    400002: //RootNode
+    400004: stoneA
+    2300000: stoneA
+    3300000: stoneA
+    4300000: stoneA
     9500000: //RootNode
   materials:
     importMaterials: 1

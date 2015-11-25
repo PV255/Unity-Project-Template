@@ -195,10 +195,10 @@ public class Snake : MonoBehaviour {
     {
         // x position between left & right border
         int x = (int)Random.Range(borderLeft.position.x,
-                                  borderRight.position.x);
+                                  borderRight.position.x-2);
 
         // y position between top & bottom border
-        int y = (int)Random.Range(borderBottom.position.y,
+        int y = (int)Random.Range(borderBottom.position.y-2,
                                   borderTop.position.y);
         Vector2 pos;
         pos.x = x;

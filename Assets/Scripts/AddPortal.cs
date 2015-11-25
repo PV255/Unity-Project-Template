@@ -32,9 +32,9 @@ public class AddPortal : MonoBehaviour {
         v3.z = distance;
         pos = Camera.main.ScreenToWorldPoint(v3);
         if (pos.x > 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 + 1;
-        if (pos.x < 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 - 1;
+        if (pos.x <= 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 - 1;
         if (pos.y < 0) pos.y = Mathf.Round((int)pos.y/2) *2 - 1;
-        if (pos.y > 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 + 1;
+        if (pos.y >= 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 + 1;
         Debug.Log("OnMouseDown " + pos);
         mouseDown = true;
         if (input)

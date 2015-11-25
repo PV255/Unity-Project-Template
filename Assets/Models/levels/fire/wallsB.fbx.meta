@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ba63e85addf5b784f8bef36d8f8bffef
-timeCreated: 1447606066
+guid: 44cdd938c4cbded439080b37d6fb9a72
+timeCreated: 1448469814
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: CINEMA4D_editor
     100002: //RootNode
-    100004: roof
+    100004: wallsB
     400000: CINEMA4D_editor
     400002: //RootNode
-    400004: roof
-    2300000: roof
-    3300000: roof
-    4300000: roof
+    400004: wallsB
+    2300000: wallsB
+    3300000: wallsB
+    4300000: wallsB
     9500000: //RootNode
   materials:
     importMaterials: 1

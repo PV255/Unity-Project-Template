@@ -174,8 +174,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void StopDying() {
-        Debug.Log("StopDying()");
         dying = false;
+        m_Animator.SetBool("moving", false);
+        m_Animator.SetBool("jumping", false);
     }
 
     public void killPlayer()

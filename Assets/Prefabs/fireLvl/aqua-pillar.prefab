@@ -25,6 +25,7 @@ GameObject:
   - 4: {fileID: 451658}
   - 33: {fileID: 3344298}
   - 23: {fileID: 2375942}
+  - 64: {fileID: 6419938}
   m_Layer: 0
   m_Name: aqua_pillar
   m_TagString: Untagged
@@ -117,6 +118,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129666}
+  m_Mesh: {fileID: 4300000, guid: 20016553eba09d4429c262f8d1ce438d, type: 3}
+--- !u!64 &6419938
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 20016553eba09d4429c262f8d1ce438d, type: 3}
 --- !u!64 &6451480
 MeshCollider:

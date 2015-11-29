@@ -67,7 +67,7 @@ public class EnemyScript : MonoBehaviour
     //    }
     //}
 
-    private void KillOnAnimationEnd()
+    public void KillOnAnimationEnd()
     {
         //yield return new WaitForSeconds(3.95f);
         this.gameObject.SetActive(false);

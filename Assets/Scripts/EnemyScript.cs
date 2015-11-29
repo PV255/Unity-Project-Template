@@ -52,6 +52,8 @@ public class EnemyScript : MonoBehaviour
             if (other.GetComponent<PlayerController>().isAttacking())
             {
                 killEnemy();
+                //GetComponent<Rigidbody>()
+                //    .AddExplosionForce(2000.0f, other.transform.position + (Vector3.down * 0.1f), 50000000.0f);
             } else {
                 killEnemy();
                 other.GetComponent<PlayerController>().killPlayer();

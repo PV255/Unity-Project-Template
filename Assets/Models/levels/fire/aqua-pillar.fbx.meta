@@ -8,12 +8,19 @@ ModelImporter:
     100000: //RootNode
     100002: aqua_pillar
     100004: CINEMA4D_editor
+    100006: Aqua_pillar
+    100008: CINEMA4D_editor_2
     400000: //RootNode
     400002: aqua_pillar
     400004: CINEMA4D_editor
+    400006: Aqua_pillar
+    400008: CINEMA4D_editor_2
     2300000: aqua_pillar
+    2300002: Aqua_pillar
     3300000: aqua_pillar
+    3300002: Aqua_pillar
     4300000: aqua_pillar
+    4300002: Aqua_pillar
     9500000: //RootNode
   materials:
     importMaterials: 1

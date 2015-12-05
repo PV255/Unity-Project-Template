@@ -1,73 +1,19 @@
 fileFormatVersion: 2
-guid: f0ea802698d4ff545b9d9752751b38b3
-timeCreated: 1448635909
+guid: 1becb48d13c2b7044a192d1865ef1466
+timeCreated: 1449341840
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: CINEMA4D_editor
-    100002: Osy
-    100004: //RootNode
-    100006: ruins
-    100008: tower
-    100010: "V\xE1lec"
-    100012: "V\xE1lec_2"
-    100014: wallsB
-    100016: wallsB_1
-    100018: wallsB_2
-    100020: wallsB_2_2
-    100022: wallsB_3
-    100024: wallsB_3_2
-    100026: wallsB_3_3
-    100028: ruins_2
+    100002: //RootNode
+    100004: tower
     400000: CINEMA4D_editor
-    400002: Osy
-    400004: //RootNode
-    400006: ruins
-    400008: tower
-    400010: "V\xE1lec"
-    400012: "V\xE1lec_2"
-    400014: wallsB
-    400016: wallsB_1
-    400018: wallsB_2
-    400020: wallsB_2_2
-    400022: wallsB_3
-    400024: wallsB_3_2
-    400026: wallsB_3_3
-    400028: ruins_2
+    400002: //RootNode
+    400004: tower
     2300000: tower
-    2300002: "V\xE1lec"
-    2300004: "V\xE1lec_2"
-    2300006: wallsB
-    2300008: wallsB_1
-    2300010: wallsB_2
-    2300012: wallsB_2_2
-    2300014: wallsB_3
-    2300016: wallsB_3_2
-    2300018: wallsB_3_3
-    2300020: ruins_2
     3300000: tower
-    3300002: "V\xE1lec"
-    3300004: "V\xE1lec_2"
-    3300006: wallsB
-    3300008: wallsB_1
-    3300010: wallsB_2
-    3300012: wallsB_2_2
-    3300014: wallsB_3
-    3300016: wallsB_3_2
-    3300018: wallsB_3_3
-    3300020: ruins_2
     4300000: tower
-    4300002: wallsB_1
-    4300004: "V\xE1lec"
-    4300006: wallsB_3
-    4300008: wallsB_3_2
-    4300010: "V\xE1lec_2"
-    4300012: wallsB_3_3
-    4300014: wallsB_2
-    4300016: wallsB
-    4300018: wallsB_2_2
-    4300020: ruins_2
     9500000: //RootNode
   materials:
     importMaterials: 1

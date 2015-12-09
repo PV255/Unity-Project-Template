@@ -24,7 +24,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 435486}
   - 54: {fileID: 5401196}
-  - 136: {fileID: 13620622}
   m_Layer: 9
   m_Name: ColliderBack
   m_TagString: Untagged
@@ -166,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
   lookAt: {fileID: 0}
-  moveSpeed: 7
+  moveSpeed: 5
   distance: 5
   height: 2
   backCollider: {fileID: 435486}
@@ -177,19 +176,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197706}
   m_Enabled: 1
---- !u!136 &13620622
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121948}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .384129643
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

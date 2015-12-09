@@ -3800,7 +3800,7 @@ Transform:
   - {fileID: 196299565}
   - {fileID: 311883880}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &1773267252
 Prefab:
   m_ObjectHideFlags: 0
@@ -4212,7 +4212,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -4913,7 +4915,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 5ca5fe24f0baed74ebdd14ecb873c6d9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8d3f77cdf3779e7408cb43945a49447a, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 5ca5fe24f0baed74ebdd14ecb873c6d9, type: 3}
       propertyPath: m_LocalRotation.x
       value: .0175903458

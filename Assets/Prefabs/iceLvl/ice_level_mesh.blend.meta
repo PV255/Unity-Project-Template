@@ -44,6 +44,9 @@ ModelImporter:
     100072: bhop2_007
     100074: theend
     100076: bhop4_2
+    100078: encounter2
+    100080: encounter2_001
+    100082: encounter2_002
     400000: //RootNode
     400002: Plane
     400004: Plane_001
@@ -83,6 +86,9 @@ ModelImporter:
     400072: bhop2_007
     400074: theend
     400076: bhop4_2
+    400078: encounter2
+    400080: encounter2_001
+    400082: encounter2_002
     2300000: //RootNode
     2300002: Plane
     2300004: Plane_001
@@ -121,6 +127,9 @@ ModelImporter:
     2300070: bhop2_007
     2300072: theend
     2300074: bhop4_2
+    2300076: encounter2
+    2300078: encounter2_001
+    2300080: encounter2_002
     3300000: //RootNode
     3300002: Plane
     3300004: Plane_001
@@ -159,6 +168,9 @@ ModelImporter:
     3300070: bhop2_007
     3300072: theend
     3300074: bhop4_2
+    3300076: encounter2
+    3300078: encounter2_001
+    3300080: encounter2_002
     4300000: Object
     4300002: Cube
     4300004: Plane
@@ -198,6 +210,9 @@ ModelImporter:
     4300072: bhop2_001
     4300074: theend
     4300076: bhop4_2
+    4300078: encounter2
+    4300080: encounter2_001
+    4300082: encounter2_002
     7400000: Default Take
     9500000: //RootNode
   materials:

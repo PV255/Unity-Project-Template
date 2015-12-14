@@ -7,6 +7,9 @@ using System.Linq;
 public class Snake : MonoBehaviour {
 
     public GameObject foodPrefab;
+    public GameObject decreaseSnakeLengthFoodPrefab;
+    public GameObject incraseSnakeSpeedFoodPrefab;
+    public GameObject decreaseSnakeSpeedPrefab;
     public GameObject background;
     public AddPortal AddPortalSript;
 
@@ -26,6 +29,7 @@ public class Snake : MonoBehaviour {
     Vector2 dir = Vector2.left;
     private List<Transform> tail = new List<Transform>();
     bool ate = false;
+    bool shrink = false;
     bool portal = false;
 	// Use this for initialization
 	void Start () {
@@ -58,6 +62,14 @@ public class Snake : MonoBehaviour {
         {
             // Get longer in next Move call
             ate = true;
+
+            // Remove the Food
+            Destroy(coll.gameObject);
+        }
+        if (coll.name.StartsWith(decreaseSnakeLengthFoodPrefab.name))
+        {
+            // Get longer in next Move call
+            shrink = true;
 
             // Remove the Food
             Destroy(coll.gameObject);
@@ -153,20 +165,34 @@ public class Snake : MonoBehaviour {
         Vector2 currentPossition = transform.position;
 
         transform.Translate(dir * moveDistance, Space.World);
-        
-        if (ate) {
+
+        if (ate)
+        {
             SpawnFood();
             tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
             ate = false;
-            
+
         }
-        else if (tail.Count > 0) {
+        else if (shrink) {
+            if (tail.Count > 0)
+            {
+                tail.Last().position = currentPossition;
+                tail.Last().rotation = transform.rotation;
+                tail.Insert(0, tail.Last());
+                tail.RemoveAt(tail.Count - 1);
+                tail.RemoveAt(tail.Count - 1);
+            }
+            else {
+                /*GAME OVER dlzka hada je 0*/
+            }
+        } else if (tail.Count > 0)
+        {
             tail.Last().position = currentPossition;
             tail.Last().rotation = transform.rotation;
             tail.Insert(0, tail.Last());
             tail.RemoveAt(tail.Count - 1);
-                
-           
+
+
         }
     }
 

@@ -16,10 +16,12 @@ public class AddPortal : MonoBehaviour {
     private Vector3 pos;
     private bool mouseDown = false;
     public List<Tuple> portals = new List<Tuple>();
+    private Color portalColor;
 
     void Start () {
         distance = 1.0f;
-	}
+        portalColor = new Color(Random.value, Random.value, Random.value, 1.0f); 
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -42,6 +44,8 @@ public class AddPortal : MonoBehaviour {
             GameObject obj = (GameObject)Instantiate(inPortal, pos, Quaternion.identity);
             obj.AddComponent<RemovePortal>();
             obj.AddComponent<PortalId>();
+            obj.GetComponent<Renderer>().material.color = portalColor;
+
             PortalId idOfNewPortal = obj.GetComponent<PortalId>();
             idOfNewPortal.setId(id);
             por = new InputPortal(id);
@@ -50,6 +54,7 @@ public class AddPortal : MonoBehaviour {
         else {
             GameObject obj = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
             obj.AddComponent<RemovePortal>();
+            obj.GetComponent<Renderer>().material.color = portalColor;
             outputPortal = true;
             input = true;
         }
@@ -89,6 +94,7 @@ public class AddPortal : MonoBehaviour {
                 localOutputPortal.setPosition((int)pos.x, (int)pos.y);
                 portals.Add(new Tuple(por, localOutputPortal));
                 id++;
+                portalColor = new Color(Random.value, Random.value, Random.value, 1.0f);
             }
         }
     }

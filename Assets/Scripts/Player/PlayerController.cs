@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
         m_Rigidbody = GetComponent<Rigidbody>();
         gravity = 5f;
 
-        cam = GameObject.Find("MainCamera");
+        cam = GameObject.Find("Main Camera");
         is_jumping = false;
         attacking = false;
         m_Animator = GetComponent<Animator>();

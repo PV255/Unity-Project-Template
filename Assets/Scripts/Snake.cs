@@ -75,16 +75,7 @@ public class Snake : MonoBehaviour {
             Destroy(coll.gameObject);
         }
         // Collided with Tail or Border
-        else if (coll.name.StartsWith("InitialPor")) {
-            portal = true;
-            if (coll.name.StartsWith("InitialPortalPrefab2"))
-            {
-                transform.position = iniPortal.transform.position;
-            }
-            else {
-                transform.position = iniPortal2.transform.position;
-            }
-        }else if(coll.name.StartsWith("PortalPrefab")){
+        else if(coll.name.StartsWith("PortalPrefab")){
              // = GetComponent(AddPortal); 
             List<AddPortal.Tuple> portals = AddPortalSript.portals;
             PortalId something = coll.gameObject.GetComponent<PortalId>();
@@ -141,7 +132,7 @@ public class Snake : MonoBehaviour {
             }
 
         }
-        else if (coll.name.StartsWith("Tail"))
+        else if (coll.name.StartsWith(tailPrefab.name))
         {
 
         }
@@ -201,21 +192,7 @@ public class Snake : MonoBehaviour {
         return false;
     }
 
-    void OnMouseDown()
-    {
-        var v3 = Input.mousePosition;
-        v3.z = distance;
-        Vector3 pos = Camera.main.ScreenToWorldPoint(v3);
-        pos.x = Mathf.Round(pos.x);
-        pos.y = Mathf.Round(pos.y);
-        Debug.Log("Position" + pos);
-        if (inBounds(pos))
-        {
-            GameObject obj = (GameObject)Instantiate(newPortal, pos, Quaternion.identity);
-            //obj.transform.Rotate(new Vector3(90f, 0f, 0f));
-            obj.AddComponent<RemovePortal>();
-        }
-    }
+
 
     void SpawnFood()
     {

@@ -37,6 +37,7 @@ public class PlayerLimit : MonoBehaviour
     {
         transform.position = startPos;
         mainCamera.GetComponent<CameraFollow>().ResetCamera(cameraStartPos);
+        GetComponent<PlayerController>().setDescending(false);
     }
 
     public void SetStartPos(Vector3 position, Vector3 cameraPos)

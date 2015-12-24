@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool attacking;
     private bool dying;
+    private bool isDescending;
 
 
     void Start()
@@ -52,6 +53,10 @@ public class PlayerController : MonoBehaviour {
         {
             attacking = true;
             m_Animator.SetTrigger("attack");
+        }
+
+        if(isDescending) {
+            moveDown();
         }
     }
 
@@ -185,5 +190,14 @@ public class PlayerController : MonoBehaviour {
         GameManager.Instance.GetComponent<GameManager>().DestroyLife();
         m_Animator.SetTrigger("isDead");
         dying = true;
+    }
+
+    public void setDescending(bool descend) {
+        this.isDescending = descend;
+    }
+
+    private void moveDown() {
+        Vector3 position = m_Rigidbody.position;
+        m_Rigidbody.position = new Vector3(position.x, position.y - Time.deltaTime * 1f, position.z);
     }
 }

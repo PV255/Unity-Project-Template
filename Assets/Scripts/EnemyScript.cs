@@ -5,6 +5,7 @@ public class EnemyScript : MonoBehaviour
 {
 
     public string path;
+    public int time;
 
     private Animator animator;
     private bool dead;
@@ -18,11 +19,12 @@ public class EnemyScript : MonoBehaviour
         dead = false;
         if (path != "") {
             iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(path),
-                "time", 5,
+                "time", time,
                 "looptype", iTween.LoopType.loop,
                 "orientToPath", true, 
                 "delay", 0,
-                "easetype", iTween.EaseType.linear));
+                "easetype", iTween.EaseType.linear,
+                "moveToPath", false));
 
             animator.SetBool("isWalking", true);
         }

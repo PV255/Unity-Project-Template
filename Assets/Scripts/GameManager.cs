@@ -32,15 +32,19 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
-        SetScoreText();
-        SetLivesText();
+            SetScoreText();
+            SetLivesText();
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (Application.loadedLevelName == "gameOver") {
+            scoreText.enabled = false;
+            livesText.enabled = false;
+            GameObject.Find("gameOverManager").GetComponent<GameOverScript>().initGameOver(score);
+        }
+
+    }
 
     public void setLevelManager(LevelManager m)
     {

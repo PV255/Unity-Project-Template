@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 1d90ad1c9b0eb90419ae17ce57b360ee
+timeCreated: 1451474683
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CINEMA4D_editor
+    100002: EthanSkeleton_1
+    100004: "K\u0159ivka"
+    100006: "Prota\u017Een\xED"
+    100008: //RootNode
+    100010: Koule
+    100012: Koule_1
+    100014: Koule_2
+    100016: Koule_3
+    100018: Koule_4
+    100020: "Prota\u017Een\xED_1"
+    100022: "Prota\u017Een\xED_2"
+    100024: "Prota\u017Een\xED_3"
+    100026: "Prota\u017Een\xED_4"
+    100028: "Prota\u017Een\xED_5"
+    100030: "Uz\xE1v\u011Br"
+    100032: "Zaoblen\xED"
+    100034: "Booleanovsk\xE9_operace"
+    100036: "Prota\u017Een\xED_1_Prota\u017Een\xED"
+    100038: Koule_3_Koule_2
+    100040: "Prota\u017Een\xED_3_Prota\u017Een\xED"
+    100042: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
+    100044: Koule_3_Koule
+    100046: Koule_5
+    100048: outisides
+    400000: CINEMA4D_editor
+    400002: EthanSkeleton_1
+    400004: "K\u0159ivka"
+    400006: "Prota\u017Een\xED"
+    400008: //RootNode
+    400010: Koule
+    400012: Koule_1
+    400014: Koule_2
+    400016: Koule_3
+    400018: Koule_4
+    400020: "Prota\u017Een\xED_1"
+    400022: "Prota\u017Een\xED_2"
+    400024: "Prota\u017Een\xED_3"
+    400026: "Prota\u017Een\xED_4"
+    400028: "Prota\u017Een\xED_5"
+    400030: "Uz\xE1v\u011Br"
+    400032: "Zaoblen\xED"
+    400034: "Booleanovsk\xE9_operace"
+    400036: "Prota\u017Een\xED_1_Prota\u017Een\xED"
+    400038: Koule_3_Koule_2
+    400040: "Prota\u017Een\xED_3_Prota\u017Een\xED"
+    400042: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
+    400044: Koule_3_Koule
+    400046: Koule_5
+    400048: outisides
+    2300000: EthanSkeleton_1
+    2300002: "Prota\u017Een\xED"
+    2300004: Koule
+    2300006: Koule_1
+    2300008: Koule_2
+    2300010: Koule_3
+    2300012: Koule_4
+    2300014: "Prota\u017Een\xED_1"
+    2300016: "Prota\u017Een\xED_2"
+    2300018: "Prota\u017Een\xED_3"
+    2300020: "Prota\u017Een\xED_4"
+    2300022: "Prota\u017Een\xED_5"
+    2300024: "Uz\xE1v\u011Br"
+    2300026: "Zaoblen\xED"
+    2300028: "Prota\u017Een\xED_1_Prota\u017Een\xED"
+    2300030: Koule_3_Koule_2
+    2300032: "Prota\u017Een\xED_3_Prota\u017Een\xED"
+    2300034: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
+    2300036: Koule_3_Koule
+    2300038: Koule_5
+    3300000: EthanSkeleton_1
+    3300002: "Prota\u017Een\xED"
+    3300004: Koule
+    3300006: Koule_1
+    3300008: Koule_2
+    3300010: Koule_3
+    3300012: Koule_4
+    3300014: "Prota\u017Een\xED_1"
+    3300016: "Prota\u017Een\xED_2"
+    3300018: "Prota\u017Een\xED_3"
+    3300020: "Prota\u017Een\xED_4"
+    3300022: "Prota\u017Een\xED_5"
+    3300024: "Uz\xE1v\u011Br"
+    3300026: "Zaoblen\xED"
+    3300028: "Prota\u017Een\xED_1_Prota\u017Een\xED"
+    3300030: Koule_3_Koule_2
+    3300032: "Prota\u017Een\xED_3_Prota\u017Een\xED"
+    3300034: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
+    3300036: Koule_3_Koule
+    3300038: Koule_5
+    4300000: EthanSkeleton_1
+    4300002: "Prota\u017Een\xED"
+    4300004: Koule_4
+    4300006: "Prota\u017Een\xED_5"
+    4300008: "Prota\u017Een\xED_4"
+    4300010: "Uz\xE1v\u011Br"
+    4300012: Koule_3
+    4300014: Koule_2
+    4300016: "Prota\u017Een\xED_3"
+    4300018: "Prota\u017Een\xED_2"
+    4300020: Koule_1
+    4300022: Koule
+    4300024: "Prota\u017Een\xED_1"
+    4300026: "Zaoblen\xED"
+    4300028: "Prota\u017Een\xED_1_Prota\u017Een\xED"
+    4300030: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
+    4300032: "Prota\u017Een\xED_3_Prota\u017Een\xED"
+    4300034: Koule_3_Koule_2
+    4300036: Koule_5
+    4300038: Koule_3_Koule
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

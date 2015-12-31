@@ -30,6 +30,7 @@ ModelImporter:
     100044: Koule_3_Koule
     100046: Koule_5
     100048: outisides
+    100050: Koule_2_2
     400000: CINEMA4D_editor
     400002: EthanSkeleton_1
     400004: "K\u0159ivka"
@@ -55,6 +56,7 @@ ModelImporter:
     400044: Koule_3_Koule
     400046: Koule_5
     400048: outisides
+    400050: Koule_2_2
     2300000: EthanSkeleton_1
     2300002: "Prota\u017Een\xED"
     2300004: Koule
@@ -75,6 +77,7 @@ ModelImporter:
     2300034: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
     2300036: Koule_3_Koule
     2300038: Koule_5
+    2300040: Koule_2_2
     3300000: EthanSkeleton_1
     3300002: "Prota\u017Een\xED"
     3300004: Koule
@@ -95,6 +98,7 @@ ModelImporter:
     3300034: "Prota\u017Een\xED_6_Prota\u017Een\xED_1_Prota\u017Een\xED"
     3300036: Koule_3_Koule
     3300038: Koule_5
+    3300040: Koule_2_2
     4300000: EthanSkeleton_1
     4300002: "Prota\u017Een\xED"
     4300004: Koule_4
@@ -115,6 +119,7 @@ ModelImporter:
     4300034: Koule_3_Koule_2
     4300036: Koule_5
     4300038: Koule_3_Koule
+    4300040: Koule_2_2
     9500000: //RootNode
   materials:
     importMaterials: 1

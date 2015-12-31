@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 50a1e8a9858a1714b8fb0f64a0b78524
+timeCreated: 1451570061
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CINEMA4D_editor
+    100004: Krychle
+    100006: mixamorig:Head
+    100008: mixamorig:HeadTop_End
+    100010: mixamorig:Hips
+    100012: mixamorig:LeftArm
+    100014: mixamorig:LeftFoot
+    100016: mixamorig:LeftForeArm
+    100018: mixamorig:LeftHand
+    100020: mixamorig:LeftLeg
+    100022: mixamorig:LeftShoulder
+    100024: mixamorig:LeftToe_End
+    100026: mixamorig:LeftToeBase
+    100028: mixamorig:LeftUpLeg
+    100030: mixamorig:Neck
+    100032: mixamorig:RightArm
+    100034: mixamorig:RightFoot
+    100036: mixamorig:RightForeArm
+    100038: mixamorig:RightHand
+    100040: mixamorig:RightLeg
+    100042: mixamorig:RightShoulder
+    100044: mixamorig:RightToe_End
+    100046: mixamorig:RightToeBase
+    100048: mixamorig:RightUpLeg
+    100050: mixamorig:Spine
+    100052: mixamorig:Spine1
+    100054: mixamorig:Spine2
+    100056: Osy
+    100058: "Segmentovan\xFD_povrch"
+    100060: Symetrie
+    100062: "V\xE1lec"
+    100064: "V\xE1lec_1"
+    100066: "V\xE1lec_1_2"
+    100068: mixamorig:LeftHandIndex1
+    100070: mixamorig:LeftHandIndex2
+    100072: mixamorig:LeftHandIndex3
+    100074: mixamorig:LeftHandIndex4
+    100076: mixamorig:LeftHandMiddle1
+    100078: mixamorig:LeftHandMiddle2
+    100080: mixamorig:LeftHandMiddle3
+    100082: mixamorig:LeftHandMiddle4
+    100084: mixamorig:LeftHandThumb1
+    100086: mixamorig:LeftHandThumb2
+    100088: mixamorig:LeftHandThumb3
+    100090: mixamorig:LeftHandThumb4
+    100092: mixamorig:RightHandIndex1
+    100094: mixamorig:RightHandIndex2
+    100096: mixamorig:RightHandIndex3
+    100098: mixamorig:RightHandIndex4
+    100100: mixamorig:RightHandMiddle1
+    100102: mixamorig:RightHandMiddle2
+    100104: mixamorig:RightHandMiddle3
+    100106: mixamorig:RightHandMiddle4
+    100108: mixamorig:RightHandThumb1
+    100110: mixamorig:RightHandThumb2
+    100112: mixamorig:RightHandThumb3
+    100114: mixamorig:RightHandThumb4
+    400000: //RootNode
+    400002: CINEMA4D_editor
+    400004: Krychle
+    400006: mixamorig:Head
+    400008: mixamorig:HeadTop_End
+    400010: mixamorig:Hips
+    400012: mixamorig:LeftArm
+    400014: mixamorig:LeftFoot
+    400016: mixamorig:LeftForeArm
+    400018: mixamorig:LeftHand
+    400020: mixamorig:LeftLeg
+    400022: mixamorig:LeftShoulder
+    400024: mixamorig:LeftToe_End
+    400026: mixamorig:LeftToeBase
+    400028: mixamorig:LeftUpLeg
+    400030: mixamorig:Neck
+    400032: mixamorig:RightArm
+    400034: mixamorig:RightFoot
+    400036: mixamorig:RightForeArm
+    400038: mixamorig:RightHand
+    400040: mixamorig:RightLeg
+    400042: mixamorig:RightShoulder
+    400044: mixamorig:RightToe_End
+    400046: mixamorig:RightToeBase
+    400048: mixamorig:RightUpLeg
+    400050: mixamorig:Spine
+    400052: mixamorig:Spine1
+    400054: mixamorig:Spine2
+    400056: Osy
+    400058: "Segmentovan\xFD_povrch"
+    400060: Symetrie
+    400062: "V\xE1lec"
+    400064: "V\xE1lec_1"
+    400066: "V\xE1lec_1_2"
+    400068: mixamorig:LeftHandIndex1
+    400070: mixamorig:LeftHandIndex2
+    400072: mixamorig:LeftHandIndex3
+    400074: mixamorig:LeftHandIndex4
+    400076: mixamorig:LeftHandMiddle1
+    400078: mixamorig:LeftHandMiddle2
+    400080: mixamorig:LeftHandMiddle3
+    400082: mixamorig:LeftHandMiddle4
+    400084: mixamorig:LeftHandThumb1
+    400086: mixamorig:LeftHandThumb2
+    400088: mixamorig:LeftHandThumb3
+    400090: mixamorig:LeftHandThumb4
+    400092: mixamorig:RightHandIndex1
+    400094: mixamorig:RightHandIndex2
+    400096: mixamorig:RightHandIndex3
+    400098: mixamorig:RightHandIndex4
+    400100: mixamorig:RightHandMiddle1
+    400102: mixamorig:RightHandMiddle2
+    400104: mixamorig:RightHandMiddle3
+    400106: mixamorig:RightHandMiddle4
+    400108: mixamorig:RightHandThumb1
+    400110: mixamorig:RightHandThumb2
+    400112: mixamorig:RightHandThumb3
+    400114: mixamorig:RightHandThumb4
+    2300000: Krychle
+    2300002: "V\xE1lec"
+    2300004: "V\xE1lec_1"
+    3300000: Krychle
+    3300002: "V\xE1lec"
+    3300004: "V\xE1lec_1"
+    4300000: "V\xE1lec_1"
+    4300002: "V\xE1lec"
+    4300004: Krychle
+    4300006: "V\xE1lec_1_2"
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: "V\xE1lec_1_2"
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

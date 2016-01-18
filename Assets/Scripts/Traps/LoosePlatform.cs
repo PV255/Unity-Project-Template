@@ -2,43 +2,43 @@
 using System.Collections;
 
 public class LoosePlatform : MonoBehaviour {
-    private float origY;
+    private Vector3 origPos;
+    private Quaternion origRot;
 
-    public float timeFallAfter = 2;
-    public float timeStayDown = 5;
+    private float timeFallAfter = 1;
+    private float timeStayDown = 7.5f;
 
     private float timeFallAt = -1;
     private float timeRiseAt = -1;
 
     // Use this for initialization
     void Start () {
-        origY = gameObject.transform.position.y;
-	}
+
+        
+        
+        origPos = gameObject.transform.position;
+        origRot = gameObject.transform.rotation;
+    }
 
     void Update() {
-        Vector3 curPos = gameObject.transform.position;
-        float targetY = curPos.y;
-
         if ((timeFallAt != -1) && (timeFallAt < Time.time)) {
-            targetY = origY - 10 * 1;
+            gameObject.AddComponent<Rigidbody>();
             timeFallAt = -1;
         }
 
-        if ((timeRiseAt != -1) && (timeRiseAt < Time.time))
-        {
-            targetY = origY;
+        if ((timeRiseAt != -1) && (timeRiseAt < Time.time)){
+            DestroyImmediate(gameObject.GetComponent<Rigidbody>());
+
+            gameObject.transform.position = origPos;
+            gameObject.transform.rotation = origRot; 
             timeRiseAt = -1;
         }
-
-        //curPos.y = curPos.y + Time.deltaTime * (targetY - curPos.y);
-        curPos.y = targetY;
-        gameObject.transform.position = curPos;
     }
 
     void OnCollisionEnter(Collision col){
-        if (col.other.CompareTag("Player")) {
+        if (col.other.CompareTag("Player") && timeFallAt == -1) {
             timeFallAt = Time.time + timeFallAfter;
-            timeRiseAt = timeFallAt + 5;
+            timeRiseAt = timeFallAt + timeStayDown;
         }
     }
 }

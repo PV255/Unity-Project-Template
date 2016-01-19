@@ -47,6 +47,8 @@ ModelImporter:
     100078: encounter2
     100080: encounter2_001
     100082: encounter2_002
+    100084: bhop4_1
+    100086: bhop4_3
     400000: //RootNode
     400002: Plane
     400004: Plane_001
@@ -89,6 +91,8 @@ ModelImporter:
     400078: encounter2
     400080: encounter2_001
     400082: encounter2_002
+    400084: bhop4_1
+    400086: bhop4_3
     2300000: //RootNode
     2300002: Plane
     2300004: Plane_001
@@ -130,6 +134,8 @@ ModelImporter:
     2300076: encounter2
     2300078: encounter2_001
     2300080: encounter2_002
+    2300082: bhop4_1
+    2300084: bhop4_3
     3300000: //RootNode
     3300002: Plane
     3300004: Plane_001
@@ -171,6 +177,8 @@ ModelImporter:
     3300076: encounter2
     3300078: encounter2_001
     3300080: encounter2_002
+    3300082: bhop4_1
+    3300084: bhop4_3
     4300000: Object
     4300002: Cube
     4300004: Plane
@@ -213,6 +221,8 @@ ModelImporter:
     4300078: encounter2
     4300080: encounter2_001
     4300082: encounter2_002
+    4300084: bhop4_3
+    4300086: bhop4_1
     7400000: Default Take
     9500000: //RootNode
   materials:

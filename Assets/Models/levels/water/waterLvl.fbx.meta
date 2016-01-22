@@ -31,6 +31,43 @@ ModelImporter:
     100046: Koule_5
     100048: outisides
     100050: Koule_2_2
+    100052: "Booleanovsk\xE9_operace_1"
+    100054: Koule_1_2
+    100056: Koule_2_2_2
+    100058: Koule_4_2
+    100060: Koule_5_2
+    100062: Koule_6
+    100064: Koule_7
+    100066: Koule_8
+    100068: Koule_9
+    100070: Koule_10
+    100072: obstacle
+    100074: obstacle_1
+    100076: domes
+    100078: obstacles
+    100080: pipes
+    100082: Koule_1_3
+    100084: Koule_3_2
+    100086: Koule_3_Koule_2_2
+    100088: Koule_4_3
+    100090: Koule_4_4
+    100092: outsides
+    100094: "Segmentovan\xFD_povrch"
+    100096: frames
+    100098: membranes
+    100100: "Prota\u017Een\xED_2_2"
+    100102: Koule_1_4
+    100104: "Prota\u017Een\xED_2_3"
+    100106: "Prota\u017Een\xED_2_4"
+    100108: "Prota\u017Een\xED_3_2"
+    100110: "Segmentovan\xFD_povrch_2"
+    100112: Koule_3_Koule_2_3
+    100114: Koule_3_Koule_2_4
+    100116: Koule_3_Koule_2_5
+    100118: Koule_3_Koule_2_6
+    100120: Koule_4_5
+    100122: "Prota\u017Een\xED_5_1"
+    100124: "Prota\u017Een\xED_5_2"
     400000: CINEMA4D_editor
     400002: EthanSkeleton_1
     400004: "K\u0159ivka"
@@ -57,6 +94,43 @@ ModelImporter:
     400046: Koule_5
     400048: outisides
     400050: Koule_2_2
+    400052: "Booleanovsk\xE9_operace_1"
+    400054: Koule_1_2
+    400056: Koule_2_2_2
+    400058: Koule_4_2
+    400060: Koule_5_2
+    400062: Koule_6
+    400064: Koule_7
+    400066: Koule_8
+    400068: Koule_9
+    400070: Koule_10
+    400072: obstacle
+    400074: obstacle_1
+    400076: domes
+    400078: obstacles
+    400080: pipes
+    400082: Koule_1_3
+    400084: Koule_3_2
+    400086: Koule_3_Koule_2_2
+    400088: Koule_4_3
+    400090: Koule_4_4
+    400092: outsides
+    400094: "Segmentovan\xFD_povrch"
+    400096: frames
+    400098: membranes
+    400100: "Prota\u017Een\xED_2_2"
+    400102: Koule_1_4
+    400104: "Prota\u017Een\xED_2_3"
+    400106: "Prota\u017Een\xED_2_4"
+    400108: "Prota\u017Een\xED_3_2"
+    400110: "Segmentovan\xFD_povrch_2"
+    400112: Koule_3_Koule_2_3
+    400114: Koule_3_Koule_2_4
+    400116: Koule_3_Koule_2_5
+    400118: Koule_3_Koule_2_6
+    400120: Koule_4_5
+    400122: "Prota\u017Een\xED_5_1"
+    400124: "Prota\u017Een\xED_5_2"
     2300000: EthanSkeleton_1
     2300002: "Prota\u017Een\xED"
     2300004: Koule
@@ -78,6 +152,35 @@ ModelImporter:
     2300036: Koule_3_Koule
     2300038: Koule_5
     2300040: Koule_2_2
+    2300042: Koule_1_2
+    2300044: Koule_2_2_2
+    2300046: Koule_4_2
+    2300048: Koule_5_2
+    2300050: Koule_6
+    2300052: Koule_7
+    2300054: Koule_8
+    2300056: Koule_9
+    2300058: Koule_10
+    2300060: obstacle
+    2300062: obstacle_1
+    2300064: Koule_1_3
+    2300066: Koule_3_2
+    2300068: Koule_3_Koule_2_2
+    2300070: Koule_4_3
+    2300072: Koule_4_4
+    2300074: "Prota\u017Een\xED_2_2"
+    2300076: "Segmentovan\xFD_povrch"
+    2300078: Koule_1_4
+    2300080: "Prota\u017Een\xED_2_3"
+    2300082: "Prota\u017Een\xED_3_2"
+    2300084: "Segmentovan\xFD_povrch_2"
+    2300086: Koule_3_Koule_2_3
+    2300088: Koule_3_Koule_2_4
+    2300090: Koule_3_Koule_2_5
+    2300092: Koule_3_Koule_2_6
+    2300094: Koule_4_5
+    2300096: "Prota\u017Een\xED_5_1"
+    2300098: "Prota\u017Een\xED_5_2"
     3300000: EthanSkeleton_1
     3300002: "Prota\u017Een\xED"
     3300004: Koule
@@ -99,6 +202,35 @@ ModelImporter:
     3300036: Koule_3_Koule
     3300038: Koule_5
     3300040: Koule_2_2
+    3300042: Koule_1_2
+    3300044: Koule_2_2_2
+    3300046: Koule_4_2
+    3300048: Koule_5_2
+    3300050: Koule_6
+    3300052: Koule_7
+    3300054: Koule_8
+    3300056: Koule_9
+    3300058: Koule_10
+    3300060: obstacle
+    3300062: obstacle_1
+    3300064: Koule_1_3
+    3300066: Koule_3_2
+    3300068: Koule_3_Koule_2_2
+    3300070: Koule_4_3
+    3300072: Koule_4_4
+    3300074: "Prota\u017Een\xED_2_2"
+    3300076: "Segmentovan\xFD_povrch"
+    3300078: Koule_1_4
+    3300080: "Prota\u017Een\xED_2_3"
+    3300082: "Prota\u017Een\xED_3_2"
+    3300084: "Segmentovan\xFD_povrch_2"
+    3300086: Koule_3_Koule_2_3
+    3300088: Koule_3_Koule_2_4
+    3300090: Koule_3_Koule_2_5
+    3300092: Koule_3_Koule_2_6
+    3300094: Koule_4_5
+    3300096: "Prota\u017Een\xED_5_1"
+    3300098: "Prota\u017Een\xED_5_2"
     4300000: EthanSkeleton_1
     4300002: "Prota\u017Een\xED"
     4300004: Koule_4
@@ -120,6 +252,35 @@ ModelImporter:
     4300036: Koule_5
     4300038: Koule_3_Koule
     4300040: Koule_2_2
+    4300042: Koule_5_2
+    4300044: Koule_2_2_2
+    4300046: Koule_1_2
+    4300048: Koule_4_2
+    4300050: Koule_9
+    4300052: Koule_8
+    4300054: Koule_7
+    4300056: Koule_6
+    4300058: Koule_10
+    4300060: obstacle
+    4300062: obstacle_1
+    4300064: Koule_3_Koule_2_2
+    4300066: Koule_4_3
+    4300068: Koule_1_3
+    4300070: Koule_4_4
+    4300072: Koule_3_2
+    4300074: "Segmentovan\xFD_povrch"
+    4300076: "Prota\u017Een\xED_2_2"
+    4300078: "Segmentovan\xFD_povrch_2"
+    4300080: "Prota\u017Een\xED_3_2"
+    4300082: Koule_1_4
+    4300084: "Prota\u017Een\xED_2_3"
+    4300086: "Prota\u017Een\xED_5_1"
+    4300088: Koule_3_Koule_2_3
+    4300090: Koule_3_Koule_2_4
+    4300092: Koule_3_Koule_2_5
+    4300094: Koule_3_Koule_2_6
+    4300096: "Prota\u017Een\xED_5_2"
+    4300098: Koule_4_5
     9500000: //RootNode
   materials:
     importMaterials: 1

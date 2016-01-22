@@ -63,8 +63,8 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate()
     {
         if (dying) {
-            return;
-        }
+            if(is_jumping) is_jumping = false;
+        } else {
 
         float h = CrossPlatformInputManager.GetAxis("Horizontal");
         float v = CrossPlatformInputManager.GetAxis("Vertical");
@@ -97,7 +97,14 @@ public class PlayerController : MonoBehaviour {
         newDir.Scale(new Vector3(1, 0, 1));
         newDir.Normalize();
         transform.rotation = Quaternion.LookRotation(newDir);
-       
+
+            //---------
+            if (move.magnitude > 1f) move.Normalize();
+            move = transform.InverseTransformDirection(move);
+
+            // send input and other state parameters to the animator
+            UpdateAnimator(move);
+        }
 
         if (is_jumping)
         {
@@ -114,12 +121,7 @@ public class PlayerController : MonoBehaviour {
         
         m_Rigidbody.velocity += Vector3.down * gravity;
 
-        //---------
-        if (move.magnitude > 1f) move.Normalize();
-        move = transform.InverseTransformDirection(move);
-
-        // send input and other state parameters to the animator
-        UpdateAnimator(move);
+        
     }
 
     void UpdateAnimator(Vector3 move)
@@ -190,6 +192,7 @@ public class PlayerController : MonoBehaviour {
         GameManager.Instance.GetComponent<GameManager>().DestroyLife();
         m_Animator.SetTrigger("isDead");
         dying = true;
+        //setDescending(true);
     }
 
     public void setDescending(bool descend) {

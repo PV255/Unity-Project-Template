@@ -98,11 +98,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: .430000007
       data:
         first:
           name: _Metallic
-        second: .379999995
+        second: .400000006
       data:
         first:
           name: _BumpScale

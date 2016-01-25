@@ -31,15 +31,25 @@ public class Snake : MonoBehaviour {
     bool ate = false;
     bool shrink = false;
     bool portal = false;
+    private int fixedUpdateCounter = 0;
 	// Use this for initialization
 	void Start () {
         background = GameObject.FindGameObjectWithTag("Background");
         AddPortalSript = background.GetComponent<AddPortal>();
-
-        InvokeRepeating("Move", moveTime, moveRate);
+        fixedUpdateCounter = 0;
         SpawnFood();
 	}
-	
+
+    void FixedUpdate() {
+        fixedUpdateCounter++;
+        float time = (float)moveTime / 0.02f;
+        Debug.Log("Fix update: " + time +" counter: "+ fixedUpdateCounter);
+        if ((int)time == fixedUpdateCounter) {
+            fixedUpdateCounter = 0;
+            Move();
+        }
+    }
+
 	// Update is called once per frame
     void Update() {
 
@@ -68,7 +78,7 @@ public class Snake : MonoBehaviour {
         }
         if (coll.name.StartsWith(decreaseSnakeLengthFoodPrefab.name))
         {
-            // Get longer in next Move call
+            // Get shorter in next Move call
             shrink = true;
 
             // Remove the Food

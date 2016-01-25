@@ -75,7 +75,6 @@ public class AddPortal : MonoBehaviour {
                 //Debug.Log("OnMouseUp " + posUp);
                 float distX = Mathf.Abs(posUp.x - pos.x);
                 float distY = Mathf.Abs(posUp.y - pos.y);
-                string direction;
                 //Debug.Log("distX: " + distX + ", distY: " + distY);
                 Vector2 vec;
                 if (distX > distY)

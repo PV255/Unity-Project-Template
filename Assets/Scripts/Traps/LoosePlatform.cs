@@ -13,21 +13,22 @@ public class LoosePlatform : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        
-        
         origPos = gameObject.transform.position;
         origRot = gameObject.transform.rotation;
+
+        gameObject.AddComponent<Rigidbody>();
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Update() {
         if ((timeFallAt != -1) && (timeFallAt < Time.time)) {
-            gameObject.AddComponent<Rigidbody>();
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
             timeFallAt = -1;
         }
 
         if ((timeRiseAt != -1) && (timeRiseAt < Time.time)){
-            DestroyImmediate(gameObject.GetComponent<Rigidbody>());
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
             gameObject.transform.position = origPos;
             gameObject.transform.rotation = origRot; 

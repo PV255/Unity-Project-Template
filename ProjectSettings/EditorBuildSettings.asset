@@ -8,12 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mainMenu.unity
   - enabled: 1
+    path: Assets/Scenes/iceLvl.unity
+  - enabled: 1
+    path: Assets/Scenes/waterLvl.unity
+  - enabled: 1
     path: Assets/Scenes/fireLvl.unity
   - enabled: 1
     path: Assets/Scenes/earthLvl.unity
   - enabled: 1
     path: Assets/Scenes/testLevel01.unity
-  - enabled: 1
-    path: Assets/Scenes/iceLvl.unity
   - enabled: 1
     path: Assets/Scenes/gameOver.unity

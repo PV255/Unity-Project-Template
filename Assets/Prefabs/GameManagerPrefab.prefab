@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .75, g: .703600466, b: .0772058666, a: 1}
+  m_Color: {r: 0.75, g: 0.70360047, b: 0.07720587, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -137,6 +137,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .75, g: .703600466, b: .0772058666, a: 1}
+  m_Color: {r: 0.75, g: 0.70360047, b: 0.07720587, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -169,6 +170,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -224,6 +226,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!224 &22424506
 RectTransform:
   m_ObjectHideFlags: 1
@@ -251,7 +254,7 @@ RectTransform:
   m_GameObject: {fileID: 195444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0497036, y: 2.04970264, z: 2.04970264}
+  m_LocalScale: {x: 2.0497036, y: 2.0497026, z: 2.0497026}
   m_Children: []
   m_Father: {fileID: 22424506}
   m_RootOrder: 0
@@ -268,7 +271,7 @@ RectTransform:
   m_GameObject: {fileID: 177796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.95031452, y: 1.95031345, z: 1.95031345}
+  m_LocalScale: {x: 1.9503145, y: 1.9503134, z: 1.9503134}
   m_Children: []
   m_Father: {fileID: 22424506}
   m_RootOrder: 1
@@ -283,7 +286,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163254}

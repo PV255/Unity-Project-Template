@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lava
+  m_Name: No Name
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,30 +19,19 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 1130ae798552e444aa341d0af31adfcb, type: 3}
-          m_Scale: {x: 25, y: 25}
-<<<<<<< HEAD
-          m_Offset: {x: -0.16003934, y: -0.48011848}
-=======
-          m_Offset: {x: -0.40142477, y: -1.2042468}
->>>>>>> 0b20392070739554b1080bc73c9bc9684582b6eb
-      data:
-        first:
-          name: _BumpMap
-        second:
-          m_Texture: {fileID: 2800000, guid: ba9732d368d8aa049977c74571bab8f2, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DetailNormalMap
+          name: _BumpMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MetallicGlossMap
+          name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -66,7 +55,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 25, y: 25}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -80,11 +69,11 @@ Material:
           name: _DetailAlbedoMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 20, y: 20}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
+          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -101,7 +90,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: 0.5
+        second: .5
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
       data:
         first:
           name: _ZWrite
@@ -109,19 +102,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
-      data:
-        first:
-          name: _Metallic
-        second: 0
+        second: .5
       data:
         first:
           name: _BumpScale
         second: 1
-      data:
-        first:
-          name: _Parallax
-        second: 0.02
       data:
         first:
           name: _OcclusionStrength
@@ -138,6 +123,10 @@ Material:
         first:
           name: _Mode
         second: 0
+      data:
+        first:
+          name: _Metallic
+        second: .540000021
     m_Colors:
       data:
         first:
@@ -146,8 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.9264706, g: 0.74606246, b: 0.27249134, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+        second: {r: .33088237, g: .33088237, b: .33088237, a: 1}

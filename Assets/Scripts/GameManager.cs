@@ -22,9 +22,7 @@ public class GameManager : MonoBehaviour {
         }
         else{
             Instance = this;
-            score = 0;
-            lives = 5;
-            SetScoreText();
+            newGameStarted();
             DontDestroyOnLoad(gameObject);
         }
         setLevelManager(GameObject.Find("LevelManager").GetComponent<LevelManager>());
@@ -84,5 +82,12 @@ public class GameManager : MonoBehaviour {
     private void SetLivesText()
     {
         livesText.text = "lives: " + lives;
+    }
+
+    public void newGameStarted() {
+        score = 0;
+        lives = 5;
+        SetScoreText();
+        SetLivesText();
     }
 }

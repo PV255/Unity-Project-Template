@@ -56,7 +56,6 @@ public class Snake : MonoBehaviour {
     void FixedUpdate() {
         fixedUpdateCounter++;
         float time = (float)moveTime / 0.02f;
-        //Debug.Log("Fix update: " + time +" counter: "+ fixedUpdateCounter);
         if ((int)time == fixedUpdateCounter) {
             fixedUpdateCounter = 0;
             Move();
@@ -80,7 +79,6 @@ public class Snake : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (portal) { return; }
-        // Food?
         if (coll.name.StartsWith(foodPrefab.name))
         {
             // Get longer in next Move call
@@ -111,10 +109,8 @@ public class Snake : MonoBehaviour {
             SpawnFood();
             Destroy(coll.gameObject);
         }
-        // Collided with Tail or Border
         else if (coll.name.StartsWith("PortalPrefab"))
         {
-            // = GetComponent(AddPortal); 
             List<AddPortal.Tuple> portals = AddPortalSript.portals;
             PortalId something = coll.gameObject.GetComponent<PortalId>();
             int id = something.id;
@@ -133,7 +129,6 @@ public class Snake : MonoBehaviour {
 
                 Vector3 head = new Vector3(dir.x, dir.y, 0);
                 Vector3 moveDirection = head;
-                //transform.rotation = Quaternion.identity;
                 if (moveDirection != Vector3.zero)
                 {
                     float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
@@ -148,7 +143,6 @@ public class Snake : MonoBehaviour {
                     transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
                 }
                 dir = onIndex.outputPortal.getHeading();
-                //transform.position = new Vector2(0,0);
                 if (dir == Vector2.left)
                 {
                     transform.rotation = new Quaternion(0, 0, 0, 1);
@@ -165,10 +159,7 @@ public class Snake : MonoBehaviour {
                 {
                     transform.rotation = new Quaternion(1, -1, 0, 0);
                 }
-                Debug.Log(transform.rotation);
-                //transform.rotation = Quaternion.RotateTowards(transform.rotation,new Quaternion(head.x,head.y,head.z,1) ,360);
-                //transform.rotation = Quaternion.LookRotation(new Vector3(0,dir.x,dir.y));
-                //transform.LookAt(onIndex.outputPortal.getHeading());
+                Debug.Log(transform.rotation); 
                 transform.position = onIndex.outputPortal.getPosition();
 
             }
@@ -181,6 +172,7 @@ public class Snake : MonoBehaviour {
 
         else
         {
+            gameOver();
             // ToDo 'You lose' screen
             Debug.Log("collision with: " + coll.name);
             Debug.Log("Score: " + tail.Count);
@@ -219,6 +211,7 @@ public class Snake : MonoBehaviour {
             }
             else {
                 /*GAME OVER dlzka hada je 0*/
+                gameOver();
             }
         } else if (tail.Count > 0)
         {
@@ -239,6 +232,7 @@ public class Snake : MonoBehaviour {
     void UpdateSpeed(bool increase) {
         if (increase) {
             moveTime -= moveChangeRate;
+            if (moveTime <= 0.1) { moveTime = 0.1f; }
             
         } else {
             moveTime += moveChangeRate;
@@ -278,7 +272,7 @@ public class Snake : MonoBehaviour {
         Debug.Log("Position food: " + pos);
         // Instantiate the food at (x, y)
         //need to shift the number
-        Instantiate(foodPrefab,
+        Instantiate(incraseSnakeSpeedFoodPrefab,
                     new Vector2(pos.x, pos.y),
                     Quaternion.identity); // default rotation
     }
@@ -326,5 +320,9 @@ public class Snake : MonoBehaviour {
                 obstacle[i][j] = false;
             }
         }
+    }
+
+    /*TODO: implement game over screen here*/
+    void gameOver() {
     }
 }

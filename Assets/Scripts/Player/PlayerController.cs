@@ -66,37 +66,38 @@ public class PlayerController : MonoBehaviour {
             if(is_jumping) is_jumping = false;
         } else {
 
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
-        float v = CrossPlatformInputManager.GetAxis("Vertical");
+            float h = CrossPlatformInputManager.GetAxis("Horizontal");
+            float v = CrossPlatformInputManager.GetAxis("Vertical");
 
-        Vector3 flatFWD = cam.transform.forward;
-        flatFWD.y = 0;
-        flatFWD.Normalize();
+            Vector3 flatFWD = cam.transform.forward;
+            flatFWD.y = 0;
+            flatFWD.Normalize();
 
-        Vector3 flatRT = cam.transform.right;
-        flatRT.y = 0;
-        flatRT.Normalize();
+            Vector3 flatRT = cam.transform.right;
+            flatRT.y = 0;
+            flatRT.Normalize();
 
-        Vector3 move = (v * flatFWD + h * flatRT) * speed;
+            Vector3 move = (v * flatFWD + h * flatRT) * speed;
 
-        CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
-        PhysicMaterial phys = col.material;
-        bool useHigherFriction = (v == 0) && (h == 0); // move.magnitude < 0.001f;
+            CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
+            PhysicMaterial phys = col.material;
+            bool useHigherFriction = (v == 0) && (h == 0); // move.magnitude < 0.001f;
 
-        if (useHigherFriction){
-            phys.staticFriction = 10;
-        }else{
-            phys.staticFriction = 0;
-        }
+            if (useHigherFriction)
+            {
+                phys.staticFriction = 10;
+            } else{
+                phys.staticFriction = 0;
+            }
 
-        m_Rigidbody.velocity = move;
+            m_Rigidbody.velocity = move;
         
-        float step = speed * Time.deltaTime;
-        Vector3 newDir = Vector3.RotateTowards(m_Rigidbody.transform.forward, move, step, 0.0F);
-        //Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
-        newDir.Scale(new Vector3(1, 0, 1));
-        newDir.Normalize();
-        transform.rotation = Quaternion.LookRotation(newDir);
+            float step = speed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(m_Rigidbody.transform.forward, move, step, 0.0F);
+            //Debug.DrawLine(m_Rigidbody.transform.position, newDir, Color.red);
+            newDir.Scale(new Vector3(1, 0, 1));
+            newDir.Normalize();
+            transform.rotation = Quaternion.LookRotation(newDir);
 
             //---------
             if (move.magnitude > 1f) move.Normalize();
@@ -119,7 +120,8 @@ public class PlayerController : MonoBehaviour {
             is_grounded = true;
         }
         
-        m_Rigidbody.velocity += Vector3.down * gravity;
+        if (!isDescending)
+            m_Rigidbody.velocity += Vector3.down * gravity;
 
         
     }
@@ -192,7 +194,6 @@ public class PlayerController : MonoBehaviour {
         GameManager.Instance.GetComponent<GameManager>().DestroyLife();
         m_Animator.SetTrigger("isDead");
         dying = true;
-        //setDescending(true);
     }
 
     public void setDescending(bool descend) {

@@ -23,4 +23,8 @@ public class FixRotation : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void setRatotation(Quaternion rotation) {
+        this.rotation = rotation;
+    }
 }

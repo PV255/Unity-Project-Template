@@ -196,6 +196,12 @@ public class PlayerController : MonoBehaviour {
         dying = true;
     }
 
+    public void drownPlayer() {
+        GameManager.Instance.GetComponent<GameManager>().DestroyLife();
+        m_Animator.SetTrigger("isDead");
+        dying = true;
+    }
+
     public void setDescending(bool descend) {
         this.isDescending = descend;
     }

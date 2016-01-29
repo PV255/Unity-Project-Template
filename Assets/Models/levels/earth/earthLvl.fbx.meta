@@ -3,7 +3,7 @@ guid: 8fc2d4610a5768940a5f5974c2fa7595
 timeCreated: 1445173816
 licenseType: Free
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: CINEMA4D_editor
     100002: //RootNode
@@ -61,6 +61,8 @@ ModelImporter:
     100106: roof
     100108: top
     100110: corridor_2_2_2
+    100112: Camera.001
+    100114: Lamp.001
     400000: CINEMA4D_editor
     400002: //RootNode
     400004: Koule
@@ -117,6 +119,8 @@ ModelImporter:
     400106: roof
     400108: top
     400110: corridor_2_2_2
+    400112: Camera.001
+    400114: Lamp.001
     2300000: Koule_2
     2300002: Koule_4
     2300004: Krychle
@@ -233,6 +237,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -240,9 +245,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
@@ -266,20 +271,19 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0

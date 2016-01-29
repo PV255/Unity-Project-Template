@@ -82,7 +82,7 @@ public class EnemyScript : MonoBehaviour
         dead = true;
         if (path != "")
         {
-            iTween.Stop();
+            iTween.Stop(this.gameObject);
         }
         animator.SetBool("isDead", true);
         //StartCoroutine(KillOnAnimationEnd());

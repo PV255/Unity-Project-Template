@@ -9,6 +9,15 @@ public class MenuBehaviourScript : MonoBehaviour {
         GameManager.Instance.newGameStarted();
     }
 
+    public void loadLevel(string id){
+        if (id == null) {
+            return;
+        }
+
+        Application.LoadLevel(id);
+        GameManager.Instance.newGameStarted();
+    }
+
     public void quitGame()
     {
         Application.Quit();

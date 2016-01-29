@@ -19,7 +19,7 @@ public class MenuBehaviourScript : MonoBehaviour {
 
     void Update() {
         if (camera != null) {
-            camera.RotateAround(pos, y, Time.deltaTime);
+            camera.RotateAround(pos, y, Time.deltaTime * 2f);
         }
     }
 

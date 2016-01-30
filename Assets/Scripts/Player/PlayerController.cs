@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour {
     private bool attacking;
     private bool dying;
     private bool isDescending;
+    private bool isPositionFixed;
 
 
     void Start()
@@ -38,6 +39,13 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log(isPositionFixed);
+        if (isPositionFixed)
+        {
+            return;
+        }
+
+        Debug.Log("NO MESSAGE SHOULD BE WRITTEN");
         if (is_grounded)
         {
             if (CrossPlatformInputManager.GetButtonDown("Jump"))
@@ -62,6 +70,12 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (isPositionFixed)
+        {
+            return;
+        }
+
+
         if (dying) {
             if(is_jumping) is_jumping = false;
         } else {
@@ -204,6 +218,10 @@ public class PlayerController : MonoBehaviour {
 
     public void setDescending(bool descend) {
         this.isDescending = descend;
+    }
+
+    public void setIsPositionFixed(bool isPosFix) {
+        this.isPositionFixed = isPosFix;
     }
 
     private void moveDown() {

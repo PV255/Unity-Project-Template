@@ -22,6 +22,13 @@ public class FallRock01Collider : MonoBehaviour {
         {
             collision.collider.GetComponent<PlayerController>().killPlayer();
             took_life = true;
+            StartCoroutine(KillOnAnimationEnd());
         }
+    }
+
+    public IEnumerator KillOnAnimationEnd()
+    {
+        yield return new WaitForSeconds(2f);
+        this.gameObject.SetActive(false);
     }
 }

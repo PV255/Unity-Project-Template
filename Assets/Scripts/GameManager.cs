@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour {
             newGameStarted();
             DontDestroyOnLoad(gameObject);
         }
-        setLevelManager(GameObject.Find("LevelManager").GetComponent<LevelManager>());
     }
 
 	// Use this for initialization

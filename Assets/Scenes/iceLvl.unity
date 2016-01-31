@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e247f1dd1d2e5748b2056a144ba28e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: testLevel01
+  nextLevel: hub
 --- !u!1001 &348735022
 Prefab:
   m_ObjectHideFlags: 0
@@ -8833,6 +8833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 464704497}
   livesText: {fileID: 571885951}
+  scoreImg: {fileID: 0}
+  livesImg: {fileID: 0}
 --- !u!1001 &1994272402
 Prefab:
   m_ObjectHideFlags: 0

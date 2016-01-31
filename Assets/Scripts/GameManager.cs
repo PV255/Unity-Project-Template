@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
     private LevelManager levelManager;
     public Text scoreText;
     public Text livesText;
+    public Image scoreImg;
+    public Image livesImg;
     private int score;
     private int lives;
 
@@ -37,8 +39,11 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Application.loadedLevelName == "gameOver") {
+            
             scoreText.enabled = false;
+            scoreImg.enabled = false;
             livesText.enabled = false;
+            livesImg.enabled = false;
             GameObject.Find("gameOverManager").GetComponent<GameOverScript>().initGameOver(score);
         }
 

@@ -7519,7 +7519,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400628, guid: 3b9af17a2b9220d409acb13ed02c4198, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429980727}
-  m_LocalRotation: {x: 0.6263631, y: -0.52902925, z: -0.25031757, w: 0.5149161}
+  m_LocalRotation: {x: 0.62636304, y: -0.5290292, z: -0.25031754, w: 0.51491606}
   m_LocalPosition: {x: -2.152361, y: -0.00000029802322, z: -0.00000017881393}
   m_LocalScale: {x: 1.0000002, y: 1, z: 1}
   m_Children:
@@ -12800,9 +12800,29 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11403954, guid: 0cf00060ee4d5a74986c2546f079bbb6, type: 2}
+      propertyPath: scoreImg
+      value: 
+      objectReference: {fileID: 752426222}
+    - target: {fileID: 11403954, guid: 0cf00060ee4d5a74986c2546f079bbb6, type: 2}
+      propertyPath: livesImg
+      value: 
+      objectReference: {fileID: 752426221}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0cf00060ee4d5a74986c2546f079bbb6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &752426221 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400098, guid: 0cf00060ee4d5a74986c2546f079bbb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 752426220}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &752426222 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11414178, guid: 0cf00060ee4d5a74986c2546f079bbb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 752426220}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &752605537
 GameObject:
   m_ObjectHideFlags: 0

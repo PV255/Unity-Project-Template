@@ -188,7 +188,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
 --- !u!1001 &91905011
 Prefab:
@@ -574,6 +574,7 @@ GameObject:
   - 4: {fileID: 881257847}
   - 33: {fileID: 881257849}
   - 23: {fileID: 881257848}
+  - 64: {fileID: 881257850}
   m_Layer: 0
   m_Name: Osy_0
   m_TagString: Untagged
@@ -627,6 +628,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 881257846}
+  m_Mesh: {fileID: 4300000, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
+--- !u!64 &881257850
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881257846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 242b10ab38d13a54380d83f07ba1a291, type: 3}
 --- !u!1 &892035986 stripped
 GameObject:

@@ -23,6 +23,7 @@ public class MenuBehaviourScript : MonoBehaviour {
         }
 
         if (!isInMainMenu && Input.GetKeyDown(KeyCode.Escape)){
+            Time.timeScale = 0;
             canvasPause.SetActive(true);
         }
     }
@@ -52,8 +53,9 @@ public class MenuBehaviourScript : MonoBehaviour {
         Application.Quit();
     }
 
-    public void quitLevel()
-    {
+    public void quitLevel(){
+        Time.timeScale = 1;
+
         Application.LoadLevel("mainMenu");
 
         canvasMain.SetActive(true);
@@ -62,5 +64,10 @@ public class MenuBehaviourScript : MonoBehaviour {
         canvasCredits.SetActive(false);
         canvasLevels.SetActive(false);
         canvasHUD.SetActive(false);
+    }
+
+    public void unpause() {
+        canvasPause.SetActive(false);
+        Time.timeScale = 1;
     }
 }

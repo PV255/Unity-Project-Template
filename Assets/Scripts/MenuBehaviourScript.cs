@@ -2,11 +2,33 @@
 using System.Collections;
 
 public class MenuBehaviourScript : MonoBehaviour {
-    public Transform camera = null;
+    public GameObject canvasMain;
+    public GameObject canvasPause;
+    public GameObject canvasCredits;
+    public GameObject canvasHUD;
+    public GameObject canvasLevels;
+
+    void Start(){
+
+    }
+
+    Vector3 pos = new Vector3(0, 0, 0);
+    Vector3 y = new Vector3(0, 1, 0);
+
+    void Update(){
+        bool isInMainMenu = Application.loadedLevelName.Contains("mainMenu");
+
+        if (isInMainMenu && Camera.main != null){
+            Camera.main.transform.RotateAround(pos, y, Time.deltaTime * 2f);
+        }
+
+        if (!isInMainMenu && Input.GetKeyDown(KeyCode.Escape)){
+            canvasPause.SetActive(true);
+        }
+    }
 
     public void newGame(){
-        Application.LoadLevel(7);
-        GameManager.Instance.newGameStarted();
+        loadLevel("hub");
     }
 
     public void loadLevel(string id){
@@ -15,24 +37,30 @@ public class MenuBehaviourScript : MonoBehaviour {
         }
 
         Application.LoadLevel(id);
+
         GameManager.Instance.newGameStarted();
+
+        canvasMain.SetActive(false);
+        canvasPause.SetActive(false);
+        canvasCredits.SetActive(false);
+        canvasLevels.SetActive(false);
+
+        canvasHUD.SetActive(true);
     }
 
-    public void quitGame()
-    {
+    public void quitGame(){
         Application.Quit();
     }
 
-    Vector3 pos = new Vector3(0, 0, 0);
-    Vector3 y = new Vector3(0, 1, 0);
+    public void quitLevel()
+    {
+        Application.LoadLevel("mainMenu");
 
-    void Update() {
-        if (camera != null) {
-            camera.RotateAround(pos, y, Time.deltaTime * 2f);
-        }
-    }
+        canvasMain.SetActive(true);
 
-    public void gameOverLeave(){
-        Application.LoadLevel(0);
+        canvasPause.SetActive(false);
+        canvasCredits.SetActive(false);
+        canvasLevels.SetActive(false);
+        canvasHUD.SetActive(false);
     }
 }

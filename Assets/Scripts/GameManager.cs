@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour {
     {
         score += ammount;
         SetScoreText();
+
+        if ((score > 0) && ((score % 100) == 0)) {
+            AddLife();
+        }
     }
 
     public void AddLife()

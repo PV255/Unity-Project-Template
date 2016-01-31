@@ -76,12 +76,13 @@ public class GameManager : MonoBehaviour {
 
     private void SetScoreText()
     {
-        scoreText.text = "Score: " + score;
+        //scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
     }
 
     private void SetLivesText()
     {
-        livesText.text = "lives: " + lives;
+        livesText.text = lives.ToString();
     }
 
     public void newGameStarted() {

@@ -5,7 +5,7 @@ public class MenuBehaviourScript : MonoBehaviour {
     public Transform camera = null;
 
     public void newGame(){
-        Application.LoadLevel(1);
+        Application.LoadLevel(7);
         GameManager.Instance.newGameStarted();
     }
 

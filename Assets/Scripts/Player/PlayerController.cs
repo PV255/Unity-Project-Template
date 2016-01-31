@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     private bool attacking;
     private bool dying;
     private bool isDescending;
-    private bool isPositionFixed;
+    private bool isPositionFixed;         //tutorial level fix position
 
 
     void Start()
@@ -39,13 +39,11 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(isPositionFixed);
         if (isPositionFixed)
         {
             return;
         }
 
-        Debug.Log("NO MESSAGE SHOULD BE WRITTEN");
         if (is_grounded)
         {
             if (CrossPlatformInputManager.GetButtonDown("Jump"))

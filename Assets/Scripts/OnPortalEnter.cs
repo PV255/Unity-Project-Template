@@ -9,7 +9,7 @@ public class OnPortalEnter : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.other.CompareTag("Player")) {
+        if (col.collider.CompareTag("Player")) {
             GameManager.Instance.GetComponent<GameManager>().GoToNextLevel();
         }
     }

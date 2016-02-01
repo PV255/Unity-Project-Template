@@ -498,6 +498,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11406930, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
+      propertyPath: path
+      value: pathSecond
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406930, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
+      propertyPath: time
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
   m_IsPrefabParent: 0
@@ -542,23 +550,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 424506, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.59797066
+      value: -0.5979706
       objectReference: {fileID: 0}
     - target: {fileID: 424506, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.36161616
+      value: -0.36161613
       objectReference: {fileID: 0}
     - target: {fileID: 424506, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.62663126
+      value: 0.6266312
       objectReference: {fileID: 0}
     - target: {fileID: 424506, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.34496123
+      value: -0.3449612
       objectReference: {fileID: 0}
     - target: {fileID: 479236, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406930, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
+      propertyPath: path
+      value: pathFirst
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406930, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
+      propertyPath: time
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
@@ -5087,6 +5103,35 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 479236, guid: 6fedeed62ba663b44ac3922559431d2f, type: 2}
   m_PrefabInternal: {fileID: 342259997}
+--- !u!1 &1086026716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1086026717}
+  m_Layer: 0
+  m_Name: Paths
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1086026717
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086026716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1960134837}
+  - {fileID: 1708013879}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1001 &1097869278
 Prefab:
   m_ObjectHideFlags: 0
@@ -7006,6 +7051,55 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 461734, guid: d0ba5f7732f0ad14eb44dfba103bf769, type: 2}
   m_PrefabInternal: {fileID: 588251}
+--- !u!1 &1708013878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1708013879}
+  - 114: {fileID: 1708013880}
+  m_Layer: 0
+  m_Name: Path02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708013879
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708013878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -118, y: 0, z: -52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1086026717}
+  m_RootOrder: 1
+--- !u!114 &1708013880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708013878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ef3b15c32eb43108261a87963b8937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: pathSecond
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -1, y: -33, z: -308}
+  - {x: -60.107315, y: -33, z: -215.9371}
+  - {x: -19.148834, y: 0, z: -212.52563}
+  - {x: -1, y: -33, z: -308}
+  nodeCount: 4
+  initialized: 1
+  initialName: New Path 2
 --- !u!4 &1715490641 stripped
 Transform:
   m_PrefabParentObject: {fileID: 461734, guid: d0ba5f7732f0ad14eb44dfba103bf769, type: 2}
@@ -7629,6 +7723,55 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0ba5f7732f0ad14eb44dfba103bf769, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1960134836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1960134837}
+  - 114: {fileID: 1960134838}
+  m_Layer: 0
+  m_Name: Path01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960134837
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960134836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4, y: 0.99, z: 101.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1086026717}
+  m_RootOrder: 0
+--- !u!114 &1960134838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960134836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ef3b15c32eb43108261a87963b8937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: pathFirst
+  pathColor: {r: 0.9264706, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -10, y: 13, z: 83}
+  - {x: -10.793125, y: 13, z: 89.31815}
+  - {x: -17.08641, y: 13, z: 90.315445}
+  - {x: -10, y: 13, z: 83}
+  nodeCount: 4
+  initialized: 1
+  initialName: New Path 2
 --- !u!1001 &1977793092
 Prefab:
   m_ObjectHideFlags: 0

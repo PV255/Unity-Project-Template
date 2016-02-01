@@ -29,7 +29,7 @@ public class MenuBehaviourScript : MonoBehaviour {
     }
 
     public void newGame(){
-        loadLevel("hub");
+        loadLevel("tutorialLevel");
     }
 
     public void loadLevel(string id){

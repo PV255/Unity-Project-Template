@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class allowMoveBehaviour : StateMachineBehaviour {
+
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,6 +20,15 @@ public class allowMoveBehaviour : StateMachineBehaviour {
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.gameObject.GetComponent<PlayerController>().setIsPositionFixed(false);
+
+        //GameObject moveGO = GameObject.Find("move");
+        //if (moveGO != null)
+        //{
+        //    Image moveVar = moveGO.GetComponent<Image>();
+        //    moveVar.enabled = true;
+        //}
+
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

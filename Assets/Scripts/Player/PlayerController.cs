@@ -210,7 +210,8 @@ public class PlayerController : MonoBehaviour {
 
     public void drownPlayer() {
         GameManager.Instance.GetComponent<GameManager>().DestroyLife();
-        m_Animator.SetTrigger("isDead");
+        m_Animator.SetTrigger("isDrowning");
+        setDescending(true);
         dying = true;
     }
 

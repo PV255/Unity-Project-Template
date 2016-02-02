@@ -40,8 +40,7 @@ public class MenuBehaviourScript : MonoBehaviour {
         canvasPause.SetActive(true);
 
         PlayerController ply = FindObjectOfType<PlayerController>();
-        playerRestoreFreeze = ply.setIsPositionFixed(true);
-        playerRestorePos = ply.gameObject.transform.position;
+        ply.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
         gamePaused = true;
     }
@@ -51,8 +50,7 @@ public class MenuBehaviourScript : MonoBehaviour {
         Time.timeScale = 1;
 
         PlayerController ply = FindObjectOfType<PlayerController>();
-        ply.gameObject.transform.position = playerRestorePos;
-        ply.setIsPositionFixed(playerRestoreFreeze);
+        ply.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
         gamePaused = false;
     }

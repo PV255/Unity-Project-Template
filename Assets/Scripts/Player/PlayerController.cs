@@ -219,8 +219,10 @@ public class PlayerController : MonoBehaviour {
         this.isDescending = descend;
     }
 
-    public void setIsPositionFixed(bool isPosFix) {
+    public bool setIsPositionFixed(bool isPosFix) {
+        bool old = this.isPositionFixed;
         this.isPositionFixed = isPosFix;
+        return old;
     }
 
     private void moveDown() {

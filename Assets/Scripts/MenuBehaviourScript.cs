@@ -12,16 +12,18 @@ public class MenuBehaviourScript : MonoBehaviour {
 
     }
 
-    Vector3 pos = new Vector3(0, 0, 0);
-    Vector3 y = new Vector3(0, 1, 0);
-    Vector3 playerRestorePos;
+    Vector3 camPos = new Vector3(0, 0, 0);
+    Vector3 camAxY = new Vector3(0, 1, 0);
     bool gamePaused = false;
+
+    Vector3 playerRestorePos;
+    bool playerRestoreFreeze;
 
     void Update(){
         bool isInMainMenu = Application.loadedLevelName.Contains("mainMenu");
         
         if (isInMainMenu && Camera.main != null){
-            Camera.main.transform.RotateAround(pos, y, Time.deltaTime * 2f);
+            Camera.main.transform.RotateAround(camPos, camAxY, Time.deltaTime * 2f);
         }
 
         if (!isInMainMenu && Input.GetKeyDown(KeyCode.Escape)){
@@ -38,7 +40,7 @@ public class MenuBehaviourScript : MonoBehaviour {
         canvasPause.SetActive(true);
 
         PlayerController ply = FindObjectOfType<PlayerController>();
-        ply.setIsPositionFixed(true);
+        playerRestoreFreeze = ply.setIsPositionFixed(true);
         playerRestorePos = ply.gameObject.transform.position;
 
         gamePaused = true;
@@ -50,7 +52,7 @@ public class MenuBehaviourScript : MonoBehaviour {
 
         PlayerController ply = FindObjectOfType<PlayerController>();
         ply.gameObject.transform.position = playerRestorePos;
-        ply.setIsPositionFixed(false);
+        ply.setIsPositionFixed(playerRestoreFreeze);
 
         gamePaused = false;
     }
@@ -64,6 +66,7 @@ public class MenuBehaviourScript : MonoBehaviour {
             return;
         }
 
+        gamePaused = false;
         Application.LoadLevel(id);
 
         GameManager.Instance.newGameStarted();
@@ -83,13 +86,14 @@ public class MenuBehaviourScript : MonoBehaviour {
     public void quitLevel(){
         Time.timeScale = 1;
 
+        gamePaused = false;
         Application.LoadLevel("mainMenu");
-
-        canvasMain.SetActive(true);
 
         canvasPause.SetActive(false);
         canvasCredits.SetActive(false);
         canvasLevels.SetActive(false);
         canvasHUD.SetActive(false);
+
+        canvasMain.SetActive(true);
     }
 }

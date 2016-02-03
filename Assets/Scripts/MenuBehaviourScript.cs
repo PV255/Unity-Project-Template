@@ -102,11 +102,19 @@ public class MenuBehaviourScript : MonoBehaviour {
     }
 
     public void showGameOver() {
-        quitLevel();
+        Time.timeScale = 1;
 
-        textGameOverScore.text = "Your Score: " + GameManager.Instance.getScore();
+        gamePaused = false;
+        Application.LoadLevel("mainMenu");
 
         canvasMain.SetActive(false);
+        canvasPause.SetActive(false);
+        canvasCredits.SetActive(false);
+        canvasLevels.SetActive(false);
+        canvasHUD.SetActive(false);
+        
+        textGameOverScore.text = "Your Score: " + GameManager.Instance.getScore();
+
         canvasGameOver.SetActive(true);
     }
     

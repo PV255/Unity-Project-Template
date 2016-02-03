@@ -3,7 +3,7 @@ using System.Collections;
 
 public class OnHUBPortalEnter : MonoBehaviour {
 
-    public int level;
+    public string level;
 
 	// Use this for initialization
 	void Start () {

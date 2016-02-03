@@ -247,7 +247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 3
+      value: iceLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -313,7 +313,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 3
+      value: iceLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -427,7 +427,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 3
+      value: iceLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -495,6 +495,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.0021571475
       objectReference: {fileID: 0}
+    - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
+      propertyPath: level
+      value: earthLvl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
   m_IsPrefabParent: 0
@@ -556,6 +560,10 @@ Prefab:
     - target: {fileID: 454952, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.0021571459
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
+      propertyPath: level
+      value: earthLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -716,6 +724,10 @@ Prefab:
       propertyPath: m_Name
       value: PortalPrefab (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
+      propertyPath: level
+      value: earthLvl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
   m_IsPrefabParent: 0
@@ -780,7 +792,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 2
+      value: fireLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -862,7 +874,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 2
+      value: fireLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -1050,7 +1062,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 2
+      value: fireLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -1186,7 +1198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 4
+      value: waterLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
@@ -1333,7 +1345,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11476442, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}
       propertyPath: level
-      value: 4
+      value: waterLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 500bc85ea0292e24083f1edb274d33b9, type: 2}

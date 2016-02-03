@@ -7,6 +7,8 @@ public class StartMenu : MonoBehaviour {
 
     public Canvas quitDialog;
     public Canvas aboutCanvas;
+    public Canvas controlsCanvas;
+    public Canvas optionsCanvas;
     public Button playButton;
     public Button exitButton;
     public Button controlsButton;
@@ -17,6 +19,9 @@ public class StartMenu : MonoBehaviour {
 	void Start () {
         quitDialog = quitDialog.GetComponent<Canvas>(); //assigned actual game object to variable
         aboutCanvas = aboutCanvas.GetComponent<Canvas>();
+        controlsCanvas = controlsCanvas.GetComponent<Canvas>();
+        optionsCanvas = optionsCanvas.GetComponent<Canvas>();
+
         playButton = playButton.GetComponent<Button>();
         exitButton = exitButton.GetComponent<Button>();
         controlsButton = controlsButton.GetComponent<Button>();
@@ -24,21 +29,38 @@ public class StartMenu : MonoBehaviour {
         aboutButton = aboutButton.GetComponent<Button>();
         quitDialog.enabled = false;
         aboutCanvas.enabled = false;
+        controlsCanvas.enabled = false;
+        optionsCanvas.enabled = false;
+    }
+
+    public void ControlsPress()
+    {
+        controlsCanvas.enabled = true;
     }
 
     // ABOUT
     public void AboutPress()
     {
         aboutCanvas.enabled = true;
-
         //disabling
+    }
+
+    // OPTIONS
+    public void OptionsPress()
+    {
+        optionsCanvas.enabled = true;
+        DisableMenuButtons();
     }
 	
 	// EXIT
 	public void ExitPress()
     {
         quitDialog.enabled = true;
+        DisableMenuButtons();
+    }
 
+    private void DisableMenuButtons()
+    {
         playButton.enabled = false;
         exitButton.enabled = false;
         controlsButton.enabled = false;
@@ -50,6 +72,8 @@ public class StartMenu : MonoBehaviour {
     {
         quitDialog.enabled = false;
         aboutCanvas.enabled = false;
+        controlsCanvas.enabled = false;
+        optionsCanvas.enabled = false;
 
         playButton.enabled = true;
         exitButton.enabled = true;
@@ -58,17 +82,13 @@ public class StartMenu : MonoBehaviour {
         aboutButton.enabled = true;
     }
 
-    public void YesExitPress()
-    {
-
-    }
-
     public void StartLevel()
     {
         //Application.LoadLevel(1);
         SceneManager.LoadScene("prototype");
     }
 
+    //Exit - yes press
     public void ExitGame()
     {
         Application.Quit();

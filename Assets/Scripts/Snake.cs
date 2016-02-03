@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-public class Snake : MonoBehaviour {
+public class Snake : MonoBehaviour
+{
 
     public GameObject foodPrefab;
     public GameObject decreaseSnakeLengthFoodPrefab;
@@ -24,8 +25,7 @@ public class Snake : MonoBehaviour {
     public float moveDistance;
     public GameObject tailPrefab;
     public GameObject newPortal;
-    public GameObject iniPortal;
-    public GameObject iniPortal2;
+
     Vector2 dir = Vector2.left;
     private List<Transform> tail = new List<Transform>();
     bool ate = false;
@@ -34,12 +34,13 @@ public class Snake : MonoBehaviour {
     private int fixedUpdateCounter = 0;
 
     private static int numOfRows = 12;
-    private static int numOfColls = 20; 
+    private static int numOfColls = 20;
 
 
-    bool[][] obstacle = new bool[numOfRows][] ; /*12*20*/
-	// Use this for initialization
-	void Start () {
+    bool[][] obstacle = new bool[numOfRows][]; /*12*20*/
+                                               // Use this for initialization
+    void Start()
+    {
         background = GameObject.FindGameObjectWithTag("Background");
         AddPortalSript = background.GetComponent<AddPortal>();
         fixedUpdateCounter = 0;
@@ -49,29 +50,32 @@ public class Snake : MonoBehaviour {
         }
         forgetObstacles();
         SpawnFood();
-        
-	}
 
-    /*guarantees same time between each update*/ 
-    void FixedUpdate() {
+    }
+
+    /*guarantees same time between each update*/
+    void FixedUpdate()
+    {
         fixedUpdateCounter++;
         float time = (float)moveTime / 0.02f;
-        if ((int)time == fixedUpdateCounter) {
+        if ((int)time == fixedUpdateCounter)
+        {
             fixedUpdateCounter = 0;
             Move();
         }
     }
 
-	// Update is called once per frame
-    void Update() {
+    // Update is called once per frame
+    void Update()
+    {
 
         // Move in a new Direction?
         if (Input.GetKey(KeyCode.RightArrow))
             dir = Vector2.right;
         else if (Input.GetKey(KeyCode.DownArrow))
-            dir = Vector2.down;    
+            dir = Vector2.down;
         else if (Input.GetKey(KeyCode.LeftArrow))
-            dir = Vector2.left; 
+            dir = Vector2.left;
         else if (Input.GetKey(KeyCode.UpArrow))
             dir = Vector2.up;
     }
@@ -99,8 +103,9 @@ public class Snake : MonoBehaviour {
         {
             //increase speed of snake ??do we increase the lenght of snake as well??
             UpdateSpeed(true);
-            SpawnFood();
             Destroy(coll.gameObject);
+            SpawnFood();
+
         }
         else if (coll.name.StartsWith(decreaseSnakeSpeedPrefab.name))
         {
@@ -109,8 +114,10 @@ public class Snake : MonoBehaviour {
             SpawnFood();
             Destroy(coll.gameObject);
         }
-        else if (coll.name.StartsWith("PortalPrefab"))
+        else if (coll.name.StartsWith(newPortal.name))
         {
+            portal = true;
+            Debug.Log("hura portal!");
             List<AddPortal.Tuple> portals = AddPortalSript.portals;
             PortalId something = coll.gameObject.GetComponent<PortalId>();
             int id = something.id;
@@ -159,7 +166,7 @@ public class Snake : MonoBehaviour {
                 {
                     transform.rotation = new Quaternion(1, -1, 0, 0);
                 }
-                Debug.Log(transform.rotation); 
+                Debug.Log(transform.rotation);
                 transform.position = onIndex.outputPortal.getPosition();
 
             }
@@ -186,7 +193,8 @@ public class Snake : MonoBehaviour {
         }
     }
 
-    public void Move() {
+    public void Move()
+    {
         portal = false;
         Vector2 currentPossition = transform.position;
 
@@ -199,7 +207,8 @@ public class Snake : MonoBehaviour {
             ate = false;
 
         }
-        else if (shrink) {
+        else if (shrink)
+        {
             if (tail.Count > 0)
             {
                 tail.Last().position = currentPossition;
@@ -213,7 +222,8 @@ public class Snake : MonoBehaviour {
                 /*GAME OVER dlzka hada je 0*/
                 gameOver();
             }
-        } else if (tail.Count > 0)
+        }
+        else if (tail.Count > 0)
         {
             tail.Last().position = currentPossition;
             tail.Last().rotation = transform.rotation;
@@ -224,17 +234,21 @@ public class Snake : MonoBehaviour {
         }
     }
 
-    bool inBounds(Vector3 bounds) {
+    bool inBounds(Vector3 bounds)
+    {
         if ((bounds.x > borderLeft.position.x) && (bounds.x < borderRight.position.x) && (bounds.y > borderBottom.position.y) && (bounds.y < borderTop.position.y)) { return true; }
         return false;
     }
 
-    void UpdateSpeed(bool increase) {
-        if (increase) {
+    void UpdateSpeed(bool increase)
+    {
+        if (increase)
+        {
             moveTime -= moveChangeRate;
             if (moveTime <= 0.1) { moveTime = 0.1f; }
-            
-        } else {
+
+        }
+        else {
             moveTime += moveChangeRate;
         }
         fixedUpdateCounter = 0;
@@ -253,7 +267,7 @@ public class Snake : MonoBehaviour {
             // y position between top & bottom border
             int y = (int)Random.Range(borderBottom.position.y + 1,
                                       borderTop.position.y);
-            
+
             pos.x = x;
             pos.y = y;
             x = Mathf.Abs((int)(borderRight.position.x - borderLeft.position.x));
@@ -265,9 +279,9 @@ public class Snake : MonoBehaviour {
             if (pos.y > 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 - 1;
             //while popoziciach je na mieste x a y sa teraz nachadza rozpetie medzi hranicami
             //foodX = (int)Mathf.Round(pos.x) / 2 + numOfRows / 2 ;
-            foodY = whichInRange((int)Mathf.Round(borderBottom.position.y),(int)Mathf.Round(pos.y), y / numOfRows);
+            foodY = whichInRange((int)Mathf.Round(borderBottom.position.y), (int)Mathf.Round(pos.y), y / numOfRows);
             foodX = whichInRange((int)Mathf.Round(borderLeft.position.x), (int)Mathf.Round(pos.x), x / numOfColls);
-            Debug.Log("suradnice do pola prekazok x: "+foodX+ " y: " + (numOfRows - foodY - 1));
+            Debug.Log("suradnice do pola prekazok x: " + foodX + " y: " + (numOfRows - foodY - 1));
         } while (!(isSafeFoodPlant(foodX, numOfRows - foodY - 1)));
         Debug.Log("Position food: " + pos);
         // Instantiate the food at (x, y)
@@ -277,7 +291,8 @@ public class Snake : MonoBehaviour {
                     Quaternion.identity); // default rotation
     }
 
-    int whichInRange(int start, int position, int step) {
+    int whichInRange(int start, int position, int step)
+    {
         Debug.Log("start: " + start + " position: " + position + " step: " + step);
         int current = start + step;
         int i = 0;
@@ -290,39 +305,46 @@ public class Snake : MonoBehaviour {
     }
 
     /*in case there are obstacles on board, we need to check whether the food is not going to be planted in some corner, since the snake can't rotate it's head*/
-    bool isSafeFoodPlant(int x, int y) {
+    bool isSafeFoodPlant(int x, int y)
+    {
         if (((x == 0) && (y == 0)) || ((x == numOfRows) && (y == 0)) ||
             ((x == numOfRows) && (y == numOfColls)) || ((x == 0) && (y == numOfColls)))
         {
             return false; //corners of game plan
         }
-        else if (obstacle[y][x] == true) {
+        else if (obstacle[y][x] == true)
+        {
             return false; //hit with the obstacle
         }
         else if ((y == 0) || (y == numOfColls))
         {
             if ((obstacle[y][x - 1]) || obstacle[y][x + 1]) { return false; } // food by vertical border
         }
-        else if ((x == 0) || (x == numOfRows)) {
+        else if ((x == 0) || (x == numOfRows))
+        {
             if ((obstacle[y - 1][x]) || (obstacle[y + 1][x])) { return false; } // food by horizontal border
         }
-        else if ((obstacle[y-1][x] && obstacle[y][x-1]) || (obstacle[y - 1][x] && obstacle[y][x + 1]) || 
-            (obstacle[y][x - 1] && obstacle[y + 1][x]) || (obstacle[y ][x-1] && obstacle[y + 1][x + 1]))
+        else if ((obstacle[y - 1][x] && obstacle[y][x - 1]) || (obstacle[y - 1][x] && obstacle[y][x + 1]) ||
+            (obstacle[y][x - 1] && obstacle[y + 1][x]) || (obstacle[y][x - 1] && obstacle[y + 1][x + 1]))
         {
             return false;
         }
         return true;
     }
 
-    void forgetObstacles() {
-        for (int i = 0; i < numOfRows; i++) {
-            for (int j = 0; j < numOfColls; j++) {
+    void forgetObstacles()
+    {
+        for (int i = 0; i < numOfRows; i++)
+        {
+            for (int j = 0; j < numOfColls; j++)
+            {
                 obstacle[i][j] = false;
             }
         }
     }
 
     /*TODO: implement game over screen here*/
-    void gameOver() {
+    void gameOver()
+    {
     }
 }

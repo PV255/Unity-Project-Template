@@ -8,6 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mainMenu.unity
   - enabled: 1
+    path: Assets/Scenes/tutorialLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/hub.unity
+  - enabled: 1
     path: Assets/Scenes/iceLvl.unity
   - enabled: 1
     path: Assets/Scenes/waterLvl.unity
@@ -19,7 +23,3 @@ EditorBuildSettings:
     path: Assets/Scenes/testLevel01.unity
   - enabled: 1
     path: Assets/Scenes/gameOver.unity
-  - enabled: 1
-    path: Assets/Scenes/hub.unity
-  - enabled: 1
-    path: Assets/Scenes/tutorialLevel.unity

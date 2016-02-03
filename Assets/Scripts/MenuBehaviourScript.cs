@@ -24,13 +24,14 @@ public class MenuBehaviourScript : MonoBehaviour {
     bool playerRestoreFreeze;
 
     void Update() {
-        bool isInMainMenu = Application.loadedLevelName.Contains("mainMenu");
+        string lvlName = Application.loadedLevelName;
+        bool nothingToPause = lvlName.Contains("mainMenu") || lvlName.Contains("gameOver");
 
-        if (isInMainMenu && Camera.main != null) {
+        if (nothingToPause && Camera.main != null) {
             Camera.main.transform.RotateAround(camPos, camAxY, Time.deltaTime * 2f);
         }
 
-        if (!isInMainMenu && Input.GetKeyDown(KeyCode.Escape)) {
+        if (!nothingToPause && Input.GetKeyDown(KeyCode.Escape)) {
             if (gamePaused) {
                 unpauseGame();
             } else {
@@ -63,6 +64,15 @@ public class MenuBehaviourScript : MonoBehaviour {
         loadLevel("tutorialLevel");
     }
 
+    public void hideCanvases() {
+        canvasMain.SetActive(false);
+        canvasPause.SetActive(false);
+        canvasCredits.SetActive(false);
+        canvasLevels.SetActive(false);
+        canvasHUD.SetActive(false);
+        canvasGameOver.SetActive(false);
+    }
+
     public void loadLevel(string id) {
         if (id == null) {
             return;
@@ -71,14 +81,9 @@ public class MenuBehaviourScript : MonoBehaviour {
         gamePaused = false;
         Application.LoadLevel(id);
 
+        hideCanvases();
+
         GameManager.Instance.newGameStarted();
-
-        canvasMain.SetActive(false);
-        canvasPause.SetActive(false);
-        canvasCredits.SetActive(false);
-        canvasLevels.SetActive(false);
-        canvasGameOver.SetActive(false);
-
     }
 
     public void quitGame() {
@@ -91,37 +96,35 @@ public class MenuBehaviourScript : MonoBehaviour {
         gamePaused = false;
         Application.LoadLevel("mainMenu");
 
-        canvasPause.SetActive(false);
-        canvasCredits.SetActive(false);
-        canvasLevels.SetActive(false);
-        canvasHUD.SetActive(false);
-        canvasGameOver.SetActive(false);
-
-        canvasMain.SetActive(true);
+        hideCanvases();
     }
 
     public void showGameOver() {
         Time.timeScale = 1;
 
         gamePaused = false;
-        Application.LoadLevel("mainMenu");
+        Application.LoadLevel("gameOver");
 
-        canvasMain.SetActive(false);
-        canvasPause.SetActive(false);
-        canvasCredits.SetActive(false);
-        canvasLevels.SetActive(false);
-        canvasHUD.SetActive(false);
-        
+        hideCanvases();
+
         textGameOverScore.text = "Your Score: " + GameManager.Instance.getScore();
-
-        canvasGameOver.SetActive(true);
     }
 
-    void OnLevelWasLoaded(int id) {
-        if (id == 1) {
+    void OnLevelWasLoaded(int id){
+        string lvlName = Application.loadedLevelName;
+
+        if (lvlName.Contains("gameOver"))
+        {
+            canvasGameOver.SetActive(true);
             return;
         }
 
+        if (lvlName.Contains("mainMenu"))
+        {
+            canvasMain.SetActive(true);
+            return;
+        }
+        
         canvasHUD.SetActive(true);
     }
 }

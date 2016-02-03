@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MenuBehaviourScript : MonoBehaviour {
     public GameObject canvasMain;
@@ -7,8 +8,11 @@ public class MenuBehaviourScript : MonoBehaviour {
     public GameObject canvasCredits;
     public GameObject canvasHUD;
     public GameObject canvasLevels;
-    
-    void Start(){
+    public GameObject canvasGameOver;
+
+    public Text textGameOverScore;
+
+    void Start() {
 
     }
 
@@ -19,17 +23,17 @@ public class MenuBehaviourScript : MonoBehaviour {
     Vector3 playerRestorePos;
     bool playerRestoreFreeze;
 
-    void Update(){
+    void Update() {
         bool isInMainMenu = Application.loadedLevelName.Contains("mainMenu");
-        
-        if (isInMainMenu && Camera.main != null){
+
+        if (isInMainMenu && Camera.main != null) {
             Camera.main.transform.RotateAround(camPos, camAxY, Time.deltaTime * 2f);
         }
 
-        if (!isInMainMenu && Input.GetKeyDown(KeyCode.Escape)){
-            if (gamePaused){
+        if (!isInMainMenu && Input.GetKeyDown(KeyCode.Escape)) {
+            if (gamePaused) {
                 unpauseGame();
-            }else{
+            } else {
                 pauseGame();
             }
         }
@@ -45,7 +49,7 @@ public class MenuBehaviourScript : MonoBehaviour {
         gamePaused = true;
     }
 
-    public void unpauseGame(){
+    public void unpauseGame() {
         canvasPause.SetActive(false);
         Time.timeScale = 1;
 
@@ -55,11 +59,11 @@ public class MenuBehaviourScript : MonoBehaviour {
         gamePaused = false;
     }
 
-    public void newGame(){
+    public void newGame() {
         loadLevel("tutorialLevel");
     }
 
-    public void loadLevel(string id){
+    public void loadLevel(string id) {
         if (id == null) {
             return;
         }
@@ -73,15 +77,16 @@ public class MenuBehaviourScript : MonoBehaviour {
         canvasPause.SetActive(false);
         canvasCredits.SetActive(false);
         canvasLevels.SetActive(false);
+        canvasGameOver.SetActive(false);
 
         canvasHUD.SetActive(true);
     }
 
-    public void quitGame(){
+    public void quitGame() {
         Application.Quit();
     }
 
-    public void quitLevel(){
+    public void quitLevel() {
         Time.timeScale = 1;
 
         gamePaused = false;
@@ -91,7 +96,19 @@ public class MenuBehaviourScript : MonoBehaviour {
         canvasCredits.SetActive(false);
         canvasLevels.SetActive(false);
         canvasHUD.SetActive(false);
+        canvasGameOver.SetActive(false);
 
         canvasMain.SetActive(true);
     }
+
+    public void showGameOver() {
+        quitLevel();
+
+        textGameOverScore.text = "Your Score: " + GameManager.Instance.getScore();
+
+        canvasMain.SetActive(false);
+        canvasGameOver.SetActive(true);
+    }
+    
+
 }

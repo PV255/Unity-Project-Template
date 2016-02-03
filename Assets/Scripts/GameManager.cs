@@ -37,17 +37,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Application.loadedLevelName == "gameOver") {
+        //if (Application.loadedLevelName == "gameOver") {
             
-            scoreText.enabled = false;
-            scoreImg.enabled = false;
-            livesText.enabled = false;
-            livesImg.enabled = false;
-            GameObject.Find("gameOverManager").GetComponent<GameOverScript>().initGameOver(score);
-        }
+        //    scoreText.enabled = false;
+        //    scoreImg.enabled = false;
+        //    livesText.enabled = false;
+        //    livesImg.enabled = false;
+        //    GameObject.Find("gameOverManager").GetComponent<GameOverScript>().initGameOver(score);
+        //}
 
     }
 
+    public int getScore() {
+        return score;
+    }
+    
     public void setLevelManager(LevelManager m)
     {
         levelManager = m;
@@ -77,7 +81,9 @@ public class GameManager : MonoBehaviour {
     {
         lives--;
         if (lives == 0) {
-            Application.LoadLevel("gameOver");
+            //Application.LoadLevel("gameOver");
+            MenuBehaviourScript menu = FindObjectOfType<MenuBehaviourScript>();
+            menu.showGameOver();
         }
         SetLivesText();
     }

@@ -17,6 +17,7 @@ public class AddPortal : MonoBehaviour {
     private bool mouseDown = false;
     public List<Tuple> portals = new List<Tuple>();
     private Color portalColor;
+    private GameObject currentOutputPortal;
 
     void Start () {
         distance = 1.0f;
@@ -52,9 +53,9 @@ public class AddPortal : MonoBehaviour {
             input = false;
         }
         else {
-            GameObject obj = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
-            obj.AddComponent<RemovePortal>();
-            obj.GetComponent<Renderer>().material.color = portalColor;
+            currentOutputPortal = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
+            currentOutputPortal.AddComponent<RemovePortal>();
+            currentOutputPortal.GetComponent<Renderer>().material.color = portalColor;
             outputPortal = true;
             input = true;
         }
@@ -90,7 +91,9 @@ public class AddPortal : MonoBehaviour {
                 Debug.Log("Direction: " + vec);
                 mouseDown = false;          
                 OutputPortal localOutputPortal = new OutputPortal(id, vec);
+                localOutputPortal.setOutputPortal(currentOutputPortal);
                 localOutputPortal.setPosition((int)pos.x, (int)pos.y);
+
                 portals.Add(new Tuple(por, localOutputPortal));
                 id++;
                 portalColor = new Color(Random.value, Random.value, Random.value, 1.0f);
@@ -117,6 +120,15 @@ public class AddPortal : MonoBehaviour {
         int id;
         Vector2 heading;
         int x, y;
+        private GameObject outputPortlaGameObject;
+
+        public void setOutputPortal(GameObject outport) {
+            outputPortlaGameObject = outport;
+        }
+
+        public GameObject getOutputPortal() {
+            return outputPortlaGameObject;
+        }
 
         public Vector3 getPosition() { 
             return new Vector3(x,y,0) ;

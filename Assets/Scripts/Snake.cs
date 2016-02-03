@@ -32,13 +32,38 @@ public class Snake : MonoBehaviour
     bool shrink = false;
     bool portal = false;
     private int fixedUpdateCounter = 0;
-
+    private int specialFoodCount = 0;
+    private bool isSpecialOnTable = false;
+    private GameObject specialFoodObject;
+    private float specialTime;
     private static int numOfRows = 12;
     private static int numOfColls = 20;
+
+    private List<PortalToDelete> portalsToDelete = new List<PortalToDelete>();
 
 
     bool[][] obstacle = new bool[numOfRows][]; /*12*20*/
                                                // Use this for initialization
+    class PortalToDelete {
+        private static GameObject inputPortal;
+        private static GameObject outputPortal;
+        public int numberOfSteps;
+
+        public void setInputPortal(GameObject input) {
+            inputPortal = input;
+        }
+        public GameObject getInputPortal() {
+            return inputPortal;
+        }
+        public void setOutPortal(GameObject output){
+            outputPortal = output;
+        }
+        public GameObject getOutputPortal() {
+            return outputPortal;
+        }
+    
+    }
+
     void Start()
     {
         background = GameObject.FindGameObjectWithTag("Background");
@@ -61,8 +86,18 @@ public class Snake : MonoBehaviour
         if ((int)time == fixedUpdateCounter)
         {
             fixedUpdateCounter = 0;
-            Move();
+            Move();       
         }
+        if (isSpecialOnTable)
+        {
+            specialFoodCount++;
+            Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
+            if (specialFoodCount == (int)specialTime)
+            {
+                removeSpecialFood();
+            }
+        }
+        
     }
 
     // Update is called once per frame
@@ -78,6 +113,7 @@ public class Snake : MonoBehaviour
             dir = Vector2.left;
         else if (Input.GetKey(KeyCode.UpArrow))
             dir = Vector2.up;
+     
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -117,7 +153,7 @@ public class Snake : MonoBehaviour
         else if (coll.name.StartsWith(newPortal.name))
         {
             portal = true;
-            Debug.Log("hura portal!");
+            //Debug.Log("hura portal!");
             List<AddPortal.Tuple> portals = AddPortalSript.portals;
             PortalId something = coll.gameObject.GetComponent<PortalId>();
             int id = something.id;
@@ -166,9 +202,13 @@ public class Snake : MonoBehaviour
                 {
                     transform.rotation = new Quaternion(1, -1, 0, 0);
                 }
-                Debug.Log(transform.rotation);
+                //Debug.Log(transform.rotation);
                 transform.position = onIndex.outputPortal.getPosition();
-
+                PortalToDelete local = new PortalToDelete();
+                local.setInputPortal(coll.gameObject);
+                local.setOutPortal(onIndex.outputPortal.getOutputPortal());
+                local.numberOfSteps = 0;
+                portalsToDelete.Add(local); 
             }
 
         }
@@ -199,6 +239,7 @@ public class Snake : MonoBehaviour
         Vector2 currentPossition = transform.position;
 
         transform.Translate(dir * moveDistance, Space.World);
+    
 
         if (ate)
         {
@@ -232,6 +273,26 @@ public class Snake : MonoBehaviour
 
 
         }
+        bool remove = false;
+        do
+        {
+            remove = false;
+            PortalToDelete port = new PortalToDelete();
+            foreach (PortalToDelete localPortal in portalsToDelete)
+            {
+                localPortal.numberOfSteps++;
+                if (localPortal.numberOfSteps > tail.Count())
+                {
+                    remove = true;
+                    Destroy(localPortal.getInputPortal());
+                    Destroy(localPortal.getOutputPortal());
+                    port = localPortal;
+                }
+                break;
+            }
+            if (remove) { portalsToDelete.Remove(port); }
+
+        } while (remove);
     }
 
     bool inBounds(Vector3 bounds)
@@ -281,19 +342,47 @@ public class Snake : MonoBehaviour
             //foodX = (int)Mathf.Round(pos.x) / 2 + numOfRows / 2 ;
             foodY = whichInRange((int)Mathf.Round(borderBottom.position.y), (int)Mathf.Round(pos.y), y / numOfRows);
             foodX = whichInRange((int)Mathf.Round(borderLeft.position.x), (int)Mathf.Round(pos.x), x / numOfColls);
-            Debug.Log("suradnice do pola prekazok x: " + foodX + " y: " + (numOfRows - foodY - 1));
+            //Debug.Log("suradnice do pola prekazok x: " + foodX + " y: " + (numOfRows - foodY - 1));
         } while (!(isSafeFoodPlant(foodX, numOfRows - foodY - 1)));
-        Debug.Log("Position food: " + pos);
+        // Debug.Log("Position food: " + pos);
         // Instantiate the food at (x, y)
         //need to shift the number
-        Instantiate(incraseSnakeSpeedFoodPrefab,
-                    new Vector2(pos.x, pos.y),
-                    Quaternion.identity); // default rotation
+        if ((int)Random.Range(0,20) > 16)
+        {
+            isSpecialOnTable = true;
+            specialFoodCount = 0;
+            /*0,1,2*/
+            int ran = (int)Random.Range(0, 3);
+            Debug.Log("random: " + ran);
+            if (ran == 0) {
+                specialFoodObject = (GameObject)Instantiate(decreaseSnakeLengthFoodPrefab,
+                        new Vector2(pos.x, pos.y),
+                        Quaternion.identity);
+            }
+            else if (ran == 2) {
+                specialFoodObject = (GameObject)Instantiate(decreaseSnakeSpeedPrefab,
+                        new Vector2(pos.x, pos.y),
+                        Quaternion.identity);
+            }
+            else {
+                specialFoodObject = (GameObject)Instantiate(incraseSnakeSpeedFoodPrefab,
+                        new Vector2(pos.x, pos.y),
+                        Quaternion.identity);
+            }
+            float rand = Random.Range(4, 7);
+            specialTime = rand / 0.02f;
+        }
+        else
+        {
+            Instantiate(foodPrefab,
+                        new Vector2(pos.x, pos.y),
+                        Quaternion.identity); // default rotation
+        }
     }
 
     int whichInRange(int start, int position, int step)
     {
-        Debug.Log("start: " + start + " position: " + position + " step: " + step);
+        //Debug.Log("start: " + start + " position: " + position + " step: " + step);
         int current = start + step;
         int i = 0;
         while (current <= position)
@@ -341,6 +430,12 @@ public class Snake : MonoBehaviour
                 obstacle[i][j] = false;
             }
         }
+    }
+
+    void removeSpecialFood() {
+        Destroy(specialFoodObject);
+        isSpecialOnTable = false;
+        SpawnFood();
     }
 
     /*TODO: implement game over screen here*/

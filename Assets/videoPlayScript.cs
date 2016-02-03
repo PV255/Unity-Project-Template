@@ -13,7 +13,10 @@ public class videoPlayScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (!video.isPlaying)
+        {
+            Application.LoadLevel(1);
+        }
 	}
 
     void OnGUI()

@@ -79,7 +79,6 @@ public class MenuBehaviourScript : MonoBehaviour {
         canvasLevels.SetActive(false);
         canvasGameOver.SetActive(false);
 
-        canvasHUD.SetActive(true);
     }
 
     public void quitGame() {
@@ -117,6 +116,12 @@ public class MenuBehaviourScript : MonoBehaviour {
 
         canvasGameOver.SetActive(true);
     }
-    
 
+    void OnLevelWasLoaded(int id) {
+        if (id == 1) {
+            return;
+        }
+
+        canvasHUD.SetActive(true);
+    }
 }

@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
     public void DestroyLife()
     {
         lives--;
-        if (lives == 0) {
+        if (lives <= 0) {
             //Application.LoadLevel("gameOver");
             MenuBehaviourScript menu = FindObjectOfType<MenuBehaviourScript>();
             menu.showGameOver();

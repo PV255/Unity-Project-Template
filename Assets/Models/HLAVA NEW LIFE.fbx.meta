@@ -6,9 +6,17 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Lamp
+    100006: Sphere.001
     400000: //RootNode
+    400002: Camera
+    400004: Lamp
+    400006: Sphere.001
     2300000: //RootNode
+    2300002: Sphere.001
     3300000: //RootNode
+    3300002: Sphere.001
     4300000: Sphere.001
   materials:
     importMaterials: 1

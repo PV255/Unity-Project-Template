@@ -18,7 +18,7 @@ public class attackHintScript : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Set Attack Hint Visible");
+            //Debug.Log("Set Attack Hint Visible");
             Image attack = GameObject.Find("attack").GetComponentInChildren<Image>();
             attack.CrossFadeAlpha(100, 1, true);
         }

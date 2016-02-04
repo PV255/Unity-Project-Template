@@ -20,7 +20,8 @@ public class allowMoveBehaviour : StateMachineBehaviour {
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.gameObject.GetComponent<PlayerController>().setIsPositionFixed(false);
-
+        Image move = GameObject.Find("move").GetComponentInChildren<Image>();
+        move.CrossFadeAlpha(100, 1, true);
         //GameObject moveGO = GameObject.Find("move");
         //if (moveGO != null)
         //{

@@ -11,6 +11,7 @@ public class keyboardHintsScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        move.CrossFadeAlpha(0, 0, true);
         jump.CrossFadeAlpha(0, 0, true);
         attack.CrossFadeAlpha(0, 0, true);
     }

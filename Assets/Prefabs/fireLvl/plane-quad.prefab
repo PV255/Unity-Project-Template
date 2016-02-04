@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 456614}
   - 33: {fileID: 3340636}
   - 23: {fileID: 2363442}
-  - 65: {fileID: 6539902}
+  - 64: {fileID: 6445984}
   m_Layer: 0
   m_Name: plane_quad
   m_TagString: Untagged
@@ -55,8 +55,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178756}
-  m_LocalRotation: {x: -.105453968, y: -.737734735, z: .0943557471, w: .660093844}
-  m_LocalPosition: {x: -.562436581, y: 1.49109495, z: 4.68400002}
+  m_LocalRotation: {x: -0.10545397, y: -0.73773474, z: 0.09435575, w: 0.66009384}
+  m_LocalPosition: {x: -0.5624366, y: 1.491095, z: 4.684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449126}
@@ -67,9 +67,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162524}
-  m_LocalRotation: {x: 0, y: -.439100236, z: 0, w: .898438096}
-  m_LocalPosition: {x: 20.6299992, y: .950000107, z: 125.429993}
-  m_LocalScale: {x: 2.18113542, y: 2.18113494, z: 2.58264256}
+  m_LocalRotation: {x: 0, y: 0.38955173, z: 0, w: 0.9210046}
+  m_LocalPosition: {x: 17.49, y: 0.75, z: 13.92}
+  m_LocalScale: {x: 2.5843883, y: 2.5843878, z: 5.787861}
   m_Children:
   - {fileID: 441222}
   - {fileID: 456614}
@@ -105,8 +105,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -118,8 +120,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136230}
   m_Mesh: {fileID: 4300000, guid: 4cca076b626d29e428fbee970e2fa7b2, type: 3}
---- !u!65 &6539902
-BoxCollider:
+--- !u!64 &6445984
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -128,8 +130,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: .399999976, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4cca076b626d29e428fbee970e2fa7b2, type: 3}
 --- !u!95 &9520494
 Animator:
   serializedVersion: 3

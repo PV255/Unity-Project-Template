@@ -19,6 +19,7 @@ public class AddPortal : MonoBehaviour {
     private Color portalColor;
     private GameObject currentOutputPortal;
     public bool pause = false;
+    public bool inMenu = false;
 
     void Start () {
         distance = 1.0f;
@@ -27,7 +28,7 @@ public class AddPortal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetKeyUp(KeyCode.P) && !inMenu)
         {
             pause = !pause;
         }
@@ -109,7 +110,16 @@ public class AddPortal : MonoBehaviour {
         }
     }
 
-    
+    public void setPause(bool pause)
+    {
+        this.pause = pause;
+    }
+
+    public void setInMenu(bool inMenu)
+    {
+        this.inMenu = inMenu;
+    }
+
     public class InputPortal
     {
         int id;

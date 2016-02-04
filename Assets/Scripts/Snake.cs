@@ -35,6 +35,7 @@ public class Snake : MonoBehaviour
     bool shrink = false;
     bool portal = false;
     bool pause = false;
+    bool inMenu = false;
     private int fixedUpdateCounter = 0;
     private int specialFoodCount = 0;
     private bool isSpecialOnTable = false;
@@ -127,12 +128,12 @@ public class Snake : MonoBehaviour
             dir = Vector2.left;
         else if (Input.GetKey(KeyCode.UpArrow))
             dir = Vector2.up;
-        if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetKeyUp(KeyCode.P) && !inMenu)
         {
             pause = !pause;
             gamePausedText.enabled = !gamePausedText.enabled;
         }
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !inMenu)
         {
             ExitGame();
         }
@@ -477,6 +478,16 @@ public class Snake : MonoBehaviour
         Destroy(specialFoodObject);
         isSpecialOnTable = false;
         SpawnFood();
+    }
+
+    public void setPause(bool pause)
+    {
+        this.pause = pause;
+    }
+
+    public void setInMenu(bool inMenu)
+    {
+        this.inMenu = inMenu;
     }
 
     /*TODO: implement game over screen here*/

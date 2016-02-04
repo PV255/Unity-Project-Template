@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         if (Instance)
         {
-            foreach (Transform child in transform) {
-                DestroyImmediate(child.gameObject);
-            }
-            DestroyImmediate(this);
+            //foreach (Transform child in transform) {
+            //    DestroyImmediate(child.gameObject);
+            //}
+            DestroyImmediate(this.gameObject);
         }
         else{
             Instance = this;

@@ -60,8 +60,12 @@ public class MenuBehaviourScript : MonoBehaviour {
         gamePaused = false;
     }
 
+    private string newGameLevelName = "tutorialLevel";
+
     public void newGame() {
-        loadLevel("tutorialLevel");
+        loadLevel(newGameLevelName);
+
+        newGameLevelName = "hub";
     }
 
     public void hideCanvases() {

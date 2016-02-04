@@ -134,10 +134,15 @@ public class Snake : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            pause = !pause;
-            gamePausedText.enabled = !gamePausedText.enabled; //teoreticky nemusi byt
-            SceneManager.LoadScene(0);
+            ExitGame();
         }
+    }
+
+    public void ExitGame()
+    {
+        pause = !pause;
+        gamePausedText.enabled = !gamePausedText.enabled; //teoreticky nemusi byt
+        SceneManager.LoadScene(0);
     }
 
     void OnTriggerEnter2D(Collider2D coll)

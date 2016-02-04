@@ -10,29 +10,44 @@ public class StartMenu : MonoBehaviour {
     public Canvas controlsCanvas;
     public Canvas optionsCanvas;
     public Canvas menuCanvas;
+    public Canvas uiCanvas;
     public Button playButton;
     public Button exitButton;
     public Button controlsButton;
     public Button optionsButton;
     public Button aboutButton;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject snakeObject;
+    public Snake snakeScript;
+    public GameObject backgroundObject;
+    public AddPortal addPortalScript;
+
+    // Use this for initialization
+    void Start () {
         
         quitDialog = quitDialog.GetComponent<Canvas>(); //assigned actual game object to variable
         aboutCanvas = aboutCanvas.GetComponent<Canvas>();
         controlsCanvas = controlsCanvas.GetComponent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         menuCanvas = menuCanvas.GetComponent<Canvas>();
+        uiCanvas = uiCanvas.GetComponent<Canvas>();
         playButton = playButton.GetComponent<Button>();
         exitButton = exitButton.GetComponent<Button>();
         controlsButton = controlsButton.GetComponent<Button>();
         optionsButton = optionsButton.GetComponent<Button>();
         aboutButton = aboutButton.GetComponent<Button>();
+
+        snakeObject = GameObject.FindGameObjectWithTag("Snake");
+        snakeScript = snakeObject.GetComponent<Snake>();
+        backgroundObject = GameObject.FindGameObjectWithTag("Background");
+        addPortalScript = backgroundObject.GetComponent<AddPortal>();
+
+
         quitDialog.enabled = false;
         aboutCanvas.enabled = false;
         controlsCanvas.enabled = false;
         optionsCanvas.enabled = false;
+        uiCanvas.enabled = false;
     }
 
     public void ControlsPress()
@@ -86,9 +101,12 @@ public class StartMenu : MonoBehaviour {
 
     public void StartLevel()
     {
-        //Application.LoadLevel(1);
         menuCanvas.enabled = false;
-        SceneManager.LoadScene("prototype");
+        uiCanvas.enabled = true;
+        snakeScript.setInMenu(false);
+        snakeScript.setPause(snakeScript.isPaused());
+        addPortalScript.setInMenu(false);
+        addPortalScript.setPause(snakeScript.isPaused());
     }
 
     //Exit - yes press

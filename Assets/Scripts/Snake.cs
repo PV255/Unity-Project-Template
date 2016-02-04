@@ -34,8 +34,8 @@ public class Snake : MonoBehaviour
     bool ate = false;
     bool shrink = false;
     bool portal = false;
-    bool pause = false;
-    bool inMenu = false;
+    bool pause = true;
+    bool inMenu = true;
     private int fixedUpdateCounter = 0;
     private int specialFoodCount = 0;
     private bool isSpecialOnTable = false;
@@ -488,6 +488,11 @@ public class Snake : MonoBehaviour
     public void setInMenu(bool inMenu)
     {
         this.inMenu = inMenu;
+    }
+
+    public bool isPaused()
+    {
+        return gamePausedText.enabled;
     }
 
     /*TODO: implement game over screen here*/

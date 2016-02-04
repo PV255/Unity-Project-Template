@@ -18,8 +18,8 @@ public class AddPortal : MonoBehaviour {
     public List<Tuple> portals = new List<Tuple>();
     private Color portalColor;
     private GameObject currentOutputPortal;
-    public bool pause = false;
-    public bool inMenu = false;
+    private bool pause = true;
+    private bool inMenu = true;
 
     void Start () {
         distance = 1.0f;

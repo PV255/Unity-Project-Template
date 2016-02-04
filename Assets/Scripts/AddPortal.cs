@@ -18,6 +18,7 @@ public class AddPortal : MonoBehaviour {
     public List<Tuple> portals = new List<Tuple>();
     private Color portalColor;
     private GameObject currentOutputPortal;
+    public bool pause = false;
 
     void Start () {
         distance = 1.0f;
@@ -26,41 +27,48 @@ public class AddPortal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-	}
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            pause = !pause;
+        }
+    }
 
     void OnMouseDown()
     {
-        var v3 = Input.mousePosition;
-        v3.z = distance;
-        pos = Camera.main.ScreenToWorldPoint(v3);
-        if (pos.x > 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 + 1;
-        if (pos.x <= 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 - 1;
-        if (pos.y < 0) pos.y = Mathf.Round((int)pos.y/2) *2 - 1;
-        if (pos.y >= 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 + 1;
-        Debug.Log("OnMouseDown " + pos);
-        mouseDown = true;
-        if (input)
+        if (!pause)
         {
-            GameObject obj = (GameObject)Instantiate(inPortal, pos, Quaternion.identity);
-            obj.AddComponent<RemovePortal>();
-            obj.AddComponent<PortalId>();
-            obj.GetComponent<Renderer>().material.color = portalColor;
+            Debug.Log("pause" + pause);
+            var v3 = Input.mousePosition;
+            v3.z = distance;
+            pos = Camera.main.ScreenToWorldPoint(v3);
+            if (pos.x > 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 + 1;
+            if (pos.x <= 0) pos.x = Mathf.Round((int)pos.x / 2) * 2 - 1;
+            if (pos.y < 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 - 1;
+            if (pos.y >= 0) pos.y = Mathf.Round((int)pos.y / 2) * 2 + 1;
+            Debug.Log("OnMouseDown " + pos);
+            mouseDown = true;
+            if (input)
+            {
+                GameObject obj = (GameObject)Instantiate(inPortal, pos, Quaternion.identity);
+                obj.AddComponent<RemovePortal>();
+                obj.AddComponent<PortalId>();
+                obj.GetComponent<Renderer>().material.color = portalColor;
 
-            PortalId idOfNewPortal = obj.GetComponent<PortalId>();
-            idOfNewPortal.setId(id);
-            por = new InputPortal(id);
-            input = false;
-        }
-        else {
-            currentOutputPortal = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
-            currentOutputPortal.AddComponent<RemovePortal>();
-            currentOutputPortal.GetComponent<Renderer>().material.color = portalColor;
-            outputPortal = true;
-            input = true;
-        }
+                PortalId idOfNewPortal = obj.GetComponent<PortalId>();
+                idOfNewPortal.setId(id);
+                por = new InputPortal(id);
+                input = false;
+            }
+            else {
+                currentOutputPortal = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
+                currentOutputPortal.AddComponent<RemovePortal>();
+                currentOutputPortal.GetComponent<Renderer>().material.color = portalColor;
+                outputPortal = true;
+                input = true;
+            }
             //obj.transform.Rotate(new Vector3(90f, 0f, 0f));
             //obj.AddComponent<RemovePortal>();
+        }
     }
 
     void OnMouseUp()

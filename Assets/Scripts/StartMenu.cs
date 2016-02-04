@@ -9,6 +9,7 @@ public class StartMenu : MonoBehaviour {
     public Canvas aboutCanvas;
     public Canvas controlsCanvas;
     public Canvas optionsCanvas;
+    public Canvas menuCanvas;
     public Button playButton;
     public Button exitButton;
     public Button controlsButton;
@@ -17,11 +18,12 @@ public class StartMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
         quitDialog = quitDialog.GetComponent<Canvas>(); //assigned actual game object to variable
         aboutCanvas = aboutCanvas.GetComponent<Canvas>();
         controlsCanvas = controlsCanvas.GetComponent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
-
+        menuCanvas = menuCanvas.GetComponent<Canvas>();
         playButton = playButton.GetComponent<Button>();
         exitButton = exitButton.GetComponent<Button>();
         controlsButton = controlsButton.GetComponent<Button>();
@@ -85,6 +87,7 @@ public class StartMenu : MonoBehaviour {
     public void StartLevel()
     {
         //Application.LoadLevel(1);
+        menuCanvas.enabled = false;
         SceneManager.LoadScene("prototype");
     }
 

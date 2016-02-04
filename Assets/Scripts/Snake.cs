@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Snake : MonoBehaviour
     public GameObject incraseSnakeSpeedFoodPrefab;
     public GameObject decreaseSnakeSpeedPrefab;
     public GameObject background;
+    public Canvas gamePausedText;
+    public Text scoreText;
     public AddPortal AddPortalSript;
 
     public Transform borderTop;
@@ -31,6 +34,7 @@ public class Snake : MonoBehaviour
     bool ate = false;
     bool shrink = false;
     bool portal = false;
+    bool pause = false;
     private int fixedUpdateCounter = 0;
     private int specialFoodCount = 0;
     private bool isSpecialOnTable = false;
@@ -38,6 +42,11 @@ public class Snake : MonoBehaviour
     private float specialTime;
     private static int numOfRows = 12;
     private static int numOfColls = 20;
+
+    private int score = 0;
+    private static int foodScoreNormal = 10;
+    private static int foodScoreIncSpeed = 20;
+    private static int foodScoreDecrease = 5; //decrease speed or length
 
     private List<PortalToDelete> portalsToDelete = new List<PortalToDelete>();
 
@@ -67,6 +76,9 @@ public class Snake : MonoBehaviour
     void Start()
     {
         background = GameObject.FindGameObjectWithTag("Background");
+        gamePausedText = gamePausedText.GetComponent<Canvas>();
+        gamePausedText.enabled = false;
+        scoreText = scoreText.GetComponent<Text>();
         AddPortalSript = background.GetComponent<AddPortal>();
         fixedUpdateCounter = 0;
         for (int i = 0; i < numOfRows; i++)
@@ -81,23 +93,25 @@ public class Snake : MonoBehaviour
     /*guarantees same time between each update*/
     void FixedUpdate()
     {
-        fixedUpdateCounter++;
-        float time = (float)moveTime / 0.02f;
-        if ((int)time == fixedUpdateCounter)
+        if (!pause)
         {
-            fixedUpdateCounter = 0;
-            Move();       
-        }
-        if (isSpecialOnTable)
-        {
-            specialFoodCount++;
-            Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
-            if (specialFoodCount == (int)specialTime)
+            fixedUpdateCounter++;
+            float time = (float)moveTime / 0.02f;
+            if ((int)time == fixedUpdateCounter)
             {
-                removeSpecialFood();
+                fixedUpdateCounter = 0;
+                Move();
+            }
+            if (isSpecialOnTable)
+            {
+                specialFoodCount++;
+                Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
+                if (specialFoodCount == (int)specialTime)
+                {
+                    removeSpecialFood();
+                }
             }
         }
-        
     }
 
     // Update is called once per frame
@@ -113,7 +127,17 @@ public class Snake : MonoBehaviour
             dir = Vector2.left;
         else if (Input.GetKey(KeyCode.UpArrow))
             dir = Vector2.up;
-     
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            pause = !pause;
+            gamePausedText.enabled = !gamePausedText.enabled;
+        }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            pause = !pause;
+            gamePausedText.enabled = !gamePausedText.enabled; //teoreticky nemusi byt
+            SceneManager.LoadScene(0);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -126,6 +150,8 @@ public class Snake : MonoBehaviour
 
             // Remove the Food
             Destroy(coll.gameObject);
+            score += foodScoreNormal;
+            scoreText.text = score.ToString();
         }
         else if (coll.name.StartsWith(decreaseSnakeLengthFoodPrefab.name))
         {
@@ -134,6 +160,8 @@ public class Snake : MonoBehaviour
 
             // Remove the Food
             Destroy(coll.gameObject);
+            score += foodScoreDecrease;
+            scoreText.text = score.ToString();
         }
         else if (coll.name.StartsWith(incraseSnakeSpeedFoodPrefab.name))
         {
@@ -141,7 +169,7 @@ public class Snake : MonoBehaviour
             UpdateSpeed(true);
             Destroy(coll.gameObject);
             SpawnFood();
-
+            //score updated in UpdateSpeed();
         }
         else if (coll.name.StartsWith(decreaseSnakeSpeedPrefab.name))
         {
@@ -149,6 +177,7 @@ public class Snake : MonoBehaviour
             UpdateSpeed(false);
             SpawnFood();
             Destroy(coll.gameObject);
+            //score updated in UpdateSpeed();
         }
         else if (coll.name.StartsWith(newPortal.name))
         {
@@ -220,6 +249,8 @@ public class Snake : MonoBehaviour
         else
         {
             gameOver();
+            score = 0;
+            scoreText.text = score.ToString();
             // ToDo 'You lose' screen
             Debug.Log("collision with: " + coll.name);
             Debug.Log("Score: " + tail.Count);
@@ -306,12 +337,17 @@ public class Snake : MonoBehaviour
         if (increase)
         {
             moveTime -= moveChangeRate;
-            if (moveTime <= 0.1) { moveTime = 0.1f; }
-
+            if (moveTime <= 0.1) {
+                moveTime = 0.1f;
+                score += foodScoreNormal;
+            }
+            else score += foodScoreIncSpeed;
         }
         else {
             moveTime += moveChangeRate;
+            score += foodScoreDecrease;
         }
+        scoreText.text = score.ToString();
         fixedUpdateCounter = 0;
     }
 

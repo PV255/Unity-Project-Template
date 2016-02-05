@@ -97,6 +97,7 @@ public class Snake : MonoBehaviour
         gameOverScreen = gameOverScreen.GetComponent<Canvas>();
         AddPortalSript = background.GetComponent<AddPortal>();
         eatSound = eatSound.GetComponent<AudioSource>();
+        eatSound.volume = 0;
         fixedUpdateCounter = 0;
         for (int i = 0; i < numOfRows; i++)
         {

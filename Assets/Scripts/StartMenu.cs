@@ -23,6 +23,7 @@ public Canvas levelsCanvas;
     public Button levelsButton;
     public AudioSource audioSource;
     public Slider musicSlider;
+    public Slider soundSlider;
 
     public GameObject snakeObject;
     public Snake snakeScript;
@@ -60,6 +61,7 @@ levelsCanvas = levelsCanvas.GetComponent<Canvas>();
         levelsButton = levelsButton.GetComponent<Button>();
         audioSource = audioSource.GetComponent<AudioSource>();
         musicSlider = musicSlider.GetComponent<Slider>();
+        soundSlider = soundSlider.GetComponent<Slider>();
 
         snakeObject = GameObject.FindGameObjectWithTag("Snake");
         snakeScript = snakeObject.GetComponent<Snake>();
@@ -151,6 +153,7 @@ Loading.SaveGame ();
     {
         optionsCanvas.enabled = false;
         audioSource.volume = musicSlider.value;
+        snakeScript.eatSound.volume = soundSlider.value;
         MenuButtonsEnamble(true);
     }
 

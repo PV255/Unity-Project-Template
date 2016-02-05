@@ -20,6 +20,7 @@ public Canvas levelsCanvas;
     public Button controlsButton;
     public Button optionsButton;
     public Button aboutButton;
+    public Button levelsButton;
     public AudioSource audioSource;
     public Toggle musicToggle;
 
@@ -54,6 +55,7 @@ levelsCanvas = levelsCanvas.GetComponent<Canvas>();
         controlsButton = controlsButton.GetComponent<Button>();
         optionsButton = optionsButton.GetComponent<Button>();
         aboutButton = aboutButton.GetComponent<Button>();
+        levelsButton = levelsButton.GetComponent<Button>();
         audioSource = audioSource.GetComponent<AudioSource>();
         musicToggle = musicToggle.GetComponent<Toggle>();
 
@@ -139,6 +141,7 @@ Loading.SaveGame ();
         controlsButton.enabled = enable;
         optionsButton.enabled = enable;
         aboutButton.enabled = enable;
+        levelsButton.enabled = enabled;
     }
 
     public void OkSoundDialog()

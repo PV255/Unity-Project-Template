@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
-using SimpleJSON;
-using SaveLoad;
-
 public class Snake : MonoBehaviour
 {
     
@@ -83,7 +80,6 @@ public class Snake : MonoBehaviour
 
     void Start()
     {
-		Loading.LoadLevels();
         background = GameObject.FindGameObjectWithTag("Background");
         gamePausedText = gamePausedText.GetComponent<Canvas>();
         gamePausedText.enabled = false;
@@ -97,7 +93,6 @@ public class Snake : MonoBehaviour
             obstacle[i] = new bool[numOfColls];
         }
         forgetObstacles();
-		setObstacles(Loading.GetBariers(Loading.getLastLevelId()));
         tail.Add(initialBody.transform);
         tail.Add(initialTail.transform);
         SpawnFood();
@@ -160,7 +155,6 @@ public class Snake : MonoBehaviour
             // Remove the Food
             Destroy(coll.gameObject);
             score += foodScoreNormal;
-			Loading.setScore(Loading.getLastLevelId(),score);
             scoreText.text = score.ToString();
         }
         else if (coll.name.StartsWith(decreaseSnakeLengthFoodPrefab.name))
@@ -171,7 +165,6 @@ public class Snake : MonoBehaviour
             // Remove the Food
             Destroy(coll.gameObject);
             score += foodScoreDecrease;
-			Loading.setScore(Loading.getLastLevelId(),score);
             scoreText.text = score.ToString();
         }
         else if (coll.name.StartsWith(incraseSnakeSpeedFoodPrefab.name))
@@ -259,7 +252,6 @@ public class Snake : MonoBehaviour
 
         else
         {
-			Loading.setScore(Loading.getLastLevelId(),score);
             gameOver();
             score = 0;
             scoreText.text = score.ToString();
@@ -516,15 +508,6 @@ public class Snake : MonoBehaviour
         }
     }
 
-void setObstacles(JSONNode bariers)
-	{
-		Debug.Log ("setObstacles");
-		for (int i = 0; i < bariers.Count; i++)
-		{
-			obstacle[bariers[i]["x"].AsInt][bariers[i]["y"].AsInt] = true;
-			Debug.Log ("obstacle"+ obstacle[bariers[i]["x"].AsInt][bariers[i]["y"].AsInt]);
-		}
-	}
     void removeSpecialFood() {
         Destroy(specialFoodObject);
         isSpecialOnTable = false;
@@ -546,16 +529,10 @@ void setObstacles(JSONNode bariers)
         return gamePausedText.enabled;
     }
 
-public void SetLevel(int levelId)
-	{
-		Loading.setLastLevelId (levelId);
-		setObstacles(Loading.GetBariers(levelId));
-	}
     /*TODO: implement game over screen here*/
     void gameOver()
     {
-        SceneManager.LoadScene(0);
-pause = true;
+        pause = true;
         inMenu = true;
         AddPortalSript.setPause(true);
         AddPortalSript.setInMenu(true);

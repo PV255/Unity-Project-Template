@@ -13,6 +13,7 @@ public class UserInterface : MonoBehaviour {
     public Snake snakeScript;
     public GameObject backgroundObject;
     public AddPortal addPortalScript;
+    public StartMenu startMenuScript;
 
     public AudioSource audioSource;
 
@@ -26,7 +27,8 @@ public class UserInterface : MonoBehaviour {
         snakeScript = snakeObject.GetComponent<Snake>();
         backgroundObject = GameObject.FindGameObjectWithTag("Background");
         addPortalScript = backgroundObject.GetComponent<AddPortal>();
-
+        GameObject startmenu = GameObject.FindGameObjectWithTag("Startmenu");
+        startMenuScript = startmenu.GetComponent<StartMenu>();
 
         uiCanvas.enabled = false;
     }
@@ -36,6 +38,8 @@ public class UserInterface : MonoBehaviour {
     public void ExitGame()
     {
         playGame.text = "continue";
+        startMenuScript.swithMusic();
+
         snakeScript.setPause(true);
         snakeScript.setInMenu(true);
         addPortalScript.setPause(true);

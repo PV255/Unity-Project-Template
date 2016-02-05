@@ -21,7 +21,7 @@ public Canvas levelsCanvas;
     public Button optionsButton;
     public Button aboutButton;
     public Button levelsButton;
-    public AudioSource audioSource;
+    public AudioSource[] audio;
     public Slider musicSlider;
     public Slider soundSlider;
 
@@ -40,7 +40,6 @@ public Canvas levelsCanvas;
 	public Button level3;
 	public Button level4;
 
-    private bool music;
     // Use this for initialization
     void Start () {
         
@@ -59,7 +58,7 @@ levelsCanvas = levelsCanvas.GetComponent<Canvas>();
         optionsButton = optionsButton.GetComponent<Button>();
         aboutButton = aboutButton.GetComponent<Button>();
         levelsButton = levelsButton.GetComponent<Button>();
-        audioSource = audioSource.GetComponent<AudioSource>();
+        audio = GetComponents<AudioSource>();
         musicSlider = musicSlider.GetComponent<Slider>();
         soundSlider = soundSlider.GetComponent<Slider>();
 
@@ -77,7 +76,7 @@ lock1 = lock1.GetComponent<Text>();
 		lock4 = lock4.GetComponent<Text>();
 		level4 = level4.GetComponent<Button>();
 
-        audioSource.volume = 0;
+
         quitDialog.enabled = false;
         aboutCanvas.enabled = false;
         controlsCanvas.enabled = false;
@@ -86,7 +85,6 @@ lock1 = lock1.GetComponent<Text>();
         uiCanvas.enabled = false;
         gameOver.enabled = false; 
         levelsCanvas.enabled = false;
-        music = false;
     }
 
     public void ControlsPress()
@@ -152,7 +150,7 @@ Loading.SaveGame ();
     public void OkSoundDialog()
     {
         optionsCanvas.enabled = false;
-        audioSource.volume = musicSlider.value;
+        audio[0].volume = audio[1].volume = musicSlider.value;
         snakeScript.eatSound.volume = soundSlider.value;
         MenuButtonsEnamble(true);
     }
@@ -190,6 +188,8 @@ public void ResetHighscore()
         snakeScript.setPause(snakeScript.isPaused());
         addPortalScript.setInMenu(false);
         addPortalScript.setPause(snakeScript.isPaused());
+        audio[0].Stop();
+        audio[1].Play();
     }
 
     public void GameOver()
@@ -225,6 +225,19 @@ public void ResetHighscore()
 			lockText.text = "highscore: " + Loading.getHighscore(id);
 		}
 	}
+
+    public void swithMusic()
+    {
+        if (audio[0].isPlaying)
+        {
+            audio[0].Stop();
+            audio[1].Play();
+        } else
+        {
+            audio[0].Play();
+            audio[1].Stop();
+        }
+    }
 
     //Exit - yes press
     public void ExitGame()

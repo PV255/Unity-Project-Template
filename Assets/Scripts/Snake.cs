@@ -16,11 +16,13 @@ public class Snake : MonoBehaviour
     public GameObject incraseSnakeSpeedFoodPrefab;
     public GameObject decreaseSnakeSpeedPrefab;
     public GameObject background;
+    public GameObject obstaclePrefab;
     public Canvas gamePausedText;
     public Canvas gameOverScreen;
     public Text scoreText;
     public Text gameOverScoreText;
     public AddPortal AddPortalSript;
+    public GameObject finalPOrtalGameObject;
 
     public Transform borderTop;
     public Transform borderBottom;
@@ -35,7 +37,7 @@ public class Snake : MonoBehaviour
     public GameObject lastTailPrefab;
     public GameObject initialBody;
     public GameObject initialTail;
-
+    public int desiredLengthOfSnake;
     Vector2 dir = Vector2.left;
     private List<Transform> tail = new List<Transform>();
     bool ate = false;
@@ -55,8 +57,10 @@ public class Snake : MonoBehaviour
     private static int foodScoreNormal = 10;
     private static int foodScoreIncSpeed = 20;
     private static int foodScoreDecrease = 5; //decrease speed or length
-
-    private List<PortalToDelete> portalsToDelete = new List<PortalToDelete>();
+    private bool finalPortalOpen = false;
+    private int nextLevel = 1;
+    private GameObject finalPortalGO;
+    private List<GameObject> obstaclesGO = new List<GameObject>();
 
 
     bool[][] obstacle = new bool[numOfRows][]; /*12*20*/
@@ -109,7 +113,13 @@ public class Snake : MonoBehaviour
     {
         if (!pause)
         {
-            
+            if (tail.Count == desiredLengthOfSnake) {
+                if (!finalPortalOpen) {
+                    //otvorit vstupny portal jeden 
+                    finalPortalOpen = true;
+                    OpenFinalPortal();
+                }
+            }
             fixedUpdateCounter++;
             float time = (float)moveTime / 0.02f;
             if ((int)time == fixedUpdateCounter)
@@ -134,14 +144,6 @@ public class Snake : MonoBehaviour
     {
 
         // Move in a new Direction?
-        if (Input.GetKey(KeyCode.RightArrow))
-            dir = Vector2.right;
-        else if (Input.GetKey(KeyCode.DownArrow))
-            dir = Vector2.down;
-        else if (Input.GetKey(KeyCode.LeftArrow))
-            dir = Vector2.left;
-        else if (Input.GetKey(KeyCode.UpArrow))
-            dir = Vector2.up;
         if (Input.GetKeyUp(KeyCode.P) && !inMenu)
         {
             pause = !pause;
@@ -160,7 +162,7 @@ public class Snake : MonoBehaviour
             // Remove the Food
             Destroy(coll.gameObject);
             score += foodScoreNormal;
-			Loading.setScore(Loading.getLastLevelId(),score);
+            Loading.setScore(Loading.getLastLevelId(), score);
             scoreText.text = score.ToString();
         }
         else if (coll.name.StartsWith(decreaseSnakeLengthFoodPrefab.name))
@@ -171,7 +173,7 @@ public class Snake : MonoBehaviour
             // Remove the Food
             Destroy(coll.gameObject);
             score += foodScoreDecrease;
-			Loading.setScore(Loading.getLastLevelId(),score);
+            Loading.setScore(Loading.getLastLevelId(), score);
             scoreText.text = score.ToString();
         }
         else if (coll.name.StartsWith(incraseSnakeSpeedFoodPrefab.name))
@@ -187,7 +189,7 @@ public class Snake : MonoBehaviour
             UpdateSpeed(false);
 
             removeSpecialFood();
-            
+
             //score updated in UpdateSpeed();
         }
         else if (coll.name.StartsWith(AddPortalSript.backgroundIn.name))
@@ -244,22 +246,27 @@ public class Snake : MonoBehaviour
                 }
                 //Debug.Log(transform.rotation);
                 transform.position = onIndex.outputPortal.getPosition();
-               
-               PortalToDelete local = new PortalToDelete();
+
+                PortalToDelete local = new PortalToDelete();
                 local.setInputPortal(coll.gameObject);
                 local.setOutPortal(onIndex.outputPortal.getOutputPortal());
                 local.numberOfSteps = 0;
-                portalsToDelete.Add(local); 
+
             }
 
         }
-        else if (coll.name.StartsWith(AddPortalSript.backgroundOut.name)) { 
+        else if (coll.name.StartsWith(AddPortalSript.backgroundOut.name)) {
+        } else if (coll.name.StartsWith(finalPOrtalGameObject.name)) {
+            desiredLengthOfSnake *= 2;
+            SetLevel(nextLevel);
+            nextLevel = (nextLevel + 1) / 4;
+            
         }
-        
+
 
         else
         {
-			Loading.setScore(Loading.getLastLevelId(),score);
+            Loading.setScore(Loading.getLastLevelId(), score);
             gameOver();
             score = 0;
             scoreText.text = score.ToString();
@@ -269,6 +276,8 @@ public class Snake : MonoBehaviour
             //initialize();
         }
     }
+
+
 
     public void Move()
     {
@@ -352,26 +361,6 @@ public class Snake : MonoBehaviour
                 tail.Add(((GameObject)Instantiate(lastTailPrefab, position, rotation)).transform);
             
         }
-        /*bool remove = false;
-        do
-        {
-            remove = false;
-            PortalToDelete port = new PortalToDelete();
-            foreach (PortalToDelete localPortal in portalsToDelete)
-            {
-                localPortal.numberOfSteps++;
-                if (localPortal.numberOfSteps > tail.Count())
-                {
-                    remove = true;
-                    Destroy(localPortal.getInputPortal());
-                    Destroy(localPortal.getOutputPortal());
-                    port = localPortal;
-                }
-                break;
-            }
-            if (remove) { portalsToDelete.Remove(port); }
-
-        } while (remove);*/
     }
 
     bool inBounds(Vector3 bounds)
@@ -505,6 +494,11 @@ public class Snake : MonoBehaviour
         return true;
     }
 
+    void OpenFinalPortal() {
+        Vector2 position = new Vector2(1,1);
+        finalPortalGO = (GameObject) Instantiate(finalPOrtalGameObject, position, Quaternion.identity);
+    }
+
     void forgetObstacles()
     {
         for (int i = 0; i < numOfRows; i++)
@@ -514,15 +508,31 @@ public class Snake : MonoBehaviour
                 obstacle[i][j] = false;
             }
         }
+        foreach (GameObject obj in obstaclesGO) {
+            Debug.Log("Destorying: " + obj);
+            Destroy(obj);
+            
+        }
+        obstaclesGO = new List<GameObject>();
     }
 
 void setObstacles(JSONNode bariers)
 	{
-		Debug.Log ("setObstacles");
+        int x, y;
+        int xDist = Mathf.Abs((int)(borderRight.position.x - borderLeft.position.x));
+        int yDist = Mathf.Abs((int)(borderBottom.position.y - borderTop.position.y));
+
+        Debug.Log ("setObstacles");
 		for (int i = 0; i < bariers.Count; i++)
 		{
-			obstacle[bariers[i]["x"].AsInt][bariers[i]["y"].AsInt] = true;
-			Debug.Log ("obstacle"+ obstacle[bariers[i]["x"].AsInt][bariers[i]["y"].AsInt]);
+            x = bariers[i]["x"].AsInt;
+            y = bariers[i]["y"].AsInt;
+            obstacle[x][y] = true;
+            Vector2 position = new Vector2();
+            position.x =Mathf.Round( borderLeft.position.x + (x * xDist / numOfColls) +1);
+            position.y =Mathf.Round( borderTop.position.y - (y * yDist / numOfRows) -1 );
+            obstaclesGO.Add((GameObject)Instantiate(obstaclePrefab, position, Quaternion.identity));
+			Debug.Log ("obstacle"+ obstacle[x][y] + "position: "+position);
 		}
 	}
     void removeSpecialFood() {
@@ -548,14 +558,17 @@ void setObstacles(JSONNode bariers)
 
 public void SetLevel(int levelId)
 	{
+        Destroy(finalPortalGO);
+        forgetObstacles();
 		Loading.setLastLevelId (levelId);
 		setObstacles(Loading.GetBariers(levelId));
 	}
     /*TODO: implement game over screen here*/
     void gameOver()
     {
+        forgetObstacles();
         SceneManager.LoadScene(0);
-pause = true;
+        pause = true;
         inMenu = true;
         AddPortalSript.setPause(true);
         AddPortalSript.setInMenu(true);

@@ -3843,7 +3843,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -10
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 05790b39fdbb4b5478d224b0be04c040, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4439,6 +4439,9 @@ MonoBehaviour:
     type: 2}
   background: {fileID: 0}
   obstaclePrefab: {fileID: 194374, guid: 723d6ee4946b83747a9d45185938954b, type: 2}
+  eraserObstacleGo: {fileID: 0}
+  pencilObstacleGO: {fileID: 0}
+  phoneObstacleGo: {fileID: 0}
   gamePausedText: {fileID: 1833104591}
   gameOverScreen: {fileID: 2131501153}
   scoreText: {fileID: 1805703814}

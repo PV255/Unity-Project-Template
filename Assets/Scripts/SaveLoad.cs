@@ -63,6 +63,16 @@ namespace SaveLoad
 			return null;
 		}
 
+		public static JSONNode GetPictures(int levelId)
+		{
+			if(levels["levels"].Count > levelId)
+			{
+				return levels ["levels"] [levelId] ["pictures"];
+			}
+
+			return null;
+		}
+
 		public static int getHighscore(int levelId)
 		{
 			Debug.Log ("get highscore" + highscoreLevels [levelId]);

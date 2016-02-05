@@ -17,6 +17,9 @@ public class Snake : MonoBehaviour
     public GameObject decreaseSnakeSpeedPrefab;
     public GameObject background;
     public GameObject obstaclePrefab;
+    public GameObject eraserObstacleGo;
+    public GameObject pencilObstacleGO;
+    public GameObject phoneObstacleGo;
     public Canvas gamePausedText;
     public Canvas gameOverScreen;
     public Text scoreText;
@@ -105,6 +108,7 @@ public class Snake : MonoBehaviour
         }
         forgetObstacles();
 		setObstacles(Loading.GetBariers(Loading.getLastLevelId()));
+        setPictures(Loading.GetPictures(Loading.getLastLevelId()));
         tail.Add(initialBody.transform);
         tail.Add(initialTail.transform);
         SpawnFood();
@@ -533,14 +537,66 @@ void setObstacles(JSONNode bariers)
 		{
             x = bariers[i]["x"].AsInt;
             y = bariers[i]["y"].AsInt;
-            obstacle[x][y] = true;
+            obstacle[y][x] = true;
             Vector2 position = new Vector2();
             position.x =Mathf.Round( borderLeft.position.x + (x * xDist / numOfColls) +1);
             position.y =Mathf.Round( borderTop.position.y - (y * yDist / numOfRows) -1 );
-            obstaclesGO.Add((GameObject)Instantiate(obstaclePrefab, position, Quaternion.identity));
-			Debug.Log ("obstacle"+ obstacle[x][y] + "position: "+position);
+            //obstaclesGO.Add((GameObject)Instantiate(obstaclePrefab, position, Quaternion.identity));
+			Debug.Log ("obstacle"+ obstacle[y][x] + "position: "+position);
 		}
 	}
+
+    void setPictures(JSONNode pictures)
+    {
+        Debug.Log("setPictures");
+        int xDist = Mathf.Abs((int)(borderRight.position.x - borderLeft.position.x));
+        int yDist = Mathf.Abs((int)(borderBottom.position.y - borderTop.position.y));
+
+        for (int i = 0; i < pictures.Count; i++)
+        {
+            //todo add sprite
+            int type = pictures[i]["type"].AsInt;
+            int x = pictures[i]["x"].AsInt;
+            int y = pictures[i]["y"].AsInt;
+            Vector2 position = new Vector2();
+            position.x = Mathf.Round(borderLeft.position.x + (x * xDist / numOfColls) + 1);
+            position.y = Mathf.Round(borderTop.position.y - (y * yDist / numOfRows) - 1);
+
+            switch (type)
+            {
+                case 0:
+                    //todo hrncek
+                    for (int k = 0; k < 5; k++) {
+                        for (int j = 0; j < 4; j++) {
+                            position.x = Mathf.Round(borderLeft.position.x + (x * xDist / numOfColls) + 1 + j *2);
+                            position.y = Mathf.Round(borderTop.position.y - (y * yDist / numOfRows) - 1 - k * 2);
+                            obstaclesGO.Add((GameObject)Instantiate(obstaclePrefab, position, Quaternion.identity));
+
+                        }
+                    }
+                    
+                    break;
+                case 1:
+                    //todo guma
+                    position.y -= 1;
+                    obstaclesGO.Add((GameObject)Instantiate(eraserObstacleGo, position, Quaternion.identity));
+                    break;
+                case 2:
+                    //todo ceruzka
+                    position.x -= 0.78f;
+                    position.y -= 0.24f;
+                    obstaclesGO.Add((GameObject)Instantiate(pencilObstacleGO, position, Quaternion.identity));
+                    break;
+                case 3:
+                    //todo mobil
+                    position.x -= 0.78f;
+                    position.y -= 0.24f;
+                    obstaclesGO.Add((GameObject)Instantiate(phoneObstacleGo, position, Quaternion.identity));
+                    break;
+            }
+        }
+    }
+
     void removeSpecialFood() {
         Destroy(specialFoodObject);
         isSpecialOnTable = false;
@@ -568,7 +624,8 @@ public void SetLevel(int levelId)
         forgetObstacles();
 		Loading.setLastLevelId (levelId);
 		setObstacles(Loading.GetBariers(levelId));
-	}
+        setPictures(Loading.GetPictures(Loading.getLastLevelId()));
+    }
     /*TODO: implement game over screen here*/
     void gameOver()
     {

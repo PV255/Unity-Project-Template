@@ -66,14 +66,18 @@ public class AddPortal : MonoBehaviour {
                 PortalId idOfNewPortal = obj.GetComponent<PortalId>();
                 idOfNewPortal.setId(id);
                 por = new InputPortal(id);
+                por.InputPortalGO = obj;
                 input = false;
             }
             else
             {
                 currentOutputPortal = (GameObject)Instantiate(backgroundOut, pos, Quaternion.identity);
                 currentOutputPortal.AddComponent<RemovePortal>();
+                currentOutputPortal.AddComponent<PortalId>();
                 currentOutputPortal.GetComponent<Renderer>().material.color = portalColor;
                 currentOutputPortal.GetComponent<SpriteRenderer>().sprite = inPortal;
+                PortalId idOfNewPortal = currentOutputPortal.GetComponent<PortalId>();
+                idOfNewPortal.setId(id);
                 outputPortal = true;
                 input = true;
             }
@@ -145,6 +149,8 @@ public class AddPortal : MonoBehaviour {
     public class InputPortal
     {
         int id;
+
+        public GameObject InputPortalGO;
 
         public InputPortal(int id) {
             this.id = id;

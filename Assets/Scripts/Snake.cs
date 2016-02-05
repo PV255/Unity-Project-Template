@@ -27,7 +27,8 @@ public class Snake : MonoBehaviour
     public float moveDistance;
     public GameObject tailPrefab;
     public GameObject lastTailPrefab;
-    public GameObject newPortal;
+    public GameObject initialBody;
+    public GameObject initialTail;
 
     Vector2 dir = Vector2.left;
     private List<Transform> tail = new List<Transform>();
@@ -87,10 +88,12 @@ public class Snake : MonoBehaviour
             obstacle[i] = new bool[numOfColls];
         }
         forgetObstacles();
+        tail.Add(initialBody.transform);
+        tail.Add(initialTail.transform);
         SpawnFood();
 
     }
-
+  
     /*guarantees same time between each update*/
     void FixedUpdate()
     {
@@ -164,7 +167,6 @@ public class Snake : MonoBehaviour
             //increase speed of snake ??do we increase the lenght of snake as well??
             UpdateSpeed(true);
             removeSpecialFood();
-            SpawnFood();
             //score updated in UpdateSpeed();
         }
         else if (coll.name.StartsWith(decreaseSnakeSpeedPrefab.name))
@@ -176,7 +178,7 @@ public class Snake : MonoBehaviour
             
             //score updated in UpdateSpeed();
         }
-        else if (coll.name.StartsWith(newPortal.name))
+        else if (coll.name.StartsWith(AddPortalSript.backgroundIn.name))
         {
             portal = true;
             //Debug.Log("hura portal!");
@@ -230,13 +232,16 @@ public class Snake : MonoBehaviour
                 }
                 //Debug.Log(transform.rotation);
                 transform.position = onIndex.outputPortal.getPosition();
-                PortalToDelete local = new PortalToDelete();
+               
+               PortalToDelete local = new PortalToDelete();
                 local.setInputPortal(coll.gameObject);
                 local.setOutPortal(onIndex.outputPortal.getOutputPortal());
                 local.numberOfSteps = 0;
                 portalsToDelete.Add(local); 
             }
 
+        }
+        else if (coll.name.StartsWith(AddPortalSript.backgroundOut.name)) { 
         }
         else if (coll.name.StartsWith(tailPrefab.name))
         {
@@ -251,13 +256,7 @@ public class Snake : MonoBehaviour
             // ToDo 'You lose' screen
             Debug.Log("collision with: " + coll.name);
             Debug.Log("Score: " + tail.Count);
-            foreach (Transform ta in tail)
-            {
-                Destroy(ta.gameObject);
-            }
-            tail = new List<Transform>();
-
-            transform.position = new Vector2(-7, 1);
+            //initialize();
         }
     }
 
@@ -287,7 +286,7 @@ public class Snake : MonoBehaviour
         }
         else if (shrink)
         {
-            if (tail.Count > 0)
+            if (tail.Count >= 2)
             {
                 isSpecialOnTable = false;
                 shrink = false;
@@ -309,6 +308,7 @@ public class Snake : MonoBehaviour
                     tail.Add(((GameObject)Instantiate(lastTailPrefab, position, rotation)).transform);
                 }
                 else {
+                    //gameOver();
                     tail.Last().position = currentPossition;
                     tail.Last().rotation = transform.rotation;
                     tail.Insert(0, tail.Last());
@@ -327,16 +327,9 @@ public class Snake : MonoBehaviour
                 gameOver();
             }
         }
-        else if (tail.Count > 0)
+        else if (tail.Count >=2 )
         {
-            if (tail.Count == 1) {
-                tail.Last().position = currentPossition;
-                tail.Last().rotation = transform.rotation;
-                tail.Insert(0, tail.Last());
-                tail.RemoveAt(tail.Count - 1);
-            }
-            else
-            {
+            
                 lastPosition = tail.Last().gameObject;
                 Destroy(lastPosition);
                 tail.RemoveAt(tail.Count - 1);
@@ -347,9 +340,9 @@ public class Snake : MonoBehaviour
                 tail.RemoveAt(tail.Count - 1);
                 tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
                 tail.Add(((GameObject)Instantiate(lastTailPrefab, position, rotation)).transform);
-            }
+            
         }
-        bool remove = false;
+        /*bool remove = false;
         do
         {
             remove = false;
@@ -368,7 +361,7 @@ public class Snake : MonoBehaviour
             }
             if (remove) { portalsToDelete.Remove(port); }
 
-        } while (remove);
+        } while (remove);*/
     }
 
     bool inBounds(Vector3 bounds)
@@ -537,5 +530,6 @@ public class Snake : MonoBehaviour
     /*TODO: implement game over screen here*/
     void gameOver()
     {
+        pause = true;
     }
 }

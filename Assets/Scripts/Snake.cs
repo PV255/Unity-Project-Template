@@ -23,6 +23,7 @@ public class Snake : MonoBehaviour
     public Text gameOverScoreText;
     public AddPortal AddPortalSript;
     public GameObject finalPOrtalGameObject;
+    public AudioSource eatSound;
 
     public Transform borderTop;
     public Transform borderBottom;
@@ -95,6 +96,7 @@ public class Snake : MonoBehaviour
         gameOverScoreText = gameOverScoreText.GetComponent<Text>();
         gameOverScreen = gameOverScreen.GetComponent<Canvas>();
         AddPortalSript = background.GetComponent<AddPortal>();
+        eatSound = eatSound.GetComponent<AudioSource>();
         fixedUpdateCounter = 0;
         for (int i = 0; i < numOfRows; i++)
         {
@@ -164,6 +166,7 @@ public class Snake : MonoBehaviour
             score += foodScoreNormal;
             Loading.setScore(Loading.getLastLevelId(), score);
             scoreText.text = score.ToString();
+            eatSound.Play();
         }
         else if (coll.name.StartsWith(decreaseSnakeLengthFoodPrefab.name))
         {
@@ -175,6 +178,7 @@ public class Snake : MonoBehaviour
             score += foodScoreDecrease;
             Loading.setScore(Loading.getLastLevelId(), score);
             scoreText.text = score.ToString();
+            eatSound.Play();
         }
         else if (coll.name.StartsWith(incraseSnakeSpeedFoodPrefab.name))
         {
@@ -385,6 +389,7 @@ public class Snake : MonoBehaviour
             score += foodScoreDecrease;
         }
         scoreText.text = score.ToString();
+        eatSound.Play();
         fixedUpdateCounter = 0;
     }
 

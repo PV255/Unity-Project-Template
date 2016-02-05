@@ -1099,8 +1099,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1501991004}
-        m_MethodName: GameOver
+      - m_Target: {fileID: 1362592742}
+        m_MethodName: loadSceneZero
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

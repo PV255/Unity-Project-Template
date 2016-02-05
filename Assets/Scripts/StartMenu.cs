@@ -146,7 +146,7 @@ Loading.SaveGame ();
         controlsButton.enabled = enable;
         optionsButton.enabled = enable;
         aboutButton.enabled = enable;
-        levelsButton.enabled = enabled;
+        levelsButton.enabled = enable;
     }
 
     public void OkSoundDialog()

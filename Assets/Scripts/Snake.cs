@@ -573,7 +573,7 @@ public void SetLevel(int levelId)
     void gameOver()
     {
         forgetObstacles();
-        SceneManager.LoadScene(0);
+
         pause = true;
         inMenu = true;
         AddPortalSript.setPause(true);
@@ -581,4 +581,10 @@ public void SetLevel(int levelId)
         gameOverScoreText.text = score.ToString();
         gameOverScreen.enabled = true;
     }
+
+    public void loadSceneZero()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

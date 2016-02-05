@@ -135,9 +135,12 @@ public class MenuBehaviourScript : MonoBehaviour
         textGameOverScore.text = "Your Score: " + GameManager.Instance.getScore();
     }
 
+    bool soundOn = true;
+
     void OnLevelWasLoaded(int id)
     {
         string lvlName = Application.loadedLevelName;
+        soundOn = true;
 
         if (lvlName.Contains("gameOver"))
         {
@@ -156,5 +159,16 @@ public class MenuBehaviourScript : MonoBehaviour
         fade.color = col;
 
         canvasHUD.SetActive(true);
+    }
+
+    public void toggleSound() {
+        if (soundOn){
+            Camera.main.GetComponent<AudioSource>().Pause();
+            soundOn = false;
+        }
+        else{
+            Camera.main.GetComponent<AudioSource>().UnPause();
+            soundOn = true;
+        }
     }
 }

@@ -86,7 +86,9 @@ public class GameManager : MonoBehaviour {
             menu.showGameOver();
         }
 
-
+        foreach(LoosePlatform tile in FindObjectsOfType<LoosePlatform>()){
+            tile.forceRestore();
+        }
 
         SetLivesText();
     }

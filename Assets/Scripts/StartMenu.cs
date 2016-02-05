@@ -22,7 +22,7 @@ public Canvas levelsCanvas;
     public Button aboutButton;
     public Button levelsButton;
     public AudioSource audioSource;
-    public Toggle musicToggle;
+    public Slider musicSlider;
 
     public GameObject snakeObject;
     public Snake snakeScript;
@@ -59,7 +59,7 @@ levelsCanvas = levelsCanvas.GetComponent<Canvas>();
         aboutButton = aboutButton.GetComponent<Button>();
         levelsButton = levelsButton.GetComponent<Button>();
         audioSource = audioSource.GetComponent<AudioSource>();
-        musicToggle = musicToggle.GetComponent<Toggle>();
+        musicSlider = musicSlider.GetComponent<Slider>();
 
         snakeObject = GameObject.FindGameObjectWithTag("Snake");
         snakeScript = snakeObject.GetComponent<Snake>();
@@ -75,7 +75,7 @@ lock1 = lock1.GetComponent<Text>();
 		lock4 = lock4.GetComponent<Text>();
 		level4 = level4.GetComponent<Button>();
 
-        audioSource.mute = true;
+        audioSource.volume = 0;
         quitDialog.enabled = false;
         aboutCanvas.enabled = false;
         controlsCanvas.enabled = false;
@@ -150,8 +150,7 @@ Loading.SaveGame ();
     public void OkSoundDialog()
     {
         optionsCanvas.enabled = false;
-        if (musicToggle.isOn) music = true;
-        else music = false;
+        audioSource.volume = musicSlider.value;
         MenuButtonsEnamble(true);
     }
 
@@ -188,8 +187,6 @@ public void ResetHighscore()
         snakeScript.setPause(snakeScript.isPaused());
         addPortalScript.setInMenu(false);
         addPortalScript.setPause(snakeScript.isPaused());
-        if (music) audioSource.mute = false;
-        else audioSource.mute = true;
     }
 
     public void GameOver()

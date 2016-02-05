@@ -14,6 +14,8 @@ public class UserInterface : MonoBehaviour {
     public GameObject backgroundObject;
     public AddPortal addPortalScript;
 
+    public AudioSource audioSource;
+
     void Start () {
         exitButton = exitButton.GetComponent<Button>();
         menuCanvas = menuCanvas.GetComponent<Canvas>();
@@ -24,6 +26,7 @@ public class UserInterface : MonoBehaviour {
         snakeScript = snakeObject.GetComponent<Snake>();
         backgroundObject = GameObject.FindGameObjectWithTag("Background");
         addPortalScript = backgroundObject.GetComponent<AddPortal>();
+
 
         uiCanvas.enabled = false;
     }

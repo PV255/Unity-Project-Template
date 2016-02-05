@@ -4430,18 +4430,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 145664, guid: 95fbf45bb5d4b5944b8bb47f158af4d6, type: 2}
-  decreaseSnakeLengthFoodPrefab: {fileID: 146730, guid: 99b2f3524c056d841ab494c78eaa9785,
+  decreaseSnakeLengthFoodPrefab: {fileID: 104106, guid: bc52979269d27e9429e10c9e5934e69d,
     type: 2}
   incraseSnakeSpeedFoodPrefab: {fileID: 156412, guid: 1a4f9ceaa14001147a5f2026c7ba67de,
     type: 2}
-  decreaseSnakeSpeedPrefab: {fileID: 181922, guid: 4d6fbf72367690648b9679c63f2537d8,
+  decreaseSnakeSpeedPrefab: {fileID: 104696, guid: 53f7a81b31c13fb499339381abfaded2,
     type: 2}
   background: {fileID: 1399677814}
+  obstaclePrefab: {fileID: 194374, guid: 723d6ee4946b83747a9d45185938954b, type: 2}
   gamePausedText: {fileID: 1833104591}
   gameOverScreen: {fileID: 2131501153}
   scoreText: {fileID: 1805703814}
   gameOverScoreText: {fileID: 1506272327}
   AddPortalSript: {fileID: 1399677817}
+  finalPOrtalGameObject: {fileID: 107498, guid: b7c4bbfa4788fdd4d9a6bacc97444225,
+    type: 2}
   borderTop: {fileID: 891390380}
   borderBottom: {fileID: 1402098674}
   borderLeft: {fileID: 2007887491}
@@ -4454,6 +4457,7 @@ MonoBehaviour:
   lastTailPrefab: {fileID: 805391549}
   initialBody: {fileID: 1006387109}
   initialTail: {fileID: 193219213}
+  desiredLengthOfSnake: 10
 --- !u!50 &1362592743
 Rigidbody2D:
   serializedVersion: 2

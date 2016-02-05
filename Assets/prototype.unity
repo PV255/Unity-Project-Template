@@ -5118,6 +5118,7 @@ MonoBehaviour:
   controlsButton: {fileID: 1304592122}
   optionsButton: {fileID: 551730363}
   aboutButton: {fileID: 638854555}
+  levelsButton: {fileID: 558240072}
   audioSource: {fileID: 1501991009}
   musicToggle: {fileID: 1304326953}
   snakeObject: {fileID: 0}
@@ -6839,8 +6840,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -46.3}
-  m_SizeDelta: {x: 71.4, y: 35.4}
+  m_AnchoredPosition: {x: 1, y: -46.3}
+  m_SizeDelta: {x: 72, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862676693
 MonoBehaviour:
@@ -6882,7 +6883,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1501991004}
-        m_MethodName: Back
+        m_MethodName: OkSoundDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

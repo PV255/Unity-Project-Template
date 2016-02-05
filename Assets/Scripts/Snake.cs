@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -133,17 +132,12 @@ public class Snake : MonoBehaviour
             pause = !pause;
             gamePausedText.enabled = !gamePausedText.enabled;
         }
-        if (Input.GetKeyUp(KeyCode.Escape) && !inMenu)
-        {
-            ExitGame();
-        }
     }
 
     public void ExitGame()
     {
         pause = !pause;
         gamePausedText.enabled = !gamePausedText.enabled; //teoreticky nemusi byt
-        SceneManager.LoadScene(0);
     }
 
     void OnTriggerEnter2D(Collider2D coll)

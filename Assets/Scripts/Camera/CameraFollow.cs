@@ -11,10 +11,13 @@ public class CameraFollow : MonoBehaviour
     public float height;
 
     public Transform backCollider;
-    
-    void Start()
-    {
 
+    private float backColliderY;
+
+    void Start(){
+        if (backCollider != null){
+            backColliderY = backCollider.position.y;
+        }
     }
 
     void FixedUpdate() {
@@ -42,8 +45,10 @@ public class CameraFollow : MonoBehaviour
             lookAt.position.z
         ));
 
-        if (backCollider != null) {
-            backCollider.position = new Vector3(transform.position.x, 0, transform.position.z);
+        if (backCollider != null){
+            //backCollider.position = new Vector3(transform.position.x, 0, transform.position.z);
+            //backCollider.position = new Vector3(transform.position.x, backColliderY, transform.position.z);
+            backCollider.position = new Vector3(transform.position.x, transform.position.y - 3, transform.position.z);
         }
     }
 

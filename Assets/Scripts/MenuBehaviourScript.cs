@@ -48,7 +48,7 @@ public class MenuBehaviourScript : MonoBehaviour
         }
 
         Color col = fade.color;
-        col.a = Mathf.Clamp01(col.a - Time.deltaTime);
+        col.a = Mathf.Clamp01(col.a - Time.deltaTime * 0.3f);
         fade.color = col;
     }
 

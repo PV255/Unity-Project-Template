@@ -434,6 +434,7 @@ GameObject:
   - 224: {fileID: 193581475}
   - 222: {fileID: 193581477}
   - 114: {fileID: 193581476}
+  - 114: {fileID: 193581478}
   m_Layer: 5
   m_Name: TextCredits
   m_TagString: Untagged
@@ -453,11 +454,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 818040133}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &193581476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,19 +485,38 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Lubor Slusny\r\nMartin Stefanko\nMiroslava Jaresova\r\nRoman Gluszny"
+  m_Text: "Game by:\r\n\r\nLubor Slusny\r\nMartin Stefanko\r\nMiroslava Jaresova\r\nRoman
+    Gluszny\r\n\r\nMusic used:\r\n\r\nBenjamin Mastripolito - Groove Music\r\nhttps://www.freesound.org/people/Lemoncreme/sounds/203099/\r\n\r\nShadyDave
+    - Snowfall final\r\nhttps://www.freesound.org/people/ShadyDave/sounds/262259/\r\n\r\nBackground
+    Cartoon Music Loop\r\nhttps://www.youtube.com/watch?v=uIYBnfsB37k\r\n\r\nWorld
+    map\r\nhttps://www.youtube.com/audiolibrary/music\r\n\r\nBike Rides - The Green
+    Orbs\r\nhttps://www.youtube.com/audiolibrary/music\r\n\r\nClassical Carnivale
+    - Twin Musicom\r\nhttps://www.youtube.com/audiolibrary/music\r\n\r\nKevin MacLeod
+    - Lightless Dawn\r\nhttps://www.youtube.com/audiolibrary/music\r\n\r\nKevin MacLeod
+    - Hypnothis\r\nhttps://www.youtube.com/audiolibrary/music"
 --- !u!222 &193581477
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 193581474}
+--- !u!114 &193581478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193581474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea32185579e3e145a7218830901c4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &237000900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1720,17 @@ MonoBehaviour:
       - m_Target: {fileID: 653434947}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 193581478}
+        m_MethodName: resetY
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -85,6 +85,9 @@ public class GameManager : MonoBehaviour {
             MenuBehaviourScript menu = FindObjectOfType<MenuBehaviourScript>();
             menu.showGameOver();
         }
+
+
+
         SetLivesText();
     }
 

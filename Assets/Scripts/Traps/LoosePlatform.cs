@@ -11,6 +11,10 @@ public class LoosePlatform : MonoBehaviour {
     private float timeFallAt = -1;
     private float timeRiseAt = -1;
 
+    public void forceRestore() {
+        timeRiseAt = Time.time;
+    }
+
     // Use this for initialization
     void Start () {
         origPos = gameObject.transform.position;
@@ -35,7 +39,7 @@ public class LoosePlatform : MonoBehaviour {
             timeRiseAt = -1;
         }
     }
-
+    
     void OnCollisionEnter(Collision col){
         if (col.other.CompareTag("Player") && timeFallAt == -1) {
             timeFallAt = Time.time + timeFallAfter;

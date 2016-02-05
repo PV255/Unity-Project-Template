@@ -107,7 +107,7 @@ public class Snake : MonoBehaviour
             if (isSpecialOnTable)
             {
                 specialFoodCount++;
-                Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
+                //Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
                 if (specialFoodCount == (int)specialTime)
                 {
                     removeSpecialFood();
@@ -163,7 +163,7 @@ public class Snake : MonoBehaviour
         {
             //increase speed of snake ??do we increase the lenght of snake as well??
             UpdateSpeed(true);
-            Destroy(coll.gameObject);
+            removeSpecialFood();
             SpawnFood();
             //score updated in UpdateSpeed();
         }
@@ -171,8 +171,9 @@ public class Snake : MonoBehaviour
         {
             //decrease speed
             UpdateSpeed(false);
-            SpawnFood();
-            Destroy(coll.gameObject);
+
+            removeSpecialFood();
+            
             //score updated in UpdateSpeed();
         }
         else if (coll.name.StartsWith(newPortal.name))
@@ -262,7 +263,7 @@ public class Snake : MonoBehaviour
 
     public void Move()
     {
-        Debug.Log("hybem sa!");
+        //Debug.Log("hybem sa!");
         GameObject lastPosition;
         portal = false;
         Vector2 currentPossition = transform.position;
@@ -288,6 +289,7 @@ public class Snake : MonoBehaviour
         {
             if (tail.Count > 0)
             {
+                isSpecialOnTable = false;
                 shrink = false;
                //* tail.Insert(0, tail.Last());
                 if (tail.Count >= 3)

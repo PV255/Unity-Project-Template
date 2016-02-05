@@ -21,6 +21,7 @@ public class jumpHintScript : MonoBehaviour {
             Debug.Log("Set Jump Hint Visible");
             Image jump = GameObject.Find("jump").GetComponentInChildren<Image>();
             jump.CrossFadeAlpha(100, 1, true);
+            GameObject.Find("move").GetComponentInChildren<Image>().CrossFadeAlpha(0, 0, true);
             //Image jump = GameObject.Find("CanvasHints").GetComponentInChildren<Image>();
         }
     }

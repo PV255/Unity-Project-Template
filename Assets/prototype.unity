@@ -4396,6 +4396,7 @@ MonoBehaviour:
   snakeScript: {fileID: 0}
   backgroundObject: {fileID: 0}
   addPortalScript: {fileID: 0}
+  startMenuScript: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!1 &1362592741
 GameObject:
@@ -5240,8 +5241,7 @@ MonoBehaviour:
   optionsButton: {fileID: 551730363}
   aboutButton: {fileID: 638854555}
   levelsButton: {fileID: 558240072}
-  audioSource: {fileID: 1501991009}
-  audioSource2: {fileID: 1501991010}
+  audio: []
   musicSlider: {fileID: 1775882993}
   soundSlider: {fileID: 1749371170}
   snakeObject: {fileID: 0}
@@ -5710,7 +5710,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1575241362
 MonoBehaviour:

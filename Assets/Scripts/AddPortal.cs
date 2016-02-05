@@ -6,8 +6,13 @@ public class AddPortal : MonoBehaviour {
 
 	// Use this for initialization
     public float distance;
-    public GameObject inPortal;
-    public GameObject outPortal;
+    public GameObject backgroundIn;
+    public GameObject backgroundOut;
+    public Sprite inPortal;
+    public Sprite outPortalUp;
+    public Sprite outPortalDown;
+    public Sprite outPortalLeft;
+    public Sprite outPortalRight;
     private bool input = true;
     private bool outputPortal = false;
     private InputPortal por;
@@ -38,6 +43,7 @@ public class AddPortal : MonoBehaviour {
     {
         if (!pause)
         {
+
             Debug.Log("pause" + pause);
             var v3 = Input.mousePosition;
             v3.z = distance;
@@ -50,27 +56,31 @@ public class AddPortal : MonoBehaviour {
             mouseDown = true;
             if (input)
             {
-                GameObject obj = (GameObject)Instantiate(inPortal, pos, Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(backgroundIn, pos, Quaternion.identity);
                 obj.AddComponent<RemovePortal>();
                 obj.AddComponent<PortalId>();
                 obj.GetComponent<Renderer>().material.color = portalColor;
+                //obj.GetComponent<Renderer>().material.mainTexture = inPortal;
+                obj.GetComponent<SpriteRenderer>().sprite = inPortal;
 
                 PortalId idOfNewPortal = obj.GetComponent<PortalId>();
                 idOfNewPortal.setId(id);
                 por = new InputPortal(id);
                 input = false;
             }
-            else {
-                currentOutputPortal = (GameObject)Instantiate(outPortal, pos, Quaternion.identity);
+            else
+            {
+                currentOutputPortal = (GameObject)Instantiate(backgroundOut, pos, Quaternion.identity);
                 currentOutputPortal.AddComponent<RemovePortal>();
                 currentOutputPortal.GetComponent<Renderer>().material.color = portalColor;
+                currentOutputPortal.GetComponent<SpriteRenderer>().sprite = inPortal;
                 outputPortal = true;
                 input = true;
             }
-            //obj.transform.Rotate(new Vector3(90f, 0f, 0f));
-            //obj.AddComponent<RemovePortal>();
+
         }
     }
+    
 
     void OnMouseUp()
     {
@@ -89,13 +99,25 @@ public class AddPortal : MonoBehaviour {
                 Vector2 vec;
                 if (distX > distY)
                 {
-                    if (posUp.x > pos.x) vec = Vector2.right;
-                    else vec = Vector2.left;
+                    if (posUp.x > pos.x) 
+                    { 
+                        vec = Vector2.right;
+                        currentOutputPortal.GetComponent<SpriteRenderer>().sprite = outPortalRight;
+                    }else{
+                     vec = Vector2.left;
+                     currentOutputPortal.GetComponent<SpriteRenderer>().sprite = outPortalLeft;
+                    }
                 }
                 else
                 {
-                    if (posUp.y > pos.y) vec = Vector2.up;
-                    else vec = Vector2.down;
+                    if (posUp.y > pos.y)
+                    {
+                        vec = Vector2.up;
+                        currentOutputPortal.GetComponent<SpriteRenderer>().sprite = outPortalUp;
+                    }
+                    else { vec = Vector2.down;
+                    currentOutputPortal.GetComponent<SpriteRenderer>().sprite = outPortalDown;
+                    }
                 }
                 Debug.Log("Direction: " + vec);
                 mouseDown = false;          

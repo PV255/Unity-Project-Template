@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: b4a654ec26fa7a04ca34671792ea5f22
+timeCreated: 1454603379
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "newhad-\u017Er\xE1dlo_0"
+    21300002: "newhad-\u017Er\xE1dlo_1"
+    21300004: "newhad-\u017Er\xE1dlo_2"
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: "newhad-\u017Er\xE1dlo_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 588
+        width: 500
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97, y: -172}
+        - {x: 120, y: -159}
+        - {x: 130, y: -151}
+        - {x: 142, y: -143}
+        - {x: 149, y: -138}
+        - {x: 167, y: -132}
+        - {x: 202, y: -131}
+        - {x: 209, y: -134}
+        - {x: 223, y: -135}
+        - {x: 250, y: -135}
+        - {x: 250, y: 113}
+        - {x: 241, y: 115}
+        - {x: 223, y: 114}
+        - {x: 223, y: 112}
+        - {x: 192, y: 113}
+        - {x: 181, y: 114}
+        - {x: 161, y: 120}
+        - {x: 136, y: 144}
+        - {x: 131, y: 153}
+        - {x: 112, y: 171}
+        - {x: 104, y: 176}
+        - {x: 86, y: 186}
+        - {x: 76, y: 188}
+        - {x: 59, y: 193}
+        - {x: 42, y: 196}
+        - {x: 3, y: 196}
+        - {x: -36, y: 190}
+        - {x: -48, y: 186}
+        - {x: -61, y: 179}
+        - {x: -69, y: 174}
+        - {x: -77, y: 168}
+        - {x: -90, y: 155}
+        - {x: -103, y: 129}
+        - {x: -124, y: 117}
+        - {x: -150, y: 116}
+        - {x: -160, y: 115}
+        - {x: -181, y: 114}
+        - {x: -204, y: 113}
+        - {x: -215, y: 111}
+        - {x: -250, y: 110}
+        - {x: -250, y: -134}
+        - {x: -248, y: -135}
+        - {x: -230, y: -135}
+        - {x: -193, y: -128}
+        - {x: -180, y: -127}
+        - {x: -161, y: -125}
+        - {x: -147, y: -123}
+        - {x: -126, y: -123}
+        - {x: -110, y: -129}
+        - {x: -105, y: -134}
+        - {x: -93, y: -145}
+        - {x: -72, y: -168}
+        - {x: -52, y: -181}
+        - {x: -37, y: -189}
+        - {x: -29, y: -192}
+        - {x: -17, y: -196}
+        - {x: 36, y: -196}
+        - {x: 42, y: -195}
+        - {x: 53, y: -191}
+        - {x: 78, y: -182}
+    - name: "newhad-\u017Er\xE1dlo_1"
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 587
+        width: 500
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104, y: -167.5}
+        - {x: 133, y: -145.5}
+        - {x: 147, y: -131.5}
+        - {x: 153, y: -127.5}
+        - {x: 166, y: -124.5}
+        - {x: 184, y: -124.5}
+        - {x: 200, y: -130.5}
+        - {x: 231, y: -133.5}
+        - {x: 250, y: -131.5}
+        - {x: 250, y: 116.5}
+        - {x: 239, y: 118.5}
+        - {x: 212, y: 117.5}
+        - {x: 185, y: 110.5}
+        - {x: 182, y: 113.5}
+        - {x: 158, y: 119.5}
+        - {x: 150, y: 122.5}
+        - {x: 130, y: 132.5}
+        - {x: 121, y: 140.5}
+        - {x: 100, y: 156.5}
+        - {x: 100, y: 159.5}
+        - {x: 82, y: 175.5}
+        - {x: 58, y: 187.5}
+        - {x: 33, y: 194.5}
+        - {x: -20, y: 194.5}
+        - {x: -34, y: 187.5}
+        - {x: -47, y: 183.5}
+        - {x: -66, y: 176.5}
+        - {x: -80, y: 169.5}
+        - {x: -103, y: 154.5}
+        - {x: -125, y: 131.5}
+        - {x: -148, y: 115.5}
+        - {x: -166, y: 112.5}
+        - {x: -183, y: 114.5}
+        - {x: -241, y: 114.5}
+        - {x: -250, y: 115.5}
+        - {x: -250, y: -138.5}
+        - {x: -246, y: -138.5}
+        - {x: -236, y: -136.5}
+        - {x: -211, y: -135.5}
+        - {x: -205, y: -131.5}
+        - {x: -189, y: -132.5}
+        - {x: -181, y: -132.5}
+        - {x: -155, y: -129.5}
+        - {x: -121, y: -128.5}
+        - {x: -109, y: -127.5}
+        - {x: -99, y: -134.5}
+        - {x: -94, y: -135.5}
+        - {x: -73, y: -148.5}
+        - {x: -51, y: -172.5}
+        - {x: -38, y: -180.5}
+        - {x: -24, y: -186.5}
+        - {x: -5, y: -191.5}
+        - {x: 8, y: -194.5}
+        - {x: 46, y: -194.5}
+        - {x: 67, y: -187.5}
+        - {x: 86, y: -178.5}
+    - name: "newhad-\u017Er\xE1dlo_2"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 500
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: -186.5}
+        - {x: 97, y: -176.5}
+        - {x: 112, y: -162.5}
+        - {x: 130, y: -140.5}
+        - {x: 149, y: -131.5}
+        - {x: 162, y: -126.5}
+        - {x: 175, y: -126.5}
+        - {x: 194, y: -130.5}
+        - {x: 214, y: -133.5}
+        - {x: 232, y: -133.5}
+        - {x: 250, y: -132.5}
+        - {x: 250, y: 114.5}
+        - {x: 247, y: 115.5}
+        - {x: 235, y: 118.5}
+        - {x: 197, y: 117.5}
+        - {x: 176, y: 112.5}
+        - {x: 151, y: 114.5}
+        - {x: 135, y: 122.5}
+        - {x: 123, y: 133.5}
+        - {x: 123, y: 142.5}
+        - {x: 105, y: 167.5}
+        - {x: 83, y: 176.5}
+        - {x: 60, y: 184.5}
+        - {x: 17, y: 190.5}
+        - {x: -23, y: 190.5}
+        - {x: -27, y: 189.5}
+        - {x: -48, y: 182.5}
+        - {x: -75, y: 170.5}
+        - {x: -82, y: 165.5}
+        - {x: -94, y: 153.5}
+        - {x: -97, y: 147.5}
+        - {x: -122, y: 121.5}
+        - {x: -127, y: 119.5}
+        - {x: -187, y: 119.5}
+        - {x: -201, y: 117.5}
+        - {x: -230, y: 111.5}
+        - {x: -240, y: 111.5}
+        - {x: -250, y: 114.5}
+        - {x: -250, y: -136.5}
+        - {x: -245, y: -136.5}
+        - {x: -225, y: -131.5}
+        - {x: -188, y: -127.5}
+        - {x: -174, y: -126.5}
+        - {x: -159, y: -117.5}
+        - {x: -147, y: -117.5}
+        - {x: -125, y: -127.5}
+        - {x: -113, y: -139.5}
+        - {x: -79, y: -171.5}
+        - {x: -72, y: -176.5}
+        - {x: -59, y: -182.5}
+        - {x: -45, y: -187.5}
+        - {x: -33, y: -190.5}
+        - {x: 17, y: -190.5}
+        - {x: 25, y: -189.5}
+        - {x: 65, y: -189.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

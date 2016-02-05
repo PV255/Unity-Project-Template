@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 37fcf6a42c48e364cb1eed66818070ff
+timeCreated: 1454604691
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: newhad-chvost_0
+    21300002: newhad-chvost_1
+    21300004: newhad-chvost_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: newhad-chvost_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 652
+        width: 492
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75, y: -10}
+        - {x: 176, y: -11}
+        - {x: 215, y: -1}
+        - {x: 246, y: 18}
+        - {x: 246, y: 37}
+        - {x: 243, y: 42}
+        - {x: 196, y: 31}
+        - {x: 105, y: 73}
+        - {x: 74, y: 79}
+        - {x: 19, y: 80}
+        - {x: -19, y: 67}
+        - {x: -49, y: 51}
+        - {x: -116, y: 49}
+        - {x: -168, y: 100}
+        - {x: -221, y: 121}
+        - {x: -246, y: 121}
+        - {x: -246, y: -121}
+        - {x: -185, y: -121}
+        - {x: -135, y: -109}
+        - {x: -102, y: -89}
+        - {x: 1, y: -23}
+    - name: newhad-chvost_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 652
+        width: 494
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 140, y: -15}
+        - {x: 155, y: -16}
+        - {x: 223, y: 4}
+        - {x: 247, y: 21}
+        - {x: 247, y: 46}
+        - {x: 241, y: 53}
+        - {x: 130, y: 41}
+        - {x: 102, y: 69}
+        - {x: 85, y: 84}
+        - {x: 7, y: 92}
+        - {x: -76, y: 45}
+        - {x: -117, y: 47}
+        - {x: -175, y: 99}
+        - {x: -232, y: 122}
+        - {x: -247, y: 122}
+        - {x: -247, y: -122}
+        - {x: -221, y: -122}
+        - {x: -185, y: -118}
+        - {x: -153, y: -108}
+        - {x: -95, y: -85}
+        - {x: 78, y: -5}
+    - name: newhad-chvost_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 488
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 114, y: -18}
+        - {x: 197, y: -8}
+        - {x: 226, y: 0}
+        - {x: 244, y: 27}
+        - {x: 244, y: 46}
+        - {x: 234, y: 47}
+        - {x: 146, y: 49}
+        - {x: 113, y: 77}
+        - {x: 35, y: 83}
+        - {x: 11, y: 76}
+        - {x: -47, y: 52}
+        - {x: -84, y: 49}
+        - {x: -151, y: 91}
+        - {x: -181, y: 107}
+        - {x: -231, y: 122}
+        - {x: -244, y: 122}
+        - {x: -244, y: -122}
+        - {x: -207, y: -122}
+        - {x: -163, y: -115}
+        - {x: -8, y: -22}
+        - {x: 37, y: -12}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

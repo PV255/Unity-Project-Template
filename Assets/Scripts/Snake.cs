@@ -244,10 +244,7 @@ public class Snake : MonoBehaviour
         }
         else if (coll.name.StartsWith(AddPortalSript.backgroundOut.name)) { 
         }
-        else if (coll.name.StartsWith(tailPrefab.name))
-        {
-
-        }
+        
 
         else
         {

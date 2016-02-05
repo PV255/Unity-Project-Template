@@ -12,6 +12,7 @@ public class LoosePlatform : MonoBehaviour {
     private float timeRiseAt = -1;
 
     public void forceRestore() {
+        timeFallAt = -1;
         timeRiseAt = Time.time;
     }
 

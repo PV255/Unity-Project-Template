@@ -38,6 +38,8 @@ public Canvas levelsCanvas;
 	public Button level2;
 	public Button level3;
 	public Button level4;
+
+    private bool music;
     // Use this for initialization
     void Start () {
         
@@ -82,6 +84,7 @@ lock1 = lock1.GetComponent<Text>();
         uiCanvas.enabled = false;
         gameOver.enabled = false; 
         levelsCanvas.enabled = false;
+        music = false;
     }
 
     public void ControlsPress()
@@ -147,9 +150,8 @@ Loading.SaveGame ();
     public void OkSoundDialog()
     {
         optionsCanvas.enabled = false;
-        if (musicToggle.isOn)
-            audioSource.mute = false;
-        else audioSource.mute = true;
+        if (musicToggle.isOn) music = true;
+        else music = false;
         MenuButtonsEnamble(true);
     }
 
@@ -186,6 +188,8 @@ public void ResetHighscore()
         snakeScript.setPause(snakeScript.isPaused());
         addPortalScript.setInMenu(false);
         addPortalScript.setPause(snakeScript.isPaused());
+        if (music) audioSource.mute = false;
+        else audioSource.mute = true;
     }
 
     public void GameOver()

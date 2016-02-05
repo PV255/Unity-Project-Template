@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21275714}
   - 61: {fileID: 6133222}
   m_Layer: 0
-  m_Name: sponky
+  m_Name: collisionObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

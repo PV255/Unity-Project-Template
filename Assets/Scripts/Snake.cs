@@ -14,7 +14,9 @@ public class Snake : MonoBehaviour
     public GameObject decreaseSnakeSpeedPrefab;
     public GameObject background;
     public Canvas gamePausedText;
+    public Canvas gameOverScreen;
     public Text scoreText;
+    public Text gameOverScoreText;
     public AddPortal AddPortalSript;
 
     public Transform borderTop;
@@ -82,6 +84,8 @@ public class Snake : MonoBehaviour
         gamePausedText = gamePausedText.GetComponent<Canvas>();
         gamePausedText.enabled = false;
         scoreText = scoreText.GetComponent<Text>();
+        gameOverScoreText = gameOverScoreText.GetComponent<Text>();
+        gameOverScreen = gameOverScreen.GetComponent<Canvas>();
         AddPortalSript = background.GetComponent<AddPortal>();
         fixedUpdateCounter = 0;
         for (int i = 0; i < numOfRows; i++)
@@ -528,6 +532,11 @@ public class Snake : MonoBehaviour
     /*TODO: implement game over screen here*/
     void gameOver()
     {
-        SceneManager.LoadScene(0);
+        pause = true;
+        inMenu = true;
+        AddPortalSript.setPause(true);
+        AddPortalSript.setInMenu(true);
+        gameOverScoreText.text = score.ToString();
+        gameOverScreen.enabled = true;
     }
 }

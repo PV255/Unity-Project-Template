@@ -12,6 +12,7 @@ public class StartMenu : MonoBehaviour {
     public Canvas optionsCanvas;
     public Canvas menuCanvas;
     public Canvas uiCanvas;
+    public Canvas gameOver;
     public Button playButton;
     public Button exitButton;
     public Button controlsButton;
@@ -35,6 +36,7 @@ public class StartMenu : MonoBehaviour {
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         menuCanvas = menuCanvas.GetComponent<Canvas>();
         uiCanvas = uiCanvas.GetComponent<Canvas>();
+        gameOver = gameOver.GetComponent<Canvas>();
         playButton = playButton.GetComponent<Button>();
         exitButton = exitButton.GetComponent<Button>();
         controlsButton = controlsButton.GetComponent<Button>();
@@ -55,6 +57,7 @@ public class StartMenu : MonoBehaviour {
         controls1Canvas.enabled = false;
         optionsCanvas.enabled = false;
         uiCanvas.enabled = false;
+        gameOver.enabled = false;
     }
 
     public void ControlsPress()
@@ -125,6 +128,13 @@ public class StartMenu : MonoBehaviour {
         snakeScript.setPause(snakeScript.isPaused());
         addPortalScript.setInMenu(false);
         addPortalScript.setPause(snakeScript.isPaused());
+    }
+
+    public void GameOver()
+    {
+        gameOver.enabled = false;
+        SceneManager.LoadScene(0);
+        StartLevel();
     }
 
     //Exit - yes press

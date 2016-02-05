@@ -41,7 +41,7 @@ GameObject:
   - 4: {fileID: 407198}
   - 33: {fileID: 3399764}
   - 23: {fileID: 2349326}
-  - 65: {fileID: 6553446}
+  - 64: {fileID: 6427378}
   m_Layer: 0
   m_Name: aqueduct
   m_TagString: Untagged
@@ -67,9 +67,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110794}
-  m_LocalRotation: {x: .127639711, y: .904079378, z: -.0570168495, w: -.403853565}
-  m_LocalPosition: {x: -3.63877821, y: 2.06912398, z: 4.16120577}
-  m_LocalScale: {x: 1, y: .99999994, z: 1}
+  m_LocalRotation: {x: 0.12763971, y: 0.9040794, z: -0.05701685, w: -0.40385357}
+  m_LocalPosition: {x: -3.6387782, y: 2.069124, z: 4.161206}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children: []
   m_Father: {fileID: 485830}
   m_RootOrder: 1
@@ -79,9 +79,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113786}
-  m_LocalRotation: {x: .0638258606, y: .90111798, z: -.142149717, w: .404606223}
-  m_LocalPosition: {x: 52.7299995, y: 2.96000004, z: 40.2999992}
-  m_LocalScale: {x: 1.5, y: 1, z: 1.24360383}
+  m_LocalRotation: {x: 0.06382586, y: 0.901118, z: -0.14214972, w: 0.40460622}
+  m_LocalPosition: {x: 52.73, y: 2.96, z: 40.3}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.2436038}
   m_Children:
   - {fileID: 407198}
   - {fileID: 424212}
@@ -105,8 +105,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -118,8 +120,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169932}
   m_Mesh: {fileID: 4300000, guid: 3f0d235e69472344c9d12ff357678afb, type: 3}
---- !u!65 &6553446
-BoxCollider:
+--- !u!64 &6427378
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -128,8 +130,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.14389026, y: .528549254, z: 5.9863019}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 3f0d235e69472344c9d12ff357678afb, type: 3}
 --- !u!95 &9527016
 Animator:
   serializedVersion: 3

@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 700, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3375,7 +3375,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 700, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4671,11 +4671,11 @@ MonoBehaviour:
   distance: 1
   backgroundIn: {fileID: 167338, guid: a44d217cbd4d3ad47bf52208693dc893, type: 2}
   backgroundOut: {fileID: 116430, guid: 07f261664be922c4da39204794030479, type: 2}
-  inPortal: {fileID: 21300000, guid: 87598df962bad1f46b385a74534caa49, type: 3}
-  outPortalUp: {fileID: 21300000, guid: e1bcd6e02848ade468f2f66aee3fcd2f, type: 3}
-  outPortalDown: {fileID: 21300000, guid: ba377ca02874c8a418d72a1ad1b8660e, type: 3}
-  outPortalLeft: {fileID: 21300000, guid: 4af822dbb0634bc4ba5774556d0cff02, type: 3}
-  outPortalRight: {fileID: 21300000, guid: e73c017485589de4a826cf08768bbec9, type: 3}
+  inPortal: {fileID: 21300000, guid: 3cd4f75a0fe3e884683b2df3975933f6, type: 3}
+  outPortalUp: {fileID: 21300000, guid: 9ebc9ffb1a7f1e649af6a6b694172d91, type: 3}
+  outPortalDown: {fileID: 21300004, guid: e7f859f318d091045817314513fe7471, type: 3}
+  outPortalLeft: {fileID: 21300002, guid: 55388d20c74746a4893463757eace6c2, type: 3}
+  outPortalRight: {fileID: 21300002, guid: 16c97f09d911c6140b4f0a86b7917788, type: 3}
 --- !u!61 &1399677819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5320,7 +5320,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 700, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -5666,7 +5666,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 700, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6676,7 +6676,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.782108
+  orthographic size: 12.21
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6750,7 +6750,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 700, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8008,7 +8008,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 700, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

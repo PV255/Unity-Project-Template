@@ -24,6 +24,7 @@ public class Snake : MonoBehaviour
     public float moveChangeRate;
     public float moveDistance;
     public GameObject tailPrefab;
+    public GameObject lastTailPrefab;
     public GameObject newPortal;
 
     Vector2 dir = Vector2.left;
@@ -91,7 +92,7 @@ public class Snake : MonoBehaviour
         if (isSpecialOnTable)
         {
             specialFoodCount++;
-            Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
+            //Debug.Log("Actual time: " + specialFoodCount + " looking for: " + (int)specialTime);
             if (specialFoodCount == (int)specialTime)
             {
                 removeSpecialFood();
@@ -235,16 +236,24 @@ public class Snake : MonoBehaviour
 
     public void Move()
     {
+        GameObject lastPosition;
         portal = false;
         Vector2 currentPossition = transform.position;
-
+        Vector2 position;
+        Quaternion rotation;
         transform.Translate(dir * moveDistance, Space.World);
     
 
         if (ate)
         {
             SpawnFood();
-            tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
+            if (tail.Count == 0) {
+                tail.Add(((GameObject)Instantiate(lastTailPrefab, currentPossition, transform.rotation)).transform);
+            }
+            else
+            {
+                tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
+            }
             ate = false;
 
         }
@@ -252,26 +261,64 @@ public class Snake : MonoBehaviour
         {
             if (tail.Count > 0)
             {
-                tail.Last().position = currentPossition;
-                tail.Last().rotation = transform.rotation;
-                tail.Insert(0, tail.Last());
-                tail.RemoveAt(tail.Count - 1);
-                tail.RemoveAt(tail.Count - 1);
+                shrink = false;
+               //* tail.Insert(0, tail.Last());
+                if (tail.Count >= 3)
+                {
+                    lastPosition = tail.Last().gameObject;
+                    Destroy(lastPosition);
+                    tail.RemoveAt(tail.Count - 1);
+                    lastPosition = tail.Last().gameObject;
+                    Destroy(lastPosition);
+                    tail.RemoveAt(tail.Count - 1);
+                    position = tail.Last().position;
+                    rotation = tail.Last().rotation;
+                    lastPosition = tail.Last().gameObject;
+                    Destroy(lastPosition);
+                    tail.RemoveAt(tail.Count - 1);
+                    tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
+                    tail.Add(((GameObject)Instantiate(lastTailPrefab, position, rotation)).transform);
+                }
+                else {
+                    tail.Last().position = currentPossition;
+                    tail.Last().rotation = transform.rotation;
+                    tail.Insert(0, tail.Last());
+                    tail.RemoveAt(tail.Count - 1);
+                    lastPosition = tail.Last().gameObject;
+                    Destroy(lastPosition);
+                    tail.RemoveAt(tail.Count - 1);
+                    
+                }
+                //tail.Insert(tail.Count - 1, ();
+                //tail.Last().GetComponent<SpriteRenderer>().sprite = lastTailPrefab.GetComponent<SpriteRenderer>().sprite;
                 SpawnFood();
             }
             else {
-                /*GAME OVER dlzka hada je 0*/
+                /*GAME OVER dlzka hada je < 0*/
                 gameOver();
             }
         }
         else if (tail.Count > 0)
         {
-            tail.Last().position = currentPossition;
-            tail.Last().rotation = transform.rotation;
-            tail.Insert(0, tail.Last());
-            tail.RemoveAt(tail.Count - 1);
-
-
+            if (tail.Count == 1) {
+                tail.Last().position = currentPossition;
+                tail.Last().rotation = transform.rotation;
+                tail.Insert(0, tail.Last());
+                tail.RemoveAt(tail.Count - 1);
+            }
+            else
+            {
+                lastPosition = tail.Last().gameObject;
+                Destroy(lastPosition);
+                tail.RemoveAt(tail.Count - 1);
+                position = tail.Last().position;
+                rotation = tail.Last().rotation;
+                lastPosition = tail.Last().gameObject;
+                Destroy(lastPosition);
+                tail.RemoveAt(tail.Count - 1);
+                tail.Insert(0, ((GameObject)Instantiate(tailPrefab, currentPossition, transform.rotation)).transform);
+                tail.Add(((GameObject)Instantiate(lastTailPrefab, position, rotation)).transform);
+            }
         }
         bool remove = false;
         do

@@ -3,10 +3,11 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
-
+    
     public GameObject foodPrefab;
     public GameObject decreaseSnakeLengthFoodPrefab;
     public GameObject incraseSnakeSpeedFoodPrefab;
@@ -530,6 +531,6 @@ public class Snake : MonoBehaviour
     /*TODO: implement game over screen here*/
     void gameOver()
     {
-        pause = true;
+        SceneManager.LoadScene(0);
     }
 }

@@ -45,7 +45,7 @@ GameObject:
   - 199: {fileID: 19914432}
   - 198: {fileID: 19885580}
   m_Layer: 0
-  m_Name: PortalHUBPrefab
+  m_Name: PortalHUBPrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,9 +57,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159000}
-  m_LocalRotation: {x: 0, y: -0.030979358, z: 0, w: 0.99952006}
-  m_LocalPosition: {x: -0.25427112, y: 0.67600006, z: 3.6964962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: -0.13756862, z: 0, w: 0.9904923}
+  m_LocalPosition: {x: -0.2690141, y: 0.67600006, z: 1.7076372}
+  m_LocalScale: {x: 0.0021571459, y: 0.002215714, z: 0.0021571459}
   m_Children:
   - {fileID: 458064}
   - {fileID: 466308}
@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 128950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0023, y: 0.0023, z: 0.0023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454952}
   m_RootOrder: 0
@@ -84,8 +84,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0023, y: 0.0023, z: 0.0023}
+  m_LocalPosition: {x: 0, y: 0, z: 478}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454952}
   m_RootOrder: 1
@@ -133,7 +133,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: -346.505, y: 410.01523, z: -40.31387}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -2.0708725, y: 0.3048407, z: -478.30508}
 --- !u!114 &11476442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c87596b9f198b40b50d998f59490e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: fireLvl
+  level: 1
 --- !u!198 &19885580
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -511,7 +511,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 10
-    radius: 0.09926341
+    radius: 1
     angle: 25
     length: 5
     boxX: 1
@@ -1692,35 +1692,7 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: 0.0023
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
-      value: 0.0023
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
-      value: 0.0023
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 159000}

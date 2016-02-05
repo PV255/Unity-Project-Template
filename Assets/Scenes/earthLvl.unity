@@ -637,7 +637,7 @@ GameObject:
   - 65: {fileID: 124929622}
   - 114: {fileID: 124929623}
   - 54: {fileID: 124929624}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ColliderBack
   m_TagString: BackCollider
   m_Icon: {fileID: 0}
@@ -7387,15 +7387,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 8fc2d4610a5768940a5f5974c2fa7595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 170.02824
+      value: 168.4
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 8fc2d4610a5768940a5f5974c2fa7595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.449476
+      value: 5.32
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 8fc2d4610a5768940a5f5974c2fa7595, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -168.54398
+      value: -172.58
       objectReference: {fileID: 0}
     - target: {fileID: 100106, guid: 8fc2d4610a5768940a5f5974c2fa7595, type: 3}
       propertyPath: m_Layer
@@ -7571,16 +7571,16 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1623810145}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1623810150
-MeshCollider:
+--- !u!135 &1623810150
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -7589,8 +7589,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300002, guid: 8fc2d4610a5768940a5f5974c2fa7595, type: 3}
+  m_Radius: 3.885188
+  m_Center: {x: 0.009794831, y: -0.0062481174, z: -0.008574605}
 --- !u!114 &1623810151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8922,7 +8922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430786, guid: af32a42bb8df66a4985206869c0c59c3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.3
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 430786, guid: af32a42bb8df66a4985206869c0c59c3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9142,6 +9142,7 @@ GameObject:
   - 4: {fileID: 1927092831}
   - 65: {fileID: 1927092833}
   - 114: {fileID: 1927092832}
+  - 114: {fileID: 1927092834}
   m_Layer: 0
   m_Name: fallRockColl02
   m_TagString: Untagged
@@ -9167,12 +9168,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927092830}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 134020ec3b63e3945b666ae1162d6234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: {fileID: 1623810145}
 --- !u!65 &1927092833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9185,6 +9185,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1927092834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1927092830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22e2aefd7fe9cb40b0656853482d4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 1623810145}
 --- !u!1001 &1931183440
 Prefab:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ TagManager:
   - BackCollider
   - Enemy
   - Rock
-  - 
+  - Cameracollider
   - 
   - 
   - 

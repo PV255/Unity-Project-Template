@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: e67f4ff02b6d6634c9756585d21e2eb2
+timeCreated: 1448637695
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CINEMA4D_editor
+    100002: "Spojovac\xED_objekt"
+    100004: //RootNode
+    100006: "Vyta\u017Een\xED"
+    100008: "Segmentovan\xFD_povrch"
+    100010: "Segmentovan\xFD_povrch_1"
+    100012: "Spojovac\xED_objekt_1"
+    100014: path
+    100016: volcano
+    400000: CINEMA4D_editor
+    400002: "Spojovac\xED_objekt"
+    400004: //RootNode
+    400006: "Vyta\u017Een\xED"
+    400008: "Segmentovan\xFD_povrch"
+    400010: "Segmentovan\xFD_povrch_1"
+    400012: "Spojovac\xED_objekt_1"
+    400014: path
+    400016: volcano
+    2300000: "Spojovac\xED_objekt"
+    2300002: "Vyta\u017Een\xED"
+    2300004: "Spojovac\xED_objekt_1"
+    2300006: "Segmentovan\xFD_povrch"
+    2300008: "Segmentovan\xFD_povrch_1"
+    2300010: path
+    2300012: volcano
+    3300000: "Spojovac\xED_objekt"
+    3300002: "Vyta\u017Een\xED"
+    3300004: "Spojovac\xED_objekt_1"
+    3300006: "Segmentovan\xFD_povrch"
+    3300008: "Segmentovan\xFD_povrch_1"
+    3300010: path
+    3300012: volcano
+    4300000: "Spojovac\xED_objekt"
+    4300002: "Vyta\u017Een\xED"
+    4300004: "Spojovac\xED_objekt_1"
+    4300006: "Segmentovan\xFD_povrch_1"
+    4300008: "Segmentovan\xFD_povrch"
+    4300010: path
+    4300012: volcano
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

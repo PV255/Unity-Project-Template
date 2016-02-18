@@ -6,4 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/initLogo.unity
+  - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/tutorialLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/hub.unity
+  - enabled: 1
+    path: Assets/Scenes/iceLvl.unity
+  - enabled: 1
+    path: Assets/Scenes/waterLvl.unity
+  - enabled: 1
+    path: Assets/Scenes/fireLvl.unity
+  - enabled: 1
+    path: Assets/Scenes/earthLvl.unity
+  - enabled: 1
+    path: Assets/Scenes/testLevel01.unity
+  - enabled: 1
+    path: Assets/Scenes/gameOver.unity

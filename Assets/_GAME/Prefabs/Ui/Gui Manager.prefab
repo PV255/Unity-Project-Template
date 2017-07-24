@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1787963520058854}
+  m_IsPrefabParent: 1
+--- !u!1 &1787963520058854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4274706132185936}
+  - component: {fileID: 114046122252916852}
+  m_Layer: 0
+  m_Name: Gui Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4274706132185936
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787963520058854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114046122252916852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787963520058854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396919303c6ca55429732ba797ceb9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetsToLoad:
+    splashUiScreen: {fileID: 114353263057364156, guid: b80a33a0251d6484a93b7f76c037ced1,
+      type: 2}
+    mainMenuUiScreen: {fileID: 114462967870111960, guid: 4415be2ccf81d03409c8259de635aec2,
+      type: 2}
+    gamePlayUiScreen: {fileID: 114711459467026028, guid: 1a3c925f5e5899d469c2301292ba14ec,
+      type: 2}
+    pauseUiScreen: {fileID: 114876655846581688, guid: 766313685e690274580e93dc5ebec626,
+      type: 2}
+    levelCompleteUiScreen: {fileID: 114804734692729940, guid: 96fbabbbec9da6a45970863f88d28b9e,
+      type: 2}
+    gameOverUiScreen: {fileID: 114431066559635632, guid: f2c595e9c31501c4a87dc633b7633a10,
+      type: 2}
